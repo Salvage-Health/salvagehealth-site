@@ -1025,7 +1025,7 @@
       } else {
         var cal2=Math.round(t0/10)*10; m=macros(cal2,wt,g==='recomp'?1.0:0.8);
         PLAN={cal:cal2,rate:0,dir:0,end:null,m:m,tdee:t0,bmr:b0};
-        $('o-goal').innerHTML=tiles([{k:'Calorie target',v:n(cal2),s:'at maintenance',hl:1}])+'<p class="res-note">'+(g==='recomp'?'A recomp has no scale target. The scale may barely move while your body composition improves, so track measurements, photos and strength, and recheck every 4 weeks (Ch. 7).':'If your weight trend drifts more than a couple of pounds over 2 to 3 weeks, adjust by 100 to 200 calories.')+'</p>';
+        $('o-goal').innerHTML=tiles([{k:'Calorie target',v:n(cal2),s:'at maintenance',hl:1}])+'<p class="res-note">'+(g==='recomp'?'A recomp has no scale target. The scale may barely move while your body composition improves, so track measurements, photos and strength, and recheck every 4 weeks (Ch. 7).':'If your weight trend drifts more than a couple of pounds over 2 to 3 weeks, adjust by 100 to 150 calories (Ch. 7).')+'</p>';
         bar.date=g==='recomp'?'Recomp':'Maintain';
       }
       if(PLAN){
