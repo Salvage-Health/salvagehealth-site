@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Salvage Health | It's never too late to take your life back</title>
 <meta name="description" content="Salvage Health puts the knowledge in your hands to build a health and fitness plan that works for you, at any age, any size, from any starting point. From Bryan Dourado, author of Fitness Without the Fear.">
+<link rel="canonical" href="https://salvagehealth.com/">
 <meta name="theme-color" content="#141413">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
@@ -108,6 +109,17 @@
   .foot nav a:hover{color:var(--fg)}
   .fine{font-size:12.5px;color:var(--faint);margin:26px 0 0;max-width:70ch}
 
+  .alist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .acard{display:flex;flex-direction:column;gap:10px;background:var(--raised);border:1px solid var(--rule);border-radius:14px;padding:24px 22px;text-decoration:none;color:var(--fg);transition:border-color .15s}
+  .acard:hover{border-color:var(--rust)}
+  .acard .cat{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+  .acard h3{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:24px;line-height:1.1;letter-spacing:.5px;margin:0}
+  .acard p{margin:0;color:var(--dim);font-size:15.5px}
+  .acard .meta{margin-top:auto;padding-top:6px;font-size:13px;color:var(--faint)}
+  .care{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--rule);border-radius:14px;padding:26px 28px}
+  .care > div{flex:1;min-width:260px;max-width:620px}
+  .care .disc{font-size:12.5px;color:var(--faint);margin:10px 0 0}
+  @media (max-width:760px){.alist{grid-template-columns:1fr}}
   @media (max-width:860px){
     .story{grid-template-columns:1fr;gap:28px}
     .pillars{grid-template-columns:1fr}
@@ -115,7 +127,7 @@
     .book .cover{max-width:180px}
   }
   @media (max-width:520px){
-    .top nav{display:none}
+    .top nav{gap:14px}.top nav a{font-size:11px;letter-spacing:1px}.top nav a:first-child,.top nav a:last-child{display:none}
     .hero{padding:52px 20px 44px}
     section{padding-top:68px}
     .never{margin-top:68px;padding:44px 0}
@@ -132,7 +144,8 @@
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
       <a href="#why">Why we exist</a>
-      <a href="#book">The book</a>
+      <a href="/articles/">Articles</a>
+      <a href="/faq/">FAQ</a>
       <a href="/book">Free plan</a>
     </nav>
   </header>
@@ -211,6 +224,29 @@
       </div>
     </section>
 
+    <section id="articles">
+      <p class="eyebrow">From the articles</p>
+      <h2 class="disp">Real talk on <em>taking your life back.</em></h2>
+      <div class="alist">
+        <a class="acard" href="/articles/75-hard/"><span class="cat">Discipline</span><h3>What 75 Hard Taught Me About Discipline</h3><p>I lost weight doing it. But the bigger thing I took away was who I became by the end.</p><span class="meta">6 min read</span></a>
+        <a class="acard" href="/articles/my-peptide-journey/"><span class="cat">My journey</span><h3>My Peptide Journey: What I Learned and What&#x27;s Still Unknown</h3><p>Peptides helped me. They also come with real unknowns. You deserve both sides.</p><span class="meta">6 min read</span></a>
+        <a class="acard" href="/articles/say-what-you-do/"><span class="cat">Mindset</span><h3>Say What You&#x27;ll Do. Do What You Say.</h3><p>Nobody can make you do something you don&#x27;t want to do. That cuts both ways.</p><span class="meta">5 min read</span></a>
+        <a class="acard" href="/articles/supplements-whats-worth-it/"><span class="cat">Nutrition</span><h3>Supplements: What&#x27;s Worth It and What&#x27;s Marketing</h3><p>Most supplements won&#x27;t do much. A few have solid research behind them. Here&#x27;s how to tell the difference.</p><span class="meta">6 min read</span></a>
+      </div>
+      <p style="margin:18px 0 0"><a class="btn line" href="/articles/">All articles</a></p>
+    </section>
+
+    <section id="care">
+      <div class="care">
+        <div>
+          <p class="eyebrow">Want a doctor in the loop?</p>
+          <p class="body" style="margin:0">Salvage Health is education only. For care with a licensed provider involved, Bryan also founded <b>Velacore Health</b>, a separate company that connects you with independent licensed physicians for physician-reviewed wellness programs.</p>
+          <p class="disc">Disclosure: Bryan has an ownership interest in Velacore Health.</p>
+        </div>
+        <a class="btn line" href="https://velacorehealth.com" target="_blank" rel="noopener">Visit Velacore Health</a>
+      </div>
+    </section>
+
     <section class="next" id="next">
       <div class="narrow">
         <p class="eyebrow">What's next</p>
@@ -228,6 +264,8 @@
         <span class="tg">Built from what's left.</span>
       </div>
       <nav aria-label="Footer">
+        <a href="/articles/">Articles</a>
+        <a href="/faq/">FAQ</a>
         <a href="/book">Free companion app</a>
         <a href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Audiobook</a>
         <a href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener">Kindle</a>
