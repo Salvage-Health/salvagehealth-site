@@ -452,7 +452,7 @@
         <button class="reset-link" type="button" id="view-plan">View or copy</button>
         <button class="reset-link" type="button" id="reset">Start over</button>
       </div>
-      <p class="fine">A starting estimate for healthy adults, not medical advice. Real progress varies, which is why the book has you recheck every 2 to 3 weeks. If you're pregnant, under 18, or managing a medical condition, talk to your doctor before changing how you eat. Your answers stay on this device and are never sent anywhere.</p>
+      <p class="fine">The numbers this app calculates are general estimates for healthy adults, not personalized medical or nutritional advice. Real progress varies, which is why the book has you recheck every 2 to 3 weeks. If you're pregnant, under 18, or managing a medical condition, talk to your doctor before changing how you eat. Your answers stay on this device and are never sent anywhere.</p>
     </div>
   </section>
 
@@ -1163,7 +1163,7 @@
     head('10 · REVIEW LOG (Ch. 7 and 21)');
     var L=S.log.slice().sort(function(a,b){return a.d<b.d?-1:1;}); if(!L.length) line('No check-ins yet.');
     L.forEach(function(e){ line(fmt(new Date(e.d+'T12:00:00'))+':  '+n(e.w)+' lbs ('+kg(e.w)+' kg)'+(e.note?'  ·  '+e.note:'')); });
-    y+=10; line('tinyurl.com/fitness-companion',{c:'#888888',s:9});
+    y+=10; line('These numbers are general estimates, not personalized medical or nutritional advice. Talk to your doctor before changing how you eat, especially if you have a medical condition.',{c:'#888888',s:9}); line('salvagehealth.com/book',{c:'#888888',s:9});
     if(VIEWONLY){ showPlan(ROWS); return; }
     var blob=doc.blob();
     if(dl){ dl.save({filename:'my-personal-plan.pdf',data:blob}).then(function(){ msg.textContent='Saved. Find it in your downloads.'; msg.hidden=false; }).catch(function(e){ msg.textContent=e&&e.code==='declined'?'Download cancelled.':'Couldn\'t save right now. Try again in a moment.'; msg.hidden=false; }); }
