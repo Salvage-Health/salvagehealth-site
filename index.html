@@ -4,37 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Salvage Health</title>
-<meta name="description" content="Salvage Health, from Bryan Dourado, author of Fitness Without the Fear. Coming soon.">
+<meta name="description" content="Salvage Health, from Bryan Dourado, author of Fitness Without the Fear. Health and fitness in plain English. Built from what's left.">
+<meta name="theme-color" content="#141413">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<meta property="og:title" content="Salvage Health">
+<meta property="og:description" content="Health and fitness in plain English, from Bryan Dourado. Built from what's left.">
+<meta property="og:image" content="https://salvagehealth.com/brand/og.png">
+<meta property="og:url" content="https://salvagehealth.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-  :root{--bg:#141413;--raised:#1c1b19;--fg:#FAF9F5;--dim:#C9C7C0;--faint:#9C9A93;--accent:#D97757;--ink:#3A241A;--rule:#3A3934;color-scheme:dark}
+  :root{--bg:#141413;--raised:#1c1b19;--fg:#FAF9F5;--dim:#C9C7C0;--faint:#9C9A93;--muted:#8A8779;--rust:#BE5126;--rust-text:#D46A3F;--rule:#3A3934;color-scheme:dark}
   *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.55;display:flex;align-items:center;justify-content:center;padding:48px 20px}
-  main{max-width:620px;width:100%;display:grid;gap:22px}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
-  h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(44px,10vw,76px);line-height:1;letter-spacing:-1px;margin:0}
-  p{margin:0;font-size:17px;color:var(--dim);max-width:46ch}
-  .card{display:flex;gap:18px;align-items:center;background:var(--raised);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;margin-top:10px}
+  html,body{min-height:100%}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.55;min-height:100vh;display:flex;padding:16px}
+  .frame{flex:1;border:1px solid rgba(250,249,245,.08);display:flex;align-items:center;justify-content:center;padding:56px 20px 40px}
+  main{max-width:560px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+  .mark{width:clamp(84px,18vw,116px);height:auto}
+  .word{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(46px,12vw,72px);line-height:.95;letter-spacing:1px;margin:0}
+  .word span{color:var(--rust);display:block}
+  .tag{margin:14px 0 0;font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
+  .intro{margin:0;font-size:16.5px;color:var(--dim);max-width:44ch}
+  .card{display:flex;gap:18px;align-items:center;text-align:left;width:100%;background:var(--raised);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .15s}
   .card img{width:58px;height:auto;border-radius:4px;flex:none}
-  .card b{display:block;font-size:16px;color:var(--fg)}
-  .card span{font-size:13.5px;color:var(--faint)}
-  .card:hover{border-color:var(--accent)}
-  .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  footer{font-size:12.5px;color:var(--faint);margin-top:18px}
+  .card .k{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+  .card b{display:block;font-size:16px;color:var(--fg);margin:2px 0}
+  .card .s{font-size:13.5px;color:var(--faint)}
+  .card .go{margin-left:auto;font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;font-size:22px;color:var(--faint);flex:none}
+  .card:hover{border-color:var(--rust)}
+  .card:hover .go{color:var(--fg)}
+  .card:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+  footer{font-size:12px;color:var(--faint);letter-spacing:.3px}
+  @media (max-width:420px){.card{padding:16px}.card .go{display:none}}
 </style>
 </head>
 <body>
+<div class="frame">
 <main>
-  <div class="eyebrow">Coming soon</div>
-  <h1>Salvage Health</h1>
-  <p>Health and fitness information in plain English, from Bryan Dourado. More is on the way.</p>
+  <img class="mark" src="/brand/mark.svg" alt="" width="116" height="116">
+  <div>
+    <h1 class="word">Salvage <span>Health</span></h1>
+    <p class="tag">Built from what's left.</p>
+  </div>
+  <p class="intro">Health and fitness in plain English, from Bryan Dourado. No gimmicks, no agenda. More is on the way.</p>
   <a class="card" href="/book">
     <img src="/book/paperback-cover.jpg" alt="Fitness Without the Fear cover">
-    <div><b>Start with the book: Fitness Without the Fear</b><span>Your personal plan app, worksheet, sources and every edition</span></div>
+    <div><div class="k">Start here</div><b>Fitness Without the Fear</b><span class="s">Your personal plan app, worksheet, sources, and every edition</span></div>
+    <span class="go" aria-hidden="true">&rarr;</span>
   </a>
   <footer>&copy; 2026 Salvage Health</footer>
 </main>
+</div>
 </body>
 </html>
