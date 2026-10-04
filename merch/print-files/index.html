@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Print Files | Salvage Health</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .pf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-bottom:40px}
+  .pc{background:var(--raised);border:1px solid var(--rule);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .pv{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:22px;border-bottom:1px solid var(--rule)}
+  .pv.dark{background:#1B1B1A}.pv.light{background:#E9E5DA}.pv.any{background:repeating-conic-gradient(#2a2926 0 25%,#222120 0 50%) 0 0/20px 20px}
+  .pv svg{max-width:100%;max-height:100%}
+  .pt{padding:14px 16px 18px;display:flex;flex-direction:column;gap:6px;flex-grow:1}
+  .pt b{font-size:15px}.pt span{font-size:13px;color:var(--faint)}
+  .pt button{margin-top:auto;align-self:flex-start;min-height:44px;padding:10px 16px;border-radius:9px;border:1px solid var(--rule);background:transparent;color:var(--fg);font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+  .pt button:hover{border-color:var(--rust)}
+  .bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 22px}
+  #status{font-size:14px;color:var(--dim)}
+  @media (max-width:900px){.pf{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:520px){.pf{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
+    <nav aria-label="Main"><a href="/merch/">Merch</a></nav>
+  </header>
+  <main>
+    <div class="phead">
+      <p class="eyebrow">Private · not linked anywhere</p>
+      <h1 class="disp">Print <em>files</em></h1>
+      <p>Print-ready PNGs at 300 DPI with transparent backgrounds, sized to each placement. Download them on a computer, then upload each one to the matching product in your print-on-demand store.</p>
+    </div>
+    <div class="bar"><button class="btn solid" id="all" type="button">Download all</button><span id="status" aria-live="polite">Loading fonts…</span></div>
+    <div class="pf" id="grid"></div>
+  </main>
+</div>
+<script src="art.js"></script>
+<script>
+(function(){
+  var ART = window.SALVAGE_ART, grid = document.getElementById('grid'), status = document.getElementById('status');
+  var FONT_CSS = 'https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@700&display=block';
+  var embedded = null;
+
+  function b64(buf){ var s='', b=new Uint8Array(buf), i; for(i=0;i<b.length;i+=0x8000){ s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000)); } return btoa(s); }
+
+  function loadFonts(){
+    return fetch(FONT_CSS).then(function(r){ return r.text(); }).then(function(css){
+      var blocks = css.split('/*').slice(1).map(function(c){ return { sub: c.slice(0, c.indexOf('*/')).trim(), body: c.slice(c.indexOf('*/')+2) }; })
+        .filter(function(b){ return b.sub === 'latin'; });
+      return Promise.all(blocks.map(function(b){
+        var url = (b.body.match(/url\(([^)]+)\)/)||[])[1];
+        var fam = (b.body.match(/font-family:\s*'([^']+)'/)||[])[1];
+        var wt = (b.body.match(/font-weight:\s*(\d+)/)||[])[1];
+        return fetch(url).then(function(r){ return r.arrayBuffer(); }).then(function(buf){
+          return "@font-face{font-family:'" + fam + "';font-weight:" + wt + ";src:url(data:font/woff2;base64," + b64(buf) + ") format('woff2');}";
+        });
+      }));
+    }).then(function(faces){ embedded = faces.join(''); });
+  }
+
+  function vb(svg){ var m = svg.match(/viewBox="([^"]+)"/)[1].split(/\s+/).map(Number); return { w: m[2], h: m[3] }; }
+
+  function render(a){
+    var s = a.svg.replace('<defs>', '<defs><style>' + embedded + '</style>');
+    var v = vb(a.svg), W = Math.round(a.inches * 300), H = Math.round(W * v.h / v.w);
+    s = s.replace('<svg ', '<svg width="' + W + '" height="' + H + '" ');
+    return new Promise(function(res, rej){
+      var img = new Image();
+      img.onload = function(){
+        setTimeout(function(){
+          var c = document.createElement('canvas'); c.width = W; c.height = H;
+          c.getContext('2d').drawImage(img, 0, 0, W, H);
+          c.toBlob(function(b){ res(b); }, 'image/png');
+        }, 120);
+      };
+      img.onerror = rej;
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+    });
+  }
+
+  function save(blob, name){
+    var u = URL.createObjectURL(blob), l = document.createElement('a');
+    l.href = u; l.download = name; document.body.appendChild(l); l.click(); l.remove();
+    setTimeout(function(){ URL.revokeObjectURL(u); }, 4000);
+  }
+
+  function dl(a){
+    if(!embedded){ status.textContent = 'Fonts are still loading, try again in a second.'; return Promise.resolve(); }
+    status.textContent = 'Making ' + a.name + '…';
+    return render(a).then(function(b){ save(b, 'salvage-health-' + a.id + '.png'); status.textContent = 'Saved ' + a.name + '. Check your downloads.'; })
+      .catch(function(){ status.textContent = 'Something went wrong making ' + a.name + '. Try again on a computer in Chrome.'; });
+  }
+
+  ART.forEach(function(a){
+    var d = document.createElement('div'); d.className = 'pc';
+    var v = vb(a.svg), W = Math.round(a.inches * 300), H = Math.round(W * v.h / v.w);
+    d.innerHTML = '<div class="pv ' + a.bg + '">' + a.svg.replace(/id="(dist|arc|ring)"/g, 'id="$1-' + a.id + '"').replace(/#(dist|arc|ring)\b/g, '#$1-' + a.id) + '</div>' +
+      '<div class="pt"><b></b><span class="pl"></span><span class="px"></span><button type="button">Download PNG</button></div>';
+    d.querySelector('b').textContent = a.name;
+    d.querySelector('.pl').textContent = a.place;
+    d.querySelector('.px').textContent = W + ' x ' + H + ' px at 300 DPI · ' + (a.bg === 'light' ? 'for light garments' : a.bg === 'dark' ? 'for dark garments' : 'any background');
+    d.querySelector('button').addEventListener('click', function(){ dl(a); });
+    grid.appendChild(d);
+  });
+
+  document.getElementById('all').addEventListener('click', function(){
+    var p = Promise.resolve(); ART.forEach(function(a){ p = p.then(function(){ return dl(a); }).then(function(){ return new Promise(function(r){ setTimeout(r, 500); }); }); });
+    p.then(function(){ status.textContent = 'All ' + ART.length + ' files saved. Check your downloads.'; });
+  });
+
+  loadFonts().then(function(){ status.textContent = 'Ready. ' + ART.length + ' print files.'; })
+    .catch(function(){ status.textContent = 'Could not load the brand fonts. Check your connection and refresh.'; });
+})();
+</script>
+</body>
+</html>
