@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
 <meta property="og:title" content="Salvage Health">
-<meta property="og:description" content="Health and fitness in plain English, from Bryan Dourado. Built from what's left.">
+<meta property="og:description" content="Health and fitness in plain English, from Bryan Dourado. Get Fitness Without the Fear: free audiobook on Spotify, Kindle on Amazon.">
 <meta property="og:image" content="https://salvagehealth.com/brand/og.png">
 <meta property="og:url" content="https://salvagehealth.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,17 +27,26 @@
   .word span{color:var(--rust);display:block}
   .tag{margin:14px 0 0;font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
   .intro{margin:0;font-size:16.5px;color:var(--dim);max-width:44ch}
-  .card{display:flex;gap:18px;align-items:center;text-align:left;width:100%;background:var(--raised);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;text-decoration:none;color:inherit;transition:border-color .15s}
-  .card img{width:58px;height:auto;border-radius:4px;flex:none}
-  .card .k{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
-  .card b{display:block;font-size:16px;color:var(--fg);margin:2px 0}
-  .card .s{font-size:13.5px;color:var(--faint)}
-  .card .go{margin-left:auto;font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;font-size:22px;color:var(--faint);flex:none}
-  .card:hover{border-color:var(--rust)}
-  .card:hover .go{color:var(--fg)}
-  .card:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
   footer{font-size:12px;color:var(--faint);letter-spacing:.3px}
-  @media (max-width:420px){.card{padding:16px}.card .go{display:none}}
+  .book{width:100%;background:var(--raised);border:1px solid var(--rule);border-radius:14px;padding:22px;display:grid;gap:18px;text-align:left}
+  .book-top{display:flex;gap:18px;align-items:center}
+  .book-top img{width:72px;height:auto;border-radius:4px;flex:none}
+  .k{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+  .book-top b{display:block;font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-size:24px;line-height:1.1;color:var(--fg);margin:4px 0}
+  .book-top .s{font-size:13.5px;color:var(--faint)}
+  .ed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .ed a,.ed span.soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:64px;padding:10px 8px;border:1px solid var(--rule);border-radius:10px;text-decoration:none;color:var(--fg);text-align:center;transition:border-color .15s,background .15s}
+  .ed a:hover{border-color:var(--rust);background:rgba(190,81,38,.08)}
+  .ed a:focus-visible,.app-link:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+  .ed b{font-size:14.5px;font-weight:700}
+  .ed small{font-size:12px;color:var(--faint)}
+  .ed span.soon{border-style:dashed;color:var(--dim)}
+  .ed span.soon small{color:var(--rust-text);font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:10.5px}
+  .app-link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:10px;background:var(--rust);color:#FAF9F5;text-decoration:none;font-weight:700;font-size:15px}
+  .app-link:hover{background:#A9461F}
+  .app-link small{display:block;font-weight:500;font-size:12.5px;opacity:.9}
+  .app-link .go{font-size:20px}
+  @media (max-width:440px){.ed{grid-template-columns:1fr}.ed a,.ed span.soon{flex-direction:row;justify-content:space-between;min-height:52px;padding:10px 14px}}
 </style>
 </head>
 <body>
@@ -49,11 +58,18 @@
     <p class="tag">Built from what's left.</p>
   </div>
   <p class="intro">Health and fitness in plain English, from Bryan Dourado. No gimmicks, no agenda. More is on the way.</p>
-  <a class="card" href="/book">
-    <img src="/book/paperback-cover.jpg" alt="Fitness Without the Fear cover">
-    <div><div class="k">Start here</div><b>Fitness Without the Fear</b><span class="s">Your personal plan app, worksheet, sources, and every edition</span></div>
-    <span class="go" aria-hidden="true">&rarr;</span>
-  </a>
+  <section class="book" aria-labelledby="book-title">
+    <div class="book-top">
+      <img src="/book/paperback-cover.jpg" alt="Fitness Without the Fear cover" width="72">
+      <div><div class="k">The book</div><b id="book-title">Fitness Without the Fear</b><span class="s">How nutrition and training actually work, explained like a friend would.</span></div>
+    </div>
+    <div class="ed">
+      <a href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener"><b>Audiobook</b><small>Free on Spotify</small></a>
+      <a href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener"><b>Kindle</b><small>On Amazon</small></a>
+      <span class="soon"><b>Paperback</b><small>Coming soon</small></span>
+    </div>
+    <a class="app-link" href="/book"><span>Free companion app<small>Build your personal plan, plus the worksheet and sources</small></span><span class="go" aria-hidden="true">&rarr;</span></a>
+  </section>
   <footer>&copy; 2026 Salvage Health</footer>
 </main>
 </div>
