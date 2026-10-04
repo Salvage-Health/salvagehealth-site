@@ -123,6 +123,9 @@
   .care{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--rule);border-radius:14px;padding:26px 28px}
   .care > div{flex:1;min-width:260px;max-width:620px}
   .care .disc{font-size:12.5px;color:var(--faint);margin:10px 0 0}
+  .merch-strip{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-decoration:none;color:var(--fg);background:linear-gradient(120deg,rgba(190,81,38,.16),rgba(190,81,38,0) 60%),var(--raised);border:1px solid var(--rule);border-radius:16px;padding:30px 30px}
+  .merch-strip:hover{border-color:var(--rust)}
+  .merch-strip h2.disp{margin-bottom:10px}
   @media (max-width:760px){.alist{grid-template-columns:1fr}}
   @media (max-width:860px){
     .story{grid-template-columns:1fr;gap:28px}
@@ -149,6 +152,7 @@
     <nav aria-label="Main">
       <a href="/about/">About</a>
       <a href="/articles/">Articles</a>
+      <a href="/merch/">Merch</a>
       <a href="/faq/">FAQ</a>
       <a href="/book">Free plan</a>
     </nav>
@@ -240,6 +244,13 @@
       <p style="margin:18px 0 0"><a class="btn line" href="/articles/">All articles</a></p>
     </section>
 
+    <section id="merch">
+      <a class="merch-strip" href="/merch/">
+        <div><p class="eyebrow">Merch</p><h2 class="disp">Wear the <em>reminder.</em></h2><p class="body" style="margin:0">Tees, hoodies, beanies, stickers and lifting gear. First drop coming soon.</p></div>
+        <span class="btn line">See the gear</span>
+      </a>
+    </section>
+
     <section id="care">
       <div class="care">
         <div>
@@ -270,6 +281,7 @@
       <nav aria-label="Footer">
         <a href="/about/">About</a>
         <a href="/articles/">Articles</a>
+        <a href="/merch/">Merch</a>
         <a href="/faq/">FAQ</a>
         <a href="/book">Free companion app</a>
         <a href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Audiobook</a>

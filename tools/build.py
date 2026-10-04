@@ -1,6 +1,6 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH
 FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
@@ -47,6 +47,7 @@ def topbar(active):
     <nav aria-label="Main">
       {a('/about/','About','about')}
       {a('/articles/','Articles','articles')}
+      {a('/merch/','Merch','merch')}
       {a('/faq/','FAQ','faq')}
       {a('/book','Free plan','book','hide-sm')}
     </nav>
@@ -62,6 +63,7 @@ FOOT = f"""  <footer class="site">
       <nav aria-label="Footer">
         <a href="/about/">About</a>
         <a href="/articles/">Articles</a>
+        <a href="/merch/">Merch</a>
         <a href="/faq/">FAQ</a>
         <a href="/book">Free companion app</a>
         <a href="{SPOTIFY}" target="_blank" rel="noopener">Audiobook</a>
@@ -179,8 +181,31 @@ ab = head("About Bryan Dourado | Salvage Health", "Bryan Dourado, founder of Sal
 """ + FOOT
 write("/about/", ab)
 
+# merch
+SHSYM = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sh" viewBox="0 0 100 100"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#BE5126" stroke-width="6" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="#FAF9F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>'
+cards = ""
+for slug, name, cat, d, svg in MERCH:
+    cards += f"""      <div class="mcard" id="{slug}">
+        <div class="mimg"><svg viewBox="0 0 200 200" role="img" aria-label="{html.escape(name)} preview">{svg}</svg><span class="mtag">Coming soon</span></div>
+        <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p></div>
+      </div>
+"""
+mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First drop coming soon.", "/merch/") + topbar("merch") + SHSYM + f"""  <main>
+    <div class="phead">
+      <p class="eyebrow">Merch</p>
+      <h1 class="disp">Wear the <em>reminder.</em></h1>
+      <p>Gear for people building from what's left. Every piece is a daily reminder that you said you'd show up. The first drop is in the works.</p>
+      <p style="margin-top:22px"><a class="btn solid" href="{IG}" target="_blank" rel="noopener">Get first access on Instagram</a></p>
+    </div>
+    <div class="mgrid">
+{cards}    </div>
+    <p class="fine" style="margin-top:22px">Designs shown are previews. Final products, colors and details may change.</p>
+  </main>
+""" + FOOT
+write("/merch/", mp)
+
 # sitemap + robots
-urls = ["/", "/about/", "/book", "/articles/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
+urls = ["/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
     f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
 open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)

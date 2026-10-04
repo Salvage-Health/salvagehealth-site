@@ -244,3 +244,59 @@ ABOUT_BODY = """
 <p>What I've learned comes down to three things: be consistent, be accountable, and be honest with yourself first. Everything else gets built on top of that.</p>
 <p>Salvage Health is here because second chances exist. Whatever you've been through, whatever you're carrying, it's not too late to take your life back. Salvage Health is here to help.</p>
 """
+
+# Merch: (slug, name, category, description, svg-body). SVGs use viewBox 0 0 200 200 and the #sh shield symbol.
+_SH = lambda x, y, s: f'<use href="#sh" x="{x}" y="{y}" width="{s}" height="{s}"/>'
+G = "#2B2A27"; GS = "#45433E"; R = "#BE5126"; C = "#FAF9F5"
+MERCH = [
+("tee", "The Shield Tee", "Apparel",
+ "Heavyweight cotton tee. The shield on the chest, \"Built from what's left.\" across the back.",
+ f'<path d="M70 30 L48 37 L20 60 L36 86 L53 76 L53 174 L147 174 L147 76 L164 86 L180 60 L152 37 L130 30 C126 43 114 50 100 50 C86 50 74 43 70 30 Z" fill="{G}" stroke="{GS}" stroke-width="2" stroke-linejoin="round"/>'
+ f'<path d="M72 31 C76 42 88 47 100 47 C112 47 124 42 128 31" fill="none" stroke="{GS}" stroke-width="2"/>' + _SH(118, 66, 24)),
+("hoodie", "Salvage Hoodie", "Apparel",
+ "Heavyweight fleece with the SALVAGE HEALTH wordmark. Made for early cardio and cold outdoor workouts.",
+ f'<path d="M64 44 L42 52 L22 116 L40 122 L54 90 L54 178 L146 178 L146 90 L160 122 L178 116 L158 52 L136 44 Z" fill="{G}" stroke="{GS}" stroke-width="2" stroke-linejoin="round"/>'
+ f'<path d="M70 46 C68 20 132 20 130 46 C122 60 78 60 70 46 Z" fill="#24231F" stroke="{GS}" stroke-width="2"/>'
+ f'<rect x="72" y="140" width="56" height="28" rx="6" fill="none" stroke="{GS}" stroke-width="2"/>'
+ f'<text x="100" y="104" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="17" fill="{C}" letter-spacing="1">SALVAGE</text>'
+ f'<text x="100" y="122" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="17" fill="{R}" letter-spacing="1">HEALTH</text>'),
+("beanie", "Shield Beanie", "Apparel",
+ "Cuffed rib-knit beanie in rust with a woven shield patch on the cuff.",
+ f'<circle cx="100" cy="46" r="12" fill="#A9461F"/>'
+ f'<path d="M48 126 C48 66 152 66 152 126 Z" fill="{R}"/>'
+ + "".join(f'<line x1="{x}" y1="80" x2="{x}" y2="124" stroke="#A9461F" stroke-width="2"/>' for x in range(62, 140, 12)) +
+ f'<rect x="42" y="118" width="116" height="40" rx="8" fill="#A9461F"/>'
+ f'<rect x="84" y="124" width="32" height="28" rx="4" fill="#141413"/>' + _SH(88, 126, 24)),
+("stickers", "Sticker Pack", "Accessories",
+ "The shield, the wordmark and \"Never too late.\" For your water bottle, laptop or gym locker.",
+ f'<g transform="rotate(-10 64 74)"><circle cx="64" cy="74" r="36" fill="#141413" stroke="{C}" stroke-width="4"/>{_SH(42, 52, 44)}</g>'
+ f'<g transform="rotate(-5 149 62)"><rect x="110" y="40" width="78" height="44" rx="22" fill="{R}"/>'
+ f'<text x="149" y="58" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="11" fill="{C}" letter-spacing="1">NEVER</text>'
+ f'<text x="149" y="73" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="11" fill="{C}" letter-spacing="1">TOO LATE</text></g>'
+ f'<g transform="rotate(6 106 144)"><rect x="36" y="122" width="140" height="44" rx="8" fill="{C}"/>'
+ f'<text x="106" y="151" textLength="120" lengthAdjust="spacingAndGlyphs" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="17" fill="#141413" letter-spacing="1">SALVAGE <tspan fill="{R}">HEALTH</tspan></text></g>'),
+("straps", "Lifting Straps", "Lifting gear",
+ "Padded lifting straps. One says \"Say what you'll do.\" The other says \"Do what you say.\"",
+ f'<g transform="rotate(-18 100 100)"><rect x="34" y="62" width="150" height="26" rx="6" fill="{G}" stroke="{GS}" stroke-width="2"/>'
+ f'<rect x="24" y="56" width="34" height="38" rx="10" fill="none" stroke="{R}" stroke-width="5"/>'
+ f'<text x="120" y="80" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="600" font-size="11" fill="{C}" letter-spacing="1">SAY WHAT YOU\'LL DO.</text></g>'
+ f'<g transform="rotate(-18 100 100)"><rect x="34" y="112" width="150" height="26" rx="6" fill="{G}" stroke="{GS}" stroke-width="2"/>'
+ f'<rect x="24" y="106" width="34" height="38" rx="10" fill="none" stroke="{R}" stroke-width="5"/>'
+ f'<text x="120" y="130" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="600" font-size="11" fill="{C}" letter-spacing="1">DO WHAT YOU SAY.</text></g>'),
+("belt", "Lever Lifting Belt", "Lifting gear",
+ "A 4-inch (10 cm) lever belt with the shield debossed on the back. For the days you go heavy.",
+ f'<path d="M20 92 C60 70 140 70 180 92 L180 132 C140 110 60 110 20 132 Z" fill="#3A2A20" stroke="#5A4232" stroke-width="2"/>'
+ f'<path d="M24 100 C62 80 138 80 176 100 M24 124 C62 104 138 104 176 124" fill="none" stroke="#5A4232" stroke-width="1.5" stroke-dasharray="4 4"/>'
+ f'<rect x="140" y="88" width="34" height="34" rx="4" fill="#8A8779" stroke="#B5B2A8" stroke-width="2"/>'
+ + _SH(68, 82, 32)),
+("shaker", "Shaker Bottle", "Accessories",
+ "Leak-proof shaker for hitting your protein target, wherever the day takes you.",
+ f'<rect x="70" y="32" width="60" height="22" rx="6" fill="{R}"/><rect x="92" y="22" width="16" height="14" rx="3" fill="#A9461F"/>'
+ f'<path d="M66 54 L134 54 L128 176 C128 182 122 186 116 186 L84 186 C78 186 72 182 72 176 Z" fill="{G}" stroke="{GS}" stroke-width="2"/>'
+ + "".join(f'<line x1="74" y1="{y}" x2="86" y2="{y}" stroke="{GS}" stroke-width="2"/>' for y in (80, 100, 120, 140)) + _SH(86, 98, 30)),
+("towel", "Gym Towel", "Accessories",
+ "Quick-dry gym towel with \"Built from what's left.\" along the edge. Wipe down, keep going.",
+ f'<path d="M40 40 L160 40 L160 150 C140 168 60 168 40 150 Z" fill="{G}" stroke="{GS}" stroke-width="2"/>'
+ f'<path d="M40 56 L160 56" stroke="{R}" stroke-width="4"/>'
+ f'<text x="100" y="140" textLength="116" lengthAdjust="spacingAndGlyphs" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="9" fill="#8A8779" letter-spacing="3">BUILT FROM WHAT\'S LEFT.</text>' + _SH(84, 78, 32)),
+]

@@ -92,3 +92,17 @@ footer.site{margin-top:88px;border-top:1px solid var(--rule);padding:36px 0 44px
 
 @media (max-width:760px){.alist,.more .alist{grid-template-columns:1fr}}
 @media (max-width:560px){.top nav{gap:14px}.top nav a{font-size:11px;letter-spacing:1px}.top nav a.hide-sm{display:none}.btn{width:100%}}
+
+/* merch */
+.mgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.mcard{background:var(--raised);border:1px solid var(--rule);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.mimg{position:relative;aspect-ratio:1/1;background:radial-gradient(circle at 50% 45%,#262522 0%,#1A1917 70%);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--rule)}
+.mimg svg{width:78%;height:78%}
+.mtag{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--rust);color:#FAF9F5;padding:5px 9px;border-radius:999px}
+.mtx{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px}
+.mtx .cat{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+.mtx h2{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.1;letter-spacing:.5px;margin:0}
+.mtx p{margin:0;color:var(--dim);font-size:14.5px;line-height:1.55}
+@media (max-width:980px){.mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.mgrid{grid-template-columns:1fr}}
