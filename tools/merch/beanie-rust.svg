@@ -1,0 +1,20 @@
+<svg viewBox="0 0 300 300" fill="none">
+        <defs>
+          <linearGradient id="br" x1="0" x2="1"><stop offset="0" stop-color="#7E3518"/><stop offset=".5" stop-color="#C45A2E"/><stop offset="1" stop-color="#7E3518"/></linearGradient>
+          <linearGradient id="brc" x1="0" x2="1"><stop offset="0" stop-color="#6E2E14"/><stop offset=".5" stop-color="#B04E25"/><stop offset="1" stop-color="#6E2E14"/></linearGradient>
+          <pattern id="rib" width="9" height="10" patternUnits="userSpaceOnUse"><rect width="9" height="10" fill="none"/><rect x="0" width="3" height="10" fill="#000" fill-opacity=".18"/></pattern>
+          <symbol id="bsh" viewBox="0 0 100 100"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#BE5126" stroke-width="8" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="#FAF9F5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        </defs>
+        <ellipse cx="150" cy="262" rx="112" ry="10" fill="#000" fill-opacity=".35"/>
+        <path d="M52 182 C46 96 96 54 150 54 C204 54 254 96 248 182 Z" fill="url(#br)"/>
+        <path d="M52 182 C46 96 96 54 150 54 C204 54 254 96 248 182 Z" fill="url(#rib)"/>
+        <path d="M150 56 C150 100 150 140 150 182" stroke="#000" stroke-opacity=".15" stroke-width="2"/>
+        <rect x="42" y="170" width="216" height="84" rx="16" fill="url(#brc)"/>
+        <rect x="42" y="170" width="216" height="84" rx="16" fill="url(#rib)"/>
+        <path d="M46 176 L254 176" stroke="#000" stroke-opacity=".2" stroke-width="3"/>
+        <rect x="116" y="186" width="68" height="52" rx="4" fill="#141413"/>
+        <rect x="120" y="190" width="60" height="44" rx="2" stroke="#3A3934" stroke-width="1" stroke-dasharray="2 2"/>
+        <use href="#bsh" x="132" y="194" width="36" height="36"/>
+        <rect x="244" y="196" width="22" height="30" rx="2" fill="#141413"/>
+        <text x="0" y="0" transform="translate(259 222) rotate(-90)" font-family="Oswald, sans-serif" font-weight="700" font-size="7" fill="#FAF9F5" letter-spacing="1">SALVAGE</text>
+      </svg>

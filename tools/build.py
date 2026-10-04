@@ -1,6 +1,6 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2
 FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
@@ -184,13 +184,15 @@ write("/about/", ab)
 # merch
 SHSYM = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sh" viewBox="0 0 100 100"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#BE5126" stroke-width="6" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="#FAF9F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>'
 cards = ""
-for slug, name, cat, d, svg in MERCH:
+MD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "merch")
+for slug, name, cat, d, art in MERCH2:
+    svg = open(os.path.join(MD, art + ".svg")).read().replace("<svg ", f'<svg role="img" aria-label="{html.escape(name)} concept" ', 1)
     cards += f"""      <div class="mcard" id="{slug}">
-        <div class="mimg"><svg viewBox="0 0 200 200" role="img" aria-label="{html.escape(name)} preview">{svg}</svg><span class="mtag">Coming soon</span></div>
+        <div class="mimg">{svg}<span class="mtag">Coming soon</span></div>
         <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p></div>
       </div>
 """
-mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First drop coming soon.", "/merch/") + topbar("merch") + SHSYM + f"""  <main>
+mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First drop coming soon.", "/merch/") + topbar("merch") + f"""  <main>
     <div class="phead">
       <p class="eyebrow">Merch</p>
       <h1 class="disp">Wear the <em>reminder.</em></h1>

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 340 300" fill="none"><defs>
+            <linearGradient id="ls" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2D2A"/><stop offset=".5" stop-color="#1C1B19"/><stop offset="1" stop-color="#121211"/></linearGradient>
+            <filter id="lsh"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".5"/></filter>
+          </defs>
+          <defs>
+            <linearGradient id="lb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2C2B29"/><stop offset=".5" stop-color="#161615"/><stop offset="1" stop-color="#0B0B0A"/></linearGradient>
+            <linearGradient id="lbk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D8D5CC"/><stop offset=".5" stop-color="#8E8B82"/><stop offset="1" stop-color="#5D5A53"/></linearGradient>
+            <symbol id="lbsh" viewBox="0 0 100 100"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#0A0A09" stroke-width="7" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="#0A0A09" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+          </defs>
+          <ellipse cx="170" cy="250" rx="140" ry="12" fill="#000" fill-opacity=".4"/>
+          <path d="M20 140 C70 96 270 96 320 140 L320 220 C270 176 70 176 20 220 Z" fill="url(#lb)" filter="url(#lsh)"/>
+          <path d="M24 148 C74 106 266 106 316 148 M24 212 C74 170 266 170 316 212" stroke="#BE5126" stroke-width="1.6" stroke-dasharray="5 4"/>
+          <use href="#lbsh" x="54" y="124" width="56" height="56" opacity=".9"/>
+          <text x="170" y="164" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="700" font-size="24" fill="#0A0A09" letter-spacing="3" opacity=".9" textLength="100" lengthAdjust="spacingAndGlyphs">SALVAGE</text>
+          <rect x="240" y="122" width="58" height="56" rx="6" fill="url(#lbk)"/>
+          <rect x="248" y="132" width="42" height="12" rx="3" fill="#4A4842"/>
+        </svg>
