@@ -1042,7 +1042,7 @@
     $('o-hyd').textContent=S.sex?'Ch. 19 starting point: about '+(S.sex==='m'?'15.5 cups (3.7 L)':'11.5 cups (2.7 L)')+' a day from all drinks and food, more on training days.':'Ch. 19 starting point: about 15.5 cups (3.7 L) a day for men and 11.5 cups (2.7 L) for women, from all drinks and food.';
     // x10
     var xp=+S.x10_protein, xc=+S.x10_cal;
-    $('o-x10').innerHTML=(xp&&xc)?(xp*10>=xc?'<b style="color:var(--accent)">Passes.</b> '+xp+' g x 10 = '+n(xp*10)+', which is at least the '+n(xc)+' calories. That\'s a solid protein source.':'<b>Doesn\'t pass.</b> '+xp+' g x 10 = '+n(xp*10)+', less than the '+n(xc)+' calories. Most of the calories come from carbs or fat.'):'';
+    $('o-x10').innerHTML=(xp&&xc)?(xp*10>=xc*0.9?'<b style="color:var(--accent)">Passes.</b> '+xp+' g x 10 = '+n(xp*10)+', '+(xp*10>=xc?'at or above':'close to')+' the '+n(xc)+' calories. That\'s a solid protein source.':'<b>Doesn\'t pass.</b> '+xp+' g x 10 = '+n(xp*10)+', well below the '+n(xc)+' calories. Most of the calories come from carbs or fat.'):'';
     review(); progress();
   }
   // review log
