@@ -931,7 +931,7 @@
   var fmtS=function(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});};
   var savedT;
   function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); $('saved').textContent='Saved on this device'; }catch(e){ $('saved').textContent='Not saved: this browser blocks storage'; } }
-  var PACES={loss:[['0.005','Steady: about 0.5% of body weight a week'],['0.0075','Standard: about 0.75% a week'],['0.01','Aggressive: about 1% a week']],gain:[['0.001','Lean: about 0.1% of body weight a week'],['0.0025','Standard: about 0.25% a week'],['0.004','Faster: about 0.4% a week']]};
+  var PACES={loss:[['0.15','Steady: about 15% below maintenance'],['0.20','Standard: about 20% below maintenance'],['0.25','Faster: about 25% below maintenance']],gain:[['200','Lean: about 200 calories above maintenance'],['250','Standard: about 250 calories above maintenance'],['300','Faster: about 300 calories above maintenance']]};
   function fillPace(){
     var sel=$('f-pace'); var g=S.goal; sel.innerHTML='';
     (PACES[g]||[]).forEach(function(p,i){ var o=document.createElement('option'); o.value=p[0]; o.textContent=p[1]; sel.appendChild(o); });
@@ -990,19 +990,22 @@
           $('o-goal').innerHTML='<p class="res-note">'+(g==='loss'?'Enter a goal weight below your current weight.':'Enter a goal weight above your current weight.')+'</p>';
           $('o-macros').innerHTML='<p class="res-note">Finish section 2 first.</p>';
         } else {
-          var pct=+S.pace_pct, maxPct=g==='loss'?0.01:0.004, warn='';
+          var pct=+S.pace_pct, warn='';
           if(S.goal_date){
             var d=new Date(S.goal_date+'T12:00:00'), wks=(d-today)/(7*864e5);
-            if(wks>=1){ var need=Math.abs(gw-wt)/wks/((wt+gw)/2);
-              if(need>maxPct){ warn='Getting to '+n(gw)+' lbs by '+fmt(d)+' would take more than '+(maxPct*100)+'% of your body weight a week, which usually costs muscle and doesn\'t stick. This plan uses the fastest realistic pace instead.'; pct=maxPct; }
-              else pct=Math.max(need,g==='loss'?0.0025:0.001);
+            if(wks>=1){ var needDay=Math.abs(gw-wt)/wks*500;
+              if(g==='loss'){ var needF=needDay/t0;
+                if(needF>0.25){ warn='Getting to '+n(gw)+' lbs by '+fmt(d)+' would take eating more than 25% below maintenance, which usually costs muscle and doesn\'t stick (Ch. 7). This plan uses the fastest realistic pace instead.'; pct=0.25; }
+                else pct=Math.max(needF,0.10); }
+              else { if(needDay>300){ warn='Getting to '+n(gw)+' lbs by '+fmt(d)+' would take a surplus of more than 300 calories a day, which mostly adds fat, not muscle (Ch. 7). This plan uses the fastest realistic pace instead.'; pct=300; }
+                else pct=Math.max(needDay,150); }
             }
           }
           var w=wt, week=0, cps=[], hitFloor=false, dir=g==='loss'?-1:1; first=null;
           while(week<260&&(dir<0?w>gw:w<gw)){
-            var t=bmr(sex,w,cm,age)*act, rate=pct*w; if(g==='loss') rate=Math.min(rate,2);
-            var cal=t+dir*rate*500; if(g==='loss'&&cal<floor){cal=floor;hitFloor=true;} if(g==='gain') cal=Math.min(cal,t+500);
-            cal=Math.round(cal/10)*10; if(!first) first={cal:cal,rate:rate};
+            var t=bmr(sex,w,cm,age)*act;
+            var cal=g==='loss'?t*(1-pct):t+pct; if(g==='loss'&&cal<floor){cal=floor;hitFloor=true;}
+            cal=Math.round(cal/10)*10; if(!first) first={cal:cal,rate:Math.abs(cal-t)*7/3500};
             var ch=(cal-t)*7/3500; if(Math.abs(ch)<0.05) break;
             cps.push({week:week,w:w,cal:cal}); w+=ch; week++; if(dir<0&&w<gw)w=gw; if(dir>0&&w>gw)w=gw;
           }
