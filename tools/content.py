@@ -199,7 +199,7 @@ ARTICLES = [
 FAQ = [
 ("About Salvage Health", [
  ("What is Salvage Health?", "<p>Salvage Health is health and fitness education in plain English, from Bryan Dourado. The idea is simple: it's never too late to take your life back, and the way you do it is by understanding how this actually works, so you can build a plan that fits your life. It started with the book <a href=\"/book\">Fitness Without the Fear</a> and is growing into articles, tools, coaching and programs.</p>"),
- ("Who is Bryan Dourado?", "<p>Bryan went from 265 to 178 pounds (120 to 81 kg) in 14 months, reversed his prediabetes, and got rid of his sleep apnea, without a medical background. He taught himself how nutrition and training actually work, then wrote the book he couldn't find when he started. He's not a doctor, and nothing here is medical advice.</p>"),
+ ("Who is Bryan Dourado?", "<p>" + "PLACEHOLDER_SHORT" + " <a href=\"/about/\">Read his full story</a>.</p><p>He's not a doctor, and nothing here is medical advice.</p>"),
  ("Is this for me if I'm older, heavier, or dealing with health problems?", "<p>Yes. You're never too old, too sick, too heavy or too thin to do something. Start where you are, and if you have a medical condition, bring your doctor into the loop before you change how you eat or train.</p>"),
 ]),
 ("The book and the app", [
@@ -215,3 +215,32 @@ FAQ = [
  ("Does Salvage Health give medical advice or prescriptions?", "<p>No. Salvage Health is education only. If you want medical care with a licensed provider involved, Bryan also founded <a href=\"https://velacorehealth.com\" target=\"_blank\" rel=\"noopener\">Velacore Health</a>, a separate company that connects you with independent licensed physicians for physician-reviewed wellness programs. Any treatment is decided by the physician, not by Velacore or Salvage Health.</p><p>Disclosure: Bryan has an ownership interest in Velacore Health.</p>"),
 ]),
 ]
+
+ABOUT_SHORT = ("Bryan Dourado is the founder of Salvage Health and the author of Fitness Without the Fear. "
+"His road here ran through poverty, adoption and living on his own at a young age, then years as a working musician, "
+"a career in sales and marketing, and running restaurant kitchens as a chef. It also ran through addiction, alcoholism and failed relationships, "
+"until he got fed up enough to pick up the pieces and figure out how to do life. He studied what creates success in other people, in health, diet, income, "
+"support, friendship and relationships, and rebuilt from there, starting with his own health: 265 pounds down to 178 in 14 months. "
+"Today he shares the stories, the wins and the failures with anyone willing to listen, because second chances exist. In his case, so did the twentieth.")
+
+ABOUT_BODY = """
+<p class="lead-in">I'm Bryan Dourado, founder of Salvage Health and author of <a href="/book">Fitness Without the Fear</a>. I'm not a doctor and I didn't grow up with a playbook. Everything I share here, I learned the hard way.</p>
+
+<h2>Finding my own way</h2>
+<p>I had a unique upbringing, to put it lightly. I grew up in poverty, went through adoption, and was living on my own at a very young age. Nobody handed me a map, so I learned to find my own way.</p>
+<p>That path took a lot of turns. I spent years as a working musician. I built a career in sales and marketing. I ran restaurants and worked as a chef. Every one of those taught me something about people, pressure and showing up when it counts.</p>
+
+<h2>Hitting the wall</h2>
+<p>It wasn't all a highlight reel. Along the way I dealt with drug addiction, alcoholism and failed relationships. My health went with it. I hit 265 pounds, prediabetic, with high blood pressure and sleep apnea, and I wasn't even 40.</p>
+<p>Eventually I got fed up. Fed up with starting over, with feeling stuck, with the version of me I was living as. So I decided to pick up all the pieces and figure out how to actually do life.</p>
+
+<h2>Picking up the pieces</h2>
+<p>I started studying what creates success in other people. Not just in health and diet, but in income, support, friendship and relationships. What do people who have it figured out actually do differently? Then I started applying it, one piece at a time.</p>
+<p>Health was where it showed first. Once I understood how nutrition and training really work, I went from 265 to 178 pounds (120 to 81 kg) in 14 months, brought my A1C from 5.9 down to 4.6, and got rid of my sleep apnea. That process became my book.</p>
+<blockquote>Second chances exist. Hell, in my case, twentieth chances exist.</blockquote>
+
+<h2>Why Salvage Health</h2>
+<p>I'm not done, and I don't have it all figured out. But I know I'm on the right track, and I want to share the stories, the successes and the failures with anybody who's willing to listen.</p>
+<p>What I've learned comes down to three things: be consistent, be accountable, and be honest with yourself first. Everything else gets built on top of that.</p>
+<p>Salvage Health is here because second chances exist. Whatever you've been through, whatever you're carrying, it's not too late to take your life back. Salvage Health is here to help.</p>
+"""

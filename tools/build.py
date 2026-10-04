@@ -1,6 +1,7 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY
+FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
 SPOTIFY = "https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw"
@@ -44,6 +45,7 @@ def topbar(active):
     return f"""  <header class="top">
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
+      {a('/about/','About','about')}
       {a('/articles/','Articles','articles')}
       {a('/faq/','FAQ','faq')}
       {a('/book','Free plan','book','hide-sm')}
@@ -58,6 +60,7 @@ FOOT = f"""  <footer class="site">
         <span class="tg">Built from what's left.</span>
       </div>
       <nav aria-label="Footer">
+        <a href="/about/">About</a>
         <a href="/articles/">Articles</a>
         <a href="/faq/">FAQ</a>
         <a href="/book">Free companion app</a>
@@ -157,8 +160,27 @@ faq = head("FAQ | Salvage Health", "Answers about Salvage Health, the book Fitne
 """ + FOOT
 write("/faq/", faq)
 
+
+# about
+ld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Bryan Dourado","description":ABOUT_SHORT,
+      "jobTitle":"Founder, Salvage Health","sameAs":[IG],"url":SITE+"/about/"}}
+ab = head("About Bryan Dourado | Salvage Health", "Bryan Dourado, founder of Salvage Health and author of Fitness Without the Fear: from poverty, addiction and 265 pounds to rebuilding his life. Second chances exist.", "/about/", f'<script type="application/ld+json">{json.dumps(ld)}</script>\n') + topbar("about") + f"""  <main>
+  <article>
+    <header>
+      <p class="eyebrow">About Bryan</p>
+      <h1 class="disp">Second chances exist. <em>Twentieth chances, too.</em></h1>
+      <p class="dek">Musician. Chef. Salesman. Founder of Salvage Health. Still figuring it out, and sharing all of it.</p>
+    </header>
+    <div class="prose" style="padding-top:28px">
+{ABOUT_BODY}
+    </div>
+{CTA}  </article>
+  </main>
+""" + FOOT
+write("/about/", ab)
+
 # sitemap + robots
-urls = ["/", "/book", "/articles/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
+urls = ["/", "/about/", "/book", "/articles/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
     f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
 open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)

@@ -9,7 +9,7 @@ a{color:var(--rust-text)}
 .disp em{font-style:normal;color:var(--rust)}
 .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--rust-text);margin:0 0 14px}
 
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 12px;padding:18px 0;border-bottom:1px solid var(--rule)}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg)}
 .brand img{width:30px;height:30px}
 .brand .wm{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
