@@ -83,6 +83,7 @@ window.SK = {
     'chicken-breast-grilled': { kcal: 148, p: 29.5, f: 3.2, c: 0 },
     'white-rice-cooked': { kcal: 130, p: 2.2, f: 0.1, c: 28.4 },
     'teriyaki-sauce': { kcal: 158, p: 2.6,  f: 0,    c: 36.8 },
+    'teriyaki-sf':    { kcal: 33,  p: 6.7,  f: 0,    c: 6.7 },   // G Hughes Sugar Free Sesame Teriyaki: 10 kcal per 2 tbsp (30 g)
     'green-onion':    { kcal: 32,  p: 1.8,  f: 0.2,  c: 7.3 },
     'ground-beef-95': { kcal: 137, p: 21.2, f: 4.8,  c: 0 },
     'rice-paper':     { kcal: 340, p: 0,    f: 0,    c: 83.5 },
@@ -398,11 +399,11 @@ window.SK = {
     {
       id: 'teriyaki-chicken-bowl', lvl: 3, name: 'Teriyaki Chicken and Rice Bowl', by: 'bryan', cat: 'Lunch', tag: 'High protein', serves: 1, mins: 30,
       photos: ['/kitchen/img/teriyaki-chicken-bowl.jpg'],
-      blurb: 'A big bowl of charred, sticky sesame teriyaki chicken over white rice with a pile of green onions. Nearly 100 grams of protein. Split it in two for a pair of 400-calorie lunches.',
+      blurb: 'A big bowl of charred, sticky sesame teriyaki chicken over white rice with a pile of green onions. Nearly 100 grams of protein. Split it in two for a pair of 380-calorie lunches.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '11 oz (308 g) grilled chicken breast, cooked weight (about 15 oz / 425 g raw)', food: 'chicken-breast-grilled', g: 308 },
         { need: 'rice', txt: '8 oz (225 g) cooked white rice, about 1 1/4 cups', food: 'white-rice-cooked', g: 225 },
-        { need: 'teriyaki-sauce', or: ['soy-sauce'], txt: '2 tbsp (1 serving) sweet sesame teriyaki sauce', food: 'teriyaki-sauce', g: 38 },
+        { need: 'teriyaki-sauce', or: ['soy-sauce'], txt: '2 tbsp G Hughes Sugar Free Sesame Teriyaki (or any sugar-free teriyaki)', food: 'teriyaki-sf', g: 30 },
         { need: 'green-onions', optional: true, txt: '2 green onions, sliced', food: 'green-onion', g: 15 },
         { need: 'soy-sauce', optional: true, txt: '1 tsp soy sauce, a light drizzle over the rice', food: 'soy-sauce', g: 6 },
         { staple: true, txt: 'Avocado oil spray; garlic powder, salt and pepper', food: 'none', g: 0 }

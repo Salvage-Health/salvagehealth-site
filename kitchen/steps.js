@@ -254,7 +254,7 @@ window.SK_STEPS = {
     "d": "Pile the glazed chicken on the rice, spoon any sauce left in the pan over the top and finish with plenty of green onions. To meal prep, split it into two containers and refrigerate up to 4 days. Reheat in the microwave for 1 1/2 to 2 minutes with a splash of water over the rice."
    }
   ],
-  "tip": "Add the teriyaki only at the end. The sugar in the sauce burns fast on a grill, so glazing for 1 minute in the pan gives you sticky chicken without bitter black spots."
+  "tip": "Add the teriyaki only at the end. Sugar-free sauce is thinner than regular, so a quick 1-minute toss in the hot pan cooks it down into a glaze that actually clings to the chicken."
  },
  "cabbage-enchiladas": {
   "steps": [
