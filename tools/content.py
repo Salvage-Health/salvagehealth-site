@@ -321,7 +321,7 @@ MERCH2 = [
 ("tee-never", "Never Too Late Tee", "Organic cotton tee",
  "Four excuses crossed out, one truth in rust. Small shield and \"Built From What's Left.\" under the collar. Tan or White.", "tee-never-front"),
 ("tee-athletic", "Salvage Athletic Tee", "Organic cotton tee",
- "Old-school athletic department look: arched wordmark over the shield, cracked vintage print. \"Never Too Late\" across the back. Black, navy, charcoal and two more dark colors, S to 5XL.", "tee-athletic-front"),
+ "Old-school athletic department look: arched wordmark over the shield, cracked vintage print. \"Never Too Late\" across the back. Black, French Navy, Anthracite, India Ink Grey or Dark Heather Grey. S to 5XL.", "tee-athletic-front"),
 ("hoodie", "Second Chances Hoodie", "Heavyweight hoodie",
  "Stacked wordmark on the chest, \"Say what you'll do.\" down the sleeve, and the big shield on the back.", "hoodie-back"),
 ("beanie", "Shield Patch Beanie", "Cuffed beanie",
