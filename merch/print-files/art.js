@@ -18,6 +18,12 @@
       svg: svg('10 2 80 98', SHIELD(R, B)) },
     { id: 'logo-shield-light', name: 'Shield logo (for light items)', place: 'Any small logo spot', inches: 4, bg: 'light',
       svg: svg('10 2 80 98', SHIELD(R, S)) },
+    { id: 'logo-horizontal-light', name: 'Store logo: shield + name (for light backgrounds)', place: 'Store header logo', inches: 6, bg: 'light',
+      svg: svg('8 0 512 100', '<path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="' + S + '" stroke="' + R + '" stroke-width="7" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="' + B + '" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<text x="104" y="71" ' + O + ' font-size="58" letter-spacing="1.5" textLength="408" lengthAdjust="spacingAndGlyphs"><tspan fill="' + S + '">SALVAGE </tspan><tspan fill="' + R + '">HEALTH</tspan></text>') },
+    { id: 'logo-horizontal-dark', name: 'Store logo: shield + name (for dark backgrounds)', place: 'Store header logo', inches: 6, bg: 'dark',
+      svg: svg('8 0 512 100', '<path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="' + S + '" stroke="' + R + '" stroke-width="7" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="' + B + '" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<text x="104" y="71" ' + O + ' font-size="58" letter-spacing="1.5" textLength="408" lengthAdjust="spacingAndGlyphs"><tspan fill="' + B + '">SALVAGE </tspan><tspan fill="' + R + '">HEALTH</tspan></text>') },
 
     { id: 'tee01-front', name: 'Tee 01, front: chest shield', place: 'Left chest, 3.5 in (9 cm) wide', inches: 3.5, bg: 'dark',
       svg: svg('10 2 80 98', SHIELD(R, B)) },
