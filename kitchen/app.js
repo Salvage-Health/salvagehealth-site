@@ -1,5 +1,5 @@
 (function () {
-  var SK = window.SK, sel = new Set(), byId = {};
+  var SK = window.SK, sel = new Set(), byId = {}, cat = 'All';
   SK.INGREDIENTS.forEach(function (i) { byId[i.id] = i; });
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -48,13 +48,21 @@
       status + '</button>';
   }
 
+  var CATS = ['All', 'Breakfast', 'Lunch', 'Dinner'];
+  function inCat(r) { return cat === 'All' || r.cat === cat; }
+  function filters() {
+    return '<div class="skf" role="group" aria-label="Meal">' + CATS.map(function (c) {
+      var n = c === 'All' ? SK.RECIPES.length : SK.RECIPES.filter(function (r) { return r.cat === c; }).length;
+      return '<button type="button" class="fchip' + (c === cat ? ' on' : '') + '" data-cat="' + c + '" aria-pressed="' + (c === cat) + '">' + c + ' <span>' + n + '</span></button>';
+    }).join('') + '</div>';
+  }
   function renderResults() {
-    var out = '';
+    var out = filters();
     if (!sel.size) {
-      out = '<h2 class="disp skh">All <em>recipes</em></h2><p class="skn">Tap what you have above and these sort themselves into what you can cook tonight.</p><div class="rgrid">' +
-        SK.RECIPES.map(function (r) { return card(score(r), 'all'); }).join('') + '</div>';
+      out += '<h2 class="disp skh">' + (cat === 'All' ? 'All' : cat) + ' <em>recipes</em></h2><p class="skn">Tap what you have above and these sort themselves into what you can cook tonight.</p><div class="rgrid">' +
+        SK.RECIPES.filter(inCat).map(function (r) { return card(score(r), 'all'); }).join('') + '</div>';
     } else {
-      var sc = SK.RECIPES.map(score);
+      var sc = SK.RECIPES.filter(inCat).map(score);
       var ready = sc.filter(function (s) { return !s.miss.length; });
       var close = sc.filter(function (s) { return s.miss.length && s.miss.length <= 2 && s.got > 0; }).sort(function (a, b) { return a.miss.length - b.miss.length; });
       out += '<h2 class="disp skh">Cook it <em>tonight</em></h2>';
@@ -87,7 +95,7 @@
       '<p class="eyebrow">' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</p>' +
       '<h2 class="disp">' + esc(r.name) + '</h2><p class="rb">' + esc(r.blurb) + '</p>' +
       '<div class="mac big"><span><em>' + m.kcal + '</em>cal</span><span><em>' + m.p + 'g</em>protein</span><span><em>' + m.c + 'g</em>carbs</span><span><em>' + m.f + 'g</em>fat</span></div>' +
-      '<p class="fine2">Per serving. Estimates from USDA data for raw and dry weights.</p>' +
+      '<p class="fine2">Per serving, including optional items. Estimates from USDA data for raw and dry weights.</p>' +
       '<h3>Ingredients</h3><ul class="ing">' + li + '</ul>' +
       '<h3>Steps</h3><ol class="stepsl">' + r.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>';
     var d = $('dlg'); if (d.showModal) d.showModal(); else d.setAttribute('open', '');
@@ -97,7 +105,10 @@
   function toggle(id) { if (sel.has(id)) sel.delete(id); else sel.add(id); persist(); renderPicker(); renderResults(); }
 
   $('groups').addEventListener('click', function (e) { var b = e.target.closest('.chip'); if (b) toggle(b.dataset.id); });
-  $('results').addEventListener('click', function (e) { var b = e.target.closest('.rc'); if (b) openRecipe(b.dataset.r); });
+  $('results').addEventListener('click', function (e) {
+    var f = e.target.closest('.fchip'); if (f) { cat = f.dataset.cat; renderResults(); return; }
+    var b = e.target.closest('.rc'); if (b) openRecipe(b.dataset.r);
+  });
   $('clear').addEventListener('click', function () { sel.clear(); persist(); renderPicker(); renderResults(); });
   $('dlg-close').addEventListener('click', function () { $('dlg').close ? $('dlg').close() : $('dlg').removeAttribute('open'); });
   $('dlg').addEventListener('click', function (e) { if (e.target === $('dlg')) $('dlg').close(); });

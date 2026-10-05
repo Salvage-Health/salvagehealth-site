@@ -37,6 +37,11 @@
 .skbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px;padding-top:14px;border-top:1px solid var(--rule);font-size:14px;color:var(--faint)}
 .skbar button{background:none;border:0;color:var(--rust-text);font:inherit;font-weight:700;cursor:pointer;padding:8px 0}
 .skh{font-size:clamp(26px,3.4vw,34px);margin:8px 0 16px}
+.skf{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.fchip{min-height:42px;padding:8px 16px;border-radius:10px;border:1px solid var(--rule);background:var(--raised);color:var(--dim);font:inherit;font-size:14.5px;font-weight:700;cursor:pointer}
+.fchip span{color:var(--faint);font-weight:500;margin-left:4px}
+.fchip.on{border-color:var(--fg);color:var(--fg)}
+.fchip.on span{color:var(--dim)}
 .skn{color:var(--dim);margin:0 0 24px}
 .rgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 36px}
 .rc{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--raised);border:1px solid var(--rule);border-radius:14px;padding:20px;color:var(--fg);font:inherit;cursor:pointer;transition:border-color .15s}
@@ -105,7 +110,7 @@ dialog#dlg::backdrop{background:rgba(0,0,0,.65)}
       <div><h2 class="disp">Save your <em>recipes</em></h2><p>Get a new fridge-friendly recipe every week, plus your saved favorites in your inbox.</p></div>
       <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Coming soon';"><input type="email" placeholder="Your email" aria-label="Email" disabled><button class="btn solid" type="submit" disabled>Coming soon</button></form>
     </section>
-    <p class="fine">Macros are estimates per serving based on USDA data. Cook chicken to 165°F (74°C) or higher. Check labels if you have allergies.</p>
+    <p class="fine">Macros are estimates per serving based on USDA data and include optional ingredients. Cook chicken to 165°F (74°C) or higher. Check labels if you have allergies.</p>
   </main>
   <dialog id="dlg" aria-label="Recipe"><div id="dlg-body"></div><button id="dlg-close" type="button" aria-label="Close" style="position:absolute;top:14px;right:14px;margin:0">&times;</button></dialog>
   <script src="/kitchen/recipes.js"></script>
