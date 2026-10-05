@@ -391,6 +391,19 @@ KITCSS = HOMECSS.replace("</style>", """
 .plan.flash .res,.plan.flash .fyr{animation:flash 1s ease}
 @keyframes flash{0%{box-shadow:0 0 0 0 rgba(190,81,38,.0)}25%{box-shadow:0 0 0 4px rgba(190,81,38,.55)}100%{box-shadow:0 0 0 0 rgba(190,81,38,0)}}
 .phd h2{font-size:clamp(28px,5vw,40px)}
+.mhd{margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+.mtiles{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:8px}
+.mtiles span{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:12px;background:var(--bg);border-top:4px solid #8A8779;min-width:0}
+.mtiles .cal{border-top-color:var(--fg)}.mtiles .pt{border-top-color:var(--rust)}.mtiles .ct{border-top-color:#E2C9A6}
+.mtiles small{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--faint)}
+.mtiles b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-size:clamp(26px,6vw,34px);line-height:1.05;color:var(--fg)}
+.mtiles em{font-style:normal;font-size:12px;color:var(--dim)}
+.pmeal{margin:10px 0 4px;font-size:14px;color:var(--dim)}
+.pmeal b{color:var(--fg)}
+.res .rtop{display:none}
+.mbar .ml{display:none}
+.mbar{margin-top:14px}
+@media (max-width:520px){.mtiles{grid-template-columns:1fr 1fr 1fr}.mtiles .cal{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:10px}}
 .pchips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
 .pchips span{padding:5px 11px;border-radius:99px;background:var(--rust);color:#FAF9F5;font-size:13px;font-weight:700}
 .pchips span.o{background:transparent;border:1px solid var(--rule);color:var(--dim)}
@@ -452,6 +465,14 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
     <section id="plan" class="plan" hidden aria-live="polite">
       <div class="phd"><p class="eyebrow">Your plan is ready</p><h2 class="disp">Built for <em id="p-who">you</em></h2><div class="pchips" id="p-chips"></div></div>
       <div class="res">
+        <p class="mhd">Your daily macros</p>
+        <div class="mtiles">
+          <span class="cal"><small>Calories</small><b id="t-cal">0</b><em>a day</em></span>
+          <span class="pt"><small>Protein</small><b id="t-p">0g</b><em id="t-pm"></em></span>
+          <span class="ct"><small>Carbs</small><b id="t-c">0g</b><em id="t-cm"></em></span>
+          <span class="ft"><small>Fat</small><b id="t-f">0g</b><em id="t-fm"></em></span>
+        </div>
+        <p class="pmeal" id="t-meal"></p>
         <div class="rtop"><span><small id="r-goal">Daily target</small><b id="r-cal">0</b> calories a day</span></div>
         <div class="ebar" id="ebar"><div class="et"><i class="ef" id="e-fill"></i><i class="em" id="e-mark"></i></div><div class="el"><span id="e-l1"></span><span id="e-l2"></span></div><p class="edl" id="e-delta"></p></div>
         <div class="mbar" id="mbar"><div class="mt"><i class="mp1" id="m-p"></i><i class="mc1" id="m-c"></i><i class="mf1" id="m-f"></i></div>
@@ -523,4 +544,4 @@ nf = head("Page not found | Salvage Health", "That page doesn't exist.", "/404.h
     </div>
   </main>
 """ + FOOT
-open(os.path.join(ROOT, "404.html"), "w").write(nf)
+open(os.path.join(ROOT, "404.html"), "w").write(bust(nf))

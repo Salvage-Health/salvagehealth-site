@@ -75,6 +75,12 @@
     $('r-goal').textContent = g.short + ' target';
     $('r-cal').textContent = n(t.cal);
 
+    // macro tiles
+    var pcal = t.p * 4 + t.c * 4 + t.f * 9;
+    $('t-cal').textContent = n(t.cal); $('t-p').textContent = t.p + 'g'; $('t-c').textContent = t.c + 'g'; $('t-f').textContent = t.f + 'g';
+    $('t-pm').textContent = Math.round(t.p * 4 / pcal * 100) + '% of calories'; $('t-cm').textContent = Math.round(t.c * 4 / pcal * 100) + '% of calories'; $('t-fm').textContent = Math.round(t.f * 9 / pcal * 100) + '% of calories';
+    $('t-meal').innerHTML = 'Across 4 meals, that is about <b>' + n(t.cal / 4) + ' calories</b> and <b>' + Math.round(t.p / 4) + 'g protein</b> each.';
+
     // energy bar
     var top = Math.max(t.tdee, t.cal) * 1.08, diff = t.cal - t.tdee;
     $('e-fill').style.width = (t.cal / top * 100) + '%';

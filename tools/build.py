@@ -99,7 +99,16 @@ CTA = f"""    <div class="cta">
     </div>
 """
 
+import hashlib as _hl
+def _ver(m):
+    f = os.path.join(ROOT, m.group(2).lstrip("/"))
+    try: v = _hl.md5(open(f, "rb").read()).hexdigest()[:8]
+    except OSError: return m.group(0)
+    return m.group(1) + m.group(2) + "?v=" + v + m.group(3)
+def bust(s):
+    return re.sub(r'((?:src|href)=")(/(?:assets|kitchen)/[^"?]+\.(?:js|css))(")', _ver, s)
 def write(path, s):
+    s = bust(s)
     full = os.path.join(ROOT, path.strip("/"), "index.html")
     os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, "w").write(s)
