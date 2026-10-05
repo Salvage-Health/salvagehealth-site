@@ -94,6 +94,15 @@
         '<text x="100" y="196" text-anchor="middle" ' + O + ' font-size="40" fill="#000" textLength="176" lengthAdjust="spacingAndGlyphs">HEALTH</text>' +
         '<rect x="12" y="210" width="176" height="3" fill="#000"/>' +
         '<text x="100" y="230" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="12" fill="#000" textLength="176" lengthAdjust="spacing">BUILT FROM WHAT\'S LEFT</text>') },
+    { id: 'towel', name: 'Gym towel: full print', place: 'Golf towel 16 x 24 in (40 x 60 cm), full bleed sublimation', inches: 16, bg: 'any',
+      svg: svg('0 0 160 240',
+        '<rect x="0" y="0" width="160" height="240" fill="' + S + '"/>' +
+        '<g transform="translate(36 34.7) scale(.88)">' + SHIELD(R, B, 7) + '</g>' +
+        '<text x="80" y="152" text-anchor="middle" ' + O + ' font-size="30" fill="' + B + '" textLength="116" lengthAdjust="spacingAndGlyphs">SAY WHAT</text>' +
+        '<text x="80" y="184" text-anchor="middle" ' + O + ' font-size="30" fill="' + B + '" textLength="116" lengthAdjust="spacingAndGlyphs">YOU\'LL DO.</text>' +
+        '<rect x="22" y="194" width="116" height="1.6" fill="' + R + '"/>' +
+        '<text x="80" y="210" text-anchor="middle" ' + O + ' font-size="12" fill="' + R + '" textLength="116" lengthAdjust="spacing">DO WHAT YOU SAY.</text>' +
+        '<text x="80" y="228" text-anchor="middle" font-family="Inter" font-weight="700" font-size="5" fill="' + M + '" textLength="56" lengthAdjust="spacing">SALVAGE HEALTH</text>') },
     { id: 'beanie-patch', name: 'Beanie: woven shield patch', place: 'Front cuff patch, 2.25 x 1.5 in (6 x 4 cm)', inches: 2.25, bg: 'any',
       svg: svg('0 0 225 150',
         '<rect x="0" y="0" width="225" height="150" rx="12" fill="' + S + '"/>' +
