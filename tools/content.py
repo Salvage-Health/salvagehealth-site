@@ -307,7 +307,8 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ("tee-never-model-front", "tee-never-model-back")),
         "tee-athletic": ("$34", SHOP + "/products/salvage-athletic-tee", ("tee-athletic-model-front", "tee-athletic-model-back")),
         "hoodie": ("$78.99", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back")),
-        "beanie": ("$32", SHOP + "/products/shield-beanie", ("beanie-model-1", "beanie-flat"))}
+        "beanie": ("$32", SHOP + "/products/shield-beanie", ("beanie-model-1", "beanie-flat")),
+        "stickers": ("$12", SHOP + "/products/sticker-pack", ("stickers-sheet", "stickers-sheet-tilt"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
@@ -328,8 +329,8 @@ MERCH2 = [
  "Small wordmark on the left chest, \"Say what you'll do.\" down the sleeve, and the big shield with \"Second chances exist.\" across the back.", "hoodie-back"),
 ("beanie", "Shield Beanie", "Organic cotton beanie",
  "Ribbed organic cotton knit with the Salvage Health shield embroidered on the cuff. Black or Navy, one size.", "beanie-rust"),
-("stickers", "Sticker Pack", "Die-cut vinyl",
- "Five waterproof stickers for your bottle, laptop, locker or lifting belt.", "stickers"),
+("stickers", "Sticker Pack", "Kiss-cut vinyl sheet",
+ "Five waterproof stickers on one 5.5 in sheet: the shield, the wordmark, Never Too Late, Say What You'll Do and the badge. For your bottle, laptop, locker or lifting belt.", "stickers"),
 ("straps", "Lifting Straps", "Lifting gear",
  "Padded straps. One says \"Say what you'll do.\" The other says \"Do what you say.\"", "straps"),
 ("belt", "Lever Belt", "Lifting gear",
