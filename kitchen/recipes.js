@@ -106,6 +106,10 @@ window.SK = {
     'beef-bacon':     { kcal: 321, p: 28.6, f: 17.9, c: 0 },
     'potato-bake':    { kcal: 105, p: 3.5,  f: 5.5,  c: 10.5 },
     'lm-mozzarella':  { kcal: 286, p: 21.4, f: 21.4, c: 7.1 },
+    'whey-isolate':   { kcal: 333, p: 83.3, f: 0,    c: 0 },
+    'egg-pasture':    { kcal: 140, p: 12,   f: 10,   c: 0 },
+    'wild-blueberries':{ kcal: 57, p: 0,    f: 0,    c: 14 },
+    'berry-cream-cheese':{ kcal: 250, p: 5, f: 15,   c: 25 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -130,6 +134,7 @@ window.SK = {
     { id: 'cheese', name: 'Cheese (shredded or sliced)', group: 'Eggs and dairy', alias: ['cheddar', 'mozzarella', 'cheese', 'american', 'slices', 'monterey jack', 'jack', 'pepper jack'] },
     { id: 'feta', name: 'Feta', group: 'Eggs and dairy', alias: ['cheese'] },
     { id: 'parmesan', name: 'Parmesan', group: 'Eggs and dairy', alias: ['parm', 'cheese'] },
+    { id: 'cream-cheese', name: 'Cream cheese', group: 'Eggs and dairy', alias: ['philadelphia', 'whipped cream cheese'] },
     { id: 'milk', name: 'Milk', group: 'Eggs and dairy', alias: ['almond milk', 'oat milk'] },
     { id: 'butter', name: 'Butter', group: 'Eggs and dairy', alias: [] },
     { id: 'rice', name: 'Rice', group: 'Carbs', alias: ['jasmine', 'white rice', 'brown rice'] },
@@ -196,6 +201,27 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'protein-blueberry-pancakes', name: 'Protein Blueberry Pancakes', by: 'bryan', cat: 'Breakfast', tag: 'Weekend', serves: 1, mins: 20,
+      photos: ['/kitchen/img/protein-blueberry-pancakes.jpg', '/kitchen/img/protein-blueberry-pancakes-cut.jpg'],
+      blurb: 'Thin, golden egg-and-whey pancakes loaded with wild blueberries, stacked with whipped mixed berry cream cheese and finished with wildflower honey. No flour, 52 grams of protein, and it eats like dessert.',
+      items: [
+        { need: 'eggs', txt: '4 large pasture-raised eggs (Vital Farms)', food: 'egg-pasture', g: 200 },
+        { need: 'protein-powder', txt: '1 scoop (about 30 g) whey protein isolate, vanilla or unflavored', food: 'whey-isolate', g: 30 },
+        { need: 'berries', txt: '3 1/2 oz (100 g) wild blueberries, about 3/4 cup (frozen works, no need to thaw)', food: 'wild-blueberries', g: 100 },
+        { need: 'cream-cheese', optional: true, txt: '1/4 cup (about 2 oz / 60 g) Philadelphia Whipped Mixed Berry cream cheese', food: 'berry-cream-cheese', g: 60 },
+        { need: 'honey', optional: true, txt: '1 tbsp wildflower honey', food: 'honey', g: 19.7 },
+        { staple: true, txt: 'Avocado oil spray; pinch of cinnamon and salt', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Whisk or blend the eggs, whey isolate, cinnamon and a pinch of salt until completely smooth with no clumps. Let it sit 2 minutes to thicken slightly.',
+        'Heat a 10-inch (25 cm) nonstick skillet over medium-low and give it a light spray of avocado oil.',
+        'Pour in about a third of the batter and swirl it into a thin, even round. Scatter a third of the blueberries over the top. Cook 2 to 3 minutes until the edges set and the bottom is golden, then flip and cook 1 more minute. Whey batter browns fast, so keep the heat low.',
+        'Repeat to make 3 pancakes.',
+        'Stack them, spreading a thin layer of the berry cream cheese between each layer. Save a scoop for the top.',
+        'Finish with the last scoop of cream cheese in the middle and drizzle the honey over everything. Slice it like a cake.'
+      ]
+    },
     {
       id: 'steak-breakfast-burrito', name: 'Steak Breakfast Burrito', by: 'bryan', cat: 'Breakfast', tag: 'Big breakfast', serves: 1, mins: 25,
       photos: ['/kitchen/img/steak-breakfast-burrito.jpg'],
