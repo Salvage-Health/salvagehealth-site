@@ -65,8 +65,9 @@
         SK.RECIPES.filter(inCat).map(function (r) { return card(score(r), 'all'); }).join('') + '</div>';
     } else {
       var sc = SK.RECIPES.filter(inCat).map(score);
-      var ready = sc.filter(function (s) { return !s.miss.length; });
-      var close = sc.filter(function (s) { return s.miss.length && s.miss.length <= 2 && s.got > 0; }).sort(function (a, b) { return a.miss.length - b.miss.length; });
+      var mine = function (s) { return s.r.by ? 0 : 1; };
+      var ready = sc.filter(function (s) { return !s.miss.length; }).sort(function (a, b) { return mine(a) - mine(b); });
+      var close = sc.filter(function (s) { return s.miss.length && s.miss.length <= 2 && s.got > 0; }).sort(function (a, b) { return a.miss.length - b.miss.length || mine(a) - mine(b); });
       var lbl = cat === 'All' ? '' : cat.toLowerCase() + ' ';
       out += '<h2 class="disp skh">Cook it <em>tonight</em></h2>';
       out += ready.length ? '<div class="rgrid">' + ready.map(function (s) { return card(s, 'ready'); }).join('') + '</div>'
@@ -82,7 +83,7 @@
         }).join(' · ') + '</span></div>';
       }
       var rest = sc.filter(function (s) { return ready.indexOf(s) < 0 && close.indexOf(s) < 0; })
-        .sort(function (a, b) { return a.miss.length - b.miss.length || b.got - a.got; });
+        .sort(function (a, b) { return a.miss.length - b.miss.length || mine(a) - mine(b) || b.got - a.got; });
       if (rest.length) {
         out += '<h2 class="disp skh">More ' + lbl + '<em>recipes</em></h2><div class="rgrid">' + rest.map(function (s) { return card(s, 'close'); }).join('') + '</div>';
       }

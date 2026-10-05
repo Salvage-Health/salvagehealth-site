@@ -645,26 +645,6 @@ window.SK = {
       ]
     },
     {
-      id: 'breakfast-burritos', name: 'Meal Prep Breakfast Burritos', cat: 'Breakfast', tag: 'Freezer friendly', serves: 6, mins: 40,
-      blurb: 'Seasoned turkey, eggs, crispy potatoes and cheese, rolled and frozen. Microwave one and you are out the door.',
-      items: [
-        { need: 'ground-turkey', or: ['ground-beef'], txt: '1 lb (454 g) lean ground turkey', food: 'ground-turkey', g: 454 },
-        { need: 'eggs', txt: '6 large eggs', food: 'egg', g: 300 },
-        { need: 'egg-whites', optional: true, txt: '1 cup (240 ml) liquid egg whites', food: 'egg-whites', g: 243 },
-        { need: 'potatoes', or: ['sweet-potatoes'], txt: '1 lb (454 g) potatoes, diced small', food: 'potato', g: 454 },
-        { need: 'flour-tortillas', txt: '6 large (10-inch) flour tortillas', food: 'flour-tortilla', g: 430 },
-        { need: 'cheese', optional: true, txt: '3/4 cup (85 g) shredded cheese', food: 'cheese', g: 85 },
-        { need: 'salsa', optional: true, txt: '1/2 cup (130 g) salsa', food: 'salsa', g: 130 },
-        { staple: true, txt: '1 tbsp avocado oil; chili powder, cumin, salt and pepper', food: 'avocado-oil', g: 13.5 }
-      ],
-      steps: [
-        'Cook the potatoes in the oil over medium-high heat, 12 to 15 minutes, until crisp. Set aside.',
-        'Brown the turkey in the same pan with the spices, breaking it up. Set aside.',
-        'Scramble the eggs and egg whites low and slow until just set.',
-        'Fill each tortilla with turkey, potatoes, eggs, cheese and salsa. Roll tight, wrap in foil and freeze. Reheat 2 to 3 minutes in the microwave, out of the foil.'
-      ]
-    },
-    {
       id: 'yogurt-bowl', name: 'Greek Yogurt Power Bowl', cat: 'Breakfast', tag: '5 minutes', serves: 1, mins: 5,
       blurb: 'Thick Greek yogurt, berries, banana and a spoon of peanut butter. Tastes like dessert, eats like a protein shake.',
       items: [
@@ -679,25 +659,6 @@ window.SK = {
         'Spoon the yogurt into a bowl and stir in the cinnamon.',
         'Top with the berries and banana.',
         'Warm the peanut butter for 10 seconds so it drizzles, then finish with honey.'
-      ]
-    },
-    {
-      id: 'protein-pancakes', name: 'Banana Protein Pancakes', cat: 'Breakfast', tag: 'Weekend', serves: 2, mins: 15,
-      blurb: 'Blender pancakes made from oats, banana, eggs and protein powder. No flour, no mix, still fluffy.',
-      items: [
-        { need: 'oats', txt: '1 cup (80 g) rolled oats', food: 'oats', g: 80 },
-        { need: 'banana', txt: '1 ripe banana', food: 'banana', g: 118 },
-        { need: 'eggs', txt: '2 large eggs', food: 'egg', g: 100 },
-        { need: 'protein-powder', txt: '1 scoop (30 g) protein powder', food: 'protein-powder', g: 30 },
-        { need: 'milk', txt: '1/2 cup (120 ml) milk', food: 'milk', g: 120 },
-        { need: 'berries', optional: true, txt: 'Berries for the top', food: 'berries', g: 75 },
-        { staple: true, txt: '1 tsp baking powder, cinnamon, avocado oil spray', food: 'none', g: 0 }
-      ],
-      steps: [
-        'Blend everything except the berries until smooth. Let it sit 5 minutes to thicken.',
-        'Heat a nonstick pan over medium-low and spray it.',
-        'Pour 1/4 cup (60 ml) per pancake. Flip when bubbles form, about 2 minutes, then 1 more minute.',
-        'Stack them up and top with berries.'
       ]
     },
     {
@@ -813,26 +774,6 @@ window.SK = {
         'Whisk the yogurt, half the parmesan, lemon juice, Dijon, garlic and plenty of pepper. Thin with water if needed.',
         'Toss the romaine with the dressing and the rest of the parmesan.',
         'Fill each wrap with salad and chicken, roll tight and cut in half.'
-      ]
-    },
-    {
-      id: 'cheeseburger-bowls', name: 'Cheeseburger Bowls', cat: 'Dinner', tag: 'Meal prep', serves: 4, mins: 35,
-      blurb: 'Everything you love about a burger with fries: lean beef, crispy potatoes, lettuce, tomato, cheese and burger sauce.',
-      items: [
-        { need: 'ground-beef', or: ['ground-turkey'], txt: '1 1/2 lb (680 g) 93% lean ground beef', food: 'ground-beef', g: 680 },
-        { need: 'potatoes', or: ['sweet-potatoes'], txt: '1 1/2 lb (680 g) potatoes, cubed', food: 'potato', g: 680 },
-        { need: 'lettuce', txt: '1 head romaine, shredded', food: 'lettuce', g: 300 },
-        { need: 'tomatoes', txt: '2 tomatoes, diced', food: 'tomato', g: 246 },
-        { need: 'onion', optional: true, txt: '1/2 onion, diced', food: 'onion', g: 75 },
-        { need: 'cheese', optional: true, txt: '1/2 cup (56 g) shredded cheddar', food: 'cheese', g: 56 },
-        { need: 'greek-yogurt', optional: true, txt: '1/4 cup (57 g) Greek yogurt for the sauce', food: 'greek-yogurt', g: 57 },
-        { staple: true, txt: '2 tsp avocado oil; ketchup, mustard, garlic powder, salt and pepper', food: 'avocado-oil', g: 9 }
-      ],
-      steps: [
-        'Heat the oven to 425°F (220°C). Toss the potatoes in the oil, salt and garlic powder and roast 25 to 30 minutes.',
-        'Brown the beef and onion, season well, and drain any fat.',
-        'Stir the yogurt with 1 tbsp ketchup and 1 tsp mustard for the burger sauce.',
-        'Build bowls: lettuce, potatoes, beef, tomato and cheese, then drizzle the sauce.'
       ]
     },
     {
@@ -992,24 +933,6 @@ window.SK = {
       ]
     },
     {
-      id: 'teriyaki-chicken-bowls', name: 'Teriyaki Chicken Bowls', cat: 'Lunch', tag: 'Meal prep', serves: 4, mins: 30,
-      blurb: 'Juicy chicken thighs in a homemade teriyaki glaze with broccoli and rice. Four lunches, zero boredom.',
-      items: [
-        { need: 'chicken-thighs', or: ['chicken-breast'], txt: '2 lb (907 g) boneless, skinless chicken thighs, cubed', food: 'chicken-thigh', g: 907 },
-        { need: 'rice', txt: '1 1/2 cups (280 g) dry rice', food: 'white-rice', g: 280 },
-        { need: 'broccoli', or: ['green-beans', 'mixed-veg'], txt: '1 lb (454 g) broccoli florets', food: 'broccoli', g: 454 },
-        { need: 'soy-sauce', txt: '1/4 cup (60 ml) low-sodium soy sauce', food: 'soy-sauce', g: 64 },
-        { need: 'honey', txt: '3 tbsp honey', food: 'honey', g: 63 },
-        { staple: true, txt: '1 tsp avocado oil; 1 tbsp cornstarch; garlic; ginger', food: 'avocado-oil', g: 4.5 }
-      ],
-      steps: [
-        'Start the rice. Whisk the soy sauce, honey, garlic, ginger, cornstarch and 1/3 cup (80 ml) water.',
-        'Brown the chicken in the oil over medium-high heat, 7 to 8 minutes.',
-        'Pour in the sauce and simmer 2 to 3 minutes until thick and glossy.',
-        'Steam the broccoli and split everything into four containers.'
-      ]
-    },
-    {
       id: 'stuffed-peppers', name: 'Turkey Stuffed Peppers', cat: 'Dinner', tag: 'Oven', serves: 4, mins: 50,
       blurb: 'Bell peppers packed with seasoned turkey, rice and tomatoes, baked under melted cheese.',
       items: [
@@ -1084,24 +1007,5 @@ window.SK = {
         'Serve in warm tortillas with onion, cilantro, avocado, salsa and lime.'
       ]
     },
-    {
-      id: 'lighter-chicken-alfredo', name: 'Lighter Chicken Alfredo', cat: 'Dinner', tag: 'Comfort food', serves: 4, mins: 30,
-      blurb: 'Creamy alfredo without the heavy cream. Blended cottage cheese, milk and parmesan make a silky high-protein sauce.',
-      items: [
-        { need: 'pasta', txt: '8 oz (227 g) dry fettuccine or penne', food: 'pasta', g: 227 },
-        { need: 'chicken-breast', or: ['chicken-thighs', 'shrimp'], txt: '1 lb (454 g) chicken breast', food: 'chicken-breast', g: 454 },
-        { need: 'cottage-cheese', txt: '1 cup (226 g) cottage cheese', food: 'cottage-cheese', g: 226 },
-        { need: 'milk', txt: '1/2 cup (120 ml) milk', food: 'milk', g: 120 },
-        { need: 'parmesan', txt: '1/2 cup (50 g) grated parmesan', food: 'parmesan', g: 50 },
-        { need: 'broccoli', optional: true, txt: '3 cups (270 g) broccoli florets', food: 'broccoli', g: 270 },
-        { staple: true, txt: '1 tsp avocado oil; 3 cloves garlic; salt and lots of black pepper', food: 'avocado-oil', g: 4.5 }
-      ],
-      steps: [
-        'Cook the pasta, adding the broccoli for the last 3 minutes. Save 1/2 cup (120 ml) of pasta water.',
-        'Season and sear the chicken in the oil, 6 to 7 minutes a side, to 165°F (74°C). Slice.',
-        'Blend the cottage cheese, milk, parmesan and garlic until completely smooth.',
-        'Toss the pasta and broccoli with the sauce over low heat, loosening with pasta water. Top with chicken and black pepper.'
-      ]
-    }
   ]
 };
