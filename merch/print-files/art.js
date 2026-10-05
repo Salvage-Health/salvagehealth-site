@@ -66,9 +66,9 @@
     { id: 'tee03-back', name: 'Tee 03, back: Never Too Late', place: 'Upper back, 9 in (23 cm) wide', inches: 9, bg: 'dark',
       svg: svg('90 74 220 58',
         '<g filter="url(#dist)">' +
-        '<text x="200" y="104" text-anchor="middle" ' + O + ' font-size="28" fill="#EDE8DC" textLength="200" lengthAdjust="spacing">NEVER TOO LATE</text>' +
+        '<text x="200" y="104" text-anchor="middle" ' + O + ' font-size="28" fill="#EDE8DC" textLength="200" lengthAdjust="spacing">NEVER TOO LATE</text></g>' +
         '<text x="200" y="124" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="' + R + '" textLength="200" lengthAdjust="spacing">SECOND CHANCES EXIST</text>' +
-        '</g>', DIST) },
+        '', DIST) },
 
     { id: 'hoodie-front', name: 'Hoodie, front: chest wordmark', place: 'Center chest, 4 in (10 cm) wide', inches: 4, bg: 'dark',
       svg: svg('148 210 104 52',
