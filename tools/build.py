@@ -42,16 +42,17 @@ def topbar(active):
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{href}"{cur}{c}>{label}</a>'
+    cta = "" if active in ("start",) else '<a class="navcta" href="/start/">Free <span class="l">Starter </span>Kit</a>'
     return f"""  <header class="top">
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
-      {a('/about/','About','about')}
-      {a('/articles/','Articles','articles')}
       {a('/kitchen/','Kitchen','kitchen')}
+      {a('/book','Free plan','book')}
+      {a('/articles/','Articles','articles')}
       {a('/merch/','Merch','merch')}
-      {a('/faq/','FAQ','faq','hide-sm')}
-      {a('/book','Free plan','book','hide-sm')}
+      {a('/about/','About','about')}
     </nav>
+    {cta}
   </header>
 """
 
@@ -427,8 +428,10 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
 """ + FOOT
 write("/kitchen/", kp)
 
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "home.py")).read())
+
 # sitemap + robots
-urls = ["/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
+urls = ["/", "/start/", "/kitchen/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
     f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
 open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)

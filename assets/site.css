@@ -9,12 +9,15 @@ a{color:var(--rust-text)}
 .disp em{font-style:normal;color:var(--rust)}
 .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--rust-text);margin:0 0 14px}
 
-.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 12px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.top{display:flex;align-items:center;gap:12px 28px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.top .brand{margin-right:auto}
+.navcta{order:3;flex:0 0 auto;display:inline-flex;align-items:center;min-height:38px;padding:7px 14px;border-radius:99px;background:var(--rust);color:#FAF9F5;font-weight:700;font-size:13.5px;text-decoration:none;white-space:nowrap}
+.navcta:hover{background:#A9461F}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg)}
 .brand img{width:30px;height:30px}
 .brand .wm{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
 .brand .wm span{color:var(--rust)}
-.top nav{display:flex;gap:22px}
+.top nav{display:flex;gap:22px;order:2}
 .top nav a{font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);text-decoration:none}
 .top nav a:hover,.top nav a[aria-current]{color:var(--fg)}
 
@@ -91,7 +94,8 @@ footer.site{margin-top:88px;border-top:1px solid var(--rule);padding:36px 0 44px
 .fine{font-size:12.5px;color:var(--faint);margin:26px 0 0;max-width:70ch}
 
 @media (max-width:760px){.alist,.more .alist{grid-template-columns:1fr}}
-@media (max-width:560px){.top nav{gap:14px}.top nav a{font-size:11px;letter-spacing:1px}.top nav a.hide-sm{display:none}.btn{width:100%}}
+@media (max-width:760px){.top{flex-wrap:wrap;gap:10px 12px;padding:12px 0 0}.top nav{order:4;flex:1 1 100%;gap:0;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:2px 20px 0}.top nav::-webkit-scrollbar{display:none}.top nav a{flex:0 0 auto;padding:10px 12px;font-size:12px;letter-spacing:1px}.top nav a:first-child{padding-left:0}.top nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--rust)}}
+@media (max-width:560px){.btn{width:100%}.top .brand{gap:8px}.top .brand img{width:26px;height:26px}.brand .wm{font-size:17px;letter-spacing:.5px}.navcta{min-height:34px;padding:6px 12px;font-size:12.5px}.navcta .l{display:none}}
 
 /* merch */
 .mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}

@@ -216,4 +216,6 @@
   $('staples').textContent = SK.STAPLES.join(', ');
   $('ktotal').textContent = SK.RECIPES.length;
   render();
+  var h = decodeURIComponent((location.hash || '').slice(1));
+  if (h && SK.RECIPES.some(function (r) { return r.id === h; })) openRecipe(h);
 })();
