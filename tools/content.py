@@ -303,7 +303,7 @@ ABOUT_BODY = """
 # SHOP: Fourthwall store. LIVE: slug -> (price, product URL) for items that are on sale now.
 SHOP = "https://salvagehealth-shop.fourthwall.com"
 # photos in /merch/img/: first is the main shot, second shows on hover
-LIVE = {"tee-built": ("$34", SHOP, ("tee-built-model-side", "tee-built-model-back-side"))}
+LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
