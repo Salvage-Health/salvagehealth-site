@@ -308,7 +308,8 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "tee-athletic": ("$34", SHOP + "/products/salvage-athletic-tee", ("tee-athletic-model-front", "tee-athletic-model-back")),
         "hoodie": ("$78.99", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back")),
         "beanie": ("$32", SHOP + "/products/shield-beanie", ("beanie-model-1", "beanie-flat")),
-        "stickers": ("$12", SHOP + "/products/sticker-pack", ("stickers-sheet", "stickers-sheet-tilt"))}
+        "stickers": ("$12", SHOP + "/products/sticker-pack", ("stickers-sheet", "stickers-sheet-tilt")),
+        "tumbler": ("$42", SHOP + "/products/salvage-tumbler", ("tumbler-black", "tumbler-etch-close"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
@@ -335,6 +336,6 @@ MERCH2 = [
  "Padded straps. One says \"Say what you'll do.\" The other says \"Do what you say.\"", "straps"),
 ("belt", "Lever Belt", "Lifting gear",
  "Black leather, 4 in (10 cm) wide, rust stitching, shield and wordmark debossed.", "belt"),
-("shaker", "Shaker Bottle", "Accessories",
- "28 oz (830 ml), leak-proof, black with a rust cap. For hitting your protein target anywhere.", "shaker"),
+("tumbler", "Salvage Tumbler", "40 oz insulated tumbler",
+ "40 oz (1.2 L) of cold water all day. The shield laser etched into recycled stainless steel, so it never peels or fades. Black or Navy.", "shaker"),
 ]
