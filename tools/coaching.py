@@ -56,6 +56,8 @@ COACHCSS = """<style>
 .co-form .chips label:has(input:checked){border-color:var(--rust);background:rgba(190,81,38,.12)}
 .co-form .btn{margin-top:22px;width:100%}
 .co-form .fine{color:var(--faint);font-size:13px;margin:12px 0 0}
+.co-cta{background:var(--raised);border:1px solid var(--rule);border-radius:16px;padding:28px 22px}
+.co-cta .btn{margin-top:20px}
 .co-end{margin:56px 0 0;padding:36px 22px;border:1px solid var(--rule);border-radius:16px;text-align:center;background:linear-gradient(180deg,rgba(190,81,38,.10),transparent)}
 .co-end p{color:var(--dim);margin:10px auto 0;max-width:52ch}
 .co-end .btn{margin-top:20px}
@@ -121,40 +123,8 @@ FAQS = [
     ("Do I have to get bloodwork?", "No. Coaching works without it. Labs are optional, but they can explain why you've been stuck, and they let us track your health improving, not just your weight."),
     ("How do check-ins work?", "Weekly, by message or a short call depending on your plan. You share your numbers and how the week went, and I adjust your plan from there."),
     ("How much does it cost?", "It depends on what you need. One-time plans cost less than ongoing coaching. You'll get exact pricing on your free intro call, with no pressure to sign up."),
+    ("Why do I have to qualify?", "Because I only take on people I can actually help, and I keep my client list small so everyone gets real attention. The questionnaire also gives you your numbers for free, so you walk away with something either way."),
 ]
-
-
-def _form():
-    opts = ["Accountability", "Fitness coaching", "Health and performance", "Custom workout plan", "Custom meal plan", "Not sure yet"]
-    chips = "".join(f'<label><input type="checkbox" name="interested" value="{o}"> {o}</label>' for o in opts)
-    return f"""<form class="co-form" name="coaching-apply" method="POST" action="/coaching/thanks/" data-netlify="true" netlify-honeypot="company">
-        <input type="hidden" name="form-name" value="coaching-apply">
-        <p hidden><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
-        <label for="ca-name">Name</label>
-        <input id="ca-name" type="text" name="name" required autocomplete="name">
-        <label for="ca-email">Email</label>
-        <input id="ca-email" type="email" name="email" required autocomplete="email">
-        <label for="ca-phone">Phone <span class="opt">(optional, for your intro call)</span></label>
-        <input id="ca-phone" type="tel" name="phone" autocomplete="tel">
-        <label>What are you interested in?</label>
-        <div class="chips">{chips}</div>
-        <label for="ca-goal">What's your main goal?</label>
-        <select id="ca-goal" name="goal" required>
-          <option value="">Choose one</option>
-          <option>Lose fat</option><option>Build muscle</option><option>Recomp (lose fat and build muscle)</option>
-          <option>More energy and better health</option><option>Get consistent and stay accountable</option><option>Something else</option>
-        </select>
-        <label for="ca-start">Where are you starting from?</label>
-        <textarea id="ca-start" name="starting_point" placeholder="Your current weight and height if you're comfortable sharing, what you've tried before, and what keeps getting in the way."></textarea>
-        <label for="ca-labs">Have you had bloodwork in the last 6 months?</label>
-        <select id="ca-labs" name="bloodwork">
-          <option>Not sure</option><option>Yes</option><option>No</option>
-        </select>
-        <label for="ca-ref">How did you find me? <span class="opt">(optional)</span></label>
-        <input id="ca-ref" type="text" name="referral" placeholder="Instagram, the book, a friend...">
-        <button class="btn solid" type="submit">Apply for coaching</button>
-        <p class="fine">I read every application myself and reply within 2 business days. Spots are limited so every client gets real attention.</p>
-      </form>"""
 
 
 svc = "".join(f"""
@@ -177,7 +147,7 @@ cp = head("Coaching with Bryan Dourado | Salvage Health",
       <p class="eyebrow">Coaching</p>
       <h1 class="disp">You're not too far gone. <em>You're just not coached yet.</em></h1>
       <p class="dek">I went from 265 pounds and prediabetic to 178. Not with a magic diet, but by learning how this actually works and having someone keep me honest. Now I do that for other people.</p>
-      <div class="acts"><a class="btn solid" href="#apply">Apply for coaching</a><a class="btn line" href="#services">See what's included</a></div>
+      <div class="acts"><a class="btn solid" href="/coaching/qualify/">See if you qualify</a><a class="btn line" href="#services">See what's included</a></div>
       <ul class="co-proof"><li>Lost 87 lb (39 kg) in 14 months</li><li>Coached people through 75 Hard</li><li>Author of Fitness Without the Fear</li><li>Former restaurant chef</li></ul>
     </section>
 
@@ -210,7 +180,7 @@ cp = head("Coaching with Bryan Dourado | Salvage Health",
       <p class="eyebrow">How it works</p>
       <h2 class="disp">Four steps. <em>No pressure.</em></h2>
       <ol class="co-steps">
-        <li><b>Apply</b><span>Two minutes. Tell me where you're starting and what you want.</span></li>
+        <li><b>See if you qualify</b><span>A 2-minute questionnaire. You get your calories and macros on the spot.</span></li>
         <li><b>Free intro call</b><span>We talk through your goal, your history and which option fits. You get exact pricing, and you decide.</span></li>
         <li><b>Your plan</b><span>Training, meals, grocery list and timing, built around your life and your numbers.</span></li>
         <li><b>Check in and adjust</b><span>Weekly check-ins keep you accountable, and the plan changes as you do.</span></li>
@@ -219,32 +189,103 @@ cp = head("Coaching with Bryan Dourado | Salvage Health",
 
     <section class="co-faq">
       <p class="eyebrow">Questions</p>
-      <h2 class="disp">Before you <em>apply</em></h2>{faq}
+      <h2 class="disp">Before you <em>start</em></h2>{faq}
     </section>
 
     <section id="apply">
-      <p class="eyebrow">Apply</p>
-      <h2 class="disp">Ready when <em>you are.</em></h2>
-      <p class="lead">Fill this out and I'll reach out to set up your free intro call.</p>
-      {_form()}
+      <div class="co-cta">
+        <p class="eyebrow">2-minute questionnaire</p>
+        <h2 class="disp">See if you <em>qualify.</em></h2>
+        <p class="lead">Answer a few questions about your goal, your body and what keeps getting in the way. You'll get your maintenance calories, daily target and macros right away, plus the coaching option that fits you. Already made a Starter Kit plan? Your numbers fill in automatically.</p>
+        <a class="btn solid" href="/coaching/qualify/">Start the questionnaire</a>
+      </div>
     </section>
 
     <div class="co-end">
       <h2 class="disp" style="font-size:clamp(26px,4vw,36px)">Never too old. Never too heavy. <em>Never too late.</em></h2>
       <p>You don't need a perfect starting point. You build with what you've got.</p>
-      <a class="btn solid" href="#apply">Apply for coaching</a>
+      <a class="btn solid" href="/coaching/qualify/">See if you qualify</a>
     </div>
   </main>
 """ + FOOT
 write("/coaching/", cp)
 
-ct = head("Application received | Salvage Health", "Thanks for applying for coaching with Bryan Dourado.", "/coaching/thanks/", NOINDEX + COACHCSS) + topbar("coaching") + """  <main class="co">
-    <section class="co-hero">
-      <p class="eyebrow">Application received</p>
-      <h1 class="disp">Got it. <em>Talk soon.</em></h1>
-      <p class="dek">I read every application myself and will reach out within 2 business days to set up your free intro call. Keep an eye on your inbox, and check spam just in case.</p>
-      <div class="acts"><a class="btn solid" href="/start/">Grab the free Starter Kit</a><a class="btn line" href="/kitchen/">Browse the Kitchen</a></div>
-    </section>
+
+QCSS = """<style>
+.qz-wrap{max-width:640px;margin:0 auto;padding:40px 0 0}
+.qz-wrap>h1{font-size:clamp(30px,6vw,46px)}
+.qz-wrap>.dek{margin-bottom:24px}
+#qz{scroll-margin-top:16px;background:var(--raised);border:1px solid var(--rule);border-radius:18px;padding:22px 18px 20px}
+.qz-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
+.qz-bar i{display:block;height:100%;background:var(--rust);border-radius:99px;transition:width .3s}
+.qz-count{color:var(--faint);font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin:10px 0 0}
+.qz-q{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(24px,5vw,30px);line-height:1.1;margin:14px 0 6px;letter-spacing:.3px}
+.qz-sub{color:var(--dim);margin:0 0 18px;font-size:15.5px}
+.qz-lbl{display:block;font-weight:700;font-size:14.5px;margin:20px 0 8px}
+.qz-lbl span,.qz-form span{color:var(--faint);font-weight:400}
+.qz-opts{display:grid;gap:8px}
+.qz-opts.row{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}
+.qz-opts.nums{grid-template-columns:repeat(5,1fr)}
+.qz-opts.multi{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.qz-opts button{min-height:52px;padding:12px 16px;border-radius:12px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:600 15.5px Inter,sans-serif;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:2px;transition:border-color .15s,background .15s}
+.qz-opts.row button,.qz-opts.nums button{text-align:center;align-items:center}
+.qz-opts button small{color:var(--faint);font-weight:500;font-size:13px}
+.qz-opts button[aria-pressed=true]{border-color:var(--rust);background:rgba(190,81,38,.14)}
+.qz-opts button[aria-pressed=true] small{color:var(--dim)}
+.qz-opts.multi button{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px}
+.qz-opts.multi button::before{content:"";flex:0 0 18px;height:18px;border-radius:5px;border:1.5px solid var(--faint)}
+.qz-opts.multi button[aria-pressed=true]::before{content:"\\2713";border-color:var(--rust);background:var(--rust);color:#FAF9F5;font-size:12px;line-height:16px;text-align:center}
+.qz-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.qz-grid label,.qz-form label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+.qz-form{display:grid;gap:14px}
+#qz input,#qz textarea{width:100%;min-height:50px;padding:12px 14px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:inherit;font-size:16px}
+#qz textarea{min-height:96px;resize:vertical}
+#qz input:focus,#qz textarea:focus{outline:2px solid var(--rust-text);outline-offset:1px}
+.qz-err{color:#F08A63;font-size:14px;margin:12px 0 0}
+.qz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.qz-nav .btn{min-width:110px}
+.qz-two{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.qz-two .btn{flex:1 1 200px}
+#qz .btn.line{background:transparent;color:var(--fg);cursor:pointer;font-family:Inter,sans-serif}
+#qz .btn.solid{border:0;cursor:pointer;font-family:Inter,sans-serif}
+.qz-sum{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0}
+.qz-sum div{background:var(--bg);border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
+.qz-sum dt{color:var(--faint);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.qz-sum dd{margin:2px 0 0;font-weight:700}
+.qz-done .disp{font-size:clamp(30px,6vw,42px);margin:0 0 8px}
+.qz-done .disp em{font-style:normal;color:var(--rust)}
+.qz-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 0}
+.qz-tiles div{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:12px 14px}
+.qz-tiles div.hl{grid-column:1/-1;border-color:var(--rust);background:rgba(190,81,38,.12)}
+.qz-tiles b{display:block;font-family:Oswald,sans-serif;font-size:26px;line-height:1.1}
+.qz-tiles .hl b{font-size:40px;color:var(--rust-text)}
+.qz-tiles div:first-child{grid-column:1/-1}
+.qz-tiles span{color:var(--faint);font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.qz-note{color:var(--faint);font-size:14px;margin:10px 0 0}
+.qz-rec{border-left:3px solid var(--rust);background:var(--bg);border-radius:10px;padding:14px 16px;margin:16px 0 0}
+.qz-rec small{color:var(--rust-text);font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.qz-rec h3{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:22px;margin:4px 0 4px}
+.qz-rec p{color:var(--dim);margin:0;font-size:15px}
+.qz-priv{color:var(--faint);font-size:13px;text-align:center;margin:14px 0 0}
+</style>
+"""
+
+QFIELDS = ["name", "email", "phone", "instagram", "referral", "goal", "sex", "age", "height", "weight_lb", "activity", "tdee", "calories", "protein", "carbs", "fat",
+           "experience", "days_per_week", "blockers", "signals", "bloodwork", "services", "style", "readiness", "why", "recommendation", "qualified", "used_starter_kit"]
+qform = '<form name="coaching-qualify" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="coaching-qualify"><input name="company">' + "".join(f'<input name="{f}">' for f in QFIELDS) + "</form>"
+
+qp = head("See if you qualify for coaching | Salvage Health", "A 2-minute questionnaire: get your TDEE, calories and macros, and see which coaching option fits you.",
+          "/coaching/qualify/", NOINDEX + COACHCSS + QCSS) + topbar("coaching") + f"""  <main class="co">
+    <div class="qz-wrap">
+      <p class="eyebrow">Coaching questionnaire</p>
+      <h1 class="disp">See if you <em>qualify.</em></h1>
+      <p class="dek">About 2 minutes. You get your calories and macros at the end either way.</p>
+      <div id="qz" aria-live="polite"><noscript>This questionnaire needs JavaScript. Email hello@salvagehealth.com and I'll send it over.</noscript></div>
+      <p class="qz-priv">Your answers go only to me. I never sell or share your information.</p>
+      {qform}
+    </div>
   </main>
+  <script src="/assets/goals.js" defer></script>
+  <script src="/assets/qualify.js" defer></script>
 """ + FOOT
-write("/coaching/thanks/", ct)
+write("/coaching/qualify/", qp)

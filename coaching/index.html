@@ -72,6 +72,8 @@
 .co-form .chips label:has(input:checked){border-color:var(--rust);background:rgba(190,81,38,.12)}
 .co-form .btn{margin-top:22px;width:100%}
 .co-form .fine{color:var(--faint);font-size:13px;margin:12px 0 0}
+.co-cta{background:var(--raised);border:1px solid var(--rule);border-radius:16px;padding:28px 22px}
+.co-cta .btn{margin-top:20px}
 .co-end{margin:56px 0 0;padding:36px 22px;border:1px solid var(--rule);border-radius:16px;text-align:center;background:linear-gradient(180deg,rgba(190,81,38,.10),transparent)}
 .co-end p{color:var(--dim);margin:10px auto 0;max-width:52ch}
 .co-end .btn{margin-top:20px}
@@ -95,7 +97,7 @@
       <p class="eyebrow">Coaching</p>
       <h1 class="disp">You're not too far gone. <em>You're just not coached yet.</em></h1>
       <p class="dek">I went from 265 pounds and prediabetic to 178. Not with a magic diet, but by learning how this actually works and having someone keep me honest. Now I do that for other people.</p>
-      <div class="acts"><a class="btn solid" href="#apply">Apply for coaching</a><a class="btn line" href="#services">See what's included</a></div>
+      <div class="acts"><a class="btn solid" href="/coaching/qualify/">See if you qualify</a><a class="btn line" href="#services">See what's included</a></div>
       <ul class="co-proof"><li>Lost 87 lb (39 kg) in 14 months</li><li>Coached people through 75 Hard</li><li>Author of Fitness Without the Fear</li><li>Former restaurant chef</li></ul>
     </section>
 
@@ -168,7 +170,7 @@
       <p class="eyebrow">How it works</p>
       <h2 class="disp">Four steps. <em>No pressure.</em></h2>
       <ol class="co-steps">
-        <li><b>Apply</b><span>Two minutes. Tell me where you're starting and what you want.</span></li>
+        <li><b>See if you qualify</b><span>A 2-minute questionnaire. You get your calories and macros on the spot.</span></li>
         <li><b>Free intro call</b><span>We talk through your goal, your history and which option fits. You get exact pricing, and you decide.</span></li>
         <li><b>Your plan</b><span>Training, meals, grocery list and timing, built around your life and your numbers.</span></li>
         <li><b>Check in and adjust</b><span>Weekly check-ins keep you accountable, and the plan changes as you do.</span></li>
@@ -177,53 +179,29 @@
 
     <section class="co-faq">
       <p class="eyebrow">Questions</p>
-      <h2 class="disp">Before you <em>apply</em></h2>
+      <h2 class="disp">Before you <em>start</em></h2>
         <details><summary>Do I need a gym membership?</summary><p>No. Plans can be built for home with little or no equipment, a full gym, or a mix of both.</p></details>
         <details><summary>I&#x27;m really out of shape. Is this for me?</summary><p>Yes. That&#x27;s exactly who this is for. I started at 265 pounds and prediabetic. Your plan starts where you are, not where a fitness influencer is.</p></details>
         <details><summary>Are you a doctor or dietitian?</summary><p>No. I&#x27;m a coach who has been through it, did the research, and wrote the book on it. I don&#x27;t diagnose or treat medical conditions. If something needs a doctor, I&#x27;ll tell you, and your plan works alongside your doctor&#x27;s advice, never against it.</p></details>
         <details><summary>Do I have to get bloodwork?</summary><p>No. Coaching works without it. Labs are optional, but they can explain why you&#x27;ve been stuck, and they let us track your health improving, not just your weight.</p></details>
         <details><summary>How do check-ins work?</summary><p>Weekly, by message or a short call depending on your plan. You share your numbers and how the week went, and I adjust your plan from there.</p></details>
         <details><summary>How much does it cost?</summary><p>It depends on what you need. One-time plans cost less than ongoing coaching. You&#x27;ll get exact pricing on your free intro call, with no pressure to sign up.</p></details>
+        <details><summary>Why do I have to qualify?</summary><p>Because I only take on people I can actually help, and I keep my client list small so everyone gets real attention. The questionnaire also gives you your numbers for free, so you walk away with something either way.</p></details>
     </section>
 
     <section id="apply">
-      <p class="eyebrow">Apply</p>
-      <h2 class="disp">Ready when <em>you are.</em></h2>
-      <p class="lead">Fill this out and I'll reach out to set up your free intro call.</p>
-      <form class="co-form" name="coaching-apply" method="POST" action="/coaching/thanks/" data-netlify="true" netlify-honeypot="company">
-        <input type="hidden" name="form-name" value="coaching-apply">
-        <p hidden><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
-        <label for="ca-name">Name</label>
-        <input id="ca-name" type="text" name="name" required autocomplete="name">
-        <label for="ca-email">Email</label>
-        <input id="ca-email" type="email" name="email" required autocomplete="email">
-        <label for="ca-phone">Phone <span class="opt">(optional, for your intro call)</span></label>
-        <input id="ca-phone" type="tel" name="phone" autocomplete="tel">
-        <label>What are you interested in?</label>
-        <div class="chips"><label><input type="checkbox" name="interested" value="Accountability"> Accountability</label><label><input type="checkbox" name="interested" value="Fitness coaching"> Fitness coaching</label><label><input type="checkbox" name="interested" value="Health and performance"> Health and performance</label><label><input type="checkbox" name="interested" value="Custom workout plan"> Custom workout plan</label><label><input type="checkbox" name="interested" value="Custom meal plan"> Custom meal plan</label><label><input type="checkbox" name="interested" value="Not sure yet"> Not sure yet</label></div>
-        <label for="ca-goal">What's your main goal?</label>
-        <select id="ca-goal" name="goal" required>
-          <option value="">Choose one</option>
-          <option>Lose fat</option><option>Build muscle</option><option>Recomp (lose fat and build muscle)</option>
-          <option>More energy and better health</option><option>Get consistent and stay accountable</option><option>Something else</option>
-        </select>
-        <label for="ca-start">Where are you starting from?</label>
-        <textarea id="ca-start" name="starting_point" placeholder="Your current weight and height if you're comfortable sharing, what you've tried before, and what keeps getting in the way."></textarea>
-        <label for="ca-labs">Have you had bloodwork in the last 6 months?</label>
-        <select id="ca-labs" name="bloodwork">
-          <option>Not sure</option><option>Yes</option><option>No</option>
-        </select>
-        <label for="ca-ref">How did you find me? <span class="opt">(optional)</span></label>
-        <input id="ca-ref" type="text" name="referral" placeholder="Instagram, the book, a friend...">
-        <button class="btn solid" type="submit">Apply for coaching</button>
-        <p class="fine">I read every application myself and reply within 2 business days. Spots are limited so every client gets real attention.</p>
-      </form>
+      <div class="co-cta">
+        <p class="eyebrow">2-minute questionnaire</p>
+        <h2 class="disp">See if you <em>qualify.</em></h2>
+        <p class="lead">Answer a few questions about your goal, your body and what keeps getting in the way. You'll get your maintenance calories, daily target and macros right away, plus the coaching option that fits you. Already made a Starter Kit plan? Your numbers fill in automatically.</p>
+        <a class="btn solid" href="/coaching/qualify/">Start the questionnaire</a>
+      </div>
     </section>
 
     <div class="co-end">
       <h2 class="disp" style="font-size:clamp(26px,4vw,36px)">Never too old. Never too heavy. <em>Never too late.</em></h2>
       <p>You don't need a perfect starting point. You build with what you've got.</p>
-      <a class="btn solid" href="#apply">Apply for coaching</a>
+      <a class="btn solid" href="/coaching/qualify/">See if you qualify</a>
     </div>
   </main>
   <footer class="site">
