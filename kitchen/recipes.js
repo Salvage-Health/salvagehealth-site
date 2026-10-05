@@ -61,12 +61,20 @@ window.SK = {
     'soy-sauce':      { kcal: 53,  p: 8.1,  f: 0.1,  c: 4.9 },
     'hot-sauce':      { kcal: 12,  p: 0.5,  f: 0.3,  c: 1 },
     'avocado':        { kcal: 160, p: 2,    f: 14.7, c: 8.5 },
+    'ground-chicken-lean': { kcal: 107, p: 23.2, f: 1.3, c: 0 },
+    'ff-mozzarella':  { kcal: 160, p: 32,   f: 0,    c: 3.6 },
+    'turkey-pepperoni':{ kcal: 233, p: 30,  f: 11.7, c: 3.3 },
+    'olives':         { kcal: 115, p: 0.8,  f: 10.7, c: 6 },
+    'jalapeno':       { kcal: 29,  p: 0.9,  f: 0.4,  c: 6.5 },
+    'mushrooms':      { kcal: 22,  p: 3.1,  f: 0.3,  c: 3.3 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
   INGREDIENTS: [
     { id: 'chicken-thighs', name: 'Chicken thighs', group: 'Meat and seafood', alias: ['thigh', 'thighs', 'chicken'] },
     { id: 'chicken-breast', name: 'Chicken breast', group: 'Meat and seafood', alias: ['breast', 'chicken', 'rotisserie'] },
+    { id: 'ground-chicken', name: 'Ground chicken', group: 'Meat and seafood', alias: ['chicken'] },
+    { id: 'turkey-pepperoni', name: 'Turkey pepperoni', group: 'Meat and seafood', alias: ['pepperoni'] },
     { id: 'ground-turkey', name: 'Ground turkey', group: 'Meat and seafood', alias: ['turkey'] },
     { id: 'ground-beef', name: 'Lean ground beef', group: 'Meat and seafood', alias: ['ground beef', 'beef', 'hamburger'] },
     { id: 'steak', name: 'Steak', group: 'Meat and seafood', alias: ['sirloin', 'beef', 'ribeye', 'strip', 'flank'] },
@@ -106,6 +114,8 @@ window.SK = {
     { id: 'cucumber', name: 'Cucumber', group: 'Vegetables', alias: ['cucumbers'] },
     { id: 'celery', name: 'Celery', group: 'Vegetables', alias: [] },
     { id: 'corn', name: 'Corn', group: 'Vegetables', alias: [] },
+    { id: 'mushrooms', name: 'Mushrooms', group: 'Vegetables', alias: ['mushroom', 'baby bella', 'cremini'] },
+    { id: 'jalapenos', name: 'Jalapeños', group: 'Vegetables', alias: ['jalapeno', 'jalapenos', 'peppers'] },
     { id: 'mixed-veg', name: 'Frozen peas and carrots', group: 'Vegetables', alias: ['peas', 'carrots', 'frozen veg', 'mixed vegetables'] },
     { id: 'cilantro', name: 'Cilantro', group: 'Fruit and fresh', alias: [] },
     { id: 'lime', name: 'Limes', group: 'Fruit and fresh', alias: ['lime'] },
@@ -114,7 +124,8 @@ window.SK = {
     { id: 'banana', name: 'Bananas', group: 'Fruit and fresh', alias: ['banana'] },
     { id: 'berries', name: 'Berries', group: 'Fruit and fresh', alias: ['blueberries', 'strawberries', 'raspberries'] },
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
-    { id: 'marinara', name: 'Marinara', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce'] },
+    { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
+    { id: 'olives', name: 'Black olives', group: 'Sauces and pantry', alias: ['olive', 'olives'] },
     { id: 'canned-tomatoes', name: 'Canned tomatoes', group: 'Sauces and pantry', alias: ['diced tomatoes', 'crushed tomatoes'] },
     { id: 'soy-sauce', name: 'Soy sauce', group: 'Sauces and pantry', alias: ['soy', 'tamari', 'coconut aminos'] },
     { id: 'honey', name: 'Honey', group: 'Sauces and pantry', alias: ['maple'] },
@@ -126,6 +137,34 @@ window.SK = {
   STAPLES: ['Olive oil or cooking spray', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'chicken-crust-pizza', name: "Deluxe Chicken Crust Pizza", by: 'bryan', cat: 'Dinner', tag: 'High protein', serves: 4, mins: 45,
+      photos: ['/kitchen/img/chicken-crust-pizza.jpg', '/kitchen/img/chicken-crust-pizza-slice.jpg'],
+      blurb: "My famous one. The crust is ground chicken, egg and cheese, baked until it is crispy and holds a real slice. Loaded deluxe, two slices still land around 45 grams of protein.",
+      items: [
+        { need: 'ground-chicken', or: ['chicken-breast'], txt: '12 1/2 oz (356 g) 99% fat-free ground chicken (or 1 lb / 454 g cooked chicken breast, pulsed fine)', food: 'ground-chicken-lean', g: 356 },
+        { need: 'eggs', txt: '1 large egg', food: 'egg', g: 50 },
+        { need: 'cheese', txt: '1/2 cup (56 g) fat-free mozzarella, for the crust', food: 'ff-mozzarella', g: 56 },
+        { need: 'parmesan', txt: '1/4 cup (25 g) grated parmesan for the crust, plus 1/3 cup (33 g) for the top', food: 'parmesan', g: 58 },
+        { need: 'marinara', txt: '5 3/4 oz (162 g) pizza sauce, about 2/3 cup', food: 'marinara', g: 162 },
+        { need: 'cheese', txt: '5 1/2 oz (155 g) part-skim mozzarella, shredded, for the top', food: 'cheese', g: 155 },
+        { need: 'turkey-pepperoni', optional: true, txt: '1 3/4 oz (50 g) turkey pepperoni', food: 'turkey-pepperoni', g: 50 },
+        { need: 'bell-pepper', optional: true, txt: '2 oz (58 g) green and red bell pepper, diced', food: 'bell-pepper', g: 58 },
+        { need: 'mushrooms', optional: true, txt: '1 oz (32 g) baby bella mushrooms, sliced', food: 'mushrooms', g: 32 },
+        { need: 'jalapenos', optional: true, txt: '1 oz (28 g) jalapeño slices', food: 'jalapeno', g: 28 },
+        { need: 'olives', optional: true, txt: '1 oz (26 g) sliced black olives', food: 'olives', g: 26 },
+        { need: 'onion', optional: true, txt: '1/2 oz (15 g) onion, thinly sliced', food: 'onion', g: 15 },
+        { staple: true, txt: '1/2 tsp each garlic powder, onion powder and Italian seasoning; salt and pepper; parchment paper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Heat the oven to 400°F (205°C). Line a pizza pan or baking sheet with parchment.',
+        'Mix the ground chicken, egg, fat-free mozzarella, the first 1/4 cup of parmesan and the seasonings until thick and sticky. Using cooked chicken instead? Pat it very dry first, and add 1 to 2 tbsp almond flour if the mix is wet.',
+        'Press it onto the parchment into a 12-inch (30 cm) circle about 1/4 inch (6 mm) thick, a little thicker at the edge. Wet hands or a second sheet of parchment on top make this easy.',
+        'Bake 15 to 20 minutes until golden and firm. For extra crisp, flip it and bake 5 more minutes.',
+        'Top it lightly: sauce, mozzarella, veggies, pepperoni, then the rest of the parmesan. Go easy on the sauce so the crust stays crisp.',
+        'Bake 8 to 10 more minutes until the cheese melts and the edges char. Rest 5 minutes on a rack, then cut into 8 slices. 2 slices per serving.'
+      ]
+    },
     {
       id: 'chili-lime-bowls', cat: 'Lunch',
       name: 'Chili-Lime Chicken Rice Bowls',

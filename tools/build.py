@@ -268,6 +268,14 @@ KCSS = """<meta name="robots" content="noindex">
 .rgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 36px}
 .rc{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--raised);border:1px solid var(--rule);border-radius:14px;padding:20px;color:var(--fg);font:inherit;cursor:pointer;transition:border-color .15s}
 .rc:hover{border-color:var(--rust)}
+.rc{position:relative}
+.rc.has-pic{padding-top:0}
+.rpic{display:block;margin:0 -20px 6px;aspect-ratio:4/3;overflow:hidden;border-radius:13px 13px 0 0;background:#2a2926}
+.rpic img{width:100%;height:100%;object-fit:cover;display:block}
+.rby{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--rust);color:#FAF9F5;padding:5px 9px;border-radius:999px}
+.rc:not(.has-pic) .rby{position:static;align-self:flex-start}
+.dpics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 18px}
+.dpics img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;display:block}
 .rtag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust-text)}
 .rc b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.1;letter-spacing:.5px}
 .rb{color:var(--dim);font-size:14.5px;line-height:1.5}
@@ -286,8 +294,8 @@ dialog#dlg::backdrop{background:rgba(0,0,0,.65)}
 #dlg-body h3{font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:18px;margin:26px 0 10px}
 .fine2{font-size:12.5px;color:var(--faint);margin:8px 0 0}
 .ing{list-style:none;padding:0;margin:0}
-.ing li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:15.5px;color:#E6E4DD}
-.ing .lab{display:inline-block;min-width:68px;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-right:10px}
+.ing li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--rule);font-size:15.5px;color:#E6E4DD}
+.ing .lab{flex-shrink:0;min-width:68px;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-right:10px}
 .ing .have .lab{color:#7FBF7F}.ing .miss .lab{color:var(--rust-text)}.ing .opt .lab,.ing .stp .lab{color:var(--faint)}
 .ing .alt{color:var(--faint);font-size:13.5px}
 .stepsl{padding-left:22px;margin:0;color:#E6E4DD}

@@ -40,7 +40,9 @@
     var status = mode === 'ready' ? '<span class="st ok">You have everything</span>'
       : mode === 'close' ? '<span class="st near">Need: ' + s.miss.map(function (it) { return esc(byId[it.need].name.toLowerCase()); }).join(', ') + '</span>'
       : '';
-    return '<button type="button" class="rc" data-r="' + r.id + '">' +
+    var pic = r.photos ? '<span class="rpic"><img src="' + r.photos[0] + '" alt="' + esc(r.name) + '" loading="lazy"></span>' : '';
+    var by = r.by ? '<span class="rby">Bryan\'s recipe</span>' : '';
+    return '<button type="button" class="rc' + (r.photos ? ' has-pic' : '') + '" data-r="' + r.id + '">' + pic + by +
       '<span class="rtag">' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</span>' +
       '<b>' + esc(r.name) + '</b>' +
       '<span class="rb">' + esc(r.blurb) + '</span>' +
@@ -48,11 +50,11 @@
       status + '</button>';
   }
 
-  var CATS = ['All', 'Breakfast', 'Lunch', 'Dinner'];
-  function inCat(r) { return cat === 'All' || r.cat === cat; }
+  var CATS = ['All', "Bryan's", 'Breakfast', 'Lunch', 'Dinner'];
+  function inCat(r) { return cat === 'All' || (cat === "Bryan's" ? !!r.by : r.cat === cat); }
   function filters() {
     return '<div class="skf" role="group" aria-label="Meal">' + CATS.map(function (c) {
-      var n = c === 'All' ? SK.RECIPES.length : SK.RECIPES.filter(function (r) { return r.cat === c; }).length;
+      var n = SK.RECIPES.filter(function (r) { var o = cat; cat = c; var k = inCat(r); cat = o; return k; }).length;
       return '<button type="button" class="fchip' + (c === cat ? ' on' : '') + '" data-cat="' + c + '" aria-pressed="' + (c === cat) + '">' + c + ' <span>' + n + '</span></button>';
     }).join('') + '</div>';
   }
@@ -94,10 +96,11 @@
       var cls = it.staple ? 'stp' : has(it) ? 'have' : it.optional ? 'opt' : 'miss';
       var lab = it.staple ? 'pantry' : has(it) ? 'have it' : it.optional ? 'optional' : 'need it';
       var alt = (it.or || []).length ? ' <span class="alt">or ' + it.or.map(function (o) { return esc(byId[o].name.toLowerCase()); }).join(', ') + '</span>' : '';
-      return '<li class="' + cls + '"><span class="lab">' + lab + '</span>' + esc(it.txt) + alt + '</li>';
+      return '<li class="' + cls + '"><span class="lab">' + lab + '</span><span>' + esc(it.txt) + alt + '</span></li>';
     }).join('');
-    $('dlg-body').innerHTML =
-      '<p class="eyebrow">' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</p>' +
+    var gal = r.photos ? '<div class="dpics">' + r.photos.map(function (u, i) { return '<img src="' + u + '" alt="' + esc(r.name) + (i ? ', close-up' : '') + '">'; }).join('') + '</div>' : '';
+    $('dlg-body').innerHTML = gal +
+      '<p class="eyebrow">' + (r.by ? 'Bryan\'s recipe · ' : '') + '' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</p>' +
       '<h2 class="disp">' + esc(r.name) + '</h2><p class="rb">' + esc(r.blurb) + '</p>' +
       '<div class="mac big"><span><em>' + m.kcal + '</em>cal</span><span><em>' + m.p + 'g</em>protein</span><span><em>' + m.c + 'g</em>carbs</span><span><em>' + m.f + 'g</em>fat</span></div>' +
       '<p class="fine2">Per serving, including optional items. Estimates from USDA data for raw and dry weights.</p>' +
