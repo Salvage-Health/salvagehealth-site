@@ -276,6 +276,7 @@ KCSS = """<meta name="robots" content="noindex">
 .rc:not(.has-pic) .rby{position:static;align-self:flex-start}
 .dpics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 18px}
 .dpics img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;display:block}
+.dpics img:only-child{grid-column:1/-1;aspect-ratio:4/3}
 .rtag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust-text)}
 .rc b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.1;letter-spacing:.5px}
 .rb{color:var(--dim);font-size:14.5px;line-height:1.5}
@@ -327,7 +328,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Tell it what's in your fridge. Ge
       <div><h2 class="disp">Save your <em>recipes</em></h2><p>Get a new fridge-friendly recipe every week, plus your saved favorites in your inbox.</p></div>
       <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Coming soon';"><input type="email" placeholder="Your email" aria-label="Email" disabled><button class="btn solid" type="submit" disabled>Coming soon</button></form>
     </section>
-    <p class="fine">Macros are estimates per serving based on USDA data and include optional ingredients. Cook chicken to 165°F (74°C) or higher. We cook with avocado oil; swap in any oil if you have an allergy. Check labels if you have allergies.</p>
+    <p class="fine">Macros are estimates per serving based on USDA and package label data and include optional ingredients. Cook chicken to 165°F (74°C) or higher. We cook with avocado oil; swap in any oil if you have an allergy. Check labels if you have allergies.</p>
   </main>
   <dialog id="dlg" aria-label="Recipe"><div id="dlg-body"></div><button id="dlg-close" type="button" aria-label="Close" style="position:absolute;top:14px;right:14px;margin:0">&times;</button></dialog>
   <script src="/kitchen/recipes.js"></script>

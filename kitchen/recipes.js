@@ -69,6 +69,13 @@ window.SK = {
     'mushrooms':      { kcal: 22,  p: 3.1,  f: 0.3,  c: 3.3 },
     'protein-pasta':  { kcal: 339, p: 17.9, f: 2.7,  c: 67.9 },
     'cacio-sauce':    { kcal: 104, p: 5,    f: 6.5,  c: 3 },
+    'ground-beef-96': { kcal: 123, p: 21.2, f: 4,    c: 0 },
+    'american-cheese':{ kcal: 333, p: 19,   f: 26,   c: 4.8 },
+    'keto-bun':       { kcal: 140, p: 10.5, f: 3.5,  c: 29.8 },
+    'tallow-fries':   { kcal: 153, p: 2.4,  f: 7.1,  c: 21.2 },
+    'ketchup':        { kcal: 101, p: 1,    f: 0.1,  c: 27 },
+    'mustard':        { kcal: 60,  p: 3.7,  f: 3.3,  c: 5.8 },
+    'pickles':        { kcal: 12,  p: 0.3,  f: 0.4,  c: 2.4 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -89,7 +96,7 @@ window.SK = {
     { id: 'egg-whites', name: 'Egg whites', group: 'Eggs and dairy', alias: ['whites'] },
     { id: 'greek-yogurt', name: 'Greek yogurt', group: 'Eggs and dairy', alias: ['yogurt'] },
     { id: 'cottage-cheese', name: 'Cottage cheese', group: 'Eggs and dairy', alias: [] },
-    { id: 'cheese', name: 'Shredded cheese', group: 'Eggs and dairy', alias: ['cheddar', 'mozzarella', 'cheese'] },
+    { id: 'cheese', name: 'Cheese (shredded or sliced)', group: 'Eggs and dairy', alias: ['cheddar', 'mozzarella', 'cheese', 'american', 'slices'] },
     { id: 'feta', name: 'Feta', group: 'Eggs and dairy', alias: ['cheese'] },
     { id: 'parmesan', name: 'Parmesan', group: 'Eggs and dairy', alias: ['parm', 'cheese'] },
     { id: 'milk', name: 'Milk', group: 'Eggs and dairy', alias: ['almond milk', 'oat milk'] },
@@ -101,6 +108,8 @@ window.SK = {
     { id: 'oats', name: 'Oats', group: 'Carbs', alias: ['oatmeal', 'rolled oats'] },
     { id: 'tortillas', name: 'Corn tortillas', group: 'Carbs', alias: ['tortilla', 'tortillas'] },
     { id: 'flour-tortillas', name: 'Flour tortillas or wraps', group: 'Carbs', alias: ['tortilla', 'tortillas', 'wraps', 'wrap'] },
+    { id: 'buns', name: 'Burger buns', group: 'Carbs', alias: ['bun', 'buns', 'keto bun', 'bread'] },
+    { id: 'frozen-fries', name: 'Frozen fries', group: 'Carbs', alias: ['fries', 'french fries'] },
     { id: 'black-beans', name: 'Black beans', group: 'Carbs', alias: ['beans'] },
     { id: 'kidney-beans', name: 'Kidney beans', group: 'Carbs', alias: ['beans', 'pinto'] },
     { id: 'bell-pepper', name: 'Bell pepper', group: 'Vegetables', alias: ['pepper', 'peppers'] },
@@ -128,6 +137,7 @@ window.SK = {
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
     { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
+    { id: 'pickles', name: 'Pickles', group: 'Sauces and pantry', alias: ['pickle', 'dill pickles'] },
     { id: 'olives', name: 'Black olives', group: 'Sauces and pantry', alias: ['olive', 'olives'] },
     { id: 'canned-tomatoes', name: 'Canned tomatoes', group: 'Sauces and pantry', alias: ['diced tomatoes', 'crushed tomatoes'] },
     { id: 'soy-sauce', name: 'Soy sauce', group: 'Sauces and pantry', alias: ['soy', 'tamari', 'coconut aminos'] },
@@ -140,6 +150,32 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'double-cheeseburger', name: 'Macro-Friendly Double Cheeseburger and Fries', by: 'bryan', cat: 'Dinner', tag: 'Burger night', serves: 1, mins: 20,
+      photos: ['/kitchen/img/double-cheeseburger.jpg'],
+      blurb: 'Two crispy smashed patties, double American cheese, all the fixings on a keto bun, with a side of beef tallow fries. A real burger night for about 650 calories and 44 grams of protein.',
+      items: [
+        { need: 'ground-beef', txt: '4 oz (114 g) 96/4 lean ground beef', food: 'ground-beef-96', g: 114 },
+        { need: 'cheese', txt: '2 slices American cheese', food: 'american-cheese', g: 42 },
+        { need: 'buns', txt: '1 Healthy Life Keto burger bun (or any low-calorie bun)', food: 'keto-bun', g: 57 },
+        { need: 'frozen-fries', or: ['potatoes'], txt: "6 oz (170 g) Jesse & Ben's Beef Tallow Sea Salt Fries, 2 servings (or hand-cut potatoes)", food: 'tallow-fries', g: 170 },
+        { need: 'tomatoes', optional: true, txt: '1 thin slice tomato, about 1 oz (25 g)', food: 'tomato', g: 25 },
+        { need: 'onion', optional: true, txt: '1 thin slice onion, about 1/2 oz (15 g)', food: 'onion', g: 15 },
+        { need: 'lettuce', optional: true, txt: '1 romaine leaf, about 1/3 oz (10 g)', food: 'lettuce', g: 10 },
+        { need: 'pickles', optional: true, txt: '3 dill pickle chips, about 1/3 oz (10 g)', food: 'pickles', g: 10 },
+        { staple: true, txt: '1 tbsp (15 g) ketchup', food: 'ketchup', g: 15 },
+        { staple: true, txt: '1 tbsp (about 3 tsp / 15 g) yellow mustard', food: 'mustard', g: 15 },
+        { staple: true, txt: 'Avocado oil spray; salt and pepper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Start the fries first. Air fry at 400°F (205°C) for 12 to 15 minutes, shaking the basket halfway, until deep golden. (Or follow the bag for the oven.)',
+        'Split the beef into two 2 oz (57 g) balls. Heat a cast iron skillet or griddle over high heat until it is ripping hot, and give it a light spray of avocado oil.',
+        'Drop the balls in and smash them flat and thin with a sturdy spatula. Season with salt and pepper. Leave them alone for 2 minutes until the edges are dark and crispy.',
+        'Flip, lay a slice of cheese on each patty, and cook 1 more minute. Cover the pan for 30 seconds so the cheese melts all the way.',
+        'Toast the cut sides of the bun in the same pan for about 30 seconds.',
+        'Build it: bottom bun, ketchup and mustard, lettuce and pickles, both patties stacked, onion and tomato, top bun. Plate it with the fries.'
+      ]
+    },
     {
       id: 'cajun-cacio-pasta', name: 'Grilled Cajun Chicken Cacio e Pepe Protein Pasta', by: 'bryan', cat: 'Dinner', tag: 'High protein', serves: 2, mins: 30,
       photos: ['/kitchen/img/cajun-cacio-pasta.jpg', '/kitchen/img/cajun-cacio-pasta-close.jpg'],

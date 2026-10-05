@@ -103,7 +103,7 @@
       '<p class="eyebrow">' + (r.by ? 'Bryan\'s recipe · ' : '') + '' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</p>' +
       '<h2 class="disp">' + esc(r.name) + '</h2><p class="rb">' + esc(r.blurb) + '</p>' +
       '<div class="mac big"><span><em>' + m.kcal + '</em>cal</span><span><em>' + m.p + 'g</em>protein</span><span><em>' + m.c + 'g</em>carbs</span><span><em>' + m.f + 'g</em>fat</span></div>' +
-      '<p class="fine2">Per serving, including optional items. Estimates from USDA data for raw and dry weights.</p>' +
+      '<p class="fine2">Per serving, including optional items. Estimates from USDA and package label data, using raw and dry weights.</p>' +
       '<h3>Ingredients</h3><ul class="ing">' + li + '</ul>' +
       '<h3>Steps</h3><ol class="stepsl">' + r.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>';
     var d = $('dlg'); if (d.showModal) d.showModal(); else d.setAttribute('open', '');
