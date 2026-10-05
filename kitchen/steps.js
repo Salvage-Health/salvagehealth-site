@@ -1355,7 +1355,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Bake the egg sheet",
-    "d": "Whisk the 8 eggs and 1 cup (240 ml) egg whites with a pinch of salt and pepper until no streaks remain. Pour into the prepared dish and bake 15 to 18 minutes, until the center is set and no longer jiggles when you shake the pan. Let it cool 5 minutes, then cut into 8 squares, or use a round cutter or wide glass for the classic McMuffin shape."
+    "d": "Shake the carton, then whisk the 3 cups (720 ml) of Egg Beaters egg whites with a pinch of salt and pepper. Pour into the prepared dish and bake 15 to 18 minutes, until the center is set, white all the way through and no longer jiggles when you shake the pan. Don't overbake, or egg whites turn rubbery. Let it cool 5 minutes, then cut into 8 squares, or use a round cutter or wide glass for the classic McMuffin shape."
    },
    {
     "t": "Cook the patties",
