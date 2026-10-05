@@ -303,7 +303,8 @@ ABOUT_BODY = """
 # SHOP: Fourthwall store. LIVE: slug -> (price, product URL) for items that are on sale now.
 SHOP = "https://salvagehealth-shop.fourthwall.com"
 # photos in /merch/img/: first is the main shot, second shows on hover
-LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side"))}
+LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side")),
+        "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ())}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
@@ -316,8 +317,8 @@ FEATURE = ("tee-built", [
 MERCH2 = [
 ("tee-built", "Built From What's Left Tee", "Organic cotton tee",
  "The flagship. Small shield on the chest, the whole mission across the back in a worn-in print. Black, S to 5XL.", "tee-built-back"),
-("tee-never", "Never Too Late Tee", "Heavyweight tee",
- "Four excuses crossed out, one truth in rust. Bone or Black.", "tee-never-front"),
+("tee-never", "Never Too Late Tee", "Organic cotton tee",
+ "Four excuses crossed out, one truth in rust. Small shield and \"Built From What's Left.\" under the collar. Tan or White.", "tee-never-front"),
 ("tee-athletic", "Salvage Athletic Tee", "Garment-dyed tee",
  "Old-school athletic department look: arched wordmark over the shield, cracked vintage ink, washed fabric.", "tee-athletic-front"),
 ("hoodie", "Second Chances Hoodie", "Heavyweight hoodie",

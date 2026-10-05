@@ -1,6 +1,6 @@
 <svg viewBox="0 0 400 440" fill="none">
         <defs>
-          <linearGradient id="t2f" x1="0" x2="1"><stop offset="0" stop-color="#C9C3B5"/><stop offset=".45" stop-color="#ECE8DD"/><stop offset=".55" stop-color="#E8E3D7"/><stop offset="1" stop-color="#C9C3B5"/></linearGradient>
+          <linearGradient id="t2f" x1="0" x2="1"><stop offset="0" stop-color="#B3A58C"/><stop offset=".45" stop-color="#D3C7B0"/><stop offset=".55" stop-color="#CEC2AA"/><stop offset="1" stop-color="#B3A58C"/></linearGradient>
           <filter id="t2blur"><feGaussianBlur stdDeviation="7"/></filter>
           <symbol id="t2sh" viewBox="0 0 100 100"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#BE5126" stroke-width="8" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="#141413" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
         </defs>
