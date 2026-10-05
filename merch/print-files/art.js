@@ -84,6 +84,9 @@
       svg: svg('0 0 300 28',
         '<text x="150" y="21" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="22" fill="' + B + '" textLength="284" lengthAdjust="spacing">SAY WHAT YOU\'LL DO.</text>') },
 
+    { id: 'beanie-shield', name: 'Beanie: embroidered shield', place: 'Front cuff, 2 in (5 cm) tall, embroidered', inches: 1.8, bg: 'dark',
+      svg: svg('6 -2 88 106', '<path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="' + R + '" stroke-width="8" stroke-linejoin="round"/>' +
+        '<path d="M31 54 H39 L45 41 L52 65 L58 47 L63 54 H69" fill="none" stroke="' + B + '" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>') },
     { id: 'beanie-patch', name: 'Beanie: woven shield patch', place: 'Front cuff patch, 2.25 x 1.5 in (6 x 4 cm)', inches: 2.25, bg: 'any',
       svg: svg('0 0 225 150',
         '<rect x="0" y="0" width="225" height="150" rx="12" fill="' + S + '"/>' +
