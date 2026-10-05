@@ -76,6 +76,10 @@ window.SK = {
     'ketchup':        { kcal: 101, p: 1,    f: 0.1,  c: 27 },
     'mustard':        { kcal: 60,  p: 3.7,  f: 3.3,  c: 5.8 },
     'pickles':        { kcal: 12,  p: 0.3,  f: 0.4,  c: 2.4 },
+    'chicken-breast-cooked': { kcal: 165, p: 31, f: 3.6, c: 0 },
+    'monterey-jack':  { kcal: 373, p: 24.5, f: 30.3, c: 0.7 },
+    'enchilada-sauce':{ kcal: 40,  p: 1.2,  f: 1.2,  c: 6 },
+    'cabbage':        { kcal: 25,  p: 1.3,  f: 0.1,  c: 5.8 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -96,7 +100,7 @@ window.SK = {
     { id: 'egg-whites', name: 'Egg whites', group: 'Eggs and dairy', alias: ['whites'] },
     { id: 'greek-yogurt', name: 'Greek yogurt', group: 'Eggs and dairy', alias: ['yogurt'] },
     { id: 'cottage-cheese', name: 'Cottage cheese', group: 'Eggs and dairy', alias: [] },
-    { id: 'cheese', name: 'Cheese (shredded or sliced)', group: 'Eggs and dairy', alias: ['cheddar', 'mozzarella', 'cheese', 'american', 'slices'] },
+    { id: 'cheese', name: 'Cheese (shredded or sliced)', group: 'Eggs and dairy', alias: ['cheddar', 'mozzarella', 'cheese', 'american', 'slices', 'monterey jack', 'jack', 'pepper jack'] },
     { id: 'feta', name: 'Feta', group: 'Eggs and dairy', alias: ['cheese'] },
     { id: 'parmesan', name: 'Parmesan', group: 'Eggs and dairy', alias: ['parm', 'cheese'] },
     { id: 'milk', name: 'Milk', group: 'Eggs and dairy', alias: ['almond milk', 'oat milk'] },
@@ -125,6 +129,7 @@ window.SK = {
     { id: 'cucumber', name: 'Cucumber', group: 'Vegetables', alias: ['cucumbers'] },
     { id: 'celery', name: 'Celery', group: 'Vegetables', alias: [] },
     { id: 'corn', name: 'Corn', group: 'Vegetables', alias: [] },
+    { id: 'cabbage', name: 'Cabbage', group: 'Vegetables', alias: ['green cabbage', 'savoy'] },
     { id: 'mushrooms', name: 'Mushrooms', group: 'Vegetables', alias: ['mushroom', 'baby bella', 'cremini'] },
     { id: 'jalapenos', name: 'Jalapeños', group: 'Vegetables', alias: ['jalapeno', 'jalapenos', 'peppers'] },
     { id: 'mixed-veg', name: 'Frozen peas and carrots', group: 'Vegetables', alias: ['peas', 'carrots', 'frozen veg', 'mixed vegetables'] },
@@ -137,6 +142,7 @@ window.SK = {
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
     { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
+    { id: 'enchilada-sauce', name: 'Enchilada sauce', group: 'Sauces and pantry', alias: ['enchilada', 'red sauce'] },
     { id: 'pickles', name: 'Pickles', group: 'Sauces and pantry', alias: ['pickle', 'dill pickles'] },
     { id: 'olives', name: 'Black olives', group: 'Sauces and pantry', alias: ['olive', 'olives'] },
     { id: 'canned-tomatoes', name: 'Canned tomatoes', group: 'Sauces and pantry', alias: ['diced tomatoes', 'crushed tomatoes'] },
@@ -150,6 +156,27 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'cabbage-enchiladas', name: 'Cabbage-Wrapped Shredded Chicken Enchiladas', by: 'bryan', cat: 'Dinner', tag: 'Low carb', serves: 8, mins: 60,
+      photos: ['/kitchen/img/cabbage-enchiladas.jpg'],
+      process: '/kitchen/img/cabbage-enchiladas-steps.jpg',
+      blurb: 'All the enchilada flavor with cabbage leaves standing in for tortillas. Saucy shredded chicken, melted Monterey Jack, a charred cheesy top, and over 60 grams of protein for under 500 calories.',
+      items: [
+        { need: 'chicken-breast', or: ['chicken-thighs'], txt: '2 3/4 lb (1.25 kg) cooked, shredded chicken breast, from about 3 1/2 lb (1.6 kg) raw', food: 'chicken-breast-cooked', g: 1280 },
+        { need: 'cabbage', txt: '1 large head green cabbage, for 16 large leaves', food: 'cabbage', g: 640 },
+        { need: 'enchilada-sauce', or: ['salsa'], txt: '2 cans (10 oz / 283 g each) Old El Paso Original Enchilada Sauce', food: 'enchilada-sauce', g: 566 },
+        { need: 'cheese', txt: '12 oz (340 g) Monterey Jack, shredded, about 3 cups', food: 'monterey-jack', g: 340 },
+        { staple: true, txt: '1 tsp each cumin, chili powder, garlic powder and onion powder; salt and pepper; avocado oil spray', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Heat the oven to 375°F (190°C). Cut the core out of the cabbage and drop the whole head into a big pot of boiling water for 3 to 5 minutes. Peel off the leaves as they soften, and keep going until you have 16. Pat them dry and shave down the thick center rib so they roll easily.',
+        'Mix the shredded chicken with the spices, 1 cup (240 ml) of the enchilada sauce and 1 cup (about 4 oz / 113 g) of the cheese.',
+        'Spray a 9 x 13-inch (23 x 33 cm) baking dish with avocado oil and spread a thin layer of sauce on the bottom.',
+        'Spoon a line of filling onto each leaf, fold in the sides and roll it up tight. Lay them seam side down in two rows, 8 per row.',
+        'Pour the rest of the sauce over the rolls, cover with foil and bake 25 minutes.',
+        'Uncover, scatter the remaining cheese over the top and bake another 15 to 20 minutes, until the cheese is bubbling and charred in spots. Rest 5 minutes. 2 rolls per serving.'
+      ]
+    },
     {
       id: 'double-cheeseburger', name: 'Macro-Friendly Double Cheeseburger and Fries', by: 'bryan', cat: 'Dinner', tag: 'Burger night', serves: 1, mins: 20,
       photos: ['/kitchen/img/double-cheeseburger.jpg'],
