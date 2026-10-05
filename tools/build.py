@@ -69,6 +69,7 @@ FOOT = f"""  <footer class="site">
         <a href="{SPOTIFY}" target="_blank" rel="noopener">Audiobook</a>
         <a href="{KINDLE}" target="_blank" rel="noopener">Kindle</a>
         <a href="{IG}" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@salvagehealth.com">hello@salvagehealth.com</a>
       </nav>
     </div>
     <p class="fine">Salvage Health shares education, not medical advice. Talk to your doctor before you change how you eat, train or supplement, especially if you have a medical condition. &copy; 2026 Salvage Health.</p>
@@ -154,7 +155,7 @@ faq = head("FAQ | Salvage Health", "Answers about Salvage Health, the book Fitne
     <div class="phead">
       <p class="eyebrow">FAQ</p>
       <h1 class="disp">Questions, <em>answered.</em></h1>
-      <p>Don't see yours? Send Bryan a message on <a href="{IG}" target="_blank" rel="noopener">Instagram</a>.</p>
+      <p>Don't see yours? Email <a href="mailto:hello@salvagehealth.com">hello@salvagehealth.com</a> or message Bryan on <a href="{IG}" target="_blank" rel="noopener">Instagram</a>.</p>
     </div>
     <div class="faq">
 {body}    </div>

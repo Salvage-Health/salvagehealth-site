@@ -243,6 +243,7 @@ ABOUT_BODY = """
 <p>I'm not done, and I don't have it all figured out. But I know I'm on the right track, and I want to share the stories, the successes and the failures with anybody who's willing to listen.</p>
 <p>What I've learned comes down to three things: be consistent, be accountable, and be honest with yourself first. Everything else gets built on top of that.</p>
 <p>Salvage Health is here because second chances exist. Whatever you've been through, whatever you're carrying, it's not too late to take your life back. Salvage Health is here to help.</p>
+<p>Want to reach me? Email <a href="mailto:hello@salvagehealth.com">hello@salvagehealth.com</a> or find me on <a href="https://www.instagram.com/el_dourado/" target="_blank" rel="noopener">Instagram</a>.</p>
 """
 
 # Merch: (slug, name, category, description, artwork file in tools/merch/)
