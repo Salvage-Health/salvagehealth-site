@@ -104,6 +104,7 @@
     renderFilters();
     $('kbrowse').hidden = mode !== 'browse';
     $('kfridge').hidden = mode !== 'fridge';
+    $('kfridge2').hidden = mode !== 'fridge';
     document.querySelectorAll('.ktab').forEach(function (t) { var on = t.dataset.mode === mode; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); });
     $('kfc').textContent = sel.size ? sel.size : '';
     if (mode === 'browse') renderBrowse(); else { renderPicked(); renderFridge(); }
@@ -113,7 +114,8 @@
   var COMMON = ['chicken-breast', 'chicken-thighs', 'ground-turkey', 'ground-beef', 'steak', 'shrimp', 'salmon', 'eggs', 'greek-yogurt', 'cheese', 'rice', 'potatoes', 'sweet-potatoes', 'pasta', 'tortillas', 'broccoli', 'bell-pepper', 'onion', 'spinach', 'lime', 'salsa', 'soy-sauce'];
   function chip(i) { return '<button type="button" class="chip' + (sel.has(i.id) ? ' on' : '') + '" data-id="' + i.id + '" aria-pressed="' + sel.has(i.id) + '">' + esc(i.name) + '</button>'; }
   function renderPicked() {
-    $('kpicked').innerHTML = sel.size ? Array.from(sel).map(function (id) { return '<button type="button" class="pk" data-id="' + id + '" aria-label="Remove ' + esc(byId[id].name) + '">' + esc(byId[id].name) + ' <span aria-hidden="true">&times;</span></button>'; }).join('') + '<button type="button" class="pkclear" id="kclear">Clear all</button>' : '';
+    $('kpicked').innerHTML = sel.size ? Array.from(sel).map(function (id) { return '<button type="button" class="pk" data-id="' + id + '" aria-label="Remove ' + esc(byId[id].name) + '">' + esc(byId[id].name) + ' <span aria-hidden="true">&times;</span></button>'; }).join('') + '' : '';
+    $('kpicked').insertAdjacentHTML('afterbegin', sel.size ? '<button type="button" class="pkclear" id="kclear">Clear ' + sel.size + '</button>' : '');
     $('kcommon').innerHTML = COMMON.filter(function (id) { return byId[id]; }).map(function (id) { return chip(byId[id]); }).join('');
     var groups = {};
     SK.INGREDIENTS.forEach(function (i) { (groups[i.group] = groups[i.group] || []).push(i); });
@@ -128,10 +130,12 @@
   // events
   document.querySelector('.ktabs').addEventListener('click', function (e) { var t = e.target.closest('.ktab'); if (t) { mode = t.dataset.mode; limit = PAGE; render(); } });
   $('kfil').addEventListener('click', function (e) { var f = e.target.closest('.kf'); if (f) { cat = f.dataset.cat; limit = PAGE; render(); } });
-  $('kfridge').addEventListener('click', function (e) {
+  function fridgeClick(e) {
     var c = e.target.closest('.chip, .pk'); if (c) { toggle(c.dataset.id); return; }
     if (e.target.closest('#kclear')) { sel.clear(); persist(); render(); }
-  });
+  }
+  $('kfridge').addEventListener('click', fridgeClick);
+  $('kfridge2').addEventListener('click', fridgeClick);
   $('results').addEventListener('click', function (e) {
     if (e.target.closest('.kmore')) { limit += PAGE * 2; render(); return; }
     var b = e.target.closest('.kc'); if (b) openRecipe(b.dataset.r);

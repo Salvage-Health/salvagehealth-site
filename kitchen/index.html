@@ -41,17 +41,19 @@
 #sug:empty{display:none}
 #sug button{min-height:38px;padding:6px 13px;border-radius:99px;border:1px solid var(--rust);background:rgba(190,81,38,.14);color:var(--fg);font:600 14px Inter,sans-serif;cursor:pointer}
 #sug .none{font-size:14px;color:var(--faint)}
-.kpicked{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.kpicked{display:flex;gap:6px;margin:8px -20px 0;padding:0 20px 2px;overflow-x:auto;scrollbar-width:none}
+.kpicked::-webkit-scrollbar{display:none}
+.kpicked::after{content:'';flex:0 0 12px}
 .kpicked:empty{display:none}
-.pk{min-height:34px;padding:4px 10px 4px 12px;border-radius:99px;border:0;background:var(--rust);color:#FAF9F5;font:600 13.5px Inter,sans-serif;cursor:pointer}
+.pk{flex:0 0 auto;white-space:nowrap;min-height:32px;padding:3px 10px 3px 12px;border-radius:99px;border:0;background:var(--rust);color:#FAF9F5;font:600 13.5px Inter,sans-serif;cursor:pointer}
 .pk span{opacity:.8;margin-left:2px}
-.pkclear{min-height:34px;padding:4px 8px;border:0;background:none;color:var(--rust-text);font:700 13.5px Inter,sans-serif;cursor:pointer}
+.pkclear{flex:0 0 auto;white-space:nowrap;min-height:32px;padding:3px 12px;border:1px solid var(--rust);border-radius:99px;background:none;color:var(--rust-text);font:700 13.5px Inter,sans-serif;cursor:pointer}
 .kdrawer{margin-top:10px}
 .kdrawer > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;font-size:14px;font-weight:700;color:var(--rust-text)}
 .kdrawer > summary::-webkit-details-marker{display:none}
 .kdrawer > summary::after{content:"+";font-size:18px;font-weight:400}
 .kdrawer[open] > summary::after{content:"\2212"}
-.kdrawer[open]{max-height:55vh;overflow:auto;padding-bottom:6px}
+.kdrawer[open]{padding-bottom:10px;border-bottom:1px solid var(--rule)}
 .klbl{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin:12px 0 8px}
 .skchips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{min-height:36px;padding:6px 12px;border-radius:99px;border:1px solid var(--rule);background:transparent;color:var(--dim);font:600 13.5px Inter,sans-serif;cursor:pointer}
@@ -192,13 +194,15 @@ dialog#dlg::backdrop{background:rgba(0,0,0,.7)}
         <label class="sr" for="q">Add an ingredient</label><input id="q" class="kin" type="text" placeholder="Add what you have, like chicken or rice" autocomplete="off">
         <div id="sug" aria-live="polite"></div>
         <div class="kpicked" id="kpicked"></div>
+      </div>
+      <div class="kfil" id="kfil" role="group" aria-label="Filter recipes"></div>
+    </div>
+    <div id="kfridge2" hidden>
         <details class="kdrawer"><summary>Pick from a list</summary>
           <span class="klbl">Quick add</span><div class="skchips" id="kcommon"></div>
           <span class="klbl">All ingredients</span><div id="kall"></div>
           <p class="kstaple">Always assumed: <span id="staples"></span>.</p>
         </details>
-      </div>
-      <div class="kfil" id="kfil" role="group" aria-label="Filter recipes"></div>
     </div>
     <div id="results" aria-live="polite"></div>
     <section class="skmail" aria-label="Get recipes by email">
