@@ -255,6 +255,7 @@ home = head("Salvage Health | It's never too late to take your life back",
   document.querySelectorAll('.optin').forEach(function(f,i){{f.id=f.id||'opt'+i;io.observe(f)}});
   window.addEventListener('scroll',function(){{var any=Object.keys(vis).some(function(k){{return vis[k]}});var on=window.scrollY>window.innerHeight*.9&&!any;b.classList.toggle('on',on)}},{{passive:true}});}})();
   </script>
+  <script src="/assets/optin.js"></script>
 """ + FOOT
 write("/", home)
 
@@ -285,6 +286,7 @@ start = head("Free Day One Starter Kit | Salvage Health",
       </div>
     </section>
   </main>
+  <script src="/assets/optin.js"></script>
 """ + FOOT
 write("/start/", start)
 
@@ -379,3 +381,17 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
   </main>
 """ + FOOT
 write("/start/kit/", kit)
+
+# ---------- 404 ----------
+nf = head("Page not found | Salvage Health", "That page doesn't exist.", "/404.html", '<meta name="robots" content="noindex">\n' + HOMECSS) + topbar("404") + f"""  <main class="hm" style="text-align:center;padding:72px 0 20px">
+    <p class="eyebrow">404</p>
+    <h1 class="disp" style="font-size:clamp(36px,7vw,60px)">This page is <em>gone.</em></h1>
+    <p class="lead" style="margin:16px auto 0">But you're not. Here's where to go next.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px">
+      <a class="btn solid" style="width:auto" href="/start/">Get the free Starter Kit</a>
+      <a class="btn line" style="width:auto" href="/kitchen/">Browse {NREC} recipes</a>
+      <a class="btn line" style="width:auto" href="/">Home</a>
+    </div>
+  </main>
+""" + FOOT
+open(os.path.join(ROOT, "404.html"), "w").write(nf)
