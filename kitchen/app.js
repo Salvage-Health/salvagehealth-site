@@ -108,7 +108,12 @@
       '<div class="mac big"><span><em>' + m.kcal + '</em>cal</span><span><em>' + m.p + 'g</em>protein</span><span><em>' + m.c + 'g</em>carbs</span><span><em>' + m.f + 'g</em>fat</span></div>' +
       '<p class="fine2">Per serving, including optional items. Estimates from USDA and package label data, using raw and dry weights.</p>' +
       '<h3>Ingredients</h3><ul class="ing">' + li + '</ul>' +
-      '<h3>Steps</h3><ol class="stepsl">' + r.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>' +
+      (function () {
+        var det = (window.SK_STEPS || {})[r.id];
+        if (!det) return '<h3>Steps</h3><ol class="stepsl">' + r.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>';
+        return '<h3>Steps</h3><p class="fine2">Tap a step to check it off as you cook.</p><ol class="stepsl det">' + det.steps.map(function (s) { return '<li tabindex="0" role="checkbox" aria-checked="false"><b>' + esc(s.t) + '</b><span>' + esc(s.d) + '</span></li>'; }).join('') + '</ol>' +
+          (det.tip ? '<div class="ptip"><b>Chef\'s tip</b><span>' + esc(det.tip) + '</span></div>' : '');
+      })() +
       (r.process ? '<img class="dproc" src="' + r.process + '" alt="Step by step: ' + esc(r.name) + '" loading="lazy">' : '');
     var d = $('dlg'); if (d.showModal) d.showModal(); else d.setAttribute('open', '');
     var dp = $('dpics');
@@ -130,6 +135,13 @@
     var b = e.target.closest('.rc'); if (b) openRecipe(b.dataset.r);
   });
   $('clear').addEventListener('click', function () { sel.clear(); persist(); renderPicker(); renderResults(); });
+  $('dlg-body').addEventListener('click', function (e) {
+    var li = e.target.closest('.stepsl.det li'); if (!li) return;
+    var on = li.classList.toggle('done'); li.setAttribute('aria-checked', on);
+  });
+  $('dlg-body').addEventListener('keydown', function (e) {
+    var li = e.target.closest('.stepsl.det li'); if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); li.click(); }
+  });
   $('dlg-close').addEventListener('click', function () { $('dlg').close ? $('dlg').close() : $('dlg').removeAttribute('open'); });
   $('dlg').addEventListener('click', function (e) { if (e.target === $('dlg')) $('dlg').close(); });
 

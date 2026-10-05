@@ -306,6 +306,17 @@ dialog#dlg::backdrop{background:rgba(0,0,0,.65)}
 .ing .alt{color:var(--faint);font-size:13.5px}
 .stepsl{padding-left:22px;margin:0;color:#E6E4DD}
 .stepsl li{margin:0 0 12px}
+.stepsl.det{padding-left:0;list-style:none;counter-reset:st;display:grid;gap:10px}
+.stepsl.det li{counter-increment:st;position:relative;margin:0;padding:14px 14px 14px 52px;background:var(--bg);border:1px solid var(--rule);border-radius:10px;cursor:pointer;line-height:1.55}
+.stepsl.det li::before{content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:99px;background:var(--rust);color:#FAF9F5;font:700 13px/26px Inter,sans-serif;text-align:center}
+.stepsl.det li b{display:block;font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:16px;margin-bottom:3px;color:var(--fg)}
+.stepsl.det li span{color:#E6E4DD;font-size:15px}
+.stepsl.det li.done{opacity:.45}
+.stepsl.det li.done::before{content:"✓";background:#5d8f5d}
+.stepsl.det li.done span{text-decoration:line-through}
+.ptip{margin:18px 0 0;padding:14px 16px;border-left:3px solid var(--rust);background:rgba(190,81,38,.1);border-radius:0 10px 10px 0;display:grid;gap:4px}
+.ptip b{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+.ptip span{color:#E6E4DD;font-size:15px}
 #dlg-close{position:sticky;top:0;float:right;margin:-10px -8px 0 0;width:44px;height:44px;border-radius:999px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font-size:22px;cursor:pointer}
 .skmail{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:linear-gradient(120deg,rgba(190,81,38,.16),rgba(190,81,38,0) 60%),var(--raised);border:1px solid var(--rule);border-radius:16px;padding:26px}
 .skmail div{flex:1;min-width:240px}
@@ -337,6 +348,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Tell it what's in your fridge. Ge
   </main>
   <dialog id="dlg" aria-label="Recipe"><div id="dlg-body"></div><button id="dlg-close" type="button" aria-label="Close" style="position:absolute;top:14px;right:14px;margin:0">&times;</button></dialog>
   <script src="/kitchen/recipes.js"></script>
+  <script src="/kitchen/steps.js"></script>
   <script src="/kitchen/app.js"></script>
 """ + FOOT
 write("/kitchen/", kp)
