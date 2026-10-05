@@ -4,6 +4,59 @@ DATE_TXT = "October 4, 2026"
 
 ARTICLES = [
 {
+'slug': 'power-of-a-coach',
+'cat': 'Coaching',
+'title': "The Power of a Coach",
+'h1': "The power of <em>a coach.</em>",
+'desc': "Why hiring a coach changed how I see fitness, what a good coach actually gives you, and the one thing you need before any coach can help: being coachable.",
+'dek': "I learned a lot on my own. A coach showed me what was actually possible.",
+'read': 5,
+'body': """
+<p>For a long time I did this on my own. I read everything I could find, watched the videos, tried things on myself and kept what worked. I made real progress that way, and I'm proud of it. But looking back, a lot of what I was doing was just what I <em>thought</em> was okay.</p>
+<p>Then I decided to look into coaching, and it changed the trajectory of how I look at fitness and what I believe is possible.</p>
+
+<h2>How I found my coach</h2>
+<p>I'd been following Matthew Redfearn of Redfearn Athletics on Instagram for a while. I watched his videos, and he had a lot of good things to say. I tried some of it myself, and it worked. So I reached out.</p>
+<p>We ended up having a really good conversation. We were aligned on what was possible, and he was very good at managing my expectations. No hype, no promises about a body in 30 days. Just an honest picture of what the work would look like. That's what made me decide to try his coaching program.</p>
+
+<h2>What a coach actually gives you</h2>
+<p>Strip away the marketing and good coaching comes down to three things.</p>
+<ul>
+<li><strong>Knowledge applied to you.</strong> General principles are everywhere. A coach takes them and adjusts them to your body, your schedule, your history and how you're actually responding. That's hard to do for yourself, especially early on.</li>
+<li><strong>Accountability.</strong> Knowing someone will notice if you disappear changes how you show up, even on the days your motivation is gone. Research backs this up: a 2016 study comparing one-on-one coaching, group training and self-coaching found one-on-one coaching did the best job of helping people reach their goals.</li>
+<li><strong>An honest outside view.</strong> This was the big one for me. A good coach looks at your progress with no bias and no agenda other than trusting the process. They're not your friend trying to spare your feelings, and they're not you, negotiating with your own excuses. Matthew has done this for years, with clients and with himself, and that experience shows.</li>
+</ul>
+<blockquote>Someone invested in your success, with enough distance to tell you the truth. That's rare. Get it if you can.</blockquote>
+
+<h2>The real obstacle: being coachable</h2>
+<p>Here's the part most people skip. The first obstacle isn't money or time or finding the right coach. It's whether you're actually coachable.</p>
+<p>A lot of people want the results, but they don't want to be told what to do. Being coachable means taking feedback, following the plan even when you'd rather freelance, and being honest about what you actually did, not what you wish you'd done. If you hire a coach and then fight everything they suggest, that's not accountability. It's an expensive way to stay exactly where you are.</p>
+<p>That's a personal choice, and it's okay if you're not there yet. But be honest with yourself about it.</p>
+
+<h2>Learn the basics first</h2>
+<p>One thing I wrote about in <a href="/book">Fitness Without the Fear</a>: going to a coach after you understand the fundamentals is a completely different relationship than going in knowing nothing.</p>
+<p>If you don't understand calories, protein or why a deficit works, your coach spends a lot of your time just building that foundation. You end up following instructions without understanding them, and it's hard to stick with a plan you don't understand when life gets in the way.</p>
+<p>If you walk in already knowing your TDEE, how a deficit works, why protein matters and why recovery counts, you can ask better questions and understand the reasons behind every adjustment. You become a partner in your own plan instead of someone waiting to be told what to do next.</p>
+
+<h2>What to look for</h2>
+<ul>
+<li><strong>A real track record.</strong> Experience you can verify, not just a big following.</li>
+<li><strong>Questions before a plan.</strong> A good coach asks about your history first. If you get the same template everyone else gets, that's a product, not coaching.</li>
+<li><strong>Someone you'll actually talk to.</strong> You need to want to check in with this person regularly and be honest with them.</li>
+<li><strong>Someone who welcomes your questions.</strong> A coach who knows you understand the basics should be glad. It makes their job easier and your results better.</li>
+</ul>
+
+<div class="callout">
+<p><b>If you're coachable and ready, I highly recommend Redfearn Athletics.</b> Matthew is the coach who changed how I train and what I believe is possible. Start a conversation with him at <a href="https://redfearnathletics.com" target="_blank" rel="noopener">redfearnathletics.com</a>.</p>
+</div>
+
+<p>Coach or no coach, the goal is the same: consistency. Show up, chip away at it and come back to the plan when you slip. A coach just makes that a lot easier to sustain.</p>
+""",
+'sources': [
+("Losch S, et al. Comparing the effectiveness of individual coaching, self-coaching, and group training: how leadership makes the difference. Frontiers in Psychology, 2016.", "https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00629/full"),
+],
+},
+{
 "slug": "75-hard",
 "cat": "Discipline",
 "title": "What 75 Hard Taught Me About Discipline",
