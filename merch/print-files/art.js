@@ -72,17 +72,17 @@
 
     { id: 'hoodie-front', name: 'Hoodie, front: chest wordmark', place: 'Center chest, 4 in (10 cm) wide', inches: 4, bg: 'dark',
       svg: svg('148 210 104 52',
-        '<text x="200" y="232" text-anchor="middle" ' + O + ' font-size="22" fill="' + B + '" letter-spacing="2">SALVAGE</text>' +
-        '<text x="200" y="256" text-anchor="middle" ' + O + ' font-size="22" fill="' + R + '" letter-spacing="2">HEALTH</text>') },
+        '<text x="201" y="232" text-anchor="middle" ' + O + ' font-size="22" fill="' + B + '" letter-spacing="2">SALVAGE</text>' +
+        '<text x="201" y="256" text-anchor="middle" ' + O + ' font-size="22" fill="' + R + '" letter-spacing="2">HEALTH</text>') },
     { id: 'hoodie-back', name: 'Hoodie, back: Second Chances Exist', place: 'Full back, 12 in (30 cm) wide', inches: 12, bg: 'dark',
-      svg: svg('100 124 200 252',
+      svg: svg('88 120 224 260',
         '<g transform="translate(130 128) scale(1.4)">' + SHIELD(R, B) + '</g>' +
-        '<text x="200" y="306" text-anchor="middle" ' + O + ' font-size="30" fill="' + B + '" letter-spacing="2">SECOND CHANCES</text>' +
+        '<text x="200" y="306" text-anchor="middle" ' + O + ' font-size="29" fill="' + B + '" textLength="200" lengthAdjust="spacingAndGlyphs">SECOND CHANCES</text>' +
         '<text x="200" y="340" text-anchor="middle" ' + O + ' font-size="30" fill="' + R + '" letter-spacing="2">EXIST.</text>' +
-        '<text x="200" y="368" text-anchor="middle" font-family="Inter" font-weight="700" font-size="9" fill="' + M + '" letter-spacing="5">SALVAGEHEALTH.COM</text>') },
+        '<text x="200" y="368" text-anchor="middle" font-family="Inter" font-weight="700" font-size="9" fill="' + M + '" textLength="150" lengthAdjust="spacing">SALVAGEHEALTH.COM</text>') },
     { id: 'hoodie-sleeve', name: "Hoodie, sleeve: Say What You'll Do", place: 'Left sleeve, 12 in (30 cm) long, reads top to bottom', inches: 12, bg: 'dark',
-      svg: svg('0 0 300 26',
-        '<text x="150" y="20" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="22" fill="' + B + '" letter-spacing="6">SAY WHAT YOU\'LL DO.</text>') },
+      svg: svg('0 0 300 28',
+        '<text x="150" y="21" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="22" fill="' + B + '" textLength="284" lengthAdjust="spacing">SAY WHAT YOU\'LL DO.</text>') },
 
     { id: 'beanie-patch', name: 'Beanie: woven shield patch', place: 'Front cuff patch, 2.25 x 1.5 in (6 x 4 cm)', inches: 2.25, bg: 'any',
       svg: svg('0 0 225 150',
