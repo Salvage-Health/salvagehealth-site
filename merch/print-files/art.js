@@ -47,10 +47,10 @@
         '<text x="200" y="292" font-size="46" fill="' + R + '" letter-spacing="1" textLength="214" lengthAdjust="spacingAndGlyphs">NEVER TOO LATE.</text>' +
         '</g>') },
     { id: 'tee02-back', name: 'Tee 02, back: neck print', place: 'Upper back below collar, 3 in (8 cm) wide', inches: 3, bg: 'light',
-      svg: svg('148 66 104 66',
+      svg: svg('138 66 124 68',
         '<g transform="translate(186 70) scale(.28)">' + SHIELD(R, S, 8) + '</g>' +
-        '<text x="200" y="114" text-anchor="middle" ' + O + ' font-size="12" fill="' + S + '" letter-spacing="2">SALVAGE <tspan fill="' + R + '">HEALTH</tspan></text>' +
-        '<text x="200" y="128" text-anchor="middle" font-family="Inter" font-weight="700" font-size="6" fill="#5A5752" letter-spacing="2.5">BUILT FROM WHAT\'S LEFT.</text>') },
+        '<text x="200" y="115" text-anchor="middle" ' + O + ' font-size="13" fill="' + S + '" textLength="112" lengthAdjust="spacingAndGlyphs">SALVAGE <tspan fill="' + R + '">HEALTH</tspan></text>' +
+        '<text x="200" y="129" text-anchor="middle" font-family="Inter" font-weight="700" font-size="6.5" fill="#5A5752" textLength="112" lengthAdjust="spacingAndGlyphs">BUILT FROM WHAT\'S LEFT.</text>') },
 
     { id: 'tee03-front', name: 'Tee 03, front: Salvage Athletic', place: 'Center chest, 11 in (28 cm) wide', inches: 11, bg: 'dark',
       svg: svg('70 100 260 202',
