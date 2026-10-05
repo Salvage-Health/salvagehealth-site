@@ -463,6 +463,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
 write("/kitchen/", kp)
 
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "home.py")).read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "coaching.py")).read())  # hidden page, not in sitemap
 
 # sitemap + robots
 urls = ["/", "/start/", "/kitchen/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
