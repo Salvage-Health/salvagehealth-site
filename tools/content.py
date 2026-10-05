@@ -305,7 +305,7 @@ SHOP = "https://salvagehealth-shop.fourthwall.com"
 # photos in /merch/img/: first is the main shot, second shows on hover
 LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side")),
         "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ("tee-never-model-front", "tee-never-model-back")),
-        "tee-athletic": ("$34", SHOP + "/products/salvage-athletic-tee", ())}
+        "tee-athletic": ("$34", SHOP + "/products/salvage-athletic-tee", ("tee-athletic-model-front", "tee-athletic-model-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
@@ -321,7 +321,7 @@ MERCH2 = [
 ("tee-never", "Never Too Late Tee", "Organic cotton tee",
  "Four excuses crossed out, one truth in rust. Small shield and \"Built From What's Left.\" under the collar. Tan or White.", "tee-never-front"),
 ("tee-athletic", "Salvage Athletic Tee", "Organic cotton tee",
- "Old-school athletic department look: arched wordmark over the shield, cracked vintage print. \"Never Too Late\" across the back. Black, S to 5XL.", "tee-athletic-front"),
+ "Old-school athletic department look: arched wordmark over the shield, cracked vintage print. \"Never Too Late\" across the back. Black, navy, charcoal and two more dark colors, S to 5XL.", "tee-athletic-front"),
 ("hoodie", "Second Chances Hoodie", "Heavyweight hoodie",
  "Stacked wordmark on the chest, \"Say what you'll do.\" down the sleeve, and the big shield on the back.", "hoodie-back"),
 ("beanie", "Shield Patch Beanie", "Cuffed beanie",
