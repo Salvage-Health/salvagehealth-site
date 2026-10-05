@@ -306,7 +306,8 @@ SHOP = "https://salvagehealth-shop.fourthwall.com"
 LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side")),
         "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ("tee-never-model-front", "tee-never-model-back")),
         "tee-athletic": ("$34", SHOP + "/products/salvage-athletic-tee", ("tee-athletic-model-front", "tee-athletic-model-back")),
-        "hoodie": ("$78.99", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back"))}
+        "hoodie": ("$78.99", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back")),
+        "beanie": ("$32", SHOP + "/products/shield-beanie", ("beanie-model-1", "beanie-flat"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
@@ -325,8 +326,8 @@ MERCH2 = [
  "Old-school athletic department look: arched wordmark over the shield, cracked vintage print. \"Never Too Late\" across the back. Black, French Navy, Anthracite, India Ink Grey or Dark Heather Grey. S to 5XL.", "tee-athletic-front"),
 ("hoodie", "Second Chances Hoodie", "Organic cotton hoodie",
  "Small wordmark on the left chest, \"Say what you'll do.\" down the sleeve, and the big shield with \"Second chances exist.\" across the back.", "hoodie-back"),
-("beanie", "Shield Patch Beanie", "Cuffed beanie",
- "Chunky rib knit with a woven shield patch on the cuff. Rust, Black or Heather.", "beanie-rust"),
+("beanie", "Shield Beanie", "Organic cotton beanie",
+ "Ribbed organic cotton knit with the Salvage Health shield embroidered on the cuff. Black or Navy, one size.", "beanie-rust"),
 ("stickers", "Sticker Pack", "Die-cut vinyl",
  "Five waterproof stickers for your bottle, laptop, locker or lifting belt.", "stickers"),
 ("straps", "Lifting Straps", "Lifting gear",
