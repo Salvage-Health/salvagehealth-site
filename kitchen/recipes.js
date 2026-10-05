@@ -84,6 +84,10 @@ window.SK = {
     'white-rice-cooked': { kcal: 130, p: 2.2, f: 0.1, c: 28.4 },
     'teriyaki-sauce': { kcal: 158, p: 2.6,  f: 0,    c: 36.8 },
     'green-onion':    { kcal: 32,  p: 1.8,  f: 0.2,  c: 7.3 },
+    'ground-beef-95': { kcal: 137, p: 21.2, f: 4.8,  c: 0 },
+    'rice-paper':     { kcal: 340, p: 0,    f: 0,    c: 83.5 },
+    'ff-american':    { kcal: 148, p: 22.2, f: 1.6,  c: 11.1 },
+    'dijon':          { kcal: 66,  p: 4.4,  f: 4,    c: 5.8 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -116,6 +120,7 @@ window.SK = {
     { id: 'oats', name: 'Oats', group: 'Carbs', alias: ['oatmeal', 'rolled oats'] },
     { id: 'tortillas', name: 'Corn tortillas', group: 'Carbs', alias: ['tortilla', 'tortillas'] },
     { id: 'flour-tortillas', name: 'Flour tortillas or wraps', group: 'Carbs', alias: ['tortilla', 'tortillas', 'wraps', 'wrap'] },
+    { id: 'rice-paper', name: 'Rice paper wrappers', group: 'Carbs', alias: ['rice paper', 'spring roll', 'wrappers', 'egg roll'] },
     { id: 'buns', name: 'Burger buns', group: 'Carbs', alias: ['bun', 'buns', 'keto bun', 'bread'] },
     { id: 'frozen-fries', name: 'Frozen fries', group: 'Carbs', alias: ['fries', 'french fries'] },
     { id: 'black-beans', name: 'Black beans', group: 'Carbs', alias: ['beans'] },
@@ -162,6 +167,29 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'cheeseburger-rice-paper-rolls', name: 'Air-Fried Cheeseburger Rice Paper Rolls', by: 'bryan', cat: 'Dinner', tag: 'Air fryer', serves: 1, mins: 30,
+      photos: ['/kitchen/img/cheeseburger-rice-paper-rolls.jpg'],
+      blurb: 'Crispy rice paper rolls stuffed with lean beef, melted American cheese, onions, pickles and a touch of Dijon. Five rolls is a full plate with 69 grams of protein. Each roll is about 107 calories and 14 grams of protein.',
+      items: [
+        { need: 'ground-beef', or: ['ground-turkey'], txt: '9 oz (250 g) 95/5 lean ground beef', food: 'ground-beef-95', g: 250 },
+        { need: 'rice-paper', txt: '5 rice paper wrappers (about 1/2 package serving, 2/3 oz / 17 g)', food: 'rice-paper', g: 17 },
+        { need: 'cheese', txt: '3 slices Kraft Fat-Free American cheese', food: 'ff-american', g: 63 },
+        { need: 'onion', txt: '2 oz (59 g) onion, finely diced, about 1/2 small onion', food: 'onion', g: 59 },
+        { need: 'pickles', optional: true, txt: '1/2 Claussen pickle spear, chopped', food: 'pickles', g: 15 },
+        { staple: true, txt: '4 tsp Dijon mustard', food: 'dijon', g: 20 },
+        { staple: true, txt: 'Avocado oil spray; garlic powder, salt and pepper', food: 'none', g: 0 },
+        { need: 'lettuce', optional: true, txt: 'To serve: romaine, diced tomato and pickle spears (not counted in the macros)', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Brown the beef and onion in a skillet over medium-high heat, breaking the beef up as it cooks, about 7 minutes. Season with garlic powder, salt and pepper. Drain any fat, stir in the Dijon and chopped pickle, and let it cool for a few minutes so it does not tear the wrappers.',
+        'Heat the air fryer to 400°F (205°C).',
+        'Cut each cheese slice into strips. Dip one rice paper wrapper in warm water for 5 to 10 seconds, just until it softens, and lay it flat on a damp cutting board.',
+        'Spoon one fifth of the beef across the lower third, lay a few cheese strips on top, fold up the bottom, fold in the sides and roll it tight like a burrito. Repeat for all 5.',
+        'Spray the rolls with avocado oil and air fry seam side down for 10 to 12 minutes, flipping halfway, until crispy and golden.',
+        'Rest 2 minutes (the cheese is molten), then serve over romaine with diced tomato and pickle spears.'
+      ]
+    },
     {
       id: 'teriyaki-chicken-bowl', name: 'Teriyaki Chicken and Rice Bowl', by: 'bryan', cat: 'Lunch', tag: 'High protein', serves: 1, mins: 30,
       photos: ['/kitchen/img/teriyaki-chicken-bowl.jpg'],
