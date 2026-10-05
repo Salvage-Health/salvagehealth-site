@@ -1479,5 +1479,482 @@ window.SK_STEPS = {
    }
   ],
   "tip": "Always cook the potatoes before they go in. Raw potatoes won't finish in the time the eggs take to set, and you'll end up with crunchy potatoes or rubbery eggs."
+ },
+ "caprese-egg-bites": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Set an oven rack in the middle and preheat the oven to 350°F (175°C). Quarter the cherry tomatoes and pat them dry with a paper towel so they do not water down the eggs. Slice the basil into thin ribbons and cut a mozzarella ball into 1/2 inch (1 cm) cubes if you are not using pearls. Spray every cup of a standard 12-cup muffin tin generously with avocado oil spray, sides included."
+   },
+   {
+    "t": "Blend the base",
+    "d": "Add the 8 eggs, 1 cup (240 ml) egg whites, 1/2 cup (113 g) cottage cheese, salt, pepper and garlic powder to a blender. Blend on high for 20 to 30 seconds until completely smooth and slightly foamy, with no curds left. This is what gives you the soft, velvety coffee-shop texture."
+   },
+   {
+    "t": "Fill the tin",
+    "d": "Divide the tomatoes, mozzarella and sliced basil evenly among the 12 cups. Pour the egg mixture over the top, filling each cup about three quarters full; a large measuring cup with a spout makes this easy."
+   },
+   {
+    "t": "Bake until just set",
+    "d": "Bake on the middle rack for 20 to 22 minutes, until the edges are set and the centers no longer jiggle when you nudge the pan but still look soft, not browned or cracked. They will puff up in the oven and settle as they cool."
+   },
+   {
+    "t": "Cool and release",
+    "d": "Let the tin rest on the counter for 5 minutes. Run a thin knife or butter knife around each bite and lift it out. Top with a fresh basil leaf if you like."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Serve 3 bites per person warm. Cool completely, then store in a sealed container lined with a paper towel for up to 4 days in the fridge, or freeze on a tray and bag them for up to 2 months. Reheat 30 to 45 seconds in the microwave from the fridge, or 60 to 90 seconds from frozen."
+   }
+  ],
+  "tip": "Pull them while the centers are barely set. Overbaked egg bites turn rubbery and weep water, and they keep cooking from the pan's heat for a few minutes after they come out."
+ },
+ "black-bean-sweet-potato-chili": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Dice the onion and bell pepper into 1/2 inch (1 cm) pieces, and peel and cube the sweet potato the same size so it cooks evenly. Mince the 4 garlic cloves. Drain and rinse the black beans, and rinse the red lentils in a strainer until the water runs mostly clear. Measure the spices into a small bowl."
+   },
+   {
+    "t": "Soften the vegetables",
+    "d": "Heat the 1 tbsp (15 ml) avocado oil in a large Dutch oven or 6 quart (5.7 L) heavy pot over medium heat until it shimmers. Add the onion and bell pepper with a pinch of salt and cook 5 to 6 minutes, stirring now and then, until soft and the onion looks translucent (see-through at the edges)."
+   },
+   {
+    "t": "Bloom the spices",
+    "d": "Add the garlic and all the spices and stir constantly for 45 to 60 seconds. Blooming means toasting spices in the hot oil so their flavor wakes up; you will smell it get deep and smoky. Do not walk away or the spices can scorch."
+   },
+   {
+    "t": "Simmer the chili",
+    "d": "Add the sweet potato, lentils, black beans, tomatoes, broth and the remaining salt and stir, scraping up anything stuck to the bottom. Bring to a boil over high heat, then lower to medium-low so it simmers, meaning small, lazy bubbles break the surface. Cover partway and cook 25 to 30 minutes, stirring every 5 to 10 minutes, until the sweet potato is fork-tender and the lentils have melted into a thick base."
+   },
+   {
+    "t": "Adjust the thickness",
+    "d": "If it is too thick, splash in more broth or water; if too thin, simmer uncovered 5 more minutes. Taste and add more salt or chili powder as needed. A squeeze of lime brightens it up."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Ladle into 6 bowls, about 1 1/2 cups each, and top each with 1/4 cup (60 g) Greek yogurt, 1/2 oz (14 g) cheddar and cilantro. Keep the chili in sealed containers for up to 5 days in the fridge, or freeze in portions for up to 3 months. Thaw overnight in the fridge and reheat in a pot over medium heat or 2 to 3 minutes in the microwave, stirring halfway; add the toppings after reheating."
+   }
+  ],
+  "tip": "Stir the pot every few minutes once the lentils go in. Red lentils thicken fast and love to stick to the bottom, and one scorched patch can make the whole batch taste burnt."
+ },
+ "cottage-cheese-protein-pizza": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 375°F (190°C) with a rack in the middle. Line a large rimmed baking sheet, about 13x18 inch (33x46 cm), with parchment paper and spray the parchment well with avocado oil spray. Thinly slice the bell pepper, mushrooms and onion, and measure out the sauce and cheeses."
+   },
+   {
+    "t": "Blend the crust",
+    "d": "Add the 1 cup (226 g) cottage cheese, 2 eggs, 2 tbsp (10 g) parmesan, 1/2 cup (56 g) of the mozzarella, the oregano, garlic powder and salt to a blender. Blend 20 to 30 seconds until completely smooth, like a thick pancake batter."
+   },
+   {
+    "t": "Spread and bake the crust",
+    "d": "Pour the batter onto the parchment and spread it with a spatula into a thin, even 11 to 12 inch (28 to 30 cm) circle or rectangle, about 1/4 inch (6 mm) thick. Bake 30 to 35 minutes, until the whole surface is deep golden, dry to the touch and the edges are browned. If the center is still pale or tacky, give it 5 more minutes; this is what makes it crispy instead of eggy."
+   },
+   {
+    "t": "Roast the toppings",
+    "d": "While the crust bakes, spray a small skillet with avocado oil and set it over medium-high heat. Cook the pepper, mushrooms and onion for 4 to 5 minutes until softened and lightly browned and the mushrooms have released their water, then toss in the spinach for 30 seconds until just wilted."
+   },
+   {
+    "t": "Top and finish",
+    "d": "Spread the 1/4 cup (62 g) sauce over the baked crust, leaving a thin border. Scatter the cooked veggies and the remaining 1/2 cup (56 g) mozzarella on top. Bake 8 to 10 more minutes until the cheese is melted and bubbling in spots; switch to broil (top heating element on high) for the last 1 to 2 minutes for browned cheese, watching it closely."
+   },
+   {
+    "t": "Serve",
+    "d": "Let it rest 3 to 5 minutes so the crust firms up, then slide it onto a cutting board, top with basil and red pepper flakes, and cut into 6 slices. Each person gets half. Leftovers keep 2 days in the fridge and re-crisp best in an air fryer or oven at 375°F (190°C) for 4 to 5 minutes."
+   }
+  ],
+  "tip": "Spread the crust thin and fully bake it before any toppings go on. A thick or underbaked crust stays soft and eggy, and wet toppings like raw mushrooms will turn it soggy, so always cook the veggies first."
+ },
+ "veggie-egg-white-frittata": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 375°F (190°C) with a rack in the middle. Dice the bell peppers and onion into 1/4 inch (6 mm) pieces, mince the garlic and roughly chop the spinach. Line a 9x13 inch (23x33 cm) rimmed baking pan or quarter sheet pan with parchment, letting it hang over the long sides, and spray it with avocado oil spray."
+   },
+   {
+    "t": "Saute the vegetables",
+    "d": "Heat the 1 tsp avocado oil in a 12 inch (30 cm) skillet over medium-high heat. Saute (cook while stirring often) the peppers and onion 4 to 5 minutes until softened, then add the garlic and spinach and stir 1 to 2 minutes until the spinach wilts and any liquid cooks off. Spread the veggies evenly in the lined pan."
+   },
+   {
+    "t": "Mix the eggs",
+    "d": "In a large bowl, whisk the 4 cups (960 ml) egg whites, 4 eggs, 1 cup (226 g) cottage cheese, salt, pepper, oregano and paprika for 30 seconds until well combined; a few small curds are fine. Pour it over the veggies and scatter the feta evenly over the top."
+   },
+   {
+    "t": "Bake",
+    "d": "Bake 22 to 28 minutes, until the center is set and springs back when lightly pressed and a knife poked in the middle comes out clean, with no wet egg. The edges will be lightly golden and pulling away from the pan."
+   },
+   {
+    "t": "Rest and slice",
+    "d": "Let it cool in the pan for 10 minutes, then use the parchment to lift it onto a cutting board. Cut into 6 large squares and sprinkle with green onions."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Serve warm with hot sauce, or pack each square into a container. It keeps 4 days in the fridge, or wrap squares individually and freeze up to 2 months. Reheat 45 to 60 seconds in the microwave from the fridge, or 1 1/2 to 2 minutes from frozen, covered with a damp paper towel."
+   }
+  ],
+  "tip": "Cook the spinach and peppers before they go in the pan. Raw veggies release water while baking, which leaves the frittata spongy with a puddle underneath."
+ },
+ "greek-chickpea-feta-bowls": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 425°F (220°C) and line a large rimmed baking sheet with parchment. Drain and rinse the chickpeas, then roll them in a clean kitchen towel to dry them well and let any loose skins fall off. Halve the tomatoes, thinly slice the red onion, and juice the lemon. Grate half the cucumber on the large holes of a box grater and dice the other half into 1/2 inch (1 cm) pieces."
+   },
+   {
+    "t": "Roast the chickpeas",
+    "d": "Toss the dry chickpeas on the baking sheet with the 1 tbsp (15 ml) avocado oil, paprika, cumin, half the oregano and 1/2 tsp salt, and spread them in a single layer. Roast 25 to 30 minutes, shaking the pan halfway, until golden brown and crisp on the outside."
+   },
+   {
+    "t": "Cook the quinoa",
+    "d": "While the chickpeas roast, rinse the quinoa in a fine strainer to remove its bitter coating. Add it to a small saucepan with 1 1/2 cups (360 ml) water and a pinch of salt, bring to a boil, then cover, lower the heat to low and cook 15 minutes until the water is absorbed. Take it off the heat, keep covered 5 minutes, then fluff with a fork."
+   },
+   {
+    "t": "Make the tzatziki",
+    "d": "Squeeze the grated cucumber hard in your hands or a towel to remove as much water as possible. Stir it into the 1 1/2 cups (340 g) Greek yogurt with the grated garlic, half the lemon juice, the rest of the oregano, 1/2 tsp salt and some pepper. Tzatziki is a cool Greek yogurt and cucumber sauce; it should be thick enough to hold its shape on a spoon."
+   },
+   {
+    "t": "Build the bowls",
+    "d": "Toss the diced cucumber, tomatoes and red onion with the remaining lemon juice and a pinch of salt. Divide the quinoa among 4 bowls or containers and top each with the chopped salad, a quarter of the chickpeas, feta, olives and a big scoop of tzatziki."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Eat right away for the crunchiest chickpeas. For meal prep, keep the tzatziki and chickpeas in separate small containers and the bowls in the fridge for up to 4 days. Do not freeze; to re-crisp the chickpeas, air fry or bake at 400°F (205°C) for 3 to 4 minutes."
+   }
+  ],
+  "tip": "Dry the chickpeas thoroughly and give them room on the pan. Wet or crowded chickpeas steam instead of roast and come out soft, so use your largest sheet pan and pat them bone dry first."
+ },
+ "lentil-bolognese": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Finely dice the onion, carrots and celery into 1/4 inch (6 mm) pieces; this mix is called a soffritto and it is the flavor base of a classic bolognese. Finely chop the mushrooms to about the size of the lentils so they mimic ground meat. Mince the garlic, and rinse the lentils in a strainer, picking out any small stones. Bring a large pot of salted water to a boil for the pasta."
+   },
+   {
+    "t": "Cook the soffritto and mushrooms",
+    "d": "Heat the 1 tbsp (15 ml) avocado oil in a large Dutch oven or 5 quart (4.7 L) pot over medium heat. Add the onion, carrot, celery and mushrooms with 1/2 tsp salt and cook 8 to 10 minutes, stirring now and then, until the mushrooms have released their water, the pan looks dry again and the veggies are soft and lightly browned."
+   },
+   {
+    "t": "Toast the paste and garlic",
+    "d": "Stir in the garlic, tomato paste, oregano, cinnamon and pepper flakes and cook 1 to 2 minutes, stirring constantly, until the paste darkens from bright red to a brick color. This caramelizes it and adds deep, meaty flavor."
+   },
+   {
+    "t": "Simmer the lentils",
+    "d": "Add the lentils, crushed tomatoes, 3 cups (720 ml) broth and the remaining salt and pepper. Bring to a boil, then lower to medium-low for a gentle simmer, partly covered. Cook 25 to 30 minutes, stirring every 5 minutes and adding a splash of broth if it gets too thick, until the lentils are tender but still hold their shape and the sauce is thick enough to cling to a spoon."
+   },
+   {
+    "t": "Cook the pasta",
+    "d": "About 12 minutes before the sauce is done, cook the 12 oz (340 g) pasta in the boiling salted water according to the package, usually 9 to 11 minutes, until al dente, meaning tender with a slight bite in the center. Scoop out 1/2 cup (120 ml) of the starchy pasta water, then drain."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Toss the pasta with the sauce, loosening with pasta water as needed, or spoon the sauce over each portion. Divide into 6 bowls and top each with 1/4 oz (7 g) parmesan and basil. The sauce keeps 5 days in the fridge or 3 months in the freezer; store pasta and sauce separately if you can, and reheat in a pot over medium heat or 2 to 3 minutes in the microwave with a splash of water."
+   }
+  ],
+  "tip": "Stop simmering when the lentils are just tender. Overcooked lentils turn to mush and the sauce goes from hearty bolognese to baby food, so start tasting at the 20 minute mark."
+ },
+ "crispy-tofu-teriyaki-bowl": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Drain the tofu and press it: wrap each block in a clean kitchen towel, set a cutting board or heavy pan on top with a few cans for weight, and leave it 15 minutes to squeeze out water. Meanwhile, cut the broccoli into bite-size florets, slice the green onions and grate the garlic and ginger. Rinse the rice in a strainer until the water runs mostly clear."
+   },
+   {
+    "t": "Start the rice",
+    "d": "Add the 3/4 cup (140 g) rice, 1 1/2 cups (360 ml) water and a pinch of salt to a small saucepan. Bring to a boil, cover, turn the heat to low and cook 15 minutes, then take it off the heat and let it sit covered 10 minutes before fluffing with a fork."
+   },
+   {
+    "t": "Coat the tofu",
+    "d": "Cut the pressed tofu into 3/4 inch (2 cm) cubes. In a large bowl, toss them gently with 2 tsp of the avocado oil, then sprinkle with the 2 tbsp (16 g) cornstarch, salt and pepper and toss again until every cube has a thin, dry, powdery coat with no wet spots."
+   },
+   {
+    "t": "Air fry the tofu",
+    "d": "Preheat the air fryer to 400°F (205°C). Spray the basket, add the tofu in a single layer (work in 2 batches if needed) and air fry 14 to 18 minutes, shaking the basket every 5 minutes, until deep golden and crisp on all sides. No air fryer: bake on a parchment-lined sheet at 425°F (220°C) for 25 to 30 minutes, flipping halfway."
+   },
+   {
+    "t": "Cook the broccoli and sauce",
+    "d": "Heat the remaining 1 tsp avocado oil in a 12 inch (30 cm) skillet over medium-high heat. Add the broccoli and 2 tbsp (30 ml) water and cook 4 to 5 minutes, stirring, until bright green and crisp-tender (a fork goes in with a little resistance). Push it to the side, add the garlic and ginger for 30 seconds, then pour in the 1/3 cup (96 g) teriyaki and let it bubble 1 minute until glossy."
+   },
+   {
+    "t": "Toss and serve",
+    "d": "Turn off the heat, add the crispy tofu and toss quickly to coat everything in the sauce. Divide the rice among 4 bowls, top with tofu and broccoli, and finish with green onions and a few drops of sesame oil. Eat right away for the crispiest tofu; leftovers keep 3 days in the fridge and re-crisp in the air fryer at 375°F (190°C) for 4 to 5 minutes."
+   }
+  ],
+  "tip": "Press the tofu and do not skip the cornstarch. Wet tofu steams instead of crisping, and sauce it only at the very end, right before serving, so the crust stays crunchy."
+ },
+ "garlic-butter-steak-bites": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Pat the steak very dry with paper towels and cut it into 1-inch (2.5 cm) cubes. Cut the zucchini into 1/2-inch (1 cm) half moons. Mince the 6 garlic cloves and season the steak with the salt, pepper and paprika."
+   },
+   {
+    "t": "Sear the zucchini",
+    "d": "Heat 1 tsp of the avocado oil in a large 12-inch (30 cm) skillet over medium-high heat until it shimmers. Add the zucchini in a single layer and cook 3 to 4 minutes, flipping once, until browned on the edges but still a little firm. Move it to a plate and sprinkle with a pinch of salt."
+   },
+   {
+    "t": "Sear the steak",
+    "d": "Add the rest of the oil to the same skillet and turn the heat to high. Add the steak in a single layer, in two batches if needed so the pieces are not touching, and leave them alone for 2 minutes to build a brown crust (searing). Flip and cook 1 to 2 minutes more: 130°F (54°C) is medium-rare and USDA recommends 145°F (63°C)."
+   },
+   {
+    "t": "Make the garlic butter",
+    "d": "Turn the heat down to medium-low and add the butter and garlic to the pan with the steak. Stir for 30 to 60 seconds, until the butter foams and the garlic smells fragrant but is not brown."
+   },
+   {
+    "t": "Finish and serve",
+    "d": "Return the zucchini to the skillet and toss everything in the garlic butter for 30 seconds. Squeeze the lemon over the top and serve right away with any pan butter spooned over. Leftovers keep 3 days in the fridge; reheat briefly in a skillet so the steak does not overcook."
+   }
+  ],
+  "tip": "Dry the steak well and don't crowd the pan. Wet, crowded steak steams and turns gray instead of browning, so cook in two batches if your skillet is small."
+ },
+ "smash-burger-lettuce-wraps": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Separate the lettuce into large cup-shaped leaves, rinse and pat dry. Slice the onion paper thin and the tomato into rounds. Divide the beef into 8 loose 3-oz (85 g) balls without packing them tight, and keep them in the fridge until the pan is hot."
+   },
+   {
+    "t": "Mix the burger sauce",
+    "d": "In a small bowl stir together the Greek yogurt, mustard, 1 tbsp pickle juice, the paprika and garlic powder, and a pinch of salt. Taste and add more mustard or pickle juice until it is tangy enough for you."
+   },
+   {
+    "t": "Heat the pan",
+    "d": "Set a large cast iron or heavy 12-inch (30 cm) skillet over high heat for 3 to 4 minutes, until a drop of water sizzles away instantly. Mist it lightly with avocado oil spray."
+   },
+   {
+    "t": "Smash the patties",
+    "d": "Place 3 or 4 beef balls in the pan, lay a square of parchment on top and press each one flat with a sturdy spatula to about 1/4 inch (6 mm) thick. That is the smash: it gives you lacy, crispy brown edges. Sprinkle with salt and pepper and cook 2 minutes without moving them until the edges are deep brown."
+   },
+   {
+    "t": "Flip and melt the cheese",
+    "d": "Scrape under each patty with the spatula, flip, and lay a half slice of cheese on top. Cook 1 minute more until the cheese melts and the beef reaches 160°F (71°C). Repeat with the remaining beef."
+   },
+   {
+    "t": "Wrap and serve",
+    "d": "Stack two patties in a double layer of lettuce leaves, then add pickles, onion, tomato and a big spoonful of burger sauce. Wrap it up like a taco and eat right away; the patties are best fresh, but cooked patties keep 3 days in the fridge."
+   }
+  ],
+  "tip": "Keep the beef cold and press it flat in the first 30 seconds only. Pressing later squeezes out the juices and gives you dry, gray patties instead of crispy ones."
+ },
+ "creamy-tuscan-chicken": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Slice each chicken breast in half horizontally to make 4 thin cutlets about 1/2 inch (1 cm) thick, so they cook evenly. Pat dry and season both sides with the salt, pepper, oregano and paprika. Mince the garlic, chop the sun-dried tomatoes and grate the parmesan."
+   },
+   {
+    "t": "Sear the chicken",
+    "d": "Heat the avocado oil in a large 12-inch (30 cm) skillet over medium-high heat until it shimmers. Add the cutlets and cook 4 to 5 minutes per side without moving them, until deep golden and 165°F (74°C) inside. Move them to a plate."
+   },
+   {
+    "t": "Build the sauce",
+    "d": "Lower the heat to medium, add the garlic and sun-dried tomatoes and stir for 1 minute until fragrant. Pour in the broth and scrape up the brown bits on the bottom of the pan with a wooden spoon (that is deglazing, and it is where the flavor lives). Stir in the cream and simmer 2 to 3 minutes until it lightly coats the spoon."
+   },
+   {
+    "t": "Add the cheese and spinach",
+    "d": "Turn the heat to low and stir in the parmesan a little at a time until smooth. Add the spinach by handfuls and stir for 1 to 2 minutes until just wilted."
+   },
+   {
+    "t": "Finish and serve",
+    "d": "Return the chicken and any juices to the pan and spoon the sauce over it for 1 minute to rewarm. Serve with extra parmesan, or over cauliflower rice or zucchini noodles. Portion into 4 containers; it keeps 4 days in the fridge or 2 months frozen, and reheats in the microwave at 50% power for 2 to 3 minutes, stirring halfway."
+   }
+  ],
+  "tip": "Add the parmesan over low heat and off the boil. High heat makes the cheese clump and the cream sauce turn grainy and oily."
+ },
+ "cauliflower-shrimp-fried-rice": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Pat the shrimp dry and season with the salt and pepper. Beat the 4 eggs in a bowl, mince the garlic, grate the ginger and slice the green onions, keeping whites and greens apart. If the riced cauliflower is frozen, microwave it 4 minutes, then squeeze it hard in a clean towel to remove the water."
+   },
+   {
+    "t": "Cook the shrimp",
+    "d": "Heat 1 tbsp avocado oil in a large 12-inch (30 cm) skillet or wok over high heat until it shimmers. Add the shrimp in one layer and cook 1 to 2 minutes per side, until pink, curled into a C shape and 145°F (63°C). Move them to a plate."
+   },
+   {
+    "t": "Scramble the eggs",
+    "d": "Add the butter to the pan over medium heat, pour in the eggs and stir gently for 1 to 2 minutes until just set in soft curds. Move them to the plate with the shrimp."
+   },
+   {
+    "t": "Fry the cauliflower",
+    "d": "Turn the heat back to high, add the remaining 1 tbsp oil, the garlic, ginger and green onion whites and stir for 30 seconds. Add the cauliflower, spread it flat and let it sit 2 minutes to brown, then stir and cook 3 to 4 minutes more until tender with some golden bits."
+   },
+   {
+    "t": "Toss and serve",
+    "d": "Add the soy sauce, shrimp and eggs and toss for 1 minute until hot and evenly coated. Turn off the heat, drizzle with sesame oil and top with green onion greens and sriracha. Leftovers keep 3 days in the fridge; reheat in a hot skillet for best texture."
+   }
+  ],
+  "tip": "Squeeze the water out of the cauliflower and use high heat. Wet cauliflower in a crowded pan steams into mush instead of frying into fluffy grains."
+ },
+ "salmon-lemon-dill-asparagus": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Pat the salmon dry and season both sides with most of the salt and pepper. Snap the woody ends off the asparagus. Zest and juice the lemon, mince the garlic and chop the dill."
+   },
+   {
+    "t": "Sear the salmon",
+    "d": "Heat 2 tsp avocado oil in a large 12-inch (30 cm) nonstick or cast iron skillet over medium-high heat until it shimmers. Lay the salmon in skin side (or presentation side) down and cook 4 minutes without moving it, until the bottom is crisp and golden. Flip and cook 2 to 4 minutes more until it flakes easily and reaches 145°F (63°C), then move to a plate."
+   },
+   {
+    "t": "Cook the asparagus",
+    "d": "Add the remaining 1 tsp oil and the asparagus to the same skillet with a pinch of salt. Cook 4 to 5 minutes over medium-high, tossing a few times, until bright green, spotted brown and just tender when pierced with a knife. Move it to the plates."
+   },
+   {
+    "t": "Make the lemon dill cream",
+    "d": "Lower the heat to medium, add the garlic and stir for 30 seconds. Pour in the cream and simmer 2 to 3 minutes, until it thickens enough to coat a spoon. Turn off the heat, then stir in the lemon zest, lemon juice and dill and season with a pinch of salt."
+   },
+   {
+    "t": "Serve",
+    "d": "Set each salmon fillet next to the asparagus and spoon the lemon dill cream over the top. Eat right away; leftovers keep 2 days in the fridge and are great cold or gently rewarmed at 50% power in the microwave."
+   }
+  ],
+  "tip": "Add the lemon juice off the heat. Boiling cream with lemon in it can make the sauce split, so take the pan off the burner first and it stays smooth."
+ },
+ "philly-cheesesteak-peppers": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 400°F (200°C). Put the steak in the freezer for 15 minutes, then slice it as thin as you can against the grain (across the lines of muscle), and cut the slices into 2-inch (5 cm) pieces. Halve the peppers lengthwise, remove seeds and ribs, and thinly slice the onion and mince the garlic."
+   },
+   {
+    "t": "Par-bake the peppers",
+    "d": "Set the pepper halves cut side up in a 9 x 13-inch (23 x 33 cm) baking dish, mist with avocado oil spray and sprinkle with a pinch of salt. Bake 10 minutes, until they just start to soften."
+   },
+   {
+    "t": "Cook the onions",
+    "d": "While the peppers bake, heat 1 tsp avocado oil in a large 12-inch (30 cm) skillet over medium heat. Add the onion and cook 6 to 7 minutes, stirring now and then, until soft and golden. Move it to a bowl."
+   },
+   {
+    "t": "Sear the steak",
+    "d": "Turn the heat to high, add the remaining oil and the steak in a single layer, and season with the salt, pepper and garlic powder. Cook 2 to 3 minutes, stirring once, until browned with no pink, then stir in the garlic, soy sauce and onion mixture for 30 seconds."
+   },
+   {
+    "t": "Stuff and bake",
+    "d": "Lay half a provolone slice inside each pepper, pack in the steak filling, and top each with another half slice. Bake 12 to 15 minutes, until the peppers are tender and the cheese is bubbly and browned in spots."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Serve 2 halves per person. Pack into containers; they keep 4 days in the fridge or 2 months frozen (thaw overnight first). Reheat covered in the microwave for 2 to 3 minutes, or at 350°F (175°C) in the oven for 15 minutes."
+   }
+  ],
+  "tip": "Freeze the steak for 15 minutes before slicing. Partly frozen beef cuts into paper-thin strips that cook fast and stay tender, instead of thick chewy chunks."
+ },
+ "chicken-parm-zoodle-bake": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 400°F (200°C). Spiralize the zucchini, toss it with 1/2 tsp salt in a colander and let it sit 15 minutes to draw out water. Cut the chicken into 1-inch (2.5 cm) pieces, season with salt, pepper and oregano, and mince the garlic."
+   },
+   {
+    "t": "Sear the chicken",
+    "d": "Heat the avocado oil in a large 12-inch (30 cm) oven-safe skillet over medium-high heat until it shimmers. Add the chicken in one layer and cook 5 to 6 minutes, turning once, until golden on the outside. It will finish cooking in the oven."
+   },
+   {
+    "t": "Add the sauce",
+    "d": "Stir the garlic into the chicken for 30 seconds, then add the marinara and chili flakes. Simmer 2 minutes, stirring, until the sauce is bubbling."
+   },
+   {
+    "t": "Layer the zoodles",
+    "d": "Squeeze the salted zucchini firmly in a clean kitchen towel to remove as much water as you can. Fold the zoodles into the skillet (or move everything into a 9 x 9-inch / 23 x 23 cm baking dish) and spread it level."
+   },
+   {
+    "t": "Bake",
+    "d": "Scatter the mozzarella and parmesan over the top. Bake 15 to 18 minutes, until the cheese is bubbling and spotted golden and the chicken reaches 165°F (74°C). For extra browning, broil 1 to 2 minutes at the end, watching closely."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Let it rest 5 minutes so the sauce settles, then cut into 4 portions. It keeps 4 days in the fridge or 2 months frozen. Reheat in the microwave for 2 minutes, then pour off any liquid that collects."
+   }
+  ],
+  "tip": "Salt the zucchini noodles and squeeze them dry before baking. Zucchini is mostly water, and skipping this step turns the bake into soup."
+ },
+ "keto-sausage-egg-cups": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 400°F (200°C) and spray a standard 12-cup muffin tin well with avocado oil spray. Mince the garlic, chop the spinach and shred the cheese if needed. Mix all the sausage seasoning in a small bowl."
+   },
+   {
+    "t": "Season the turkey",
+    "d": "In a large bowl, mix the ground turkey, garlic, spinach and sausage seasoning with your hands until evenly combined, about 1 minute. Don't overwork it or it gets tough."
+   },
+   {
+    "t": "Form the cups",
+    "d": "Divide the turkey into 12 balls (about 2 oz / 57 g each). Press each ball into a muffin cup and up the sides with your fingers to make a thin cup about 1/4 inch (6 mm) thick, leaving a well in the middle."
+   },
+   {
+    "t": "Par-bake the cups",
+    "d": "Bake 10 minutes, until the turkey is set and pale. Carefully tip or blot out any liquid that pooled in the cups with a paper towel, and press the centers back down with a spoon if they puffed up."
+   },
+   {
+    "t": "Add the eggs and cheese",
+    "d": "Sprinkle a pinch of cheese into each cup, crack 1 egg into each, then top with the rest of the cheese and a pinch of salt and pepper. If a cup looks too full, spoon off a little egg white so it does not overflow."
+   },
+   {
+    "t": "Bake until set",
+    "d": "Bake 12 to 15 minutes, until the whites are fully set and the yolks are cooked how you like them (15 minutes for firm, best for meal prep). The turkey should read 165°F (74°C). Cool 5 minutes, then run a butter knife around each cup to lift it out."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Serve 2 cups per person, topped with green onions and hot sauce if you like. They keep 4 days in the fridge or 2 months frozen. Reheat 45 to 60 seconds in the microwave from the fridge, or 1 1/2 to 2 minutes from frozen, wrapped in a damp paper towel."
+   }
+  ],
+  "tip": "Par-bake the turkey cups and pour off the liquid before adding the eggs. Skip it and the cups shrink around a watery, rubbery egg."
+ },
+ "buffalo-chicken-dip-plate": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Preheat the oven to 375°F (190°C). Shred the chicken with two forks into bite-size strands. Cut the celery into 3-inch (7.5 cm) pieces, halve and seed the mini peppers, slice the green onions, and set the cream cheese out to soften for 10 minutes."
+   },
+   {
+    "t": "Mix the dip",
+    "d": "In a large bowl, stir the softened cream cheese until smooth, then mix in the Greek yogurt, hot sauce, garlic powder and paprika until no lumps remain. Fold in the chicken and half the shredded cheese."
+   },
+   {
+    "t": "Bake the dip",
+    "d": "Spread the dip in a small 8 x 8-inch (20 x 20 cm) baking dish and top with the rest of the cheese. Bake 15 to 20 minutes, until bubbling at the edges and hot in the center, 165°F (74°C)."
+   },
+   {
+    "t": "Stuff the veggies",
+    "d": "Let the dip cool 5 minutes so it firms up a little. Spoon it generously into the celery pieces and pepper halves, and top with green onions."
+   },
+   {
+    "t": "Serve and store",
+    "d": "Serve warm or cold, about a quarter of the dip with a mix of celery and peppers per person. For meal prep, store the dip and the cut veggies in separate containers and fill right before eating; the dip keeps 4 days in the fridge and reheats in 60 to 90 seconds in the microwave. Freezing is not recommended since the yogurt turns grainy."
+   }
+  ],
+  "tip": "Beat the cream cheese smooth before adding the yogurt and hot sauce. Cold cream cheese stays in little lumps that never melt out, even in the oven."
+ },
+ "carnitas-lettuce-wraps": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Trim the thin silver skin off the pork, cut it into 3/4-inch (2 cm) cubes, and toss with the cumin, oregano, chili powder, salt, pepper and cinnamon. Mince the garlic, juice the limes, finely dice half the onion and slice the other half. Separate and dry the lettuce leaves."
+   },
+   {
+    "t": "Make the avocado crema",
+    "d": "Mash or blend the avocado with the Greek yogurt, 2 tbsp of the lime juice, a pinch of salt and a splash of water until smooth and spoonable. Cover and chill."
+   },
+   {
+    "t": "Brown the pork",
+    "d": "Heat 1 tbsp avocado oil in a large 12-inch (30 cm) skillet over medium-high heat until it shimmers. Add the pork and sliced onion in one layer and cook 5 to 6 minutes, turning a few times, until browned on most sides."
+   },
+   {
+    "t": "Braise it",
+    "d": "Add the garlic, broth and remaining lime juice, cover, and simmer on medium-low for 6 to 8 minutes. Braising like this (cooking covered in a little liquid) keeps the lean tenderloin juicy. The pork is done at 145°F (63°C)."
+   },
+   {
+    "t": "Crisp the edges",
+    "d": "Uncover, turn the heat to high and add the remaining 1/2 tbsp oil. Press the pork into the pan and cook 3 to 4 minutes without stirring much, until the liquid is gone and the edges are crispy and caramelized, just like real carnitas."
+   },
+   {
+    "t": "Build and serve",
+    "d": "Spoon the pork into lettuce cups and top with avocado crema, diced onion, cilantro and jalapeño. Eat right away; leftover pork keeps 3 days in the fridge (re-crisp it in a hot skillet), and the crema keeps 1 day with plastic pressed onto its surface."
+   }
+  ],
+  "tip": "Let the liquid fully cook off before you crisp the pork. If you try to brown it while it is still wet, it steams and stays pale instead of getting those crispy carnitas edges."
  }
 };

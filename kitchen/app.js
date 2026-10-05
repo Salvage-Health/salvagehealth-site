@@ -43,15 +43,15 @@
     var pic = r.photos ? '<span class="rpic"' + (r.picRatio ? ' style="aspect-ratio:' + r.picRatio + '"' : '') + '><img src="' + r.photos[0] + '" alt="' + esc(r.name) + '" loading="lazy"></span>' : '';
     var by = r.by ? '<span class="rby">Bryan\'s recipe</span>' : '';
     return '<button type="button" class="rc' + (r.photos ? ' has-pic' : '') + '" data-r="' + r.id + '">' + pic + by +
-      '<span class="rtag">' + (r.batch && !/prep/i.test(r.tag) ? 'Batch prep · ' : '') + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</span>' +
+      '<span class="rtag">' + (r.veg ? 'Vegetarian · ' : '') + (r.keto ? 'Keto · ' : '') + (r.batch && !/prep/i.test(r.tag) ? 'Batch prep · ' : '') + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</span>' +
       '<b>' + esc(r.name) + '</b>' +
       '<span class="rb">' + esc(r.blurb) + '</span>' +
       '<span class="mac"><span><em>' + m.kcal + '</em>cal</span><span><em>' + m.p + 'g</em>protein</span><span><em>' + m.c + 'g</em>carbs</span><span><em>' + m.f + 'g</em>fat</span></span>' +
       status + '</button>';
   }
 
-  var CATS = ['All', "Bryan's", 'Batch prep', 'Breakfast', 'Lunch', 'Dinner'];
-  function inCat(r) { return cat === 'All' || (cat === "Bryan's" ? !!r.by : cat === 'Batch prep' ? !!r.batch : r.cat === cat); }
+  var CATS = ['All', "Bryan's", 'Batch prep', 'Vegetarian', 'Keto', 'Breakfast', 'Lunch', 'Dinner'];
+  function inCat(r) { return cat === 'All' || (cat === "Bryan's" ? !!r.by : cat === 'Batch prep' ? !!r.batch : cat === 'Vegetarian' ? !!r.veg : cat === 'Keto' ? !!r.keto : r.cat === cat); }
   function filters() {
     return '<div class="skf" role="group" aria-label="Meal">' + CATS.map(function (c) {
       var n = SK.RECIPES.filter(function (r) { var o = cat; cat = c; var k = inCat(r); cat = o; return k; }).length;
