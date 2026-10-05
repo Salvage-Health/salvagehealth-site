@@ -53,7 +53,7 @@
         '<text x="200" y="129" text-anchor="middle" font-family="Inter" font-weight="700" font-size="6.5" fill="#5A5752" textLength="112" lengthAdjust="spacingAndGlyphs">BUILT FROM WHAT\'S LEFT.</text>') },
 
     { id: 'tee03-front', name: 'Tee 03, front: Salvage Athletic', place: 'Center chest, 11 in (28 cm) wide', inches: 11, bg: 'dark',
-      svg: svg('70 100 260 202',
+      svg: svg('54 100 292 204',
         '<g filter="url(#dist)">' +
         '<text ' + O + ' font-size="40" fill="#EDE8DC" letter-spacing="3" textLength="250" lengthAdjust="spacingAndGlyphs"><textPath href="#arc" startOffset="50%" text-anchor="middle">SALVAGE HEALTH</textPath></text>' +
         '<g transform="translate(164 160) scale(.72)">' + SHIELD(R, '#EDE8DC') + '</g>' +
@@ -64,10 +64,10 @@
         '<line x1="104" y1="296" x2="296" y2="296" stroke="#EDE8DC" stroke-width="2"/>' +
         '</g>', DIST.replace('seed="4"', 'seed="9"') + '<path id="arc" d="M86 196 Q200 96 314 196"/>') },
     { id: 'tee03-back', name: 'Tee 03, back: Never Too Late', place: 'Upper back, 9 in (23 cm) wide', inches: 9, bg: 'dark',
-      svg: svg('92 76 216 56',
+      svg: svg('90 74 220 58',
         '<g filter="url(#dist)">' +
-        '<text x="200" y="104" text-anchor="middle" ' + O + ' font-size="30" fill="#EDE8DC" letter-spacing="3">NEVER TOO LATE</text>' +
-        '<text x="200" y="124" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="' + R + '" letter-spacing="6">SECOND CHANCES EXIST</text>' +
+        '<text x="200" y="104" text-anchor="middle" ' + O + ' font-size="28" fill="#EDE8DC" textLength="200" lengthAdjust="spacing">NEVER TOO LATE</text>' +
+        '<text x="200" y="124" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="' + R + '" textLength="200" lengthAdjust="spacing">SECOND CHANCES EXIST</text>' +
         '</g>', DIST) },
 
     { id: 'hoodie-front', name: 'Hoodie, front: chest wordmark', place: 'Center chest, 4 in (10 cm) wide', inches: 4, bg: 'dark',
