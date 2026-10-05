@@ -88,6 +88,9 @@ window.SK = {
     'rice-paper':     { kcal: 340, p: 0,    f: 0,    c: 83.5 },
     'ff-american':    { kcal: 148, p: 22.2, f: 1.6,  c: 11.1 },
     'dijon':          { kcal: 66,  p: 4.4,  f: 4,    c: 5.8 },
+    'skirt-steak':    { kcal: 160, p: 21,   f: 7.8,  c: 0 },
+    'banderita-tortilla': { kcal: 154, p: 3.85, f: 1.9, c: 32.7 },
+    'salsa-verde':    { kcal: 50,  p: 0,    f: 0,    c: 10 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -150,6 +153,7 @@ window.SK = {
     { id: 'banana', name: 'Bananas', group: 'Fruit and fresh', alias: ['banana'] },
     { id: 'berries', name: 'Berries', group: 'Fruit and fresh', alias: ['blueberries', 'strawberries', 'raspberries'] },
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
+    { id: 'salsa-verde', name: 'Salsa verde', group: 'Sauces and pantry', alias: ['verde', 'green salsa', 'tomatillo'] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
     { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
     { id: 'teriyaki-sauce', name: 'Teriyaki sauce', group: 'Sauces and pantry', alias: ['teriyaki', 'sesame', 'stir fry sauce'] },
@@ -167,6 +171,27 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'carne-asada-tacos', name: 'Carne Asada Tacos', by: 'bryan', cat: 'Dinner', tag: 'Taco night', serves: 1, mins: 25,
+      photos: ['/kitchen/img/carne-asada-tacos.jpg', '/kitchen/img/carne-asada-tacos-side.jpg'], picRatio: '4/5',
+      blurb: 'Simple, clean and dialed in. Hard-seared skirt steak sliced thin on charred corn tortillas with onion, cilantro, salsa verde and lime. Four tacos, 47 grams of protein.',
+      items: [
+        { need: 'steak', txt: '7 1/4 oz (205 g) skirt steak, trimmed lean (raw weight)', food: 'skirt-steak', g: 205 },
+        { need: 'tortillas', txt: '4 La Banderita white corn tortillas', food: 'banderita-tortilla', g: 104 },
+        { need: 'onion', txt: '3/4 oz (22 g) white onion, finely diced, about 3 tbsp', food: 'onion', g: 22 },
+        { need: 'cilantro', txt: 'Small handful fresh cilantro, chopped', food: 'cilantro', g: 5 },
+        { need: 'salsa-verde', or: ['salsa'], txt: "1/4 cup (60 g) Mateo's Medium Salsa Verde", food: 'salsa-verde', g: 60 },
+        { need: 'lime', optional: true, txt: '1 lime, half juiced for the steak, half in wedges to serve', food: 'none', g: 0 },
+        { staple: true, txt: 'Avocado oil spray; garlic powder, cumin, salt and pepper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Pat the skirt steak dry. Season both sides with salt, pepper, garlic powder and a pinch of cumin, then squeeze half the lime over it. Let it sit 15 minutes while the grill or cast iron gets screaming hot.',
+        'Give the steak a light spray of avocado oil and sear it 3 to 4 minutes a side for medium, about 135°F (57°C). Skirt is thin, so it goes fast and you want hard char on the outside.',
+        'Rest the steak 5 to 10 minutes, then slice it thin against the grain. This is what keeps skirt tender, so do not skip it.',
+        'Warm the tortillas on a dry hot pan or right over the flame, about 30 seconds a side, until they puff and get a few charred spots. Double them up if they are thin.',
+        'Load each tortilla with steak, then onion and cilantro. Serve with the salsa verde on the side and lime wedges to squeeze over.'
+      ]
+    },
     {
       id: 'cheeseburger-rice-paper-rolls', name: 'Air-Fried Cheeseburger Rice Paper Rolls', by: 'bryan', cat: 'Dinner', tag: 'Air fryer', serves: 1, mins: 30,
       photos: ['/kitchen/img/cheeseburger-rice-paper-rolls.jpg'],
