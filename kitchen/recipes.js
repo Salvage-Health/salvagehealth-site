@@ -106,6 +106,7 @@ window.SK = {
     'realgood-tortilla': { kcal: 180, p: 20, f: 8,    c: 32 },
     'beef-bacon':     { kcal: 321, p: 28.6, f: 17.9, c: 0 },
     'potato-bake':    { kcal: 105, p: 3.5,  f: 5.5,  c: 10.5 },
+    'tater-tots':     { kcal: 188, p: 2.4,  f: 9.4,  c: 24.7 },   // frozen tots (Ore-Ida: 160 kcal per 9 pieces / 85 g)
     'lm-mozzarella':  { kcal: 286, p: 21.4, f: 21.4, c: 7.1 },
     'whey-isolate':   { kcal: 333, p: 83.3, f: 0,    c: 0 },
     'egg-pasture':    { kcal: 140, p: 12,   f: 10,   c: 0 },
@@ -261,13 +262,13 @@ window.SK = {
     {
       id: 'steak-breakfast-burrito', lvl: 4, name: 'Steak Breakfast Burrito', by: 'bryan', cat: 'Breakfast', tag: 'Big breakfast', serves: 1, mins: 25,
       photos: ['/kitchen/img/steak-breakfast-burrito.jpg'],
-      blurb: 'Seared top sirloin, beef bacon, a scrambled egg, cheesy cheddar and chive potatoes and melted mozzarella, wrapped in a high-protein tortilla and crisped in the pan. Nearly 50 grams of protein before 9 a.m.',
+      blurb: 'Seared top sirloin, beef bacon, a scrambled egg, crispy air-fried tater tots and melted mozzarella, wrapped in a high-protein tortilla and crisped in the pan. Nearly 50 grams of protein before 9 a.m.',
       items: [
         { need: 'flour-tortillas', txt: '1 Real Good burrito tortilla', food: 'realgood-tortilla', g: 50 },
         { need: 'steak', txt: '2 3/4 oz (78 g) top sirloin steak', food: 'top-sirloin', g: 78 },
         { need: 'eggs', txt: '1 large organic egg', food: 'egg', g: 50 },
         { need: 'bacon', optional: true, txt: '2 slices beef bacon', food: 'beef-bacon', g: 28 },
-        { need: 'potatoes', optional: true, txt: '1/2 pack cheddar and chive potato bake (or 1/2 cup / 75 g crispy diced potatoes)', food: 'potato-bake', g: 100 },
+        { need: 'potatoes', txt: '8 frozen tater tots (about 2 3/4 oz / 76 g), air fried', food: 'tater-tots', g: 76 },
         { need: 'cheese', txt: '1 oz (28 g) low-moisture mozzarella, shredded', food: 'lm-mozzarella', g: 28 },
         { staple: true, txt: 'Avocado oil spray; salt and pepper; chopped parsley to finish', food: 'none', g: 0 },
         { need: 'salsa', optional: true, txt: 'Red salsa or hot sauce for dipping (not counted in the macros)', food: 'none', g: 0 }

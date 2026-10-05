@@ -40,8 +40,8 @@ window.SK_STEPS = {
     "d": "Take out the 2 3/4 oz (78 g) of top sirloin and pat it dry with a paper towel, then season both sides with salt and pepper. Crack the egg into a small bowl and beat it with a fork. Shred the 1 oz (28 g) of mozzarella if it is not already shredded, chop a little parsley, and set out the tortilla and the 2 slices of beef bacon."
    },
    {
-    "t": "Heat the potatoes",
-    "d": "Heat the 1/2 pack of potato bake according to the package, in the oven or microwave, until steaming hot all the way through. Keep it warm so it is ready when you build the burrito."
+    "t": "Air fry the tots",
+    "d": "Put the 8 frozen tater tots in the air fryer basket in a single layer, no oil needed. Air fry at 400°F (204°C) for 10 to 12 minutes, shaking the basket halfway, until deep golden and crunchy. They cook while you do the bacon and steak, so start them first."
    },
    {
     "t": "Crisp the bacon",
@@ -57,7 +57,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Fill and roll",
-    "d": "Warm the tortilla in the microwave for 10 to 15 seconds or in the dry pan for a few seconds a side, so it bends without cracking. Lay the mozzarella down the middle first, then add the egg, steak, bacon and potatoes on top. Fold in the two sides, then roll it up tightly from the bottom."
+    "d": "Warm the tortilla in the microwave for 10 to 15 seconds or in the dry pan for a few seconds a side, so it bends without cracking. Lay the mozzarella down the middle first, then add the egg, steak, bacon and tots on top. Press the tots down a little so the burrito rolls tight. Fold in the two sides, then roll it up tightly from the bottom."
    },
    {
     "t": "Crisp and serve",
