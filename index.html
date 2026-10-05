@@ -126,6 +126,7 @@
   .merch-strip{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-decoration:none;color:var(--fg);background:linear-gradient(120deg,rgba(190,81,38,.16),rgba(190,81,38,0) 60%),var(--raised);border:1px solid var(--rule);border-radius:16px;padding:30px 30px}
   .merch-strip:hover{border-color:var(--rust)}
   .merch-strip h2.disp{margin-bottom:10px}
+  #kitchen{margin-bottom:-40px}
   .merch-strip .mshot{width:150px;aspect-ratio:4/5;object-fit:cover;border-radius:10px;background:#E4E4E4;flex-shrink:0}
   .merch-strip .mst{flex:1;min-width:220px}
   @media (max-width:560px){.merch-strip .mshot{width:100%}}
@@ -155,9 +156,10 @@
     <nav aria-label="Main">
       <a href="/about/">About</a>
       <a href="/articles/">Articles</a>
+      <a href="/kitchen/">Kitchen</a>
       <a href="/merch/">Merch</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/book">Free plan</a>
+      <a href="/faq/" class="hide-sm">FAQ</a>
+      <a href="/book" class="hide-sm">Free plan</a>
     </nav>
   </header>
 
@@ -247,6 +249,13 @@
       <p style="margin:18px 0 0"><a class="btn line" href="/articles/">All articles</a></p>
     </section>
 
+    <section id="kitchen">
+      <a class="merch-strip kit-strip" href="/kitchen/">
+        <div class="mst"><p class="eyebrow">New · Salvage Kitchen</p><h2 class="disp">Cook from <em>what's left.</em></h2><p class="body" style="margin:0">Tap what's in your fridge and get macro-friendly recipes you can make tonight, plus the one thing to grab at the store to unlock more.</p></div>
+        <span class="btn solid">Open the kitchen</span>
+      </a>
+    </section>
+
     <section id="merch">
       <a class="merch-strip" href="/merch/">
         <img class="mshot" src="/merch/img/tee-built-model-side.jpg" alt="The Built From What's Left Tee, worn" loading="lazy">
@@ -285,6 +294,7 @@
       <nav aria-label="Footer">
         <a href="/about/">About</a>
         <a href="/articles/">Articles</a>
+        <a href="/kitchen/">Salvage Kitchen</a>
         <a href="/merch/">Merch</a>
         <a href="/faq/">FAQ</a>
         <a href="/book">Free companion app</a>

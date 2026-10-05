@@ -47,8 +47,9 @@ def topbar(active):
     <nav aria-label="Main">
       {a('/about/','About','about')}
       {a('/articles/','Articles','articles')}
+      {a('/kitchen/','Kitchen','kitchen')}
       {a('/merch/','Merch','merch')}
-      {a('/faq/','FAQ','faq')}
+      {a('/faq/','FAQ','faq','hide-sm')}
       {a('/book','Free plan','book','hide-sm')}
     </nav>
   </header>
@@ -63,6 +64,7 @@ FOOT = f"""  <footer class="site">
       <nav aria-label="Footer">
         <a href="/about/">About</a>
         <a href="/articles/">Articles</a>
+        <a href="/kitchen/">Salvage Kitchen</a>
         <a href="/merch/">Merch</a>
         <a href="/faq/">FAQ</a>
         <a href="/book">Free companion app</a>
