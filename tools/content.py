@@ -306,7 +306,7 @@ SHOP = "https://salvagehealth-shop.fourthwall.com"
 LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side")),
         "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ("tee-never-model-front", "tee-never-model-back")),
         "tee-athletic": ("$34", SHOP + "/products/salvage-athletic-tee", ("tee-athletic-model-front", "tee-athletic-model-back")),
-        "hoodie": ("$68", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back"))}
+        "hoodie": ("$78.99", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
