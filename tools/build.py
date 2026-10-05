@@ -316,6 +316,29 @@ KCSS = """<style>
 .km b{color:var(--dim);font-weight:700}
 .kst{font-size:12.5px;font-weight:700;color:var(--rust-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .kst.ok{color:#7FBF7F}
+.lvd{display:inline-flex;gap:2px;vertical-align:middle;margin-left:6px}
+.lvd i{width:6px;height:6px;border-radius:99px;background:rgba(250,249,245,.18)}
+.lvd i.on{background:var(--rust-text)}
+.kplan{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px;padding:12px 14px;border-radius:12px;border:1px solid var(--rust);background:rgba(190,81,38,.1);text-decoration:none;color:var(--fg)}
+.kplan small{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust-text)}
+.kplan b{font-size:16px}
+.kplan em{font-style:normal;font-weight:700;color:var(--rust-text);white-space:nowrap}
+.kplan.none span{font-size:14.5px;color:var(--dim)}.kplan.none b{font-size:14.5px;color:var(--fg)}
+.klv{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 16px}
+.klv span{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);margin-right:4px}
+.klv button{min-height:32px;padding:4px 11px;border-radius:99px;border:1px solid var(--rule);background:transparent;color:var(--dim);font:600 13px Inter,sans-serif;cursor:pointer}
+.klv button[aria-pressed=true]{border-color:var(--fg);color:var(--fg)}
+.dday{display:grid;gap:7px;margin-top:14px;padding:14px;border-radius:12px;background:rgba(190,81,38,.1);border:1px solid rgba(190,81,38,.5)}
+.dday b{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust-text)}
+.dday span{display:grid;grid-template-columns:70px 1fr 42px;align-items:center;gap:10px;font-size:13px;color:var(--dim)}
+.dday i{font-style:normal}
+.dday s{display:block;height:8px;border-radius:99px;background:rgba(250,249,245,.1);overflow:hidden;text-decoration:none}
+.dday u{display:block;height:100%;background:var(--rust);text-decoration:none}
+.dday em{font-style:normal;text-align:right;font-weight:700;color:var(--fg)}
+.dlv{margin-top:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--rule)}
+.dlv span{font-size:12.5px;color:var(--faint)}
+.dlv b{display:block;font-size:15px;margin-top:2px}
+.dlv p{margin:2px 0 0;font-size:13.5px;color:var(--dim)}
 .kmore{display:block;width:100%;max-width:360px;margin:22px auto 8px;min-height:48px;border-radius:10px;border:1px solid var(--rule);background:var(--raised);color:var(--fg);font:700 15px Inter,sans-serif;cursor:pointer}
 .kmore span{color:var(--faint);font-weight:500;margin-left:6px}
 .kmore:hover{border-color:var(--rust)}

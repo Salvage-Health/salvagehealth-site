@@ -23,7 +23,11 @@
     return { r: r, miss: miss, got: core.length - miss.length };
   }
 
-  var PLAN = window.SH_GOALS ? window.SH_GOALS.load() : null, GOAL = PLAN && PLAN.goal && window.SH_GOALS.G[PLAN.goal];
+  var HG = window.SH_GOALS, PLAN = HG ? HG.load() : null, GOAL = PLAN && PLAN.goal && HG.G[PLAN.goal];
+  var lvMax = HG && PLAN && PLAN.skill ? HG.maxLv(PLAN.skill) : 5;
+  function lvOk(r) { return (r.lvl || 3) <= lvMax; }
+  function dots(l) { return HG ? HG.dots(l) : ''; }
+  function setLv(v) { lvMax = v; if (HG) { var p = HG.load() || {}; p.skill = v <= 2 ? 'new' : v <= 3 ? 'ok' : 'pro'; HG.save(p); PLAN = p; } }
   var CATS = (GOAL ? ['For you'] : []).concat(['All', "Bryan's", 'Batch prep', 'Vegetarian', 'Keto', 'Breakfast', 'Lunch', 'Dinner']);
   function inCat(r, c) { c = c || cat; if (c === 'For you') return !!GOAL && GOAL.fits(r); return c === 'All' || (c === "Bryan's" ? !!r.by : c === 'Batch prep' ? !!r.batch : c === 'Vegetarian' ? !!r.veg : c === 'Keto' ? !!r.keto : r.cat === c); }
   function matches(r) { if (!query) return true; return query.split(/\s+/).every(function (w) { return r.hay.indexOf(w) > -1; }); }
@@ -45,7 +49,7 @@
     else if (status === 'close') st = '<span class="kst">Need ' + s.miss.map(function (it) { return esc(byId[it.need].name.toLowerCase()); }).join(', ') + '</span>';
     return '<button type="button" class="kc" data-r="' + r.id + '"><span class="kimg">' + pic + badge(r) + '</span>' +
       '<span class="kt">' + esc(r.name) + '</span>' +
-      '<span class="km"><span><b>' + m.kcal + '</b> cal · <b>' + m.p + 'g</b> protein</span><span>' + r.mins + ' min</span></span>' + st + '</button>';
+      '<span class="km"><span><b>' + m.kcal + '</b> cal · <b>' + m.p + 'g</b> protein</span><span>' + r.mins + ' min' + dots(r.lvl) + '</span></span>' + st + '</button>';
   }
 
   function grid(list, status, key) {
@@ -56,16 +60,17 @@
 
   function renderFilters() {
     $('kfil').innerHTML = CATS.map(function (c) {
-      var n = SK.RECIPES.filter(function (r) { return inCat(r, c); }).length;
+      var n = SK.RECIPES.filter(function (r) { return inCat(r, c) && lvOk(r); }).length;
       return '<button type="button" class="kf' + (c === cat ? ' on' : '') + '" data-cat="' + c + '" aria-pressed="' + (c === cat) + '">' + c + ' <span>' + n + '</span></button>';
     }).join('');
   }
 
   function renderBrowse() {
-    var list = SK.RECIPES.filter(function (r) { return inCat(r) && matches(r); });
-    var out = '';
+    var list = SK.RECIPES.filter(function (r) { return inCat(r) && matches(r) && lvOk(r); });
+    if (cat === 'For you' && GOAL) { var order = HG.rank(SK.RECIPES, PLAN.goal, PLAN.skill); list.sort(function (x, y) { return order.indexOf(x) - order.indexOf(y); }); }
+    var out = planBar() + lvBar();
     if (cat === 'All' && !query) {
-      var mine = SK.RECIPES.filter(function (r) { return r.by; });
+      var mine = SK.RECIPES.filter(function (r) { return r.by && lvOk(r); });
       out += '<section class="kfeat"><div class="kh"><h2 class="disp">Bryan\'s <em>kitchen</em></h2><span>' + mine.length + ' recipes · swipe</span></div><div class="krail">' + mine.map(function (r) { return card(r); }).join('') + '</div></section>';
       list = list.filter(function (r) { return !r.by; }).sort(function (x, y) { return (y.photos ? 1 : 0) - (x.photos ? 1 : 0); });
       out += '<div class="kh"><h2 class="disp">More <em>recipes</em></h2><span>' + list.length + '</span></div>';
@@ -76,13 +81,22 @@
     $('results').innerHTML = out;
   }
 
+  function planBar() {
+    if (!PLAN || !PLAN.cal || !GOAL) return '<a class="kplan none" href="/start/"><span><b>Get your numbers</b> and this kitchen shows how each meal fits your day.</span><em>Free &rarr;</em></a>';
+    return '<a class="kplan" href="/start/kit/#numbers"><span><small>Your plan · ' + esc(GOAL.short) + '</small><b>' + PLAN.cal.toLocaleString('en-US') + ' cal · ' + PLAN.p + 'g protein</b></span><em>Edit</em></a>';
+  }
+  function lvBar() {
+    var opts = [[5, 'Any level'], [2, 'Easy (1 to 2)'], [3, 'Up to 3']];
+    return '<div class="klv" role="group" aria-label="Kitchen level"><span>Kitchen level</span>' + opts.map(function (o) { return '<button type="button" data-lv="' + o[0] + '" aria-pressed="' + (lvMax === o[0]) + '">' + o[1] + '</button>'; }).join('') + '</div>';
+  }
+
   function renderFridge() {
-    var out = '';
+    var out = lvBar();
     if (!sel.size) {
-      out = '<p class="kempty">Add a few things you have and your matches show up here, best first.</p>';
+      out += '<p class="kempty">Add a few things you have and your matches show up here, best first.</p>';
       $('results').innerHTML = out; return;
     }
-    var sc = SK.RECIPES.filter(function (r) { return inCat(r); }).map(score);
+    var sc = SK.RECIPES.filter(function (r) { return inCat(r) && lvOk(r); }).map(score);
     var mine = function (s) { return s.r.by ? 0 : 1; };
     var ready = sc.filter(function (s) { return !s.miss.length; }).sort(function (a, b) { return mine(a) - mine(b); });
     var close = sc.filter(function (s) { return s.miss.length && s.miss.length <= 2 && s.got > 0; }).sort(function (a, b) { return a.miss.length - b.miss.length || mine(a) - mine(b); });
@@ -139,6 +153,7 @@
   $('kfridge2').addEventListener('click', fridgeClick);
   $('results').addEventListener('click', function (e) {
     if (e.target.closest('.kmore')) { limit += PAGE * 2; render(); return; }
+    var lv = e.target.closest('.klv button'); if (lv) { setLv(+lv.dataset.lv); limit = PAGE; render(); return; }
     var b = e.target.closest('.kc'); if (b) openRecipe(b.dataset.r);
   });
   var timer;
@@ -180,6 +195,8 @@
       '<p class="dmeta"><span>' + r.mins + ' min</span><span>Serves ' + r.serves + '</span>' + (r.batch ? '<span>Batch prep</span>' : '') + (r.keto ? '<span>Keto</span>' : '') + (r.veg ? '<span>Vegetarian</span>' : '') + '</p>' +
       '<p class="rb">' + esc(r.blurb) + '</p></div>' +
       '<div class="mac big"><span><em>' + m.kcal + '</em>cal</span><span><em>' + m.p + 'g</em>protein</span><span><em>' + m.c + 'g</em>carbs</span><span><em>' + m.f + 'g</em>fat</span></div>' +
+      (PLAN && PLAN.cal ? '<div class="dday"><b>Of your day</b>' + [['Calories', m.kcal, PLAN.cal], ['Protein', m.p, PLAN.p], ['Carbs', m.c, PLAN.c], ['Fat', m.f, PLAN.f]].map(function (x) { var pc = x[2] ? Math.round(x[1] / x[2] * 100) : 0; return '<span><i>' + x[0] + '</i><s><u style="width:' + Math.min(pc, 100) + '%"></u></s><em>' + pc + '%</em></span>'; }).join('') + '</div>' : '') +
+      (r.lvl ? '<div class="dlv"><span>Level ' + r.lvl + ' of 5 ' + dots(r.lvl) + '</span><b>' + (HG ? HG.LV[r.lvl][0] : '') + '</b><p>' + (HG ? HG.LV[r.lvl][1] : '') + '</p></div>' : '') +
       '<p class="fine2">Per serving, including optional items. Estimates from USDA and package label data.</p>' +
       '<div class="dtabs" role="tablist"><button type="button" class="dtab on" data-p="ing" role="tab" aria-selected="true">Ingredients <span>' + r.items.length + '</span></button><button type="button" class="dtab" data-p="steps" role="tab" aria-selected="false">Steps <span>' + (det ? det.steps.length : r.steps.length) + '</span></button></div>' +
       '<div class="dpane" data-p="ing"><ul class="ing">' + li + '</ul><button type="button" class="dgo" data-p="steps">Start cooking</button></div>' +

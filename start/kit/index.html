@@ -209,7 +209,41 @@
 .fya a{display:block;padding:14px 16px;background:var(--raised);border:1px solid var(--rule);border-radius:12px;text-decoration:none;color:var(--fg);font-weight:700}
 .fya a:hover,.fyr a:hover b{color:var(--rust-text)}
 .fit{margin:12px 0 0;padding:12px 14px;border-left:3px solid var(--rust);background:rgba(190,81,38,.1);border-radius:0 10px 10px 0;color:var(--dim);font-size:14.5px}
-@media (max-width:640px){.gls{grid-template-columns:1fr}.goals{grid-template-columns:1fr 1fr}.seg.act{grid-template-columns:1fr 1fr}.nums{grid-template-columns:1fr 1fr}.nums label:nth-child(2){grid-column:1/-1;order:-1}.fyr{grid-template-columns:1fr 1fr}.calc{padding:16px}}
+.seg.sk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.plan{padding-top:28px!important;scroll-margin-top:12px}
+.plan.flash .res,.plan.flash .fyr{animation:flash 1s ease}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(190,81,38,.0)}25%{box-shadow:0 0 0 4px rgba(190,81,38,.55)}100%{box-shadow:0 0 0 0 rgba(190,81,38,0)}}
+.phd h2{font-size:clamp(28px,5vw,40px)}
+.pchips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.pchips span{padding:5px 11px;border-radius:99px;background:var(--rust);color:#FAF9F5;font-size:13px;font-weight:700}
+.pchips span.o{background:transparent;border:1px solid var(--rule);color:var(--dim)}
+.ebar{margin-top:16px}
+.et{position:relative;height:14px;border-radius:99px;background:rgba(250,249,245,.08);overflow:visible}
+.ef{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--rust);transition:width .5s}
+.em{position:absolute;top:-5px;bottom:-5px;width:3px;border-radius:2px;background:var(--fg);transition:left .5s}
+.el{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:12.5px;color:var(--faint)}
+.el b{color:var(--fg)}
+.edl{margin:8px 0 0;font-weight:700;font-size:15px;color:var(--fg)}
+.edl em{font-style:normal;color:var(--rust-text)}
+.mbar{margin-top:18px}
+.mt{display:flex;height:14px;border-radius:99px;overflow:hidden;gap:2px}
+.mt i{display:block;height:100%;transition:width .5s}
+.mp1,.sw.p{background:var(--rust)}.mc1,.sw.c{background:#E2C9A6}.mf1,.sw.f{background:#8A8779}
+.ml{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:14px;color:var(--dim)}
+.ml b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-size:22px;color:var(--fg)}
+.ml em{font-style:normal;color:var(--faint);font-size:12.5px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.phd2{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.phd2 span{font-size:12.5px;color:var(--faint)}
+.fyr .why{font-size:12px;color:var(--rust-text);font-weight:600;line-height:1.35}
+.lvd{display:inline-flex;gap:2px;vertical-align:middle;margin-left:4px}
+.lvd i{width:6px;height:6px;border-radius:99px;background:rgba(250,249,245,.18)}
+.lvd i.on{background:var(--rust-text)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,250%);z-index:30;padding:10px 16px;border-radius:99px;background:var(--fg);color:#141413;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .25s;white-space:nowrap}
+.toast.on{transform:translate(-50%,0)}
+.toast button{margin-left:10px;border:0;background:none;color:var(--rust);font:inherit;cursor:pointer;text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.ef,.em,.mt i,.toast{transition:none}.plan.flash .res,.plan.flash .fyr{animation:none}}
+@media (max-width:640px){.seg.sk{grid-template-columns:1fr}.gls{grid-template-columns:1fr}.goals{grid-template-columns:1fr 1fr}.seg.act{grid-template-columns:1fr 1fr}.nums{grid-template-columns:1fr 1fr}.nums label:nth-child(2){grid-column:1/-1;order:-1}.fyr{grid-template-columns:1fr 1fr}.calc{padding:16px}}
 </style>
 </head>
 <body>
@@ -245,14 +279,25 @@
           <label><span class="cl">Weight</span><span class="hgt"><input id="c-lb" type="number" inputmode="decimal" min="80" max="700" placeholder="220"><i>lb</i></span></label>
         </div>
         <div class="cq"><span class="cl">Activity</span><div class="seg act" id="c-act"></div></div>
+        <div class="cq"><span class="cl">In the kitchen</span><div class="seg sk" id="c-skill"></div></div>
       </form>
-      <div class="res" id="res" hidden>
-        <div class="rtop"><span><small id="r-goal">Daily target</small><b id="r-cal">0</b> calories a day</span><span class="rt"><small>Maintenance</small><b id="r-tdee">0</b></span></div>
-        <div class="rm"><span><b id="r-p">0</b>g<small>protein</small></span><span><b id="r-c">0</b>g<small>carbs</small></span><span><b id="r-f">0</b>g<small>fat</small></span></div>
+      <p class="pantry" id="r-empty">Answer all six to see your plan. Estimates only, not medical advice. Want goal dates? Use the <a href="/book">full companion app</a>.</p>
+    </section>
+
+    <section id="plan" class="plan" hidden aria-live="polite">
+      <div class="phd"><p class="eyebrow">Your plan is ready</p><h2 class="disp">Built for <em id="p-who">you</em></h2><div class="pchips" id="p-chips"></div></div>
+      <div class="res">
+        <div class="rtop"><span><small id="r-goal">Daily target</small><b id="r-cal">0</b> calories a day</span></div>
+        <div class="ebar" id="ebar"><div class="et"><i class="ef" id="e-fill"></i><i class="em" id="e-mark"></i></div><div class="el"><span id="e-l1"></span><span id="e-l2"></span></div><p class="edl" id="e-delta"></p></div>
+        <div class="mbar" id="mbar"><div class="mt"><i class="mp1" id="m-p"></i><i class="mc1" id="m-c"></i><i class="mf1" id="m-f"></i></div>
+          <div class="ml"><span><i class="sw p"></i><b id="r-p">0</b>g protein <em id="r-pp"></em></span><span><i class="sw c"></i><b id="r-c">0</b>g carbs <em id="r-cp"></em></span><span><i class="sw f"></i><b id="r-f">0</b>g fat <em id="r-fp"></em></span></div></div>
         <p class="rnote" id="r-note"></p>
         <p class="rnote" id="r-kg"></p>
       </div>
-      <p class="pantry" id="r-empty">Fill in all six to see your numbers. Estimates only, not medical advice. Want goal dates and a full plan? Use the <a href="/book">full companion app</a>.</p>
+      <div class="phd2"><h3 class="fyh">Your first meals</h3><span id="p-skilltag"></span></div>
+      <p class="pantry" id="p-why"></p>
+      <div class="fyr" id="fy-rec"></div>
+      <a class="btn line" style="width:auto;margin-top:14px" href="/kitchen/#foryou">See every recipe that fits your plan</a>
     </section>
 
     <section style="padding-top:44px" id="foryou" hidden>
@@ -260,13 +305,10 @@
       <h2 class="disp" id="fy-h">Your playbook</h2>
       <p class="lead" id="fy-hello"></p>
       <ol class="tips" id="fy-tips"></ol>
-      <h3 class="fyh">Recipes that fit your goal</h3>
-      <div class="fyr" id="fy-rec"></div>
-      <a class="btn line" style="width:auto;margin-top:14px" href="/kitchen/#foryou">See every recipe that fits</a>
       <h3 class="fyh">Read next</h3>
       <div class="fya" id="fy-art"></div>
     </section>
-    <form name="starter-kit-profile" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="starter-kit-profile"><input name="company"><input name="email"><input name="goal"><input name="calories"><input name="protein"><input name="activity"></form>
+    <form name="starter-kit-profile" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="starter-kit-profile"><input name="company"><input name="email"><input name="goal"><input name="calories"><input name="protein"><input name="activity"><input name="skill"></form>
 
     <section style="padding-top:44px" id="week">
       <p class="eyebrow">Step 2</p>

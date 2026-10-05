@@ -13,7 +13,9 @@
         ['The scale will lie to you', 'Water and sodium swing your weight 2 to 5 lb (1 to 2 kg) day to day. Watch the weekly average, not one morning.']
       ],
       articles: ['say-what-you-do', '75-hard'],
-      fits: function (r) { return r.m.kcal <= 520 && r.m.p * 4 / Math.max(r.m.kcal, 1) >= 0.3; }
+      fits: function (r) { return r.m.kcal <= 520 && r.m.p * 4 / Math.max(r.m.kcal, 1) >= 0.3; },
+      score: function (r) { return r.m.p * 400 / r.m.kcal - r.m.kcal / 40; },
+      why: function (r) { return Math.round(r.m.p * 400 / r.m.kcal) + '% of calories from protein. Keeps you full.'; }
     },
     recomp: {
       label: 'Recomp', short: 'Recomp',
@@ -27,7 +29,9 @@
         ['Sleep is the multiplier', 'Muscle is built while you sleep. Seven to nine hours makes everything else work better.']
       ],
       articles: ['power-of-a-coach', 'supplements-whats-worth-it'],
-      fits: function (r) { return r.m.kcal >= 300 && r.m.kcal <= 650 && r.m.p >= 35; }
+      fits: function (r) { return r.m.kcal >= 300 && r.m.kcal <= 560 && r.m.p >= 40; },
+      score: function (r) { return r.m.p * 1.5 - Math.abs(r.m.kcal - 430) / 8; },
+      why: function (r) { return r.m.p + 'g protein in a ' + r.m.kcal + '-calorie meal. Feeds the muscle, not the fat.'; }
     },
     gain: {
       label: 'Build muscle', short: 'Muscle gain',
@@ -41,7 +45,9 @@
         ['Recovery is training too', 'Rest days, sleep and food are when you actually grow. Don\'t skip them.']
       ],
       articles: ['power-of-a-coach', 'supplements-whats-worth-it'],
-      fits: function (r) { return r.m.kcal >= 480 && r.m.p >= 40; }
+      fits: function (r) { return r.m.kcal >= 540 && r.m.p >= 35; },
+      score: function (r) { return r.m.kcal / 6 + r.m.p * 0.5; },
+      why: function (r) { return 'Big plate: ' + r.m.kcal + ' calories and ' + r.m.p + 'g protein to fuel growth.'; }
     },
     maintain: {
       label: 'Maintain', short: 'Maintenance',
@@ -55,9 +61,26 @@
         ['Check in monthly', 'Weigh in and measure once a month. Small drifts are easy to fix. Big ones aren\'t.']
       ],
       articles: ['say-what-you-do', 'power-of-a-coach'],
-      fits: function (r) { return r.m.kcal >= 300 && r.m.kcal <= 650; }
+      fits: function (r) { return r.m.kcal >= 300 && r.m.kcal <= 650; },
+      score: function (r) { return 40 - Math.abs(r.m.kcal - 420) / 8 + (r.batch ? 8 : 0) + (r.veg ? 6 : 0) - (r.m.p > 50 ? 12 : 0); },
+      why: function (r) { return 'Balanced ' + r.m.kcal + '-calorie meal' + (r.batch ? ' you can batch for the week.' : ' that is easy to fit into any day.'); }
     }
   };
+  var LV = {1: ['No-stress', 'Mostly mixing and assembling. If you can use a microwave, you can make this.'],
+    2: ['Easy', 'One pan or one sheet pan and basic chopping. A great place to start.'],
+    3: ['Comfortable', 'A few parts going at once and searing meat to temperature.'],
+    4: ['Confident', 'More hands-on technique: shaping, rolling, smashing or grilling.'],
+    5: ['Chef level', 'Several techniques and careful timing. Worth it when you are ready.']};
+  var SKILL = [['new', 'Just starting out', 'Show me the easy ones', 2], ['ok', 'I can follow a recipe', 'Easy to medium', 3], ['pro', 'Comfortable in the kitchen', 'Show me everything', 5]];
+  function maxLv(skill) { var s = SKILL.filter(function (x) { return x[0] === skill; })[0]; return s ? s[3] : 5; }
+  function rank(list, goal, skill) {
+    var g = G[goal], max = maxLv(skill);
+    return list.filter(g.fits).sort(function (a, b) {
+      var oa = (a.lvl || 3) > max ? 1 : 0, ob = (b.lvl || 3) > max ? 1 : 0;
+      return oa - ob || (g.score(b) + (b.photos ? 2 : 0)) - (g.score(a) + (a.photos ? 2 : 0));
+    });
+  }
+  function dots(l) { var s = ''; for (var i = 1; i <= 5; i++) s += '<i class="' + (i <= l ? 'on' : '') + '"></i>'; return '<span class="lvd" title="Level ' + l + ' of 5">' + s + '</span>'; }
   var ACT = [['1.2', 'Mostly sitting'], ['1.375', 'Light', '1 to 3 workouts a week'], ['1.55', 'Active', '4 to 5 workouts a week'], ['1.725', 'Very active', 'Daily training or physical job']];
 
   function bmr(sex, lb, cm, age) { return 10 * lb * 0.45359237 + 6.25 * cm - 5 * age + (sex === 'm' ? 5 : -161); }
@@ -75,5 +98,5 @@
   }
   function load() { try { return JSON.parse(localStorage.getItem('sh-plan') || 'null'); } catch (e) { return null; } }
   function save(p) { try { localStorage.setItem('sh-plan', JSON.stringify(p)); } catch (e) {} }
-  window.SH_GOALS = { G: G, ACT: ACT, targets: targets, load: load, save: save };
+  window.SH_GOALS = { G: G, ACT: ACT, LV: LV, SKILL: SKILL, maxLv: maxLv, rank: rank, dots: dots, targets: targets, load: load, save: save };
 })();
