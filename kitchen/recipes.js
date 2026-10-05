@@ -262,7 +262,7 @@ window.SK = {
     {
       id: 'steak-breakfast-burrito', lvl: 4, name: 'Steak Breakfast Burrito', by: 'bryan', cat: 'Breakfast', tag: 'Big breakfast', serves: 1, mins: 25,
       photos: ['/kitchen/img/steak-breakfast-burrito.jpg'],
-      blurb: 'Seared top sirloin, beef bacon, a scrambled egg, crispy air-fried tater tots and melted mozzarella, wrapped in a high-protein tortilla and crisped in the pan. Nearly 50 grams of protein before 9 a.m.',
+      blurb: 'Seared top sirloin, beef bacon, a scrambled egg, crispy air-fried tater tots and melted mozzarella, wrapped in a high-protein tortilla and crisped in the pan. About 40 grams of protein before 9 a.m.',
       items: [
         { need: 'flour-tortillas', txt: '1 Real Good burrito tortilla', food: 'realgood-tortilla', g: 50 },
         { need: 'steak', txt: '2 3/4 oz (78 g) top sirloin steak', food: 'top-sirloin', g: 78 },
