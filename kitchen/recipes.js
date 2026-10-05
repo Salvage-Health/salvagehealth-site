@@ -17,7 +17,7 @@ window.SK = {
     'lime-juice':     { kcal: 25,  p: 0.4,  f: 0.1,  c: 8.4 },
     'lemon-juice':    { kcal: 22,  p: 0.4,  f: 0.2,  c: 6.9 },
     'cilantro':       { kcal: 23,  p: 2.1,  f: 0.5,  c: 3.7 },
-    'olive-oil':      { kcal: 884, p: 0,    f: 100,  c: 0 },
+    'avocado-oil':      { kcal: 884, p: 0,    f: 100,  c: 0 },
     'butter':         { kcal: 717, p: 0.9,  f: 81,   c: 0.1 },
     'corn-tortilla':  { kcal: 218, p: 5.7,  f: 2.9,  c: 44.6 },
     'salsa':          { kcal: 36,  p: 1.5,  f: 0.2,  c: 7 },
@@ -137,7 +137,7 @@ window.SK = {
     { id: 'protein-powder', name: 'Protein powder', group: 'Sauces and pantry', alias: ['whey', 'protein'] }
   ],
 
-  STAPLES: ['Olive oil or cooking spray', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
+  STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
     {
@@ -150,10 +150,10 @@ window.SK = {
         { need: 'broccoli', txt: '5 1/4 oz (151 g) broccoli florets, about 1 3/4 cups', food: 'broccoli', g: 151 },
         { need: 'cacio-sauce', optional: true, txt: '2 3/4 oz (77 g) Carbone Cacio e Pepe sauce, about 1/3 cup (no jar? use extra parmesan, pasta water and lots of black pepper)', food: 'cacio-sauce', g: 77 },
         { need: 'parmesan', txt: '1 oz (25 g) fresh grated parmesan, about 1/3 cup', food: 'parmesan', g: 25 },
-        { staple: true, txt: '1 1/2 tbsp Cajun seasoning; cooking spray; salt; lots of fresh black pepper', food: 'none', g: 0 }
+        { staple: true, txt: '1 1/2 tbsp Cajun seasoning; avocado oil spray; salt; lots of fresh black pepper', food: 'none', g: 0 }
       ],
       steps: [
-        'Pat the chicken thighs dry and coat them all over with the Cajun seasoning and a light spray of oil. Let them sit 10 minutes while the grill heats (or overnight in the fridge).',
+        'Pat the chicken thighs dry and coat them all over with the Cajun seasoning and a light spray of avocado oil. Let them sit 10 minutes while the grill heats (or overnight in the fridge).',
         'Grill over medium-high heat, 5 to 6 minutes a side, until charred and 175°F (79°C) inside. Rest 5 minutes, then slice.',
         'Meanwhile, boil the rotini in well-salted water. Add the broccoli for the last 3 minutes. Save 1/2 cup (120 ml) of the pasta water, then drain.',
         'Put the pasta and broccoli back in the pot over low heat. Stir in the cacio e pepe sauce, half the parmesan and a splash of pasta water until it turns glossy and coats everything. Crack in plenty of black pepper.',
@@ -202,7 +202,7 @@ window.SK = {
         { need: 'bell-pepper', txt: '1 bell pepper, diced', food: 'bell-pepper', g: 150 },
         { need: 'lime', txt: '2 limes', food: 'lime-juice', g: 60 },
         { need: 'cilantro', optional: true, txt: 'Handful of cilantro, chopped', food: 'cilantro', g: 10 },
-        { staple: true, txt: '1 tbsp olive oil', food: 'olive-oil', g: 13.5 },
+        { staple: true, txt: '1 tbsp avocado oil', food: 'avocado-oil', g: 13.5 },
         { staple: true, txt: '2 tsp chili powder, 1 tsp cumin, salt and pepper', food: 'none', g: 0 }
       ],
       steps: [
@@ -225,7 +225,7 @@ window.SK = {
         { need: 'cilantro', txt: 'Handful of cilantro, chopped', food: 'cilantro', g: 15 },
         { need: 'lime', txt: '2 limes', food: 'lime-juice', g: 60 },
         { need: 'salsa', optional: true, txt: '1/2 cup (130 g) salsa', food: 'salsa', g: 130 },
-        { staple: true, txt: '1 tsp olive oil', food: 'olive-oil', g: 4.5 },
+        { staple: true, txt: '1 tsp avocado oil', food: 'avocado-oil', g: 4.5 },
         { staple: true, txt: '1 tsp each chili powder, cumin, oregano; salt', food: 'none', g: 0 }
       ],
       steps: [
@@ -246,7 +246,7 @@ window.SK = {
         { need: 'potatoes', or: ['sweet-potatoes'], txt: '1 1/2 lb (680 g) baby potatoes, halved', food: 'potato', g: 680 },
         { need: 'green-beans', or: ['broccoli'], txt: '1 lb (454 g) green beans, trimmed', food: 'green-beans', g: 454 },
         { need: 'butter', optional: true, txt: '1 tbsp butter', food: 'butter', g: 14 },
-        { staple: true, txt: '1 tbsp olive oil', food: 'olive-oil', g: 13.5 },
+        { staple: true, txt: '1 tbsp avocado oil', food: 'avocado-oil', g: 13.5 },
         { staple: true, txt: '3 cloves garlic, smashed; salt and pepper', food: 'garlic', g: 9 }
       ],
       steps: [
@@ -269,7 +269,7 @@ window.SK = {
         { need: 'onion', txt: '1 red onion, cut in chunks', food: 'onion', g: 150 },
         { need: 'rice', txt: '1 cup (185 g) dry rice', food: 'white-rice', g: 185 },
         { need: 'lemon', or: ['lime'], txt: '1 lemon', food: 'lemon-juice', g: 45 },
-        { staple: true, txt: '1 tbsp olive oil', food: 'olive-oil', g: 13.5 },
+        { staple: true, txt: '1 tbsp avocado oil', food: 'avocado-oil', g: 13.5 },
         { staple: true, txt: '3 cloves garlic, minced; paprika, salt and pepper', food: 'garlic', g: 9 }
       ],
       steps: [
@@ -290,7 +290,7 @@ window.SK = {
         { need: 'eggs', txt: '4 large eggs', food: 'egg', g: 200 },
         { need: 'potatoes', or: ['sweet-potatoes'], txt: '12 oz (340 g) potatoes, diced small', food: 'potato', g: 340 },
         { need: 'onion', optional: true, txt: '1/2 onion, diced', food: 'onion', g: 75 },
-        { staple: true, txt: '2 tsp olive oil', food: 'olive-oil', g: 9 },
+        { staple: true, txt: '2 tsp avocado oil', food: 'avocado-oil', g: 9 },
         { staple: true, txt: 'Salt, pepper and paprika', food: 'none', g: 0 }
       ],
       steps: [
@@ -310,7 +310,7 @@ window.SK = {
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '2 lb (907 g) chicken breast', food: 'chicken-breast', g: 907 },
         { need: 'sweet-potatoes', or: ['potatoes'], txt: '2 lb (907 g) sweet potatoes, cubed', food: 'sweet-potato', g: 907 },
         { need: 'broccoli', or: ['green-beans'], txt: '1 1/2 lb (680 g) broccoli florets', food: 'broccoli', g: 680 },
-        { staple: true, txt: '2 tbsp olive oil', food: 'olive-oil', g: 27 },
+        { staple: true, txt: '2 tbsp avocado oil', food: 'avocado-oil', g: 27 },
         { staple: true, txt: 'Garlic powder, paprika, salt and pepper', food: 'none', g: 0 }
       ],
       steps: [
@@ -349,7 +349,7 @@ window.SK = {
         { need: 'spinach', txt: '2 cups (60 g) spinach, chopped', food: 'spinach', g: 60 },
         { need: 'bell-pepper', txt: '1 bell pepper, finely diced', food: 'bell-pepper', g: 150 },
         { need: 'cheese', optional: true, txt: '1/2 cup (56 g) shredded cheese', food: 'cheese', g: 56 },
-        { staple: true, txt: 'Cooking spray, salt and pepper', food: 'none', g: 0 }
+        { staple: true, txt: 'Avocado oil spray, salt and pepper', food: 'none', g: 0 }
       ],
       steps: [
         'Heat the oven to 350°F (175°C) and spray a 12-cup muffin tin well.',
@@ -369,7 +369,7 @@ window.SK = {
         { need: 'flour-tortillas', txt: '6 large (10-inch) flour tortillas', food: 'flour-tortilla', g: 430 },
         { need: 'cheese', optional: true, txt: '3/4 cup (85 g) shredded cheese', food: 'cheese', g: 85 },
         { need: 'salsa', optional: true, txt: '1/2 cup (130 g) salsa', food: 'salsa', g: 130 },
-        { staple: true, txt: '1 tbsp olive oil; chili powder, cumin, salt and pepper', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; chili powder, cumin, salt and pepper', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Cook the potatoes in the oil over medium-high heat, 12 to 15 minutes, until crisp. Set aside.',
@@ -405,7 +405,7 @@ window.SK = {
         { need: 'protein-powder', txt: '1 scoop (30 g) protein powder', food: 'protein-powder', g: 30 },
         { need: 'milk', txt: '1/2 cup (120 ml) milk', food: 'milk', g: 120 },
         { need: 'berries', optional: true, txt: 'Berries for the top', food: 'berries', g: 75 },
-        { staple: true, txt: '1 tsp baking powder, cinnamon, cooking spray', food: 'none', g: 0 }
+        { staple: true, txt: '1 tsp baking powder, cinnamon, avocado oil spray', food: 'none', g: 0 }
       ],
       steps: [
         'Blend everything except the berries until smooth. Let it sit 5 minutes to thicken.',
@@ -426,7 +426,7 @@ window.SK = {
         { need: 'greek-yogurt', txt: '1 cup (227 g) nonfat Greek yogurt', food: 'greek-yogurt', g: 227 },
         { need: 'lemon', txt: '1 lemon', food: 'lemon-juice', g: 45 },
         { need: 'feta', optional: true, txt: '1/3 cup (50 g) crumbled feta', food: 'feta', g: 50 },
-        { staple: true, txt: '1 tbsp olive oil; garlic, oregano, salt and pepper', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; garlic, oregano, salt and pepper', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Start the rice. Toss the chicken with oil, half the lemon juice, garlic, oregano, salt and pepper.',
@@ -445,7 +445,7 @@ window.SK = {
         { need: 'corn', optional: true, txt: '1 cup (150 g) corn', food: 'corn', g: 150 },
         { need: 'salsa', or: ['canned-tomatoes'], txt: '1 cup (260 g) salsa', food: 'salsa', g: 260 },
         { need: 'cheese', optional: true, txt: '1/2 cup (56 g) shredded cheese', food: 'cheese', g: 56 },
-        { staple: true, txt: '1 tsp olive oil; chili powder, cumin, salt; 2 cups (480 ml) water', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; chili powder, cumin, salt; 2 cups (480 ml) water', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Season the chicken and brown it in the oil in a large lidded skillet, 5 minutes.',
@@ -520,7 +520,7 @@ window.SK = {
         { need: 'greek-yogurt', txt: '1/2 cup (113 g) nonfat Greek yogurt', food: 'greek-yogurt', g: 113 },
         { need: 'lemon', txt: '1 lemon', food: 'lemon-juice', g: 45 },
         { need: 'flour-tortillas', txt: '4 large flour tortillas or wraps', food: 'flour-tortilla', g: 288 },
-        { staple: true, txt: '1 tsp olive oil; 1 tsp Dijon, garlic, salt, lots of black pepper', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; 1 tsp Dijon, garlic, salt, lots of black pepper', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Season the chicken with salt, pepper and oil. Grill or sear 6 to 7 minutes a side to 165°F (74°C). Rest and slice.',
@@ -540,7 +540,7 @@ window.SK = {
         { need: 'onion', optional: true, txt: '1/2 onion, diced', food: 'onion', g: 75 },
         { need: 'cheese', optional: true, txt: '1/2 cup (56 g) shredded cheddar', food: 'cheese', g: 56 },
         { need: 'greek-yogurt', optional: true, txt: '1/4 cup (57 g) Greek yogurt for the sauce', food: 'greek-yogurt', g: 57 },
-        { staple: true, txt: '2 tsp olive oil; ketchup, mustard, garlic powder, salt and pepper', food: 'olive-oil', g: 9 }
+        { staple: true, txt: '2 tsp avocado oil; ketchup, mustard, garlic powder, salt and pepper', food: 'avocado-oil', g: 9 }
       ],
       steps: [
         'Heat the oven to 425°F (220°C). Toss the potatoes in the oil, salt and garlic powder and roast 25 to 30 minutes.',
@@ -579,7 +579,7 @@ window.SK = {
         { need: 'greek-yogurt', txt: '1/2 cup (113 g) Greek yogurt', food: 'greek-yogurt', g: 113 },
         { need: 'celery', optional: true, txt: '1 stalk celery, thinly sliced', food: 'celery', g: 40 },
         { need: 'cheese', optional: true, txt: '1/2 cup (56 g) shredded cheese', food: 'cheese', g: 56 },
-        { staple: true, txt: '1 tsp olive oil; garlic powder, dried dill or parsley, salt', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; garlic powder, dried dill or parsley, salt', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Season and cook the chicken in the oil, 6 to 7 minutes a side, until 165°F (74°C). Chop and toss with the hot sauce.',
@@ -599,7 +599,7 @@ window.SK = {
         { need: 'lime', optional: true, txt: '1 lime', food: 'lime-juice', g: 30 },
         { need: 'greek-yogurt', optional: true, txt: '1/2 cup (113 g) Greek yogurt in place of sour cream', food: 'greek-yogurt', g: 113 },
         { need: 'salsa', optional: true, txt: 'Salsa to serve', food: 'salsa', g: 130 },
-        { staple: true, txt: '1 tbsp olive oil; 2 tsp chili powder, 1 tsp each cumin, paprika, garlic powder, salt', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; 2 tsp chili powder, 1 tsp each cumin, paprika, garlic powder, salt', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Heat the oven to 425°F (220°C).',
@@ -618,7 +618,7 @@ window.SK = {
         { need: 'mixed-veg', txt: '2 cups (300 g) frozen peas and carrots', food: 'mixed-veg', g: 300 },
         { need: 'soy-sauce', txt: '3 tbsp low-sodium soy sauce', food: 'soy-sauce', g: 48 },
         { need: 'onion', optional: true, txt: '1/2 onion or 3 green onions, chopped', food: 'onion', g: 60 },
-        { staple: true, txt: '1 tbsp oil; 3 cloves garlic', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; 3 cloves garlic', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Get a large pan or wok very hot with half the oil. Cook the shrimp 1 to 2 minutes a side and set aside.',
@@ -639,7 +639,7 @@ window.SK = {
         { need: 'bell-pepper', optional: true, txt: '1 bell pepper, diced', food: 'bell-pepper', g: 150 },
         { need: 'cheese', optional: true, txt: 'Shredded cheese to top', food: 'cheese', g: 56 },
         { need: 'greek-yogurt', optional: true, txt: 'Greek yogurt to top', food: 'greek-yogurt', g: 113 },
-        { staple: true, txt: '1 tbsp olive oil; 3 tbsp chili powder, 2 tsp cumin, 1 tsp oregano, garlic, salt', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; 3 tbsp chili powder, 2 tsp cumin, 1 tsp oregano, garlic, salt', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Cook the onion and pepper in the oil for 5 minutes. Add the turkey and brown it, breaking it up.',
@@ -657,7 +657,7 @@ window.SK = {
         { need: 'rice', txt: '1 1/2 cups (280 g) dry rice', food: 'white-rice', g: 280 },
         { need: 'soy-sauce', txt: '1/4 cup (60 ml) low-sodium soy sauce', food: 'soy-sauce', g: 64 },
         { need: 'honey', txt: '2 tbsp honey or brown sugar', food: 'honey', g: 42 },
-        { staple: true, txt: '1 tbsp oil; 1 tbsp cornstarch; 3 cloves garlic; ginger', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; 1 tbsp cornstarch; 3 cloves garlic; ginger', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Start the rice. Toss the steak with half the cornstarch. Whisk the soy sauce, honey, garlic, ginger, the rest of the cornstarch and 1/2 cup (120 ml) water.',
@@ -676,7 +676,7 @@ window.SK = {
         { need: 'soy-sauce', txt: '2 tbsp low-sodium soy sauce', food: 'soy-sauce', g: 32 },
         { need: 'lemon', optional: true, txt: '1 lemon', food: 'lemon-juice', g: 45 },
         { need: 'rice', optional: true, txt: '1 cup (185 g) dry rice to serve', food: 'white-rice', g: 185 },
-        { staple: true, txt: '1 tsp olive oil; 3 cloves garlic, minced; salt and pepper', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; 3 cloves garlic, minced; salt and pepper', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Heat the oven to 400°F (200°C). Whisk the honey, soy sauce, garlic and half the lemon juice.',
@@ -714,7 +714,7 @@ window.SK = {
         { need: 'broccoli', or: ['green-beans', 'mixed-veg'], txt: '1 lb (454 g) broccoli florets', food: 'broccoli', g: 454 },
         { need: 'soy-sauce', txt: '1/4 cup (60 ml) low-sodium soy sauce', food: 'soy-sauce', g: 64 },
         { need: 'honey', txt: '3 tbsp honey', food: 'honey', g: 63 },
-        { staple: true, txt: '1 tsp oil; 1 tbsp cornstarch; garlic; ginger', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; 1 tbsp cornstarch; garlic; ginger', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Start the rice. Whisk the soy sauce, honey, garlic, ginger, cornstarch and 1/3 cup (80 ml) water.',
@@ -751,7 +751,7 @@ window.SK = {
         { need: 'marinara', or: ['canned-tomatoes'], txt: '2 cups (500 g) marinara', food: 'marinara', g: 500 },
         { need: 'parmesan', optional: true, txt: '1/4 cup (25 g) grated parmesan', food: 'parmesan', g: 25 },
         { need: 'spinach', optional: true, txt: '2 cups (60 g) spinach', food: 'spinach', g: 60 },
-        { staple: true, txt: '1 tsp olive oil; garlic, Italian seasoning, salt and pepper', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; garlic, Italian seasoning, salt and pepper', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Heat the oven to 400°F (200°C). Halve the squash, scoop the seeds, rub with oil and salt, and roast cut side down 35 to 45 minutes.',
@@ -769,7 +769,7 @@ window.SK = {
         { need: 'green-beans', or: ['asparagus', 'broccoli'], txt: '1 lb (454 g) green beans', food: 'green-beans', g: 454 },
         { need: 'lemon', txt: '1 lemon', food: 'lemon-juice', g: 45 },
         { need: 'butter', optional: true, txt: '1 tbsp butter, melted', food: 'butter', g: 14 },
-        { staple: true, txt: '1 tbsp olive oil; garlic, paprika, salt and pepper', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; garlic, paprika, salt and pepper', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Heat the oven to 425°F (220°C). Roast the potatoes with half the oil, salt and pepper for 15 minutes.',
@@ -789,7 +789,7 @@ window.SK = {
         { need: 'cilantro', optional: true, txt: 'Handful of cilantro', food: 'cilantro', g: 15 },
         { need: 'avocado', optional: true, txt: '1/2 avocado, sliced', food: 'avocado', g: 75 },
         { need: 'salsa', optional: true, txt: 'Salsa to serve', food: 'salsa', g: 130 },
-        { staple: true, txt: '1 tbsp olive oil; cumin, oregano, chili powder, garlic, salt', food: 'olive-oil', g: 13.5 }
+        { staple: true, txt: '1 tbsp avocado oil; cumin, oregano, chili powder, garlic, salt', food: 'avocado-oil', g: 13.5 }
       ],
       steps: [
         'Cut the pork into 2-inch (5 cm) chunks and toss with the spices and salt.',
@@ -808,7 +808,7 @@ window.SK = {
         { need: 'milk', txt: '1/2 cup (120 ml) milk', food: 'milk', g: 120 },
         { need: 'parmesan', txt: '1/2 cup (50 g) grated parmesan', food: 'parmesan', g: 50 },
         { need: 'broccoli', optional: true, txt: '3 cups (270 g) broccoli florets', food: 'broccoli', g: 270 },
-        { staple: true, txt: '1 tsp olive oil; 3 cloves garlic; salt and lots of black pepper', food: 'olive-oil', g: 4.5 }
+        { staple: true, txt: '1 tsp avocado oil; 3 cloves garlic; salt and lots of black pepper', food: 'avocado-oil', g: 4.5 }
       ],
       steps: [
         'Cook the pasta, adding the broccoli for the last 3 minutes. Save 1/2 cup (120 ml) of pasta water.',
