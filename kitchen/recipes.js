@@ -80,6 +80,10 @@ window.SK = {
     'monterey-jack':  { kcal: 373, p: 24.5, f: 30.3, c: 0.7 },
     'enchilada-sauce':{ kcal: 40,  p: 1.2,  f: 1.2,  c: 6 },
     'cabbage':        { kcal: 25,  p: 1.3,  f: 0.1,  c: 5.8 },
+    'chicken-breast-grilled': { kcal: 148, p: 29.5, f: 3.2, c: 0 },
+    'white-rice-cooked': { kcal: 130, p: 2.2, f: 0.1, c: 28.4 },
+    'teriyaki-sauce': { kcal: 158, p: 2.6,  f: 0,    c: 36.8 },
+    'green-onion':    { kcal: 32,  p: 1.8,  f: 0.2,  c: 7.3 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -133,6 +137,7 @@ window.SK = {
     { id: 'mushrooms', name: 'Mushrooms', group: 'Vegetables', alias: ['mushroom', 'baby bella', 'cremini'] },
     { id: 'jalapenos', name: 'Jalapeños', group: 'Vegetables', alias: ['jalapeno', 'jalapenos', 'peppers'] },
     { id: 'mixed-veg', name: 'Frozen peas and carrots', group: 'Vegetables', alias: ['peas', 'carrots', 'frozen veg', 'mixed vegetables'] },
+    { id: 'green-onions', name: 'Green onions', group: 'Fruit and fresh', alias: ['scallions', 'scallion', 'green onion', 'onion'] },
     { id: 'cilantro', name: 'Cilantro', group: 'Fruit and fresh', alias: [] },
     { id: 'lime', name: 'Limes', group: 'Fruit and fresh', alias: ['lime'] },
     { id: 'lemon', name: 'Lemons', group: 'Fruit and fresh', alias: ['lemon'] },
@@ -142,6 +147,7 @@ window.SK = {
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
     { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
+    { id: 'teriyaki-sauce', name: 'Teriyaki sauce', group: 'Sauces and pantry', alias: ['teriyaki', 'sesame', 'stir fry sauce'] },
     { id: 'enchilada-sauce', name: 'Enchilada sauce', group: 'Sauces and pantry', alias: ['enchilada', 'red sauce'] },
     { id: 'pickles', name: 'Pickles', group: 'Sauces and pantry', alias: ['pickle', 'dill pickles'] },
     { id: 'olives', name: 'Black olives', group: 'Sauces and pantry', alias: ['olive', 'olives'] },
@@ -156,6 +162,26 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'teriyaki-chicken-bowl', name: 'Teriyaki Chicken and Rice Bowl', by: 'bryan', cat: 'Lunch', tag: 'High protein', serves: 1, mins: 30,
+      photos: ['/kitchen/img/teriyaki-chicken-bowl.jpg'],
+      blurb: 'A big bowl of charred, sticky sesame teriyaki chicken over white rice with a pile of green onions. Nearly 100 grams of protein. Split it in two for a pair of 400-calorie lunches.',
+      items: [
+        { need: 'chicken-breast', or: ['chicken-thighs'], txt: '11 oz (308 g) grilled chicken breast, cooked weight (about 15 oz / 425 g raw)', food: 'chicken-breast-grilled', g: 308 },
+        { need: 'rice', txt: '8 oz (225 g) cooked white rice, about 1 1/4 cups', food: 'white-rice-cooked', g: 225 },
+        { need: 'teriyaki-sauce', or: ['soy-sauce'], txt: '2 tbsp (1 serving) sweet sesame teriyaki sauce', food: 'teriyaki-sauce', g: 38 },
+        { need: 'green-onions', optional: true, txt: '2 green onions, sliced', food: 'green-onion', g: 15 },
+        { need: 'soy-sauce', optional: true, txt: '1 tsp soy sauce, a light drizzle over the rice', food: 'soy-sauce', g: 6 },
+        { staple: true, txt: 'Avocado oil spray; garlic powder, salt and pepper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Pat the chicken dry, spray it lightly with avocado oil and season with garlic powder, salt and pepper.',
+        'Grill over medium-high heat, 6 to 7 minutes a side, until it hits 165°F (74°C) and has good char. No grill? Use a hot grill pan or cast iron. Rest 5 minutes.',
+        'Cut the chicken into bite-size chunks. Toss them in a hot pan with the teriyaki sauce for about 1 minute, until the sauce bubbles and turns sticky and glossy.',
+        'Warm the rice and drizzle the soy sauce over it.',
+        'Pile the glazed chicken on the rice, spoon any extra sauce from the pan over the top, and finish with plenty of green onions.'
+      ]
+    },
     {
       id: 'cabbage-enchiladas', name: 'Cabbage-Wrapped Shredded Chicken Enchiladas', by: 'bryan', cat: 'Dinner', tag: 'Low carb', serves: 8, mins: 60,
       photos: ['/kitchen/img/cabbage-enchiladas.jpg'],
