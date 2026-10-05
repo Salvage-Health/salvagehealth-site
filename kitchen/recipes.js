@@ -97,8 +97,8 @@ window.SK = {
     'cottage-2':      { kcal: 72,  p: 12.5, f: 2.7,  c: 2.7 },
     'taco-seasoning': { kcal: 333, p: 0,    f: 0,    c: 67 },
     'pineapple-juice':{ kcal: 53,  p: 0.4,  f: 0.1,  c: 12.9 },
-    'ramen-millet':   { kcal: 375, p: 12.5, f: 3.1,  c: 72 },
-    'tonkotsu-broth': { kcal: 47,  p: 2.33, f: 3.67, c: 1.67 },
+    'ramen-millet':   { kcal: 343, p: 11.4, f: 4.3,  c: 65.7 },   // Lotus Foods Millet and Brown Rice Ramen: 240 kcal per 70 g cake
+    'tonkotsu-broth': { kcal: 58,  p: 2.9,  f: 4.6,  c: 2.1 },    // Kirkland Signature Tonkotsu Pork Ramen Broth: 140 kcal per 240 g portion
     'top-sirloin':    { kcal: 201, p: 20.6, f: 12.9, c: 0 },
     'shallot':        { kcal: 72,  p: 2.5,  f: 0.1,  c: 16.8 },
     'nori':           { kcal: 133, p: 0,    f: 0,    c: 33 },
@@ -285,11 +285,11 @@ window.SK = {
     {
       id: 'steak-tonkotsu-ramen', lvl: 5, name: 'Steak Tonkotsu Ramen', by: 'bryan', cat: 'Dinner', tag: 'Ramen night', serves: 1, mins: 30,
       photos: ['/kitchen/img/steak-tonkotsu-ramen.jpg', '/kitchen/img/steak-tonkotsu-ramen-side.jpg'],
-      blurb: 'Rich, creamy tonkotsu broth over millet and brown rice ramen, loaded with seared top sirloin, a jammy soft egg, charred corn, roasted mushrooms, crispy shallots and nori. A real ramen-shop bowl with 54 grams of protein.',
+      blurb: 'Rich, creamy tonkotsu broth over millet and brown rice ramen, loaded with seared top sirloin, a jammy soft egg, charred corn, roasted mushrooms, crispy shallots and nori. A real ramen-shop bowl with 52 grams of protein.',
       items: [
         { need: 'steak', txt: '6 oz (170 g) beef top sirloin steak', food: 'top-sirloin', g: 170 },
-        { need: 'ramen-noodles', or: ['pasta'], txt: '1/2 pack (about 1 1/8 oz / 32 g) millet and brown rice ramen noodles', food: 'ramen-millet', g: 32 },
-        { need: 'broth', txt: '1 portion tonkotsu ramen broth, about 1 1/4 cups (300 ml)', food: 'tonkotsu-broth', g: 300 },
+        { need: 'ramen-noodles', or: ['pasta'], txt: '1/2 cake (about 1 1/4 oz / 35 g) Lotus Foods Millet and Brown Rice Ramen noodles', food: 'ramen-millet', g: 35 },
+        { need: 'broth', txt: '1 portion Kirkland Signature Tonkotsu Pork Ramen Broth (Costco), about 1 cup (240 ml)', food: 'tonkotsu-broth', g: 240 },
         { need: 'eggs', txt: '1 large organic egg', food: 'egg', g: 50 },
         { need: 'corn', optional: true, txt: '1 oz (28 g) sweet corn, about 3 tbsp', food: 'corn', g: 28 },
         { need: 'mushrooms', optional: true, txt: '1 oz (32 g) baby bella mushrooms, sliced thick', food: 'mushrooms', g: 32 },

@@ -90,7 +90,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Heat broth and noodles",
-    "d": "Pour the 1 1/4 cups (300 ml) of tonkotsu broth into a small saucepan over medium heat until it is steaming, about 3 to 4 minutes. At the same time, cook the noodles in a pot of boiling water according to the package, usually about 4 minutes, until tender, then drain."
+    "d": "Pour the 1 cup (240 ml) portion of tonkotsu broth into a small saucepan over medium heat until it is steaming, about 3 to 4 minutes. At the same time, cook the 1/2 noodle cake in a pot of boiling water for about 4 minutes, stirring to loosen it, until tender, then drain."
    },
    {
     "t": "Build the bowl",
