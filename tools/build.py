@@ -1,6 +1,6 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE
 FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
@@ -188,21 +188,29 @@ cards = ""
 MD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "merch")
 for slug, name, cat, d, art in MERCH2:
     svg = open(os.path.join(MD, art + ".svg")).read().replace("<svg ", f'<svg role="img" aria-label="{html.escape(name)} concept" ', 1)
-    cards += f"""      <div class="mcard" id="{slug}">
-        <div class="mimg">{svg}<span class="mtag">Coming soon</span></div>
+    if slug in LIVE:
+        price, url = LIVE[slug]
+        cards += f"""      <div class="mcard live" id="{slug}">
+        <a class="mimg" href="{url}" target="_blank" rel="noopener" aria-label="Buy the {html.escape(name)}">{svg}<span class="mtag">Available now</span></a>
+        <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p><div class="mbuy"><b>{price}</b><a class="btn solid" href="{url}" target="_blank" rel="noopener">Buy now</a></div></div>
+      </div>
+"""
+    else:
+        cards += f"""      <div class="mcard" id="{slug}">
+        <div class="mimg">{svg}<span class="mtag soon">Coming soon</span></div>
         <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p></div>
       </div>
 """
-mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First drop coming soon.", "/merch/") + topbar("merch") + f"""  <main>
+mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First tee available now.", "/merch/") + topbar("merch") + f"""  <main>
     <div class="phead">
       <p class="eyebrow">Merch</p>
       <h1 class="disp">Wear the <em>reminder.</em></h1>
-      <p>Gear for people building from what's left. Every piece is a daily reminder that you said you'd show up. The first drop is in the works.</p>
-      <p style="margin-top:22px"><a class="btn solid" href="{IG}" target="_blank" rel="noopener">Get first access on Instagram</a></p>
+      <p>Gear for people building from what's left. Every piece is a daily reminder that you said you'd show up. The first tee is live now, with more dropping soon.</p>
+      <p style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn solid" href="{SHOP}" target="_blank" rel="noopener">Shop the store</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow for new drops</a></p>
     </div>
     <div class="mgrid">
 {cards}    </div>
-    <p class="fine" style="margin-top:22px">Designs shown are previews. Final products, colors and details may change.</p>
+    <p class="fine" style="margin-top:22px">Items marked Coming soon are previews. Final products, colors and details may change. Orders are printed to order and handled by our store partner, Fourthwall.</p>
   </main>
 """ + FOOT
 write("/merch/", mp)

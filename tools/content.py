@@ -247,9 +247,12 @@ ABOUT_BODY = """
 """
 
 # Merch: (slug, name, category, description, artwork file in tools/merch/)
+# SHOP: Fourthwall store. LIVE: slug -> (price, product URL) for items that are on sale now.
+SHOP = "https://salvagehealth-shop.fourthwall.com"
+LIVE = {"tee-built": ("$34", SHOP)}
 MERCH2 = [
-("tee-built", "Built From What's Left Tee", "Heavyweight tee",
- "The flagship. Small shield on the chest, the whole mission across the back in a worn-in print. Black, Charcoal or Bone.", "tee-built-back"),
+("tee-built", "Built From What's Left Tee", "Organic cotton tee",
+ "The flagship. Small shield on the chest, the whole mission across the back in a worn-in print. Black, S to 5XL.", "tee-built-back"),
 ("tee-never", "Never Too Late Tee", "Heavyweight tee",
  "Four excuses crossed out, one truth in rust. Bone or Black.", "tee-never-front"),
 ("tee-athletic", "Salvage Athletic Tee", "Garment-dyed tee",
