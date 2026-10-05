@@ -67,6 +67,7 @@
     if (t) { P.cal = t.cal; P.p = t.p; P.c = t.c; P.f = t.f; P.tdee = t.tdee; } else { delete P.cal; }
     H.save(P);
     $('plan').hidden = !ok; $('r-empty').hidden = !!ok; $('foryou').hidden = !ok;
+    needs(ok);
     if (!ok) return false;
     var g = H.G[P.goal], sk = H.SKILL.filter(function (s) { return s[0] === P.skill; })[0];
 
@@ -129,5 +130,22 @@
     return true;
   }
 
+  var touched = false;
+  document.getElementById('calc').addEventListener('input', function () { touched = true; });
+  document.getElementById('calc').addEventListener('click', function (e) { if (e.target.closest('button')) touched = true; });
+  function needs(ok) {
+    var miss = [];
+    var chk = [['goal', !!P.goal, '#c-goal'], ['male or female', !!P.sex, '[data-k=sex]'], ['age', P.age >= 18 && P.age <= 90, '#c-age'],
+      ['height', P.ft >= 4 && P.ft <= 7, '#c-ft'], ['weight', P.lb >= 80 && P.lb <= 700, '#c-lb'], ['activity', !!P.act, '#c-act'], ['kitchen level', !!P.skill, '#c-skill']];
+    chk.forEach(function (c) {
+      var el = document.querySelector(c[2]); if (!el) return;
+      var tgt = el.tagName === 'INPUT' ? el : el.closest('.cq');
+      tgt.classList.toggle('miss', touched && !ok && !c[1]);
+      if (!c[1]) miss.push(c[0]);
+    });
+    if (ok) return;
+    $('need-h').textContent = miss.length >= 6 ? 'Answer 6 quick questions to see your plan' : 'Almost there. Your plan appears when you add:';
+    $('need-l').innerHTML = miss.length >= 6 ? 'Your calories, protein, carbs and fat show up right here.' : miss.map(function (m) { return '<em>' + m + '</em>'; }).join(', ');
+  }
   mark(); wasReady = update();
 })();

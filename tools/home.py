@@ -391,6 +391,12 @@ KITCSS = HOMECSS.replace("</style>", """
 .plan.flash .res,.plan.flash .fyr{animation:flash 1s ease}
 @keyframes flash{0%{box-shadow:0 0 0 0 rgba(190,81,38,.0)}25%{box-shadow:0 0 0 4px rgba(190,81,38,.55)}100%{box-shadow:0 0 0 0 rgba(190,81,38,0)}}
 .phd h2{font-size:clamp(28px,5vw,40px)}
+.nums input::placeholder{color:#5E5C55;font-weight:500}
+.nums input.miss,.cq.miss .seg,.cq.miss .goals{outline:2px solid var(--rust-text);outline-offset:3px;border-radius:10px}
+.need{display:flex;flex-direction:column;gap:4px;margin-top:14px;padding:16px;border-radius:14px;border:1px dashed var(--rust);background:rgba(190,81,38,.08)}
+.need b{font-size:16px}
+.need span{font-size:14px;color:var(--dim)}
+.need span em{font-style:normal;font-weight:700;color:var(--rust-text)}
 .mhd{margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
 .mtiles{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:8px}
 .mtiles span{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:12px;background:var(--bg);border-top:4px solid #8A8779;min-width:0}
@@ -452,14 +458,15 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
         <div class="cq"><span class="cl">Goal</span><div class="goals" id="c-goal"></div></div>
         <div class="cq"><span class="cl">I am</span><div class="seg" data-k="sex"><button type="button" data-v="m">Male</button><button type="button" data-v="f">Female</button></div></div>
         <div class="cq nums">
-          <label><span class="cl">Age</span><input id="c-age" type="number" inputmode="numeric" min="18" max="90" placeholder="40"></label>
-          <label><span class="cl">Height</span><span class="hgt"><input id="c-ft" type="number" inputmode="numeric" min="4" max="7" placeholder="5"><i>ft</i><input id="c-in" type="number" inputmode="numeric" min="0" max="11" placeholder="10"><i>in</i></span></label>
-          <label><span class="cl">Weight</span><span class="hgt"><input id="c-lb" type="number" inputmode="decimal" min="80" max="700" placeholder="220"><i>lb</i></span></label>
+          <label><span class="cl">Age</span><input id="c-age" type="number" inputmode="numeric" min="18" max="90" placeholder="Age"></label>
+          <label><span class="cl">Height</span><span class="hgt"><input id="c-ft" type="number" inputmode="numeric" min="4" max="7" placeholder="Ft"><i>ft</i><input id="c-in" type="number" inputmode="numeric" min="0" max="11" placeholder="In"><i>in</i></span></label>
+          <label><span class="cl">Weight</span><span class="hgt"><input id="c-lb" type="number" inputmode="decimal" min="80" max="700" placeholder="Pounds"><i>lb</i></span></label>
         </div>
         <div class="cq"><span class="cl">Activity</span><div class="seg act" id="c-act"></div></div>
         <div class="cq"><span class="cl">In the kitchen</span><div class="seg sk" id="c-skill"></div></div>
       </form>
-      <p class="pantry" id="r-empty">Answer all six to see your plan. Estimates only, not medical advice. Want goal dates? Use the <a href="/book">full companion app</a>.</p>
+      <div class="need" id="r-empty" aria-live="polite"><b id="need-h">Answer 6 quick questions</b><span id="need-l"></span></div>
+      <p class="pantry">Estimates only, not medical advice. Want goal dates? Use the <a href="/book">full companion app</a>.</p>
     </section>
 
     <section id="plan" class="plan" hidden aria-live="polite">
