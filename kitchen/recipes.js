@@ -102,6 +102,10 @@ window.SK = {
     'shallot':        { kcal: 72,  p: 2.5,  f: 0.1,  c: 16.8 },
     'nori':           { kcal: 133, p: 0,    f: 0,    c: 33 },
     'sesame-oil':     { kcal: 884, p: 0,    f: 100,  c: 0 },
+    'realgood-tortilla': { kcal: 180, p: 20, f: 8,    c: 32 },
+    'beef-bacon':     { kcal: 321, p: 28.6, f: 17.9, c: 0 },
+    'potato-bake':    { kcal: 105, p: 3.5,  f: 5.5,  c: 10.5 },
+    'lm-mozzarella':  { kcal: 286, p: 21.4, f: 21.4, c: 7.1 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -109,6 +113,7 @@ window.SK = {
     { id: 'chicken-thighs', name: 'Chicken thighs', group: 'Meat and seafood', alias: ['thigh', 'thighs', 'chicken'] },
     { id: 'chicken-breast', name: 'Chicken breast', group: 'Meat and seafood', alias: ['breast', 'chicken', 'rotisserie'] },
     { id: 'ground-chicken', name: 'Ground chicken', group: 'Meat and seafood', alias: ['chicken'] },
+    { id: 'bacon', name: 'Bacon', group: 'Meat and seafood', alias: ['beef bacon', 'turkey bacon'] },
     { id: 'turkey-pepperoni', name: 'Turkey pepperoni', group: 'Meat and seafood', alias: ['pepperoni'] },
     { id: 'ground-turkey', name: 'Ground turkey', group: 'Meat and seafood', alias: ['turkey'] },
     { id: 'ground-beef', name: 'Lean ground beef', group: 'Meat and seafood', alias: ['ground beef', 'beef', 'hamburger'] },
@@ -191,6 +196,29 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'steak-breakfast-burrito', name: 'Steak Breakfast Burrito', by: 'bryan', cat: 'Breakfast', tag: 'Big breakfast', serves: 1, mins: 25,
+      photos: ['/kitchen/img/steak-breakfast-burrito.jpg'],
+      blurb: 'Seared top sirloin, beef bacon, a scrambled egg, cheesy cheddar and chive potatoes and melted mozzarella, wrapped in a high-protein tortilla and crisped in the pan. Nearly 50 grams of protein before 9 a.m.',
+      items: [
+        { need: 'flour-tortillas', txt: '1 Real Good burrito tortilla', food: 'realgood-tortilla', g: 50 },
+        { need: 'steak', txt: '2 3/4 oz (78 g) top sirloin steak', food: 'top-sirloin', g: 78 },
+        { need: 'eggs', txt: '1 large organic egg', food: 'egg', g: 50 },
+        { need: 'bacon', optional: true, txt: '2 slices beef bacon', food: 'beef-bacon', g: 28 },
+        { need: 'potatoes', optional: true, txt: '1/2 pack cheddar and chive potato bake (or 1/2 cup / 75 g crispy diced potatoes)', food: 'potato-bake', g: 100 },
+        { need: 'cheese', txt: '1 oz (28 g) low-moisture mozzarella, shredded', food: 'lm-mozzarella', g: 28 },
+        { staple: true, txt: 'Avocado oil spray; salt and pepper; chopped parsley to finish', food: 'none', g: 0 },
+        { need: 'salsa', optional: true, txt: 'Red salsa or hot sauce for dipping (not counted in the macros)', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Heat the potato bake according to the package (oven or microwave) so it is hot and ready when you build.',
+        'Cook the beef bacon in a skillet until crisp, 3 to 4 minutes, then chop it.',
+        'Season the steak with salt and pepper and sear it in the same hot pan with a light spray of avocado oil, 2 to 3 minutes a side for medium-rare. Rest 3 minutes, then chop into small bite-size pieces.',
+        'Drop the heat to medium-low and scramble the egg until just set and still soft.',
+        'Warm the tortilla so it rolls without cracking. Lay the mozzarella down the middle first so it melts against the hot fillings, then add the egg, steak, bacon and potatoes. Fold in the sides and roll it tight.',
+        'Put it seam side down in the hot pan and sear 1 to 2 minutes a side until the tortilla is golden and crisp and the cheese is melted. Cut in half, sprinkle with parsley and serve with salsa for dipping.'
+      ]
+    },
     {
       id: 'steak-tonkotsu-ramen', name: 'Steak Tonkotsu Ramen', by: 'bryan', cat: 'Dinner', tag: 'Ramen night', serves: 1, mins: 30,
       photos: ['/kitchen/img/steak-tonkotsu-ramen.jpg', '/kitchen/img/steak-tonkotsu-ramen-side.jpg'],
