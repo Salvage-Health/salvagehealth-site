@@ -146,6 +146,14 @@
       used_starter_kit: usePlan ? 'yes' : 'no'
     };
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() }).catch(function () {});
+    // Free membership: create the account and email a magic login link.
+    var member = { name: A.name, goal: P.goal, tdee: t.tdee, calories: t.cal, protein: t.p, carbs: t.c, fat: t.f, recommendation: rec[0], qualified_at: new Date().toISOString() };
+    try { localStorage.setItem('sh-qz', JSON.stringify(member)); } catch (e) {}
+    var A2 = window.SH_AUTH, memberMsg = '';
+    if (A2 && A2.ready) {
+      memberMsg = '<div class="qz-rec"><small>Your free member access</small><p>I just emailed you a login link to the Salvage Health members area: your numbers, the bloodwork guide and Peptides 101. Tap the link in your email to get in.</p></div>';
+      A2.sendLink(A.email, { create: true, data: member }).catch(function () {});
+    }
 
     var tiles = '<div class="qz-tiles"><div><b>' + t.tdee.toLocaleString() + '</b><span>Maintenance (TDEE)</span></div><div class="hl"><b>' + t.cal.toLocaleString() + '</b><span>Daily target</span></div>' +
       '<div><b>' + t.p + 'g</b><span>Protein</span></div><div><b>' + t.c + 'g</b><span>Carbs</span></div><div><b>' + t.f + 'g</b><span>Fat</span></div></div>' +
@@ -155,11 +163,11 @@
       '<div class="qz-done"><p class="eyebrow">You qualify</p><h2 class="disp">' + esc(first) + ', <em>you are a fit.</em></h2>' +
       '<p class="qz-sub">Here are your starting numbers. Your coached plan fine-tunes them from your check-ins.</p>' + tiles +
       '<div class="qz-rec"><small>Recommended for you</small><h3>' + esc(rec[0]) + '</h3><p>' + esc(rec[1]) + '</p></div>' +
-      '<div class="qz-rec"><small>What happens next</small><p>I will personally review your answers and reach out within 2 business days to set up a free intro call. Check your inbox, and your spam folder just in case.</p></div>' +
+      memberMsg + '<div class="qz-rec"><small>What happens next</small><p>I will personally review your answers and reach out within 2 business days to set up a free intro call. Check your inbox, and your spam folder just in case.</p></div>' +
       '<div class="qz-two"><a class="btn solid" href="/kitchen/#foryou">See meals that fit your numbers</a><a class="btn line" href="/start/kit/">Open your free Starter Kit</a></div></div>'
       :
       '<div class="qz-done"><p class="eyebrow">Not quite yet</p><h2 class="disp">Start here, <em>' + esc(first) + '.</em></h2>' +
-      '<p class="qz-sub">Coaching works best when you are ready to go all in. Build some momentum with the free tools first, and when you hit an 8 out of 10, come back. Your answers are saved and I will still follow up.</p>' + tiles +
+      '<p class="qz-sub">Coaching works best when you are ready to go all in. Build some momentum with the free tools first, and when you hit an 8 out of 10, come back. Your answers are saved and I will still follow up.</p>' + tiles + memberMsg +
       '<div class="qz-two"><a class="btn solid" href="/start/kit/">Open your free Starter Kit</a><a class="btn line" href="/kitchen/#foryou">See meals that fit your numbers</a></div></div>';
     root.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

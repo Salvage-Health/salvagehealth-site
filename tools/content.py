@@ -302,6 +302,9 @@ ABOUT_BODY = """
 # Merch: (slug, name, category, description, artwork file in tools/merch/)
 # SHOP: Fourthwall store. LIVE: slug -> (price, product URL) for items that are on sale now.
 SHOP = "https://salvagehealth-shop.fourthwall.com"
+# Supabase (members login). Paste the Project URL and the anon/publishable key here; both are public.
+SB_URL = ""
+SB_KEY = ""
 # photos in /merch/img/: first is the main shot, second shows on hover
 LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side")),
         "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ("tee-never-model-front", "tee-never-model-back")),

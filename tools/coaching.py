@@ -285,7 +285,10 @@ qp = head("See if you qualify for coaching | Salvage Health", "A 2-minute questi
       {qform}
     </div>
   </main>
-  <script src="/assets/goals.js" defer></script>
-  <script src="/assets/qualify.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/sb-config.js"></script>
+  <script src="/assets/auth.js"></script>
+  <script src="/assets/goals.js"></script>
+  <script src="/assets/qualify.js"></script>
 """ + FOOT
 write("/coaching/qualify/", qp)

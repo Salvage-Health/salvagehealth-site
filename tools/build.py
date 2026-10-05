@@ -1,6 +1,6 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE, FEATURE
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE, FEATURE, SB_URL, SB_KEY
 FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
@@ -464,6 +464,7 @@ write("/kitchen/", kp)
 
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "home.py")).read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "coaching.py")).read())  # hidden page, not in sitemap
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "members.py")).read())  # gated by netlify/edge-functions/members
 
 # sitemap + robots
 urls = ["/", "/start/", "/kitchen/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>See if you qualify for coaching | Salvage Health</title>
-<meta name="description" content="A 2-minute questionnaire: get your TDEE, calories and macros, and see which coaching option fits you.">
-<link rel="canonical" href="https://salvagehealth.com/coaching/qualify/">
+<title>Member login | Salvage Health</title>
+<meta name="description" content="Log in to the Salvage Health members area.">
+<link rel="canonical" href="https://salvagehealth.com/members/login/">
 <meta name="theme-color" content="#141413">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Salvage Health">
-<meta property="og:title" content="See if you qualify for coaching | Salvage Health">
-<meta property="og:description" content="A 2-minute questionnaire: get your TDEE, calories and macros, and see which coaching option fits you.">
+<meta property="og:title" content="Member login | Salvage Health">
+<meta property="og:description" content="Log in to the Salvage Health members area.">
 <meta property="og:image" content="https://salvagehealth.com/brand/og.png">
-<meta property="og:url" content="https://salvagehealth.com/coaching/qualify/">
+<meta property="og:url" content="https://salvagehealth.com/members/login/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
@@ -79,61 +79,43 @@
 .co-end .btn{margin-top:20px}
 </style>
 <style>
-.qz-wrap{max-width:640px;margin:0 auto;padding:40px 0 0}
-.qz-wrap>h1{font-size:clamp(30px,6vw,46px)}
-.qz-wrap>.dek{margin-bottom:24px}
-#qz{scroll-margin-top:16px;background:var(--raised);border:1px solid var(--rule);border-radius:18px;padding:22px 18px 20px}
-.qz-bar{height:6px;border-radius:99px;background:var(--rule);overflow:hidden}
-.qz-bar i{display:block;height:100%;background:var(--rust);border-radius:99px;transition:width .3s}
-.qz-count{color:var(--faint);font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin:10px 0 0}
-.qz-q{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(24px,5vw,30px);line-height:1.1;margin:14px 0 6px;letter-spacing:.3px}
-.qz-sub{color:var(--dim);margin:0 0 18px;font-size:15.5px}
-.qz-lbl{display:block;font-weight:700;font-size:14.5px;margin:20px 0 8px}
-.qz-lbl span,.qz-form span{color:var(--faint);font-weight:400}
-.qz-opts{display:grid;gap:8px}
-.qz-opts.row{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}
-.qz-opts.nums{grid-template-columns:repeat(5,1fr)}
-.qz-opts.multi{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.qz-opts button{min-height:52px;padding:12px 16px;border-radius:12px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:600 15.5px Inter,sans-serif;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:2px;transition:border-color .15s,background .15s}
-.qz-opts.row button,.qz-opts.nums button{text-align:center;align-items:center}
-.qz-opts button small{color:var(--faint);font-weight:500;font-size:13px}
-.qz-opts button[aria-pressed=true]{border-color:var(--rust);background:rgba(190,81,38,.14)}
-.qz-opts button[aria-pressed=true] small{color:var(--dim)}
-.qz-opts.multi button{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px}
-.qz-opts.multi button::before{content:"";flex:0 0 18px;height:18px;border-radius:5px;border:1.5px solid var(--faint)}
-.qz-opts.multi button[aria-pressed=true]::before{content:"\2713";border-color:var(--rust);background:var(--rust);color:#FAF9F5;font-size:12px;line-height:16px;text-align:center}
-.qz-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.qz-grid label,.qz-form label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
-.qz-form{display:grid;gap:14px}
-#qz input,#qz textarea{width:100%;min-height:50px;padding:12px 14px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:inherit;font-size:16px}
-#qz textarea{min-height:96px;resize:vertical}
-#qz input:focus,#qz textarea:focus{outline:2px solid var(--rust-text);outline-offset:1px}
-.qz-err{color:#F08A63;font-size:14px;margin:12px 0 0}
-.qz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
-.qz-nav .btn{min-width:110px}
-.qz-two{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.qz-two .btn{flex:1 1 200px}
-#qz .btn.line{background:transparent;color:var(--fg);cursor:pointer;font-family:Inter,sans-serif}
-#qz .btn.solid{border:0;cursor:pointer;font-family:Inter,sans-serif}
-.qz-sum{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0}
-.qz-sum div{background:var(--bg);border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
-.qz-sum dt{color:var(--faint);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
-.qz-sum dd{margin:2px 0 0;font-weight:700}
-.qz-done .disp{font-size:clamp(30px,6vw,42px);margin:0 0 8px}
-.qz-done .disp em{font-style:normal;color:var(--rust)}
-.qz-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 0}
-.qz-tiles div{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:12px 14px}
-.qz-tiles div.hl{grid-column:1/-1;border-color:var(--rust);background:rgba(190,81,38,.12)}
-.qz-tiles b{display:block;font-family:Oswald,sans-serif;font-size:26px;line-height:1.1}
-.qz-tiles .hl b{font-size:40px;color:var(--rust-text)}
-.qz-tiles div:first-child{grid-column:1/-1}
-.qz-tiles span{color:var(--faint);font-size:12.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
-.qz-note{color:var(--faint);font-size:14px;margin:10px 0 0}
-.qz-rec{border-left:3px solid var(--rust);background:var(--bg);border-radius:10px;padding:14px 16px;margin:16px 0 0}
-.qz-rec small{color:var(--rust-text);font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
-.qz-rec h3{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:22px;margin:4px 0 4px}
-.qz-rec p{color:var(--dim);margin:0;font-size:15px}
-.qz-priv{color:var(--faint);font-size:13px;text-align:center;margin:14px 0 0}
+.mb{padding-top:36px}
+.mb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.mb-top .who{color:var(--faint);font-size:14px}
+.mb-top button{background:none;border:1px solid var(--rule);color:var(--dim);border-radius:99px;padding:8px 14px;font:600 13px Inter,sans-serif;cursor:pointer}
+.mb h1{font-size:clamp(32px,6vw,52px);margin:10px 0 0}
+.mb-nav{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}
+.mb-nav a{padding:9px 14px;border:1px solid var(--rule);border-radius:99px;color:var(--fg);text-decoration:none;font-weight:600;font-size:14px}
+.mb-nav a[aria-current]{border-color:var(--rust);background:rgba(190,81,38,.14)}
+.mb-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 0;max-width:640px}
+.mb-tiles div{background:var(--raised);border:1px solid var(--rule);border-radius:12px;padding:12px 14px}
+.mb-tiles .hl{grid-column:span 3;border-color:var(--rust);background:rgba(190,81,38,.12)}
+.mb-tiles b{display:block;font-family:Oswald,sans-serif;font-size:26px;line-height:1.1}
+.mb-tiles .hl b{font-size:40px;color:var(--rust-text)}
+.mb-tiles span{color:var(--faint);font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.mb-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:22px 0 0}
+.mb-cards a{display:block;background:var(--raised);border:1px solid var(--rule);border-radius:14px;padding:18px;text-decoration:none;color:var(--fg);transition:border-color .15s}
+.mb-cards a:hover{border-color:var(--rust)}
+.mb-cards small{color:var(--rust-text);font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.mb-cards b{display:block;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:21px;margin:4px 0}
+.mb-cards span{color:var(--dim);font-size:14.5px}
+.mb-sec{margin:44px 0 0}
+.mb-sec h2{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(24px,4vw,32px);margin:0 0 10px;letter-spacing:.3px}
+.mb-sec h3{font-size:17px;margin:22px 0 6px}
+.mb-sec p,.mb-sec li{color:var(--dim);font-size:16px}
+.mb-sec ul{padding-left:20px}
+.mb-sec li{margin:6px 0}
+.mb-sec li::marker{color:var(--rust)}
+.mb-sec li b{color:var(--fg)}
+.mb-box{background:var(--raised);border:1px solid var(--rule);border-left:3px solid var(--rust);border-radius:12px;padding:16px 18px;margin:18px 0 0}
+.mb-box p{margin:0 0 8px;font-size:15px}.mb-box p:last-child{margin:0}
+.mb-disc{color:var(--faint);font-size:13.5px;border-top:1px solid var(--rule);padding-top:16px;margin:44px 0 0}
+.mb-login{max-width:480px;margin:0 auto;padding:56px 0 0}
+.mb-login form{display:grid;gap:10px;margin:22px 0 0}
+.mb-login input{min-height:52px;padding:12px 16px;border-radius:10px;border:1px solid var(--rule);background:var(--raised);color:var(--fg);font:inherit;font-size:16px}
+.mb-login button{border:0;cursor:pointer;font-family:Inter,sans-serif}
+.mb-msg{margin:16px 0 0;padding:14px 16px;border-radius:12px;background:var(--raised);border:1px solid var(--rule);color:var(--dim)}
+.mb-msg.ok{border-color:#3c7a4f}.mb-msg.err{border-color:var(--rust)}
 </style>
 </head>
 <body>
@@ -150,20 +132,49 @@
     <a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>
   </header>
   <main class="co">
-    <div class="qz-wrap">
-      <p class="eyebrow">Coaching questionnaire</p>
-      <h1 class="disp">See if you <em>qualify.</em></h1>
-      <p class="dek">About 2 minutes. You get your calories and macros at the end either way.</p>
-      <div id="qz" aria-live="polite"><noscript>This questionnaire needs JavaScript. Email hello@salvagehealth.com and I'll send it over.</noscript></div>
-      <p class="qz-priv">Your answers go only to me. I never sell or share your information.</p>
-      <form name="coaching-qualify" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="coaching-qualify"><input name="company"><input name="name"><input name="email"><input name="phone"><input name="instagram"><input name="referral"><input name="goal"><input name="sex"><input name="age"><input name="height"><input name="weight_lb"><input name="activity"><input name="tdee"><input name="calories"><input name="protein"><input name="carbs"><input name="fat"><input name="experience"><input name="days_per_week"><input name="blockers"><input name="signals"><input name="bloodwork"><input name="services"><input name="style"><input name="readiness"><input name="why"><input name="recommendation"><input name="qualified"><input name="used_starter_kit"></form>
+    <div class="mb-login">
+      <p class="eyebrow">Members</p>
+      <h1 class="disp" style="font-size:clamp(34px,7vw,52px)">Member <em>login</em></h1>
+      <p class="dek" id="mb-intro">Enter your email and I'll send you a one-tap login link. No password to remember.</p>
+      <form id="mb-form">
+        <label class="sr" for="mb-email">Email address</label>
+        <input id="mb-email" type="email" required autocomplete="email" placeholder="Your email address">
+        <button class="btn solid" type="submit">Email me a login link</button>
+      </form>
+      <div id="mb-out" class="mb-msg" hidden></div>
+      <p style="color:var(--faint);font-size:14px;margin:22px 0 0">Not a member yet? Membership is free when you complete the <a href="/coaching/qualify/">coaching questionnaire</a>.</p>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/assets/sb-config.js"></script>
+  <script src="/assets/sb-config.js?v=abe91627"></script>
   <script src="/assets/auth.js?v=1ddd7311"></script>
-  <script src="/assets/goals.js?v=9861d9d3"></script>
-  <script src="/assets/qualify.js?v=555858dc"></script>
+  <script>
+  (function () {
+    var q = new URLSearchParams(location.search), next = q.get('next') || '/members/';
+    if (!/^\/members\//.test(next)) next = '/members/';
+    var out = document.getElementById('mb-out'), form = document.getElementById('mb-form');
+    function say(t, cls) { out.hidden = false; out.className = 'mb-msg ' + (cls || ''); out.innerHTML = t; }
+    if (!SH_AUTH.ready) { form.hidden = true; document.getElementById('mb-intro').textContent = 'The members area is opening soon. Take the coaching questionnaire to be first in.'; return; }
+    if (q.get('out')) say('You are logged out.');
+    SH_AUTH.session().then(function (s) { if (s) location.replace(next); });
+    try { var e = localStorage.getItem('sh-email'); if (e) document.getElementById('mb-email').value = e; } catch (x) {}
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var em = document.getElementById('mb-email').value.trim(), b = form.querySelector('button');
+      b.disabled = true; b.textContent = 'Sending...';
+      SH_AUTH.sendLink(em, { next: next }).then(function () {
+        say('Check your email. Tap the link from Salvage Health on this device and you are in. It can take a minute, and check spam just in case.', 'ok');
+        b.textContent = 'Link sent';
+      }).catch(function (err) {
+        b.disabled = false; b.textContent = 'Email me a login link';
+        var msg = String(err && (err.message || err.code) || '');
+        if (/signup|not found|not allowed|otp_disabled/i.test(msg)) say('I could not find a membership for that email. Membership is free when you finish the <a href="/coaching/qualify/">coaching questionnaire</a>.', 'err');
+        else if (/rate|seconds/i.test(msg)) say('Too many tries. Wait a minute and try again.', 'err');
+        else say('Something went wrong sending your link. Try again, or email hello@salvagehealth.com.', 'err');
+      });
+    });
+  })();
+  </script>
   <footer class="site">
     <div class="foot">
       <div>
