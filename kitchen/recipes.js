@@ -110,6 +110,9 @@ window.SK = {
     'egg-pasture':    { kcal: 140, p: 12,   f: 10,   c: 0 },
     'wild-blueberries':{ kcal: 57, p: 0,    f: 0,    c: 14 },
     'berry-cream-cheese':{ kcal: 250, p: 5, f: 15,   c: 25 },
+    'english-muffin': { kcal: 175, p: 8.8,  f: 1.8,  c: 45.6 },
+    'rf-cheese':      { kcal: 238, p: 21.4, f: 14.3, c: 7.1 },
+    'chicken-sausage':{ kcal: 188, p: 16.5, f: 11.8, c: 3.5 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -117,6 +120,7 @@ window.SK = {
     { id: 'chicken-thighs', name: 'Chicken thighs', group: 'Meat and seafood', alias: ['thigh', 'thighs', 'chicken'] },
     { id: 'chicken-breast', name: 'Chicken breast', group: 'Meat and seafood', alias: ['breast', 'chicken', 'rotisserie'] },
     { id: 'ground-chicken', name: 'Ground chicken', group: 'Meat and seafood', alias: ['chicken'] },
+    { id: 'chicken-sausage', name: 'Chicken sausage', group: 'Meat and seafood', alias: ['sausage', 'sausage links'] },
     { id: 'bacon', name: 'Bacon', group: 'Meat and seafood', alias: ['beef bacon', 'turkey bacon'] },
     { id: 'turkey-pepperoni', name: 'Turkey pepperoni', group: 'Meat and seafood', alias: ['pepperoni'] },
     { id: 'ground-turkey', name: 'Ground turkey', group: 'Meat and seafood', alias: ['turkey'] },
@@ -144,6 +148,7 @@ window.SK = {
     { id: 'oats', name: 'Oats', group: 'Carbs', alias: ['oatmeal', 'rolled oats'] },
     { id: 'tortillas', name: 'Corn tortillas', group: 'Carbs', alias: ['tortilla', 'tortillas'] },
     { id: 'flour-tortillas', name: 'Flour tortillas or wraps', group: 'Carbs', alias: ['tortilla', 'tortillas', 'wraps', 'wrap'] },
+    { id: 'english-muffins', name: 'English muffins', group: 'Carbs', alias: ['english muffin', 'muffins', 'bread'] },
     { id: 'ramen-noodles', name: 'Ramen noodles', group: 'Carbs', alias: ['ramen', 'noodles', 'rice noodles'] },
     { id: 'rice-paper', name: 'Rice paper wrappers', group: 'Carbs', alias: ['rice paper', 'spring roll', 'wrappers', 'egg roll'] },
     { id: 'buns', name: 'Burger buns', group: 'Carbs', alias: ['bun', 'buns', 'keto bun', 'bread'] },
@@ -164,6 +169,7 @@ window.SK = {
     { id: 'cucumber', name: 'Cucumber', group: 'Vegetables', alias: ['cucumbers'] },
     { id: 'celery', name: 'Celery', group: 'Vegetables', alias: [] },
     { id: 'corn', name: 'Corn', group: 'Vegetables', alias: [] },
+    { id: 'coleslaw-mix', name: 'Coleslaw mix', group: 'Vegetables', alias: ['coleslaw', 'slaw', 'shredded cabbage', 'cabbage'] },
     { id: 'shallots', name: 'Shallots', group: 'Vegetables', alias: ['shallot', 'onion'] },
     { id: 'cabbage', name: 'Cabbage', group: 'Vegetables', alias: ['green cabbage', 'savoy'] },
     { id: 'mushrooms', name: 'Mushrooms', group: 'Vegetables', alias: ['mushroom', 'baby bella', 'cremini'] },
@@ -272,7 +278,7 @@ window.SK = {
       ]
     },
     {
-      id: 'tropic-fire-chicken', name: 'Tropic Fire Grilled Chicken', by: 'bryan', cat: 'Dinner', tag: '24-hour marinade', serves: 4, mins: 30,
+      id: 'tropic-fire-chicken', batch: true, name: 'Tropic Fire Grilled Chicken', by: 'bryan', cat: 'Dinner', tag: '24-hour marinade', serves: 4, mins: 30,
       photos: ['/kitchen/img/tropic-fire-chicken.jpg'],
       blurb: 'A full 24-hour marinade of pineapple, fresh jalapeño, cilantro, garlic, ginger, onion, ancho chile and lime, then grilled hot for a deep caramelized crust and heavy grill marks. Sweet heat, bright citrus and a little smoke in every bite.',
       items: [
@@ -381,7 +387,7 @@ window.SK = {
       ]
     },
     {
-      id: 'cabbage-enchiladas', name: 'Cabbage-Wrapped Shredded Chicken Enchiladas', by: 'bryan', cat: 'Dinner', tag: 'Low carb', serves: 8, mins: 60,
+      id: 'cabbage-enchiladas', batch: true, name: 'Cabbage-Wrapped Shredded Chicken Enchiladas', by: 'bryan', cat: 'Dinner', tag: 'Low carb', serves: 8, mins: 60,
       photos: ['/kitchen/img/cabbage-enchiladas-steps.jpg', '/kitchen/img/cabbage-enchiladas.jpg'], picRatio: '3/4',
       blurb: 'All the enchilada flavor with cabbage leaves standing in for tortillas. Saucy shredded chicken, melted Monterey Jack, a charred cheesy top, and over 60 grams of protein for under 500 calories.',
       items: [
@@ -474,8 +480,13 @@ window.SK = {
         'Bake 8 to 10 more minutes until the cheese melts and the edges char. Rest 5 minutes on a rack, then cut into 8 slices. 2 slices per serving.'
       ]
     },
+    {"id": "turkey-sausage-mcmuffins", "name": "High-Protein Turkey Sausage Egg McMuffins", "cat": "Breakfast", "tag": "Freezer friendly", "serves": 8, "mins": 40, "blurb": "The drive-thru classic, rebuilt lean. Homemade sage turkey sausage, a fluffy egg round and melty reduced-fat cheese on a toasted light English muffin. Make 8 on Sunday, grab one every morning. About 365 calories and 35 grams of protein each.", "items": [{"need": "ground-turkey", "or": ["chicken-sausage"], "txt": "1 1/2 lb (680 g) 93% lean ground turkey", "food": "ground-turkey", "g": 680}, {"need": "eggs", "txt": "8 large eggs", "food": "egg", "g": 400}, {"need": "egg-whites", "optional": true, "txt": "1 cup (240 ml) liquid egg whites", "food": "egg-whites", "g": 243}, {"need": "english-muffins", "txt": "8 light multigrain English muffins (about 100 calories each)", "food": "english-muffin", "g": 456}, {"need": "cheese", "txt": "8 slices reduced-fat cheddar or 2% American cheese", "food": "rf-cheese", "g": 168}, {"staple": true, "txt": "Sausage seasoning: 1 tsp dried sage, 1 tsp salt, 1/2 tsp each black pepper, garlic powder and crushed fennel seed, 1/4 tsp each smoked paprika and red pepper flakes", "food": "none", "g": 0}, {"staple": true, "txt": "Avocado oil spray", "food": "none", "g": 0}], "batch": true},
+    {"id": "shredded-salsa-chicken", "name": "Shredded Salsa Chicken", "cat": "Lunch", "tag": "Set it and forget it", "serves": 8, "mins": 20, "blurb": "Three pounds of chicken and a jar of salsa, cooked low and slow until it shreds with a fork. One batch covers bowls, tacos, wraps and salads all week. About 40 grams of protein per serving for around 230 calories.", "items": [{"need": "chicken-breast", "or": ["chicken-thighs"], "txt": "3 lb (1.36 kg) boneless, skinless chicken breasts", "food": "chicken-breast", "g": 1360}, {"need": "salsa", "or": ["salsa-verde"], "txt": "2 cups (16 oz / 520 g) salsa, any heat level", "food": "salsa", "g": 520}, {"need": "taco-seasoning", "optional": true, "txt": "1 tbsp taco seasoning (or 1 tsp each chili powder and cumin)", "food": "taco-seasoning", "g": 8}, {"need": "lime", "optional": true, "txt": "1 lime, juiced", "food": "none", "g": 0}, {"staple": true, "txt": "1/2 tsp salt", "food": "none", "g": 0}], "batch": true},
+    {"id": "egg-roll-in-a-bowl", "name": "Egg Roll in a Bowl", "cat": "Dinner", "tag": "20 minutes", "serves": 4, "mins": 20, "blurb": "Everything you love about an egg roll without the wrapper. Ground turkey, crunchy cabbage slaw, ginger, garlic and soy, all in one skillet in 20 minutes. Low carb, high protein, and it reheats perfectly.", "items": [{"need": "ground-turkey", "or": ["ground-beef", "ground-chicken"], "txt": "1 1/2 lb (680 g) 93% lean ground turkey", "food": "ground-turkey", "g": 680}, {"need": "coleslaw-mix", "or": ["cabbage"], "txt": "1 bag (14 oz / 400 g) coleslaw mix", "food": "cabbage", "g": 400}, {"need": "soy-sauce", "txt": "3 tbsp (45 ml) low-sodium soy sauce", "food": "soy-sauce", "g": 48}, {"need": "green-onions", "optional": true, "txt": "4 green onions, sliced, whites and greens kept separate", "food": "green-onion", "g": 30}, {"need": "ginger", "optional": true, "txt": "1 tbsp fresh ginger, grated (or 1/2 tsp ground)", "food": "none", "g": 0}, {"need": "sesame-oil", "optional": true, "txt": "1 tsp toasted sesame oil", "food": "sesame-oil", "g": 4.5}, {"need": "hot-sauce", "optional": true, "txt": "Sriracha to finish", "food": "none", "g": 0}, {"staple": true, "txt": "1 tsp avocado oil; 3 cloves garlic, minced", "food": "avocado-oil", "g": 4.5}], "batch": true},
+    {"id": "sheet-pan-chicken-sausage", "name": "Sheet Pan Chicken Sausage, Peppers and Potatoes", "cat": "Dinner", "tag": "Sheet pan", "serves": 4, "mins": 40, "blurb": "Browned chicken sausage, crispy potatoes and sweet roasted peppers and onions, all on one pan. Minimal chopping, one pan to wash, and four containers ready for the week.", "items": [{"need": "chicken-sausage", "txt": "1 lb (454 g) fully cooked chicken sausage, 5 to 6 links", "food": "chicken-sausage", "g": 454}, {"need": "potatoes", "or": ["sweet-potatoes"], "txt": "1 lb (454 g) baby potatoes", "food": "potato", "g": 454}, {"need": "bell-pepper", "txt": "2 bell peppers, any color", "food": "bell-pepper", "g": 300}, {"need": "onion", "txt": "1 red onion", "food": "onion", "g": 150}, {"staple": true, "txt": "1 tbsp avocado oil; 1 tsp each Italian seasoning or oregano, garlic powder and paprika; 1/2 tsp salt; black pepper", "food": "avocado-oil", "g": 13.5}], "batch": true},
+    {"id": "protein-breakfast-casserole", "name": "High-Protein Breakfast Casserole", "cat": "Breakfast", "tag": "Meal prep", "serves": 8, "mins": 55, "blurb": "A whole week of breakfast in one 9 x 13 dish. Homemade turkey sausage, eggs, egg whites, cottage cheese, crispy potatoes, spinach and peppers under a layer of reduced-fat cheddar. Cut, box and reheat in a minute.", "items": [{"need": "ground-turkey", "or": ["chicken-sausage"], "txt": "1 lb (454 g) 93% lean ground turkey", "food": "ground-turkey", "g": 454}, {"need": "eggs", "txt": "10 large eggs", "food": "egg", "g": 500}, {"need": "egg-whites", "optional": true, "txt": "2 cups (480 ml) liquid egg whites", "food": "egg-whites", "g": 486}, {"need": "cottage-cheese", "or": ["greek-yogurt"], "txt": "1 cup (8 oz / 226 g) low-fat cottage cheese", "food": "cottage-cheese", "g": 226}, {"need": "potatoes", "or": ["sweet-potatoes"], "txt": "1 lb (454 g) potatoes, diced small (or frozen diced hash browns, thawed)", "food": "potato", "g": 454}, {"need": "spinach", "optional": true, "txt": "2 packed cups (60 g) baby spinach, roughly chopped", "food": "spinach", "g": 60}, {"need": "bell-pepper", "optional": true, "txt": "1 bell pepper, diced", "food": "bell-pepper", "g": 150}, {"need": "cheese", "txt": "1 cup (4 oz / 113 g) reduced-fat shredded cheddar", "food": "rf-cheese", "g": 113}, {"staple": true, "txt": "Sausage seasoning: 1 tsp dried sage, 1 tsp salt, 1/2 tsp each black pepper, garlic powder and crushed fennel seed, 1/4 tsp each smoked paprika and red pepper flakes", "food": "none", "g": 0}, {"staple": true, "txt": "Avocado oil spray; salt and pepper", "food": "none", "g": 0}], "batch": true},
     {
-      id: 'chili-lime-bowls', cat: 'Lunch',
+      id: 'chili-lime-bowls', batch: true, cat: 'Lunch',
       name: 'Chili-Lime Chicken Rice Bowls',
       tag: 'Meal prep',
       serves: 4, mins: 35,
@@ -587,7 +598,7 @@ window.SK = {
       ]
     },
     {
-      id: 'chicken-meal-prep', cat: 'Lunch',
+      id: 'chicken-meal-prep', batch: true, cat: 'Lunch',
       name: 'Chicken, Sweet Potato and Broccoli Meal Prep',
       tag: 'Meal prep',
       serves: 4, mins: 40,
@@ -607,7 +618,7 @@ window.SK = {
       ]
     },
     {
-      id: 'protein-overnight-oats', name: 'Protein Overnight Oats', cat: 'Breakfast', tag: 'Make ahead', serves: 2, mins: 5,
+      id: 'protein-overnight-oats', batch: true, name: 'Protein Overnight Oats', cat: 'Breakfast', tag: 'Make ahead', serves: 2, mins: 5,
       blurb: 'Oats, Greek yogurt and a scoop of protein, mixed the night before. Grab-and-go breakfast with over 30 grams of protein.',
       items: [
         { need: 'oats', txt: '1 cup (80 g) rolled oats', food: 'oats', g: 80 },
@@ -626,7 +637,7 @@ window.SK = {
       ]
     },
     {
-      id: 'egg-bites', name: 'Veggie Egg Bites', cat: 'Breakfast', tag: 'Meal prep', serves: 4, mins: 30,
+      id: 'egg-bites', batch: true, name: 'Veggie Egg Bites', cat: 'Breakfast', tag: 'Meal prep', serves: 4, mins: 30,
       blurb: 'Fluffy muffin-tin egg bites with spinach and peppers. Cottage cheese makes them creamy and adds protein.',
       items: [
         { need: 'eggs', txt: '6 large eggs', food: 'egg', g: 300 },
@@ -662,7 +673,7 @@ window.SK = {
       ]
     },
     {
-      id: 'greek-chicken-bowls', name: 'Greek Chicken Bowls', cat: 'Lunch', tag: 'Meal prep', serves: 4, mins: 35,
+      id: 'greek-chicken-bowls', batch: true, name: 'Greek Chicken Bowls', cat: 'Lunch', tag: 'Meal prep', serves: 4, mins: 35,
       blurb: 'Lemon-oregano chicken over rice with cucumber, tomato, red onion, feta and a Greek yogurt tzatziki.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '2 lb (907 g) chicken breast', food: 'chicken-breast', g: 907 },
@@ -683,7 +694,7 @@ window.SK = {
       ]
     },
     {
-      id: 'burrito-skillet', name: 'One-Pan Chicken Burrito Skillet', cat: 'Dinner', tag: 'One pan', serves: 4, mins: 30,
+      id: 'burrito-skillet', batch: true, name: 'One-Pan Chicken Burrito Skillet', cat: 'Dinner', tag: 'One pan', serves: 4, mins: 30,
       blurb: 'Chicken, rice, beans, corn and salsa all cooked in one skillet, finished with melted cheese. Burrito bowl, fewer dishes.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '1 1/2 lb (680 g) chicken breast, cubed', food: 'chicken-breast', g: 680 },
@@ -722,7 +733,7 @@ window.SK = {
       ]
     },
     {
-      id: 'greek-yogurt-chicken-salad', name: 'Greek Yogurt Chicken Salad', cat: 'Lunch', tag: 'No cook option', serves: 4, mins: 15,
+      id: 'greek-yogurt-chicken-salad', batch: true, name: 'Greek Yogurt Chicken Salad', cat: 'Lunch', tag: 'No cook option', serves: 4, mins: 15,
       blurb: 'Classic chicken salad made with Greek yogurt instead of mayo. Crunchy celery, red onion and lemon. Great in a wrap or lettuce.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '1 1/2 lb (680 g) cooked chicken breast or rotisserie chicken, chopped', food: 'chicken-breast', g: 680 },
@@ -777,7 +788,7 @@ window.SK = {
       ]
     },
     {
-      id: 'korean-beef-bowls', name: 'Korean-Style Beef Bowls', cat: 'Dinner', tag: '20 minutes', serves: 4, mins: 20,
+      id: 'korean-beef-bowls', batch: true, name: 'Korean-Style Beef Bowls', cat: 'Dinner', tag: '20 minutes', serves: 4, mins: 20,
       blurb: 'Sweet and savory ground beef with garlic, ginger and soy over rice. Faster than takeout and a lot leaner.',
       items: [
         { need: 'ground-beef', or: ['ground-turkey'], txt: '1 1/2 lb (680 g) 93% lean ground beef', food: 'ground-beef', g: 680 },
@@ -816,7 +827,7 @@ window.SK = {
       ]
     },
     {
-      id: 'sheet-pan-fajitas', name: 'Sheet Pan Chicken Fajitas', cat: 'Dinner', tag: 'Sheet pan', serves: 4, mins: 30,
+      id: 'sheet-pan-fajitas', batch: true, name: 'Sheet Pan Chicken Fajitas', cat: 'Dinner', tag: 'Sheet pan', serves: 4, mins: 30,
       blurb: 'Chicken, peppers and onions roasted on one pan with fajita spices. Wrap them up or eat them over rice.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs', 'shrimp'], txt: '1 1/2 lb (680 g) chicken breast, sliced into strips', food: 'chicken-breast', g: 680 },
@@ -855,7 +866,7 @@ window.SK = {
       ]
     },
     {
-      id: 'turkey-chili', name: 'Big Batch Turkey Chili', cat: 'Dinner', tag: 'Meal prep', serves: 6, mins: 45,
+      id: 'turkey-chili', batch: true, name: 'Big Batch Turkey Chili', cat: 'Dinner', tag: 'Meal prep', serves: 6, mins: 45,
       blurb: 'Lean turkey, two kinds of beans and tomatoes simmered with real spice. Freezes perfectly.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '2 lb (907 g) lean ground turkey', food: 'ground-turkey', g: 907 },
@@ -913,7 +924,7 @@ window.SK = {
       ]
     },
     {
-      id: 'turkey-meatballs-pasta', name: 'Turkey Meatballs and Marinara Pasta', cat: 'Dinner', tag: 'Family', serves: 4, mins: 35,
+      id: 'turkey-meatballs-pasta', batch: true, name: 'Turkey Meatballs and Marinara Pasta', cat: 'Dinner', tag: 'Family', serves: 4, mins: 35,
       blurb: 'Tender parmesan turkey meatballs baked, then simmered in marinara and served over pasta. Sunday dinner that fits the plan.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '1 1/2 lb (680 g) lean ground turkey', food: 'ground-turkey', g: 680 },
@@ -933,7 +944,7 @@ window.SK = {
       ]
     },
     {
-      id: 'stuffed-peppers', name: 'Turkey Stuffed Peppers', cat: 'Dinner', tag: 'Oven', serves: 4, mins: 50,
+      id: 'stuffed-peppers', batch: true, name: 'Turkey Stuffed Peppers', cat: 'Dinner', tag: 'Oven', serves: 4, mins: 50,
       blurb: 'Bell peppers packed with seasoned turkey, rice and tomatoes, baked under melted cheese.',
       items: [
         { need: 'bell-pepper', txt: '4 large bell peppers, tops cut off and seeded', food: 'bell-pepper', g: 800 },
@@ -952,7 +963,7 @@ window.SK = {
       ]
     },
     {
-      id: 'spaghetti-squash-marinara', name: 'Spaghetti Squash with Turkey Marinara', cat: 'Dinner', tag: 'Low carb', serves: 4, mins: 55,
+      id: 'spaghetti-squash-marinara', batch: true, name: 'Spaghetti Squash with Turkey Marinara', cat: 'Dinner', tag: 'Low carb', serves: 4, mins: 55,
       blurb: 'Roasted spaghetti squash strands under a hearty turkey meat sauce and parmesan. Big bowl, light on calories.',
       items: [
         { need: 'spaghetti-squash', or: ['pasta'], txt: '1 large spaghetti squash (about 3 lb / 1.4 kg)', food: 'spaghetti-squash', g: 1000 },
@@ -1027,7 +1038,7 @@ window.SK = {
       ]
     },
     {
-      id: 'breakfast-burritos', name: 'Meal Prep Breakfast Burritos', cat: 'Breakfast', tag: 'Freezer friendly', serves: 6, mins: 40,
+      id: 'breakfast-burritos', batch: true, name: 'Meal Prep Breakfast Burritos', cat: 'Breakfast', tag: 'Freezer friendly', serves: 6, mins: 40,
       blurb: 'Seasoned turkey, eggs, crispy potatoes and cheese, rolled and frozen. Microwave one and you are out the door.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '1 lb (454 g) lean ground turkey', food: 'ground-turkey', g: 454 },

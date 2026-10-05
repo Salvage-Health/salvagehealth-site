@@ -1338,5 +1338,146 @@ window.SK_STEPS = {
    }
   ],
   "tip": "Give the potatoes room on the pan. Crowded potatoes steam and go soft, so use two pans if they are touching."
+ },
+ "turkey-sausage-mcmuffins": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Heat the oven to 375°F (190°C). Spray a 9 x 13-inch (23 x 33 cm) baking dish well with avocado oil spray. Mix the sausage seasoning in a small bowl: 1 tsp dried sage, 1 tsp salt, 1/2 tsp each black pepper, garlic powder and crushed fennel seed, and 1/4 tsp each smoked paprika and red pepper flakes. Split the 8 English muffins and set out the 8 cheese slices."
+   },
+   {
+    "t": "Make the sausage",
+    "d": "Put the 1 1/2 lb (680 g) ground turkey in a large bowl, sprinkle the seasoning over it and mix with your hands for about 30 seconds, just until the spices are evenly spread. Don't overwork it or the patties get tough. Divide it into 8 equal balls, about 3 oz (85 g) each."
+   },
+   {
+    "t": "Shape the patties",
+    "d": "Flatten each ball into a thin patty about 4 inches (10 cm) wide, a little wider than the muffin, because they shrink as they cook. Press a shallow dent in the center with your thumb so they stay flat instead of puffing up."
+   },
+   {
+    "t": "Bake the egg sheet",
+    "d": "Whisk the 8 eggs and 1 cup (240 ml) egg whites with a pinch of salt and pepper until no streaks remain. Pour into the prepared dish and bake 15 to 18 minutes, until the center is set and no longer jiggles when you shake the pan. Let it cool 5 minutes, then cut into 8 squares, or use a round cutter or wide glass for the classic McMuffin shape."
+   },
+   {
+    "t": "Cook the patties",
+    "d": "While the eggs bake, heat a large 12-inch (30 cm) nonstick skillet over medium heat and give it a light spray of avocado oil. Cook the patties in two batches, 4 to 5 minutes per side, until browned on both sides and 165°F (74°C) in the center. Ground turkey must be fully cooked, so check one with a thermometer."
+   },
+   {
+    "t": "Toast and stack",
+    "d": "Toast the English muffins until lightly golden. Build each one: bottom muffin, sausage patty, cheese slice (the heat from the patty melts it), egg square, top muffin."
+   },
+   {
+    "t": "Wrap, freeze and reheat",
+    "d": "Let the sandwiches cool completely, about 20 minutes, so they don't get soggy. Wrap each one in parchment or foil and put them in a freezer bag: they keep 4 days in the fridge or 3 months in the freezer. To reheat from frozen, unwrap, wrap in a damp paper towel and microwave 60 to 90 seconds, flip, then 30 to 60 seconds more until hot in the center. From the fridge, 45 to 60 seconds is enough."
+   }
+  ],
+  "tip": "Freeze them unwrapped on a sheet pan for 1 hour before wrapping. They won't stick together, and the muffin stays much less soggy when you reheat it."
+ },
+ "shredded-salsa-chicken": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Pat the 3 lb (1.36 kg) chicken breasts dry with paper towels. Open the 2 cups (520 g) salsa and juice the lime if you're using it. If you have taco seasoning, measure 1 tbsp."
+   },
+   {
+    "t": "Load the pot",
+    "d": "Lay the chicken in a single layer in a slow cooker or Instant Pot. Sprinkle with the taco seasoning and 1/2 tsp salt, then pour the salsa over the top so the chicken is covered. You don't need to add any water; the chicken releases plenty of juice."
+   },
+   {
+    "t": "Cook it",
+    "d": "Slow cooker: cover and cook on LOW 6 to 7 hours or HIGH 3 to 4 hours. Instant Pot: add 1/2 cup (120 ml) water so it can come to pressure, seal, cook on high pressure 12 minutes, then let the pressure release naturally for 10 minutes. Either way it's done when the thickest piece is 165°F (74°C) and pulls apart easily with a fork."
+   },
+   {
+    "t": "Shred it",
+    "d": "Move the chicken to a cutting board and shred it with two forks, pulling in opposite directions. A stand mixer or hand mixer on low shreds it in about 20 seconds if you have one."
+   },
+   {
+    "t": "Soak up the juices",
+    "d": "Return the shredded chicken to the pot and stir it into the salsa juices. Let it sit 10 minutes so the meat soaks up the flavor. Stir in the lime juice and taste for salt."
+   },
+   {
+    "t": "Portion and store",
+    "d": "Divide into 8 containers, about 1 cup each, with a spoonful of juice in each one so it stays moist. It keeps 4 days in the fridge or 3 months in the freezer. Reheat covered in the microwave 1 to 2 minutes, and use it in rice bowls, tacos, wraps, lettuce cups or on a salad."
+   }
+  ],
+  "tip": "Don't drain the juice. Storing the chicken in a little of its own salsa liquid is what keeps it from drying out when you reheat it later in the week."
+ },
+ "egg-roll-in-a-bowl": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Mince the 3 garlic cloves and grate 1 tbsp fresh ginger. Slice the 4 green onions, keeping the white parts and green tops in separate piles. Measure the 3 tbsp (45 ml) soy sauce and 1 tsp sesame oil."
+   },
+   {
+    "t": "Brown the turkey",
+    "d": "Heat the 1 tsp avocado oil in a large 12-inch (30 cm) skillet over medium-high heat until it shimmers. Add the 1 1/2 lb (680 g) ground turkey and break it into small crumbles with a wooden spoon. Cook 7 to 8 minutes, until no pink remains and some bits are browned. Ground turkey is done at 165°F (74°C)."
+   },
+   {
+    "t": "Add the aromatics",
+    "d": "Push the turkey to the sides, add the garlic, ginger and green onion whites to the center, and stir them for 30 to 60 seconds until they smell fragrant. Don't let the garlic brown or it turns bitter."
+   },
+   {
+    "t": "Wilt the slaw",
+    "d": "Add the whole 14 oz (400 g) bag of coleslaw mix and the soy sauce. Toss everything together and cook 3 to 4 minutes, stirring often, until the cabbage has wilted but still has a little crunch."
+   },
+   {
+    "t": "Finish and serve",
+    "d": "Turn off the heat and stir in the sesame oil. Top with the green onion tops and a drizzle of sriracha if you like heat. For meal prep, split into 4 containers; it keeps 4 days in the fridge and reheats in 1 to 2 minutes in the microwave."
+   }
+  ],
+  "tip": "Pull it off the heat while the cabbage still has some crunch. It keeps softening in the container, so slightly underdone today means perfect on day three."
+ },
+ "sheet-pan-chicken-sausage": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Heat the oven to 425°F (220°C) with a rack in the middle. Line a large rimmed baking sheet with parchment. Halve the 1 lb (454 g) baby potatoes (quarter any bigger than a golf ball). Cut the 2 bell peppers and red onion into 1 1/2-inch (4 cm) chunks. Slice the sausage into 1/2-inch (1 cm) coins on a slight angle."
+   },
+   {
+    "t": "Start the potatoes",
+    "d": "Toss the potatoes on the pan with half the 1 tbsp avocado oil, 1/2 tsp of the garlic powder, the salt and a few grinds of pepper. Spread them out cut side down and roast 15 minutes. They need a head start because they take longest."
+   },
+   {
+    "t": "Season the rest",
+    "d": "While the potatoes roast, toss the peppers, onion and sausage in a bowl with the rest of the avocado oil, the Italian seasoning, paprika and remaining garlic powder."
+   },
+   {
+    "t": "Roast it all",
+    "d": "Pull the pan out, add the sausage and vegetables, and spread everything into a single layer. Crowded pans steam instead of roast, so use a second pan if needed. Roast 15 to 20 minutes more, until the potatoes are golden and tender when poked with a fork, the peppers have browned edges, and the sausage is sizzling and browned."
+   },
+   {
+    "t": "Serve or store",
+    "d": "Serve straight from the pan. For meal prep, divide into 4 containers once it cools a bit; it keeps 4 days in the fridge. Reheat in the microwave 2 minutes, or in an air fryer at 375°F (190°C) for 5 to 6 minutes to bring back the crisp."
+   }
+  ],
+  "tip": "Put the potatoes cut side down and leave them alone. That flat side touching the hot pan is what gets them crispy and golden instead of pale."
+ },
+ "protein-breakfast-casserole": {
+  "steps": [
+   {
+    "t": "Prep everything",
+    "d": "Heat the oven to 375°F (190°C). Spray a 9 x 13-inch (23 x 33 cm) baking dish with avocado oil spray. Mix the sausage seasoning: 1 tsp dried sage, 1 tsp salt, 1/2 tsp each black pepper, garlic powder and crushed fennel seed, and 1/4 tsp each smoked paprika and red pepper flakes. Dice the 1 lb (454 g) potatoes and the bell pepper into 1/2-inch (1 cm) pieces and roughly chop the spinach."
+   },
+   {
+    "t": "Brown the sausage",
+    "d": "Heat a large 12-inch (30 cm) skillet over medium-high heat with a light spray of avocado oil. Add the 1 lb (454 g) ground turkey and the seasoning, breaking it into small crumbles. Cook 7 to 8 minutes until browned with no pink left, 165°F (74°C). Scoop it into a bowl."
+   },
+   {
+    "t": "Crisp the potatoes",
+    "d": "In the same skillet over medium heat, add the potatoes with another spray of oil and a pinch of salt. Cook 8 to 10 minutes, stirring every couple of minutes, until golden on the outside and nearly tender. Add the bell pepper for the last 2 minutes and the spinach for the last 30 seconds, just until it wilts."
+   },
+   {
+    "t": "Mix the eggs",
+    "d": "In a large bowl, whisk the 10 eggs, 2 cups (480 ml) egg whites and 1 cup (226 g) cottage cheese with a pinch of pepper until the egg is fully broken up. The cottage cheese curds will stay a little lumpy, which is fine; they melt into creamy pockets as it bakes."
+   },
+   {
+    "t": "Layer and bake",
+    "d": "Spread the potatoes and vegetables in the baking dish, scatter the sausage over them, then pour the egg mix evenly over the top. Sprinkle the 1 cup (113 g) cheddar on top. Bake 40 to 45 minutes, until the center is set, a knife slid into the middle comes out clean, and the top is golden. The center should read 160°F (71°C)."
+   },
+   {
+    "t": "Rest, cut and store",
+    "d": "Let it rest 10 minutes so it holds together, then cut into 8 squares. Store in containers for up to 4 days in the fridge, or wrap individually and freeze up to 2 months. Reheat a square in the microwave 60 to 90 seconds from the fridge, or 2 to 3 minutes from frozen."
+   }
+  ],
+  "tip": "Always cook the potatoes before they go in. Raw potatoes won't finish in the time the eggs take to set, and you'll end up with crunchy potatoes or rubbery eggs."
  }
 };
