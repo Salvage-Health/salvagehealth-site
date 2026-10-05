@@ -266,11 +266,13 @@ QCSS = """<style>
 .qz-rec small{color:var(--rust-text);font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
 .qz-rec h3{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:22px;margin:4px 0 4px}
 .qz-rec p{color:var(--dim);margin:0;font-size:15px}
+.qz-rec.qz-hot{border:1px solid var(--rust);border-left-width:3px;background:rgba(190,81,38,.10)}
+.qz-rec .btn{margin-top:14px;width:100%;border:0;cursor:pointer;font-family:Inter,sans-serif}
 .qz-priv{color:var(--faint);font-size:13px;text-align:center;margin:14px 0 0}
 </style>
 """
 
-QFIELDS = ["name", "email", "phone", "instagram", "referral", "goal", "sex", "age", "height", "weight_lb", "activity", "tdee", "calories", "protein", "carbs", "fat",
+QFIELDS = ["lead", "lead_summary", "contact_pref", "best_time", "start_when", "name", "email", "phone", "instagram", "referral", "goal", "sex", "age", "height", "weight_lb", "activity", "tdee", "calories", "protein", "carbs", "fat",
            "experience", "days_per_week", "blockers", "signals", "bloodwork", "services", "style", "readiness", "why", "recommendation", "qualified", "used_starter_kit"]
 qform = '<form name="coaching-qualify" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="coaching-qualify"><input name="company">' + "".join(f'<input name="{f}">' for f in QFIELDS) + "</form>"
 
