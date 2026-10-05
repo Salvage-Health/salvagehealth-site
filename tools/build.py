@@ -237,6 +237,89 @@ mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, 
 """ + FOOT
 write("/merch/", mp)
 
+
+# kitchen (preview: noindex, not in nav until real recipes are in)
+KCSS = """<meta name="robots" content="noindex">
+<style>
+.skpick{background:var(--raised);border:1px solid var(--rule);border-radius:16px;padding:22px;margin:0 0 40px}
+.skq{position:relative;margin:0 0 18px}
+.skq input{width:100%;min-height:52px;padding:12px 16px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:inherit;font-size:16px}
+.skq input:focus{outline:2px solid var(--rust-text);outline-offset:1px}
+#sug{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+#sug button{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--rust);background:rgba(190,81,38,.14);color:var(--fg);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+#sug .none{font-size:14px;color:var(--faint)}
+.skg{margin:0 0 14px}
+.skgl{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text);margin:0 0 8px}
+.skchips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--dim);font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:all .12s}
+.chip:hover{border-color:var(--rust)}
+.chip.on{background:var(--rust);border-color:var(--rust);color:#FAF9F5}
+.skbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px;padding-top:14px;border-top:1px solid var(--rule);font-size:14px;color:var(--faint)}
+.skbar button{background:none;border:0;color:var(--rust-text);font:inherit;font-weight:700;cursor:pointer;padding:8px 0}
+.skh{font-size:clamp(26px,3.4vw,34px);margin:8px 0 16px}
+.skn{color:var(--dim);margin:0 0 24px}
+.rgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 36px}
+.rc{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--raised);border:1px solid var(--rule);border-radius:14px;padding:20px;color:var(--fg);font:inherit;cursor:pointer;transition:border-color .15s}
+.rc:hover{border-color:var(--rust)}
+.rtag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust-text)}
+.rc b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.1;letter-spacing:.5px}
+.rb{color:var(--dim);font-size:14.5px;line-height:1.5}
+.mac{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:4px}
+.mac span{display:flex;flex-direction:column;align-items:center;background:var(--bg);border-radius:8px;padding:8px 4px;font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:1px}
+.mac em{font-style:normal;font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-size:19px;color:var(--fg);letter-spacing:0}
+.mac.big em{font-size:24px}
+.st{font-size:13px;font-weight:700;margin-top:auto;padding-top:6px}
+.st.ok{color:#7FBF7F}.st.near{color:var(--rust-text)}
+.buy{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;background:rgba(190,81,38,.1);border:1px solid var(--rust);border-radius:12px;padding:14px 18px;margin:-16px 0 36px;font-size:15px;color:var(--dim)}
+.buy b{color:var(--fg)}.buy em{font-style:normal;color:var(--rust-text);font-weight:600}
+dialog#dlg{width:min(680px,calc(100vw - 24px));max-height:calc(100vh - 40px);padding:0;border:1px solid var(--rule);border-radius:16px;background:var(--raised);color:var(--fg)}
+dialog#dlg::backdrop{background:rgba(0,0,0,.65)}
+#dlg-body{padding:28px 26px 30px;overflow:auto;max-height:calc(100vh - 40px)}
+#dlg-body h2{font-size:clamp(28px,4vw,38px);margin:0 0 12px}
+#dlg-body h3{font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:18px;margin:26px 0 10px}
+.fine2{font-size:12.5px;color:var(--faint);margin:8px 0 0}
+.ing{list-style:none;padding:0;margin:0}
+.ing li{padding:9px 0;border-bottom:1px solid var(--rule);font-size:15.5px;color:#E6E4DD}
+.ing .lab{display:inline-block;min-width:68px;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-right:10px}
+.ing .have .lab{color:#7FBF7F}.ing .miss .lab{color:var(--rust-text)}.ing .opt .lab,.ing .stp .lab{color:var(--faint)}
+.ing .alt{color:var(--faint);font-size:13.5px}
+.stepsl{padding-left:22px;margin:0;color:#E6E4DD}
+.stepsl li{margin:0 0 12px}
+#dlg-close{position:sticky;top:0;float:right;margin:-10px -8px 0 0;width:44px;height:44px;border-radius:999px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font-size:22px;cursor:pointer}
+.skmail{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:linear-gradient(120deg,rgba(190,81,38,.16),rgba(190,81,38,0) 60%),var(--raised);border:1px solid var(--rule);border-radius:16px;padding:26px}
+.skmail div{flex:1;min-width:240px}
+.skmail h2{font-size:clamp(24px,3vw,30px);margin:0 0 8px}
+.skmail p{margin:0;color:var(--dim)}
+.skmail form{display:flex;gap:10px;flex-wrap:wrap;flex:1;min-width:260px}
+.skmail input{flex:1;min-width:180px;min-height:48px;padding:10px 14px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:inherit}
+@media (max-width:900px){.rgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.rgrid{grid-template-columns:1fr}.skpick{padding:16px}}
+</style>
+"""
+kp = head("Salvage Kitchen | Salvage Health", "Tell it what's in your fridge. Get macro-friendly recipes you can cook tonight.", "/kitchen/", KCSS) + topbar("kitchen") + """  <main>
+    <div class="phead">
+      <p class="eyebrow">Salvage Kitchen</p>
+      <h1 class="disp">Cook from <em>what's left.</em></h1>
+      <p>Tap what's in your fridge, freezer and cupboard. Get macro-friendly recipes you can make tonight, plus what to grab at the store to unlock more.</p>
+    </div>
+    <section class="skpick" aria-label="What do you have?">
+      <div class="skq"><label for="q" class="skgl">What do you have?</label><input id="q" type="text" placeholder="Type an ingredient, like chicken or rice" autocomplete="off"><div id="sug" aria-live="polite"></div></div>
+      <div id="groups"></div>
+      <div class="skbar"><span><span id="count"></span>. Always assumed: <span id="staples"></span>.</span><button type="button" id="clear" hidden>Clear all</button></div>
+    </section>
+    <div id="results" aria-live="polite"></div>
+    <section class="skmail" aria-label="Get recipes by email">
+      <div><h2 class="disp">Save your <em>recipes</em></h2><p>Get a new fridge-friendly recipe every week, plus your saved favorites in your inbox.</p></div>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Coming soon';"><input type="email" placeholder="Your email" aria-label="Email" disabled><button class="btn solid" type="submit" disabled>Coming soon</button></form>
+    </section>
+    <p class="fine">Macros are estimates per serving based on USDA data. Cook chicken to 165°F (74°C) or higher. Check labels if you have allergies.</p>
+  </main>
+  <dialog id="dlg" aria-label="Recipe"><div id="dlg-body"></div><button id="dlg-close" type="button" aria-label="Close" style="position:absolute;top:14px;right:14px;margin:0">&times;</button></dialog>
+  <script src="/kitchen/recipes.js"></script>
+  <script src="/kitchen/app.js"></script>
+""" + FOOT
+write("/kitchen/", kp)
+
 # sitemap + robots
 urls = ["/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
