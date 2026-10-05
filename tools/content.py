@@ -257,8 +257,8 @@ FEATURE = ("tee-built", [
     ("tee-built-model-back-side", "Back of the tee, worn, side angle"),
     ("tee-built-model-front", "Front of the tee, worn, with the shield on the left chest"),
     ("tee-built-model-back", "Back of the tee, worn"),
-    ("tee-built-flat-back", "Back print: Built From What's Left"),
     ("tee-built-flat-front", "Front: Salvage Health shield on the left chest"),
+    ("tee-built-flat-back", "Back print: Built From What's Left"),
 ])
 MERCH2 = [
 ("tee-built", "Built From What's Left Tee", "Organic cotton tee",
