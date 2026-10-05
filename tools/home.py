@@ -256,6 +256,7 @@ home = head("Salvage Health | It's never too late to take your life back",
   window.addEventListener('scroll',function(){{var any=Object.keys(vis).some(function(k){{return vis[k]}});var on=window.scrollY>window.innerHeight*.9&&!any;b.classList.toggle('on',on)}},{{passive:true}});}})();
   </script>
   <script src="/assets/optin.js"></script>
+  <script src="/assets/rail.js"></script>
 """ + FOOT
 write("/", home)
 

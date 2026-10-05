@@ -458,6 +458,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
   <script src="/kitchen/steps.js"></script>
   <script src="/assets/goals.js"></script>
   <script src="/kitchen/app.js"></script>
+  <script src="/assets/rail.js"></script>
 """ + FOOT
 write("/kitchen/", kp)
 
