@@ -161,7 +161,55 @@
 .gl input:checked + *{text-decoration:line-through}
 .gl em{color:var(--faint)}
 .pantry{font-size:13.5px;color:var(--faint);margin-top:10px}
-@media (max-width:640px){.gls{grid-template-columns:1fr}}
+.calc{display:grid;gap:18px;margin-top:22px;padding:20px;background:var(--raised);border:1px solid var(--rule);border-radius:16px}
+.cl{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.goals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.goals button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:64px;padding:10px 12px;border-radius:12px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:700 15px Inter,sans-serif;text-align:left;cursor:pointer}
+.goals button small{font-weight:500;font-size:12px;color:var(--faint);line-height:1.3}
+.goals button[aria-pressed=true]{border-color:var(--rust);background:rgba(190,81,38,.16);box-shadow:inset 0 0 0 1px var(--rust)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1 1 0;min-height:46px;padding:8px 10px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--dim);font:700 14px Inter,sans-serif;cursor:pointer;line-height:1.2}
+.seg button small{display:block;font-weight:500;font-size:11.5px;color:var(--faint);margin-top:2px}
+.seg button[aria-pressed=true]{border-color:var(--rust);background:var(--rust);color:#FAF9F5}
+.seg button[aria-pressed=true] small{color:#F3D3C4}
+.seg.act{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.nums{display:grid;grid-template-columns:.7fr 1.3fr 1fr;gap:10px}
+.nums label{display:block;min-width:0}
+.nums input{width:100%;min-width:0;min-height:48px;padding:10px 12px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--fg);font:600 17px Inter,sans-serif}
+.nums input:focus{outline:2px solid var(--rust-text);outline-offset:1px}
+.hgt{display:flex;align-items:center;gap:6px}
+.hgt i{font-style:normal;color:var(--faint);font-size:13px}
+.res{margin-top:14px;padding:20px;border-radius:16px;border:1px solid var(--rust);background:linear-gradient(135deg,rgba(190,81,38,.2),rgba(190,81,38,.04))}
+.rtop{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.rtop small{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+.rtop b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-size:clamp(44px,10vw,60px);line-height:1;margin-right:6px}
+.rtop span{color:var(--dim)}
+.rtop .rt{text-align:right}.rtop .rt b{font-size:24px;color:var(--fg);margin:0}
+@media (max-width:480px){.rtop .rt{text-align:left;display:flex;align-items:baseline;gap:8px}.rtop .rt small{display:inline}}
+.rtop .rt small{color:var(--faint)}
+.rm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.rm span{background:var(--bg);border-radius:10px;padding:10px;text-align:center;font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-size:15px;color:var(--dim)}
+.rm b{font-size:28px;color:var(--fg)}
+.rm small{display:block;font-family:Inter,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--faint)}
+.rnote{font-size:13px;color:var(--dim);margin:12px 0 0}
+.rnote:empty{display:none}
+.tips{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;counter-reset:t}
+.tips li{counter-increment:t;position:relative;padding:14px 14px 14px 50px;background:var(--raised);border:1px solid var(--rule);border-radius:12px;color:var(--dim);font-size:15px}
+.tips li::before{content:counter(t);position:absolute;left:14px;top:13px;width:24px;height:24px;border-radius:99px;background:var(--rust);color:#FAF9F5;display:grid;place-items:center;font-size:12px;font-weight:800}
+.tips li b{display:block;color:var(--fg);font-size:15.5px;margin-bottom:2px}
+.fyh{font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:20px;margin:30px 0 12px}
+.fyr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fyr a{text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:3px;min-width:0}
+.fyr .im{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--raised);border:1px solid var(--rule);display:grid;place-items:center}
+.fyr .im img{width:100%;height:100%;object-fit:cover}
+.fyr .im svg{width:30%;color:#4A4842}
+.fyr b{font-size:14.5px;line-height:1.3;margin-top:3px}
+.fyr small{font-size:12px;color:var(--faint)}
+.fya{display:grid;gap:8px}
+.fya a{display:block;padding:14px 16px;background:var(--raised);border:1px solid var(--rule);border-radius:12px;text-decoration:none;color:var(--fg);font-weight:700}
+.fya a:hover,.fyr a:hover b{color:var(--rust-text)}
+.fit{margin:12px 0 0;padding:12px 14px;border-left:3px solid var(--rust);background:rgba(190,81,38,.1);border-radius:0 10px 10px 0;color:var(--dim);font-size:14.5px}
+@media (max-width:640px){.gls{grid-template-columns:1fr}.goals{grid-template-columns:1fr 1fr}.seg.act{grid-template-columns:1fr 1fr}.nums{grid-template-columns:1fr 1fr}.nums label:nth-child(2){grid-column:1/-1;order:-1}.fyr{grid-template-columns:1fr 1fr}.calc{padding:16px}}
 </style>
 </head>
 <body>
@@ -184,7 +232,41 @@
       <p class="lead">Bookmark this page. It's yours to keep. Work through it in order and don't try to be perfect. Week one is about starting, not nailing it.</p>
     </div>
 
-    <div class="kstep"><span class="n">1</span><div><b>Get your numbers first</b><p>Two minutes in the free app gives you your daily calorie and protein targets. Everything else builds on these.</p><a class="btn solid" href="/book">Get my numbers</a></div></div>
+    <section style="padding-top:36px" id="numbers">
+      <p class="eyebrow">Step 1</p>
+      <h2 class="disp">Your numbers <em>in 30 seconds</em></h2>
+      <p class="lead">Tap through these and your daily targets appear instantly. Everything below changes to match your goal.</p>
+      <form class="calc" id="calc" autocomplete="off" onsubmit="return false">
+        <div class="cq"><span class="cl">Goal</span><div class="goals" id="c-goal"></div></div>
+        <div class="cq"><span class="cl">I am</span><div class="seg" data-k="sex"><button type="button" data-v="m">Male</button><button type="button" data-v="f">Female</button></div></div>
+        <div class="cq nums">
+          <label><span class="cl">Age</span><input id="c-age" type="number" inputmode="numeric" min="18" max="90" placeholder="40"></label>
+          <label><span class="cl">Height</span><span class="hgt"><input id="c-ft" type="number" inputmode="numeric" min="4" max="7" placeholder="5"><i>ft</i><input id="c-in" type="number" inputmode="numeric" min="0" max="11" placeholder="10"><i>in</i></span></label>
+          <label><span class="cl">Weight</span><span class="hgt"><input id="c-lb" type="number" inputmode="decimal" min="80" max="700" placeholder="220"><i>lb</i></span></label>
+        </div>
+        <div class="cq"><span class="cl">Activity</span><div class="seg act" id="c-act"></div></div>
+      </form>
+      <div class="res" id="res" hidden>
+        <div class="rtop"><span><small id="r-goal">Daily target</small><b id="r-cal">0</b> calories a day</span><span class="rt"><small>Maintenance</small><b id="r-tdee">0</b></span></div>
+        <div class="rm"><span><b id="r-p">0</b>g<small>protein</small></span><span><b id="r-c">0</b>g<small>carbs</small></span><span><b id="r-f">0</b>g<small>fat</small></span></div>
+        <p class="rnote" id="r-note"></p>
+        <p class="rnote" id="r-kg"></p>
+      </div>
+      <p class="pantry" id="r-empty">Fill in all six to see your numbers. Estimates only, not medical advice. Want goal dates and a full plan? Use the <a href="/book">full companion app</a>.</p>
+    </section>
+
+    <section style="padding-top:44px" id="foryou" hidden>
+      <p class="eyebrow" id="fy-eb">Made for you</p>
+      <h2 class="disp" id="fy-h">Your playbook</h2>
+      <p class="lead" id="fy-hello"></p>
+      <ol class="tips" id="fy-tips"></ol>
+      <h3 class="fyh">Recipes that fit your goal</h3>
+      <div class="fyr" id="fy-rec"></div>
+      <a class="btn line" style="width:auto;margin-top:14px" href="/kitchen/#foryou">See every recipe that fits</a>
+      <h3 class="fyh">Read next</h3>
+      <div class="fya" id="fy-art"></div>
+    </section>
+    <form name="starter-kit-profile" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="starter-kit-profile"><input name="company"><input name="email"><input name="goal"><input name="calories"><input name="protein"><input name="activity"></form>
 
     <section style="padding-top:44px" id="week">
       <p class="eyebrow">Step 2</p>
@@ -196,7 +278,8 @@
     <section style="padding-top:44px" id="meals">
       <p class="eyebrow">Step 3</p>
       <h2 class="disp">Cook twice. <em>Eat all week.</em></h2>
-      <p class="lead">Sunday you cook three things (about 2 hours). Thursday you cook one more (20 minutes). That covers breakfast, lunch and dinner for the week at roughly 1,400 to 1,500 calories and about 150 g protein a day before snacks. Adjust portions up or down to match your numbers. Tap any recipe for the full step-by-step.</p>
+      <p class="lead">Sunday you cook three things (about 2 hours). Thursday you cook one more (20 minutes). That covers breakfast, lunch and dinner for the week at roughly 1,400 to 1,500 calories and about 150 g protein a day before snacks. Tap any recipe for the full step-by-step.</p>
+      <p class="fit" id="mp-fit">Adjust portions up or down to match your numbers from Step 1.</p>
       <div class="mps"><a class="mp" href="/kitchen/#turkey-sausage-mcmuffins"><img src="/kitchen/img/turkey-sausage-mcmuffins.jpg" alt="" loading="lazy"><span><small>Breakfast, all 7 days · Cook Sunday</small><b>High-Protein Turkey Sausage Egg McMuffins</b><em>365 cal · 35g protein per serving</em></span></a><a class="mp" href="/kitchen/#chicken-meal-prep"><img src="/kitchen/img/chicken-meal-prep.jpg" alt="" loading="lazy"><span><small>Lunch, Monday to Thursday · Cook Sunday</small><b>Chicken, Sweet Potato and Broccoli Meal Prep</b><em>585 cal · 59g protein per serving</em></span></a><a class="mp" href="/kitchen/#cabbage-enchiladas"><img src="/kitchen/img/cabbage-enchiladas-steps.jpg" alt="" loading="lazy"><span><small>Dinner, Sunday to Wednesday, plus lunch Friday to Sunday · Cook Sunday</small><b>Cabbage-Wrapped Shredded Chicken Enchiladas</b><em>470 cal · 62g protein per serving</em></span></a><a class="mp" href="/kitchen/#egg-roll-in-a-bowl"><img src="/brand/mark.svg" alt="" loading="lazy"><span><small>Dinner, Thursday, Saturday and Sunday · Cook Thursday, 20 minutes</small><b>Egg Roll in a Bowl</b><em>305 cal · 34g protein per serving</em></span></a></div>
       <p class="pantry">Day 5 is your real-world meal: eat out or eat with friends that night.</p>
     </section>
@@ -214,6 +297,10 @@
         <div style="display:grid;gap:10px"><a class="btn solid" href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Listen free on Spotify</a><a class="btn line" href="/kitchen/">Browse all 65 recipes</a><a class="btn line" href="https://www.instagram.com/el_dourado/" target="_blank" rel="noopener">Follow on Instagram</a></div></div>
     </section>
   </main>
+  <script>window.SH_ARTICLES = {"power-of-a-coach": "The Power of a Coach", "75-hard": "What 75 Hard Taught Me About Discipline", "my-peptide-journey": "My Peptide Journey: What I Learned and What's Still Unknown", "say-what-you-do": "Say What You'll Do. Do What You Say.", "supplements-whats-worth-it": "Supplements: What's Worth It and What's Marketing"};</script>
+  <script src="/kitchen/recipes.js"></script>
+  <script src="/assets/goals.js"></script>
+  <script src="/assets/kit.js"></script>
   <footer class="site">
     <div class="foot">
       <div>

@@ -424,6 +424,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
   <dialog id="dlg" aria-label="Recipe"><button id="dlg-close" type="button" aria-label="Close">&times;</button><div id="dlg-body"></div></dialog>
   <script src="/kitchen/recipes.js"></script>
   <script src="/kitchen/steps.js"></script>
+  <script src="/assets/goals.js"></script>
   <script src="/kitchen/app.js"></script>
 """ + FOOT
 write("/kitchen/", kp)

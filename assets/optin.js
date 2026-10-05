@@ -5,6 +5,7 @@
       e.preventDefault();
       var btn = f.querySelector('button');
       if (btn) { btn.disabled = true; btn.textContent = 'Opening your kit...'; }
+      try { var em = (f.querySelector('input[type=email]') || {}).value || ''; sessionStorage.setItem('sh-email', em); localStorage.setItem('sh-email', em); } catch (x) {}
       var go = function () { window.location.href = '/start/kit/'; };
       var body = new URLSearchParams(new FormData(f)).toString();
       var t = setTimeout(go, 4000);

@@ -23,8 +23,9 @@
     return { r: r, miss: miss, got: core.length - miss.length };
   }
 
-  var CATS = ['All', "Bryan's", 'Batch prep', 'Vegetarian', 'Keto', 'Breakfast', 'Lunch', 'Dinner'];
-  function inCat(r, c) { c = c || cat; return c === 'All' || (c === "Bryan's" ? !!r.by : c === 'Batch prep' ? !!r.batch : c === 'Vegetarian' ? !!r.veg : c === 'Keto' ? !!r.keto : r.cat === c); }
+  var PLAN = window.SH_GOALS ? window.SH_GOALS.load() : null, GOAL = PLAN && PLAN.goal && window.SH_GOALS.G[PLAN.goal];
+  var CATS = (GOAL ? ['For you'] : []).concat(['All', "Bryan's", 'Batch prep', 'Vegetarian', 'Keto', 'Breakfast', 'Lunch', 'Dinner']);
+  function inCat(r, c) { c = c || cat; if (c === 'For you') return !!GOAL && GOAL.fits(r); return c === 'All' || (c === "Bryan's" ? !!r.by : c === 'Batch prep' ? !!r.batch : c === 'Vegetarian' ? !!r.veg : c === 'Keto' ? !!r.keto : r.cat === c); }
   function matches(r) { if (!query) return true; return query.split(/\s+/).every(function (w) { return r.hay.indexOf(w) > -1; }); }
 
   var SHIELD = '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -69,7 +70,7 @@
       list = list.filter(function (r) { return !r.by; }).sort(function (x, y) { return (y.photos ? 1 : 0) - (x.photos ? 1 : 0); });
       out += '<div class="kh"><h2 class="disp">More <em>recipes</em></h2><span>' + list.length + '</span></div>';
     } else {
-      out += '<div class="kh"><h2 class="disp">' + (query ? 'Results' : esc(cat)) + '</h2><span>' + list.length + ' recipe' + (list.length === 1 ? '' : 's') + '</span></div>';
+      out += '<div class="kh"><h2 class="disp">' + (query ? 'Results' : cat === 'For you' ? 'Fits your <em>' + esc(GOAL.short.toLowerCase()) + '</em> plan' : esc(cat)) + '</h2><span>' + list.length + ' recipe' + (list.length === 1 ? '' : 's') + '</span></div>';
     }
     out += list.length ? grid(list) : '<p class="kempty">No recipes match that yet. Try another word or clear the filter.</p>';
     $('results').innerHTML = out;
@@ -217,5 +218,6 @@
   $('ktotal').textContent = SK.RECIPES.length;
   render();
   var h = decodeURIComponent((location.hash || '').slice(1));
-  if (h && SK.RECIPES.some(function (r) { return r.id === h; })) openRecipe(h);
+  if (h === 'foryou' && GOAL) { cat = 'For you'; render(); }
+  else if (h && SK.RECIPES.some(function (r) { return r.id === h; })) openRecipe(h);
 })();
