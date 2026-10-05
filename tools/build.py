@@ -1,6 +1,6 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE, FEATURE
 FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
@@ -190,7 +190,7 @@ for slug, name, cat, d, art in MERCH2:
     svg = open(os.path.join(MD, art + ".svg")).read().replace("<svg ", f'<svg role="img" aria-label="{html.escape(name)} concept" ', 1)
     if slug in LIVE:
         price, url, ph = LIVE[slug]
-        pic = f'<img src="/merch/img/{ph[0]}.jpg" alt="{html.escape(name)}, back" width="800" height="800" loading="lazy"><img class="alt" src="/merch/img/{ph[1]}.jpg" alt="" width="800" height="800" loading="lazy">' if ph else svg
+        pic = f'<img src="/merch/img/{ph[0]}.jpg" alt="{html.escape(name)}, back" loading="lazy"><img class="alt" src="/merch/img/{ph[1]}.jpg" alt="" loading="lazy">' if ph else svg
         cards += f"""      <div class="mcard live" id="{slug}">
         <a class="mimg{' photo' if ph else ''}" href="{url}" target="_blank" rel="noopener" aria-label="Buy the {html.escape(name)}">{pic}<span class="mtag">Available now</span></a>
         <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p><div class="mbuy"><b>{price}</b><a class="btn solid" href="{url}" target="_blank" rel="noopener">Buy now</a></div></div>
@@ -202,6 +202,27 @@ for slug, name, cat, d, art in MERCH2:
         <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p></div>
       </div>
 """
+fslug, fphotos = FEATURE
+fname, fcat, fdesc = next((n, c, d) for sl, n, c, d, _ in MERCH2 if sl == fslug)
+fprice, furl, _ = LIVE[fslug]
+thumbs = "".join(f'<button type="button" class="fth{" on" if i == 0 else ""}" data-src="/merch/img/{ph}.jpg" data-alt="{html.escape(alt)}" aria-label="Show photo {i+1}: {html.escape(alt)}"><img src="/merch/img/{ph}.jpg" alt="" loading="lazy"></button>' for i, (ph, alt) in enumerate(fphotos))
+feature = f"""    <section class="feat" aria-label="Featured: {html.escape(fname)}">
+      <div class="fgal">
+        <div class="fmain"><img id="fimg" src="/merch/img/{fphotos[0][0]}.jpg" alt="{html.escape(fphotos[0][1])}"></div>
+        <div class="fthumbs">{thumbs}</div>
+      </div>
+      <div class="ftx">
+        <p class="eyebrow">Available now</p>
+        <h2 class="disp">Built From <em>What's Left.</em></h2>
+        <p>The flagship tee. A small shield on the chest and the whole mission across the back in a worn-in print.</p>
+        <p>For anyone who has started over, more than once if that's what it took. You don't need a perfect starting point. You build with what you've got.</p>
+        <ul class="fspec"><li>Unisex fit, soft organic cotton, ribbed neck</li><li>Black, sizes S to 5XL</li><li>Printed to order, ships in 5 to 11 days</li></ul>
+        <div class="fbuy"><b>{fprice}</b><a class="btn solid" href="{furl}" target="_blank" rel="noopener">Buy now</a></div>
+      </div>
+    </section>
+    <script>document.querySelectorAll('.fth').forEach(function(b){{b.addEventListener('click',function(){{var i=document.getElementById('fimg');i.src=b.dataset.src;i.alt=b.dataset.alt;document.querySelectorAll('.fth').forEach(function(x){{x.classList.remove('on')}});b.classList.add('on');}});}});</script>
+    <h2 class="disp mhead">The <em>lineup</em></h2>
+"""
 mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First tee available now.", "/merch/") + topbar("merch") + f"""  <main>
     <div class="phead">
       <p class="eyebrow">Merch</p>
@@ -209,7 +230,7 @@ mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, 
       <p>Gear for people building from what's left. Every piece is a daily reminder that you said you'd show up. The first tee is live now, with more dropping soon.</p>
       <p style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn solid" href="{SHOP}" target="_blank" rel="noopener">Shop the store</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow for new drops</a></p>
     </div>
-    <div class="mgrid">
+{feature}    <div class="mgrid">
 {cards}    </div>
     <p class="fine" style="margin-top:22px">Items marked Coming soon are previews. Final products, colors and details may change. Orders are printed to order and handled by our store partner, Fourthwall.</p>
   </main>

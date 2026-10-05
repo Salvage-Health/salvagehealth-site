@@ -126,6 +126,9 @@
   .merch-strip{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-decoration:none;color:var(--fg);background:linear-gradient(120deg,rgba(190,81,38,.16),rgba(190,81,38,0) 60%),var(--raised);border:1px solid var(--rule);border-radius:16px;padding:30px 30px}
   .merch-strip:hover{border-color:var(--rust)}
   .merch-strip h2.disp{margin-bottom:10px}
+  .merch-strip .mshot{width:150px;aspect-ratio:4/5;object-fit:cover;border-radius:10px;background:#E4E4E4;flex-shrink:0}
+  .merch-strip .mst{flex:1;min-width:220px}
+  @media (max-width:560px){.merch-strip .mshot{width:100%}}
   @media (max-width:760px){.alist{grid-template-columns:1fr}}
   @media (max-width:860px){
     .story{grid-template-columns:1fr;gap:28px}
@@ -246,8 +249,9 @@
 
     <section id="merch">
       <a class="merch-strip" href="/merch/">
-        <div><p class="eyebrow">Merch</p><h2 class="disp">Wear the <em>reminder.</em></h2><p class="body" style="margin:0">The first tee is live: Built From What's Left. Hoodies, beanies, stickers and lifting gear coming soon.</p></div>
-        <span class="btn line">See the gear</span>
+        <img class="mshot" src="/merch/img/tee-built-model-back.jpg" alt="The Built From What's Left Tee, worn, back view" loading="lazy">
+        <div class="mst"><p class="eyebrow">Merch</p><h2 class="disp">Wear the <em>reminder.</em></h2><p class="body" style="margin:0">The first tee is live: Built From What's Left. Hoodies, beanies, stickers and lifting gear coming soon.</p></div>
+        <span class="btn solid">Shop the tee</span>
       </a>
     </section>
 
