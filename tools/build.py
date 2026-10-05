@@ -202,7 +202,7 @@ for slug, name, cat, d, art in MERCH2:
     svg = open(os.path.join(MD, art + ".svg")).read().replace("<svg ", f'<svg role="img" aria-label="{html.escape(name)} concept" ', 1)
     if slug in LIVE:
         price, url, ph = LIVE[slug]
-        pic = f'<img src="/merch/img/{ph[0]}.jpg" alt="{html.escape(name)}, back" loading="lazy"><img class="alt" src="/merch/img/{ph[1]}.jpg" alt="" loading="lazy">' if ph else svg
+        pic = f'<img src="/merch/img/{ph[0]}.jpg" alt="{html.escape(name)}, worn" loading="lazy"><img class="alt" src="/merch/img/{ph[1]}.jpg" alt="" loading="lazy">' if ph else svg
         cards += f"""      <div class="mcard live" id="{slug}">
         <a class="mimg{' photo' if ph else ''}" href="{url}" target="_blank" rel="noopener" aria-label="Buy the {html.escape(name)}">{pic}<span class="mtag">Available now</span></a>
         <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p><div class="mbuy"><b>{price}</b><a class="btn solid" href="{url}" target="_blank" rel="noopener">Buy now</a></div></div>

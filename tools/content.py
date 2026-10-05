@@ -304,7 +304,7 @@ ABOUT_BODY = """
 SHOP = "https://salvagehealth-shop.fourthwall.com"
 # photos in /merch/img/: first is the main shot, second shows on hover
 LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee-built-model-side", "tee-built-model-back-side")),
-        "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ())}
+        "tee-never": ("$34", SHOP + "/products/never-too-late-tee", ("tee-never-model-front", "tee-never-model-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
