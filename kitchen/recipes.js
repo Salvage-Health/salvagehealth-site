@@ -96,6 +96,12 @@ window.SK = {
     'cottage-2':      { kcal: 72,  p: 12.5, f: 2.7,  c: 2.7 },
     'taco-seasoning': { kcal: 333, p: 0,    f: 0,    c: 67 },
     'pineapple-juice':{ kcal: 53,  p: 0.4,  f: 0.1,  c: 12.9 },
+    'ramen-millet':   { kcal: 375, p: 12.5, f: 3.1,  c: 72 },
+    'tonkotsu-broth': { kcal: 47,  p: 2.33, f: 3.67, c: 1.67 },
+    'top-sirloin':    { kcal: 201, p: 20.6, f: 12.9, c: 0 },
+    'shallot':        { kcal: 72,  p: 2.5,  f: 0.1,  c: 16.8 },
+    'nori':           { kcal: 133, p: 0,    f: 0,    c: 33 },
+    'sesame-oil':     { kcal: 884, p: 0,    f: 100,  c: 0 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -128,6 +134,7 @@ window.SK = {
     { id: 'oats', name: 'Oats', group: 'Carbs', alias: ['oatmeal', 'rolled oats'] },
     { id: 'tortillas', name: 'Corn tortillas', group: 'Carbs', alias: ['tortilla', 'tortillas'] },
     { id: 'flour-tortillas', name: 'Flour tortillas or wraps', group: 'Carbs', alias: ['tortilla', 'tortillas', 'wraps', 'wrap'] },
+    { id: 'ramen-noodles', name: 'Ramen noodles', group: 'Carbs', alias: ['ramen', 'noodles', 'rice noodles'] },
     { id: 'rice-paper', name: 'Rice paper wrappers', group: 'Carbs', alias: ['rice paper', 'spring roll', 'wrappers', 'egg roll'] },
     { id: 'buns', name: 'Burger buns', group: 'Carbs', alias: ['bun', 'buns', 'keto bun', 'bread'] },
     { id: 'frozen-fries', name: 'Frozen fries', group: 'Carbs', alias: ['fries', 'french fries'] },
@@ -147,6 +154,7 @@ window.SK = {
     { id: 'cucumber', name: 'Cucumber', group: 'Vegetables', alias: ['cucumbers'] },
     { id: 'celery', name: 'Celery', group: 'Vegetables', alias: [] },
     { id: 'corn', name: 'Corn', group: 'Vegetables', alias: [] },
+    { id: 'shallots', name: 'Shallots', group: 'Vegetables', alias: ['shallot', 'onion'] },
     { id: 'cabbage', name: 'Cabbage', group: 'Vegetables', alias: ['green cabbage', 'savoy'] },
     { id: 'mushrooms', name: 'Mushrooms', group: 'Vegetables', alias: ['mushroom', 'baby bella', 'cremini'] },
     { id: 'jalapenos', name: 'Jalapeños', group: 'Vegetables', alias: ['jalapeno', 'jalapenos', 'peppers'] },
@@ -160,6 +168,9 @@ window.SK = {
     { id: 'banana', name: 'Bananas', group: 'Fruit and fresh', alias: ['banana'] },
     { id: 'berries', name: 'Berries', group: 'Fruit and fresh', alias: ['blueberries', 'strawberries', 'raspberries'] },
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
+    { id: 'broth', name: 'Broth', group: 'Sauces and pantry', alias: ['tonkotsu', 'bone broth', 'stock', 'chicken broth', 'ramen broth'] },
+    { id: 'nori', name: 'Nori seaweed', group: 'Sauces and pantry', alias: ['seaweed', 'nori'] },
+    { id: 'sesame-oil', name: 'Sesame oil', group: 'Sauces and pantry', alias: ['sesame'] },
     { id: 'taco-seasoning', name: 'Taco seasoning', group: 'Sauces and pantry', alias: ['taco', 'mccormick'] },
     { id: 'salsa-verde', name: 'Salsa verde', group: 'Sauces and pantry', alias: ['verde', 'green salsa', 'tomatillo'] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
@@ -180,6 +191,32 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'steak-tonkotsu-ramen', name: 'Steak Tonkotsu Ramen', by: 'bryan', cat: 'Dinner', tag: 'Ramen night', serves: 1, mins: 30,
+      photos: ['/kitchen/img/steak-tonkotsu-ramen.jpg', '/kitchen/img/steak-tonkotsu-ramen-side.jpg'],
+      blurb: 'Rich, creamy tonkotsu broth over millet and brown rice ramen, loaded with seared top sirloin, a jammy soft egg, charred corn, roasted mushrooms, crispy shallots and nori. A real ramen-shop bowl with 54 grams of protein.',
+      items: [
+        { need: 'steak', txt: '6 oz (170 g) beef top sirloin steak', food: 'top-sirloin', g: 170 },
+        { need: 'ramen-noodles', or: ['pasta'], txt: '1/2 pack (about 1 1/8 oz / 32 g) millet and brown rice ramen noodles', food: 'ramen-millet', g: 32 },
+        { need: 'broth', txt: '1 portion tonkotsu ramen broth, about 1 1/4 cups (300 ml)', food: 'tonkotsu-broth', g: 300 },
+        { need: 'eggs', txt: '1 large organic egg', food: 'egg', g: 50 },
+        { need: 'corn', optional: true, txt: '1 oz (28 g) sweet corn, about 3 tbsp', food: 'corn', g: 28 },
+        { need: 'mushrooms', optional: true, txt: '1 oz (32 g) baby bella mushrooms, sliced thick', food: 'mushrooms', g: 32 },
+        { need: 'green-onions', optional: true, txt: '3 tbsp (18 g) sliced scallions', food: 'green-onion', g: 18 },
+        { need: 'shallots', optional: true, txt: '1 tbsp (10 g) shallot, sliced paper thin', food: 'shallot', g: 10 },
+        { need: 'nori', optional: true, txt: '3 pieces nori seaweed', food: 'nori', g: 3 },
+        { need: 'sesame-oil', optional: true, txt: '1/2 tsp (about 2 g) toasted sesame oil, a light drizzle', food: 'sesame-oil', g: 2.7 },
+        { staple: true, txt: 'Avocado oil spray; salt and coarse black pepper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Jammy egg first: lower the egg into boiling water and cook exactly 6 1/2 minutes, then straight into ice water for 5 minutes. Peel and halve it when you are ready to plate.',
+        'Pat the steak dry and season hard with salt and pepper. Sear in a ripping-hot cast iron pan with a light spray of avocado oil, 3 to 4 minutes a side, to 130°F (54°C) for medium-rare. Rest 5 minutes, then slice thin against the grain.',
+        'In the same pan, sear the mushroom slices 2 minutes a side until browned, then char the corn 3 to 4 minutes until it gets dark spots. Set both aside.',
+        'For crispy shallots, spray the thin shallot slices with avocado oil and air fry at 350°F (175°C) for 5 to 7 minutes, shaking often, until deep golden. Watch them, they go from golden to burnt fast. (Or crisp them in the hot pan.)',
+        'Heat the broth until steaming. Cook the noodles according to the package, usually about 4 minutes, and drain.',
+        'Build the bowl: noodles, then the hot broth, then fan the steak across the middle. Add the egg halves, corn, mushrooms and scallions around it, pile the crispy shallots on the steak, tuck the nori against the side, and finish with a light drizzle of sesame oil.'
+      ]
+    },
     {
       id: 'tropic-fire-chicken', name: 'Tropic Fire Grilled Chicken', by: 'bryan', cat: 'Dinner', tag: '24-hour marinade', serves: 4, mins: 30,
       photos: ['/kitchen/img/tropic-fire-chicken.jpg'],
