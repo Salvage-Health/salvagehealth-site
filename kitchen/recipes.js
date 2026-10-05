@@ -95,6 +95,7 @@ window.SK = {
     'broccolini':     { kcal: 35,  p: 2.5,  f: 0.6,  c: 6.9 },
     'cottage-2':      { kcal: 72,  p: 12.5, f: 2.7,  c: 2.7 },
     'taco-seasoning': { kcal: 333, p: 0,    f: 0,    c: 67 },
+    'pineapple-juice':{ kcal: 53,  p: 0.4,  f: 0.1,  c: 12.9 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -151,6 +152,7 @@ window.SK = {
     { id: 'jalapenos', name: 'Jalapeños', group: 'Vegetables', alias: ['jalapeno', 'jalapenos', 'peppers'] },
     { id: 'mixed-veg', name: 'Frozen peas and carrots', group: 'Vegetables', alias: ['peas', 'carrots', 'frozen veg', 'mixed vegetables'] },
     { id: 'green-onions', name: 'Green onions', group: 'Fruit and fresh', alias: ['scallions', 'scallion', 'green onion', 'onion'] },
+    { id: 'ginger', name: 'Fresh ginger', group: 'Fruit and fresh', alias: ['ginger root'] },
     { id: 'cilantro', name: 'Cilantro', group: 'Fruit and fresh', alias: [] },
     { id: 'lime', name: 'Limes', group: 'Fruit and fresh', alias: ['lime'] },
     { id: 'lemon', name: 'Lemons', group: 'Fruit and fresh', alias: ['lemon'] },
@@ -162,6 +164,7 @@ window.SK = {
     { id: 'salsa-verde', name: 'Salsa verde', group: 'Sauces and pantry', alias: ['verde', 'green salsa', 'tomatillo'] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
     { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
+    { id: 'pineapple-juice', name: 'Pineapple juice', group: 'Sauces and pantry', alias: ['pineapple', 'juice'] },
     { id: 'teriyaki-sauce', name: 'Teriyaki sauce', group: 'Sauces and pantry', alias: ['teriyaki', 'sesame', 'stir fry sauce'] },
     { id: 'enchilada-sauce', name: 'Enchilada sauce', group: 'Sauces and pantry', alias: ['enchilada', 'red sauce'] },
     { id: 'pickles', name: 'Pickles', group: 'Sauces and pantry', alias: ['pickle', 'dill pickles'] },
@@ -177,6 +180,31 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'tropic-fire-chicken', name: 'Tropic Fire Grilled Chicken', by: 'bryan', cat: 'Dinner', tag: '24-hour marinade', serves: 4, mins: 30,
+      photos: ['/kitchen/img/tropic-fire-chicken.jpg'],
+      blurb: 'A full 24-hour marinade of pineapple, fresh jalapeño, cilantro, garlic, ginger, onion, ancho chile and lime, then grilled hot for a deep caramelized crust and heavy grill marks. Sweet heat, bright citrus and a little smoke in every bite.',
+      items: [
+        { need: 'chicken-thighs', or: ['chicken-breast'], txt: '2 lb (907 g) boneless, skinless chicken thighs', food: 'chicken-thigh', g: 907 },
+        { need: 'pineapple-juice', txt: '1 cup (240 ml) pineapple juice (macros count the 1/4 cup or so that clings to the chicken)', food: 'pineapple-juice', g: 60 },
+        { need: 'lime', txt: '2 limes, juiced, plus more to serve', food: 'none', g: 0 },
+        { need: 'jalapenos', optional: true, txt: '1 to 2 fresh jalapeños, stems off (keep the seeds for more heat)', food: 'none', g: 0 },
+        { need: 'cilantro', optional: true, txt: '1 cup (about 1 oz / 30 g) cilantro, stems and all, plus more to garnish', food: 'none', g: 0 },
+        { need: 'green-onions', optional: true, txt: '4 green onions', food: 'none', g: 0 },
+        { need: 'onion', optional: true, txt: '1/2 white onion, roughly chopped', food: 'none', g: 0 },
+        { need: 'ginger', optional: true, txt: '1-inch (2.5 cm) piece fresh ginger, peeled (or 1 tsp ground)', food: 'none', g: 0 },
+        { staple: true, txt: '6 cloves fresh garlic', food: 'none', g: 0 },
+        { staple: true, txt: '2 tbsp ancho chile powder (or 2 dried ancho chiles, stemmed, seeded and soaked)', food: 'none', g: 0 },
+        { staple: true, txt: '1 tbsp avocado oil; 2 tsp salt; 1 tsp black pepper', food: 'avocado-oil', g: 13.5 }
+      ],
+      steps: [
+        'Make the marinade: blend the pineapple juice, lime juice, jalapeño, cilantro, green onions, white onion, ginger, garlic, ancho chile, avocado oil, salt and pepper until smooth.',
+        'Put the chicken in a zip-top bag or container, pour the marinade over and massage it in. Refrigerate a full 24 hours, turning it once or twice. (Pineapple tenderizes, so do not push it much past 24 hours or the texture goes soft.)',
+        'Take the chicken out 20 minutes before grilling, let the extra marinade drip off and pat the tops lightly dry. A drier surface is what gives you the crust. Throw out the used marinade.',
+        'Get the grill very hot, 450 to 500°F (230 to 260°C), and oil the grates. Grill the thighs 5 to 6 minutes a side without moving them, so you get deep caramelized grill marks, until they hit 175°F (79°C) inside. The sugar in the pineapple chars fast, so if the outside gets ahead of the inside, move them to a cooler part of the grill to finish.',
+        'Rest 5 minutes. Pile on a plate, scatter chopped cilantro over the top and serve with lime halves.'
+      ]
+    },
     {
       id: 'power-protein-bowl', name: 'Power Protein Bowl', by: 'bryan', cat: 'Dinner', tag: 'Meal prep', serves: 1, mins: 35,
       photos: ['/kitchen/img/power-protein-bowl.jpg'],
