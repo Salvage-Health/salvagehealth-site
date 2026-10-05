@@ -65,12 +65,12 @@
       var sc = SK.RECIPES.filter(inCat).map(score);
       var ready = sc.filter(function (s) { return !s.miss.length; });
       var close = sc.filter(function (s) { return s.miss.length && s.miss.length <= 2 && s.got > 0; }).sort(function (a, b) { return a.miss.length - b.miss.length; });
+      var lbl = cat === 'All' ? '' : cat.toLowerCase() + ' ';
       out += '<h2 class="disp skh">Cook it <em>tonight</em></h2>';
       out += ready.length ? '<div class="rgrid">' + ready.map(function (s) { return card(s, 'ready'); }).join('') + '</div>'
-        : '<p class="skn">Nothing complete yet. Check the "one or two away" list below, or add a few more things you have.</p>';
+        : '<p class="skn">No ' + lbl + 'recipes you can make with just what you picked yet. ' + (close.length ? 'These are close:' : 'Here is everything we have, closest first.') + '</p>';
       if (close.length) {
         out += '<h2 class="disp skh">One or two <em>items away</em></h2><div class="rgrid">' + close.map(function (s) { return card(s, 'close'); }).join('') + '</div>';
-        // best next buy
         var buys = {};
         close.forEach(function (s) { s.miss.forEach(function (it) { buys[it.need] = (buys[it.need] || 0) + (s.miss.length === 1 ? 1 : 0.5); }); });
         var top = Object.keys(buys).sort(function (a, b) { return buys[b] - buys[a]; }).slice(0, 3);
@@ -78,6 +78,11 @@
           var n = close.filter(function (s) { return s.miss.length === 1 && s.miss[0].need === id; }).length;
           return esc(byId[id].name) + (n ? ' <em>unlocks ' + n + ' recipe' + (n > 1 ? 's' : '') + '</em>' : '');
         }).join(' · ') + '</span></div>';
+      }
+      var rest = sc.filter(function (s) { return ready.indexOf(s) < 0 && close.indexOf(s) < 0; })
+        .sort(function (a, b) { return a.miss.length - b.miss.length || b.got - a.got; });
+      if (rest.length) {
+        out += '<h2 class="disp skh">More ' + lbl + '<em>recipes</em></h2><div class="rgrid">' + rest.map(function (s) { return card(s, 'close'); }).join('') + '</div>';
       }
     }
     $('results').innerHTML = out;
