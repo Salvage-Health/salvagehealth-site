@@ -87,6 +87,13 @@
     { id: 'beanie-shield', name: 'Beanie: embroidered shield', place: 'Front cuff, 2 in (5 cm) tall, embroidered', inches: 1.8, bg: 'dark',
       svg: svg('6 -2 88 106', '<path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="' + R + '" stroke-width="8" stroke-linejoin="round"/>' +
         '<path d="M31 54 H39 L45 41 L52 65 L58 47 L63 54 H69" fill="none" stroke="' + B + '" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>') },
+    { id: 'tumbler-etch', name: 'Tumbler: laser etch (black = etched)', place: 'Front of tumbler, 2.5 in (6.5 cm) wide, laser etched', inches: 2.5, bg: 'light',
+      svg: svg('0 0 200 236',
+        '<g transform="translate(46 4) scale(1.08)"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#000" stroke-width="7.5" stroke-linejoin="round"/><path d="M30 54 H38 L44.5 41 L52 65 L58 47 L63 54 H70" fill="none" stroke="#000" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></g>' +
+        '<text x="100" y="152" text-anchor="middle" ' + O + ' font-size="40" fill="#000" textLength="176" lengthAdjust="spacingAndGlyphs">SALVAGE</text>' +
+        '<text x="100" y="196" text-anchor="middle" ' + O + ' font-size="40" fill="#000" textLength="176" lengthAdjust="spacingAndGlyphs">HEALTH</text>' +
+        '<rect x="12" y="210" width="176" height="3" fill="#000"/>' +
+        '<text x="100" y="230" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="12" fill="#000" textLength="176" lengthAdjust="spacing">BUILT FROM WHAT\'S LEFT</text>') },
     { id: 'beanie-patch', name: 'Beanie: woven shield patch', place: 'Front cuff patch, 2.25 x 1.5 in (6 x 4 cm)', inches: 2.25, bg: 'any',
       svg: svg('0 0 225 150',
         '<rect x="0" y="0" width="225" height="150" rx="12" fill="' + S + '"/>' +
