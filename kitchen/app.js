@@ -40,7 +40,7 @@
     var status = mode === 'ready' ? '<span class="st ok">You have everything</span>'
       : mode === 'close' ? '<span class="st near">Need: ' + s.miss.map(function (it) { return esc(byId[it.need].name.toLowerCase()); }).join(', ') + '</span>'
       : '';
-    var pic = r.photos ? '<span class="rpic"><img src="' + r.photos[0] + '" alt="' + esc(r.name) + '" loading="lazy"></span>' : '';
+    var pic = r.photos ? '<span class="rpic"' + (r.picRatio ? ' style="aspect-ratio:' + r.picRatio + '"' : '') + '><img src="' + r.photos[0] + '" alt="' + esc(r.name) + '" loading="lazy"></span>' : '';
     var by = r.by ? '<span class="rby">Bryan\'s recipe</span>' : '';
     return '<button type="button" class="rc' + (r.photos ? ' has-pic' : '') + '" data-r="' + r.id + '">' + pic + by +
       '<span class="rtag">' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</span>' +
@@ -98,7 +98,9 @@
       var alt = (it.or || []).length ? ' <span class="alt">or ' + it.or.map(function (o) { return esc(byId[o].name.toLowerCase()); }).join(', ') + '</span>' : '';
       return '<li class="' + cls + '"><span class="lab">' + lab + '</span><span>' + esc(it.txt) + alt + '</span></li>';
     }).join('');
-    var gal = r.photos ? '<div class="dpics">' + r.photos.map(function (u, i) { return '<img src="' + u + '" alt="' + esc(r.name) + (i ? ', close-up' : '') + '">'; }).join('') + '</div>' : '';
+    var n = r.photos ? r.photos.length : 0;
+    var gal = n ? '<div class="dgal"><div class="dpics' + (n > 1 ? ' multi' : '') + '" id="dpics">' + r.photos.map(function (u, i) { return '<img src="' + u + '" alt="' + esc(r.name) + ', photo ' + (i + 1) + ' of ' + n + '">'; }).join('') + '</div>' +
+      (n > 1 ? '<button type="button" class="dnav prev" data-d="-1" aria-label="Previous photo">&#8249;</button><button type="button" class="dnav next" data-d="1" aria-label="Next photo">&#8250;</button><span class="dcount" id="dcount">1 / ' + n + '</span>' : '') + '</div>' : '';
     $('dlg-body').innerHTML = gal +
       '<p class="eyebrow">' + (r.by ? 'Bryan\'s recipe · ' : '') + '' + esc(r.tag) + ' · ' + r.mins + ' min · serves ' + r.serves + '</p>' +
       '<h2 class="disp">' + esc(r.name) + '</h2><p class="rb">' + esc(r.blurb) + '</p>' +
@@ -108,6 +110,14 @@
       '<h3>Steps</h3><ol class="stepsl">' + r.steps.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>' +
       (r.process ? '<img class="dproc" src="' + r.process + '" alt="Step by step: ' + esc(r.name) + '" loading="lazy">' : '');
     var d = $('dlg'); if (d.showModal) d.showModal(); else d.setAttribute('open', '');
+    var dp = $('dpics');
+    if (dp && n > 1) {
+      var cur = function () { return Math.round(dp.scrollLeft / dp.clientWidth); };
+      dp.addEventListener('scroll', function () { $('dcount').textContent = (cur() + 1) + ' / ' + n; });
+      Array.prototype.forEach.call(document.querySelectorAll('.dnav'), function (b) {
+        b.addEventListener('click', function () { var i = Math.max(0, Math.min(n - 1, cur() + Number(b.dataset.d))); dp.scrollTo({ left: i * dp.clientWidth, behavior: 'smooth' }); });
+      });
+    }
     $('dlg-body').scrollTop = 0;
   }
 

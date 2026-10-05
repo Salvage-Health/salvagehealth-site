@@ -184,8 +184,7 @@ window.SK = {
     },
     {
       id: 'cabbage-enchiladas', name: 'Cabbage-Wrapped Shredded Chicken Enchiladas', by: 'bryan', cat: 'Dinner', tag: 'Low carb', serves: 8, mins: 60,
-      photos: ['/kitchen/img/cabbage-enchiladas.jpg'],
-      process: '/kitchen/img/cabbage-enchiladas-steps.jpg',
+      photos: ['/kitchen/img/cabbage-enchiladas-steps.jpg', '/kitchen/img/cabbage-enchiladas.jpg'], picRatio: '3/4',
       blurb: 'All the enchilada flavor with cabbage leaves standing in for tortillas. Saucy shredded chicken, melted Monterey Jack, a charred cheesy top, and over 60 grams of protein for under 500 calories.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '2 3/4 lb (1.25 kg) cooked, shredded chicken breast, from about 3 1/2 lb (1.6 kg) raw', food: 'chicken-breast-cooked', g: 1280 },
