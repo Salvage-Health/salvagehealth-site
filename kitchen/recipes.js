@@ -91,6 +91,10 @@ window.SK = {
     'skirt-steak':    { kcal: 160, p: 21,   f: 7.8,  c: 0 },
     'banderita-tortilla': { kcal: 154, p: 3.85, f: 1.9, c: 32.7 },
     'salsa-verde':    { kcal: 50,  p: 0,    f: 0,    c: 10 },
+    'ground-beef-96b':{ kcal: 116, p: 20.3, f: 4,    c: 0 },
+    'broccolini':     { kcal: 35,  p: 2.5,  f: 0.6,  c: 6.9 },
+    'cottage-2':      { kcal: 72,  p: 12.5, f: 2.7,  c: 2.7 },
+    'taco-seasoning': { kcal: 333, p: 0,    f: 0,    c: 67 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -131,6 +135,7 @@ window.SK = {
     { id: 'bell-pepper', name: 'Bell pepper', group: 'Vegetables', alias: ['pepper', 'peppers'] },
     { id: 'onion', name: 'Onion', group: 'Vegetables', alias: ['onions', 'red onion', 'white onion'] },
     { id: 'broccoli', name: 'Broccoli', group: 'Vegetables', alias: [] },
+    { id: 'broccolini', name: 'Broccolini', group: 'Vegetables', alias: ['baby broccoli', 'broccoli'] },
     { id: 'green-beans', name: 'Green beans', group: 'Vegetables', alias: [] },
     { id: 'asparagus', name: 'Asparagus', group: 'Vegetables', alias: [] },
     { id: 'zucchini', name: 'Zucchini', group: 'Vegetables', alias: ['squash'] },
@@ -153,6 +158,7 @@ window.SK = {
     { id: 'banana', name: 'Bananas', group: 'Fruit and fresh', alias: ['banana'] },
     { id: 'berries', name: 'Berries', group: 'Fruit and fresh', alias: ['blueberries', 'strawberries', 'raspberries'] },
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
+    { id: 'taco-seasoning', name: 'Taco seasoning', group: 'Sauces and pantry', alias: ['taco', 'mccormick'] },
     { id: 'salsa-verde', name: 'Salsa verde', group: 'Sauces and pantry', alias: ['verde', 'green salsa', 'tomatillo'] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
     { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
@@ -171,6 +177,26 @@ window.SK = {
   STAPLES: ['Avocado oil or avocado oil spray (any oil works if avocado is a problem for you)', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'power-protein-bowl', name: 'Power Protein Bowl', by: 'bryan', cat: 'Dinner', tag: 'Meal prep', serves: 1, mins: 35,
+      photos: ['/kitchen/img/power-protein-bowl.jpg'],
+      blurb: 'Taco-seasoned lean beef, charred sweet potatoes, blistered broccolini and a big scoop of cottage cheese with chili flakes. 64 grams of protein, no sauce needed.',
+      items: [
+        { need: 'ground-beef', or: ['ground-turkey'], txt: '7 oz (202 g) 96% lean ground beef', food: 'ground-beef-96b', g: 202 },
+        { need: 'sweet-potatoes', or: ['potatoes'], txt: '9 oz (252 g) sweet potato, about 1 medium, cut in 1-inch (2.5 cm) cubes', food: 'sweet-potato', g: 252 },
+        { need: 'broccolini', or: ['broccoli', 'green-beans'], txt: '5 1/2 oz (159 g) broccolini, about 1 bunch', food: 'broccolini', g: 159 },
+        { need: 'cottage-cheese', or: ['greek-yogurt'], txt: '4 oz (112 g) 2% cottage cheese, about 1/2 cup', food: 'cottage-2', g: 112 },
+        { need: 'taco-seasoning', optional: true, txt: '2 tsp McCormick taco seasoning (or 1 tsp chili powder plus 1/2 tsp cumin)', food: 'taco-seasoning', g: 6 },
+        { need: 'lime', optional: true, txt: '1/2 lime, in wedges', food: 'none', g: 0 },
+        { staple: true, txt: 'Avocado oil spray; red pepper flakes, garlic powder, paprika, salt and pepper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Heat the oven or air fryer to 425°F (220°C). Toss the sweet potato cubes with a light spray of avocado oil, salt, pepper and paprika. Roast 25 to 30 minutes in the oven (or 15 to 18 in the air fryer), shaking once, until the edges char.',
+        'While they roast, brown the beef in a hot skillet, breaking it into small crumbles, 6 to 7 minutes. Stir in the taco seasoning with a splash of water and cook 2 minutes until it coats the meat.',
+        'Add the broccolini to the oven pan for the last 8 to 10 minutes with a spray of avocado oil, salt, garlic powder and red pepper flakes. Or blister it in a hot skillet for 4 to 5 minutes.',
+        'Build the bowl: beef on one side, sweet potatoes and broccolini on the other, a big scoop of cottage cheese in the middle. Finish with red pepper flakes and lime wedges to squeeze over.'
+      ]
+    },
     {
       id: 'carne-asada-tacos', name: 'Carne Asada Tacos', by: 'bryan', cat: 'Dinner', tag: 'Taco night', serves: 1, mins: 25,
       photos: ['/kitchen/img/carne-asada-tacos.jpg', '/kitchen/img/carne-asada-tacos-side.jpg'], picRatio: '4/5',
