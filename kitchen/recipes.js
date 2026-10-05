@@ -67,6 +67,8 @@ window.SK = {
     'olives':         { kcal: 115, p: 0.8,  f: 10.7, c: 6 },
     'jalapeno':       { kcal: 29,  p: 0.9,  f: 0.4,  c: 6.5 },
     'mushrooms':      { kcal: 22,  p: 3.1,  f: 0.3,  c: 3.3 },
+    'protein-pasta':  { kcal: 339, p: 17.9, f: 2.7,  c: 67.9 },
+    'cacio-sauce':    { kcal: 104, p: 5,    f: 6.5,  c: 3 },
     'none':           { kcal: 0,   p: 0,    f: 0,    c: 0 }
   },
 
@@ -95,7 +97,7 @@ window.SK = {
     { id: 'rice', name: 'Rice', group: 'Carbs', alias: ['jasmine', 'white rice', 'brown rice'] },
     { id: 'potatoes', name: 'Potatoes', group: 'Carbs', alias: ['potato', 'baby potatoes', 'yukon', 'russet'] },
     { id: 'sweet-potatoes', name: 'Sweet potatoes', group: 'Carbs', alias: ['sweet potato', 'yam'] },
-    { id: 'pasta', name: 'Pasta', group: 'Carbs', alias: ['spaghetti', 'penne', 'noodles'] },
+    { id: 'pasta', name: 'Pasta', group: 'Carbs', alias: ['spaghetti', 'penne', 'noodles', 'rotini', 'protein pasta', 'fettuccine'] },
     { id: 'oats', name: 'Oats', group: 'Carbs', alias: ['oatmeal', 'rolled oats'] },
     { id: 'tortillas', name: 'Corn tortillas', group: 'Carbs', alias: ['tortilla', 'tortillas'] },
     { id: 'flour-tortillas', name: 'Flour tortillas or wraps', group: 'Carbs', alias: ['tortilla', 'tortillas', 'wraps', 'wrap'] },
@@ -125,6 +127,7 @@ window.SK = {
     { id: 'berries', name: 'Berries', group: 'Fruit and fresh', alias: ['blueberries', 'strawberries', 'raspberries'] },
     { id: 'salsa', name: 'Salsa', group: 'Sauces and pantry', alias: [] },
     { id: 'marinara', name: 'Marinara or pizza sauce', group: 'Sauces and pantry', alias: ['pasta sauce', 'tomato sauce', 'pizza sauce', 'marinara'] },
+    { id: 'cacio-sauce', name: 'Cacio e pepe or alfredo sauce', group: 'Sauces and pantry', alias: ['alfredo', 'carbone', 'cacio', 'white sauce'] },
     { id: 'olives', name: 'Black olives', group: 'Sauces and pantry', alias: ['olive', 'olives'] },
     { id: 'canned-tomatoes', name: 'Canned tomatoes', group: 'Sauces and pantry', alias: ['diced tomatoes', 'crushed tomatoes'] },
     { id: 'soy-sauce', name: 'Soy sauce', group: 'Sauces and pantry', alias: ['soy', 'tamari', 'coconut aminos'] },
@@ -137,6 +140,26 @@ window.SK = {
   STAPLES: ['Olive oil or cooking spray', 'Salt and pepper', 'Garlic', 'Basic spices (chili powder, cumin, paprika, oregano, cinnamon)', 'Mustard and ketchup', 'Cornstarch'],
 
   RECIPES: [
+    {
+      id: 'cajun-cacio-pasta', name: 'Grilled Cajun Chicken Cacio e Pepe Protein Pasta', by: 'bryan', cat: 'Dinner', tag: 'High protein', serves: 2, mins: 30,
+      photos: ['/kitchen/img/cajun-cacio-pasta.jpg', '/kitchen/img/cajun-cacio-pasta-close.jpg'],
+      blurb: 'Charred Cajun chicken thighs over creamy, peppery protein rotini and broccoli, buried in fresh parmesan. Tastes like a cheat meal, eats like a 45 gram protein meal.',
+      items: [
+        { need: 'chicken-thighs', or: ['chicken-breast'], txt: '8 oz (230 g) boneless, skinless chicken thighs', food: 'chicken-thigh', g: 230 },
+        { need: 'pasta', txt: '6 oz (168 g) dry Barilla Protein+ rotini (3 servings), or any pasta', food: 'protein-pasta', g: 168 },
+        { need: 'broccoli', txt: '5 1/4 oz (151 g) broccoli florets, about 1 3/4 cups', food: 'broccoli', g: 151 },
+        { need: 'cacio-sauce', optional: true, txt: '2 3/4 oz (77 g) Carbone Cacio e Pepe sauce, about 1/3 cup (no jar? use extra parmesan, pasta water and lots of black pepper)', food: 'cacio-sauce', g: 77 },
+        { need: 'parmesan', txt: '1 oz (25 g) fresh grated parmesan, about 1/3 cup', food: 'parmesan', g: 25 },
+        { staple: true, txt: '1 1/2 tbsp Cajun seasoning; cooking spray; salt; lots of fresh black pepper', food: 'none', g: 0 }
+      ],
+      steps: [
+        'Pat the chicken thighs dry and coat them all over with the Cajun seasoning and a light spray of oil. Let them sit 10 minutes while the grill heats (or overnight in the fridge).',
+        'Grill over medium-high heat, 5 to 6 minutes a side, until charred and 175°F (79°C) inside. Rest 5 minutes, then slice.',
+        'Meanwhile, boil the rotini in well-salted water. Add the broccoli for the last 3 minutes. Save 1/2 cup (120 ml) of the pasta water, then drain.',
+        'Put the pasta and broccoli back in the pot over low heat. Stir in the cacio e pepe sauce, half the parmesan and a splash of pasta water until it turns glossy and coats everything. Crack in plenty of black pepper.',
+        'Split between two plates, fan the sliced chicken on top, and finish with the rest of the parmesan and more pepper.'
+      ]
+    },
     {
       id: 'chicken-crust-pizza', name: "Deluxe Chicken Crust Pizza", by: 'bryan', cat: 'Dinner', tag: 'High protein', serves: 4, mins: 45,
       photos: ['/kitchen/img/chicken-crust-pizza.jpg', '/kitchen/img/chicken-crust-pizza-slice.jpg'],
