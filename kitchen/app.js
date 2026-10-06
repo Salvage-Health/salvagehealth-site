@@ -88,7 +88,9 @@
     var out = planBar() + lvBar();
     if (cat === 'All' && !query) {
       var mine = SK.RECIPES.filter(function (r) { return r.by && lvOk(r); });
-      out += '<section class="kfeat"><div class="kh"><h2 class="disp">Bryan\'s <em>kitchen</em></h2><span>' + mine.length + ' recipes · swipe</span></div><div class="krail">' + mine.map(function (r) { return card(r); }).join('') + '</div></section>';
+      out += '<section class="kfeat"><div class="kh"><div><h2 class="disp">Bryan\'s <em>kitchen</em></h2><p class="ksub">My ' + mine.length + ' go-to recipes. <span class="kswipe">Swipe for more &#8594;</span></p></div>' +
+        '<button type="button" class="kall" data-cat="Bryan\'s">See all ' + mine.length + ' &#8594;</button></div><div class="krail">' + mine.map(function (r) { return card(r); }).join('') +
+        '<button type="button" class="kc kend kall" data-cat="Bryan\'s"><span class="kimg"><span class="kendin"><b>' + mine.length + '</b><span>Bryan\'s recipes</span><i>See them all &#8594;</i></span></span></button></div></section>';
       list = list.filter(function (r) { return !r.by; }).sort(function (x, y) { return (y.photos ? 1 : 0) - (x.photos ? 1 : 0); });
       out += '<div class="kh"><h2 class="disp">More <em>recipes</em></h2><span>' + list.length + '</span></div>';
     } else {
@@ -170,6 +172,7 @@
   $('kfridge2').addEventListener('click', fridgeClick);
   $('results').addEventListener('click', function (e) {
     if (e.target.closest('.kmore')) { limit += PAGE * 2; render(); return; }
+    var all = e.target.closest('.kall'); if (all) { cat = all.dataset.cat; limit = PAGE; render(); var f = $('kfil'); if (f && f.getBoundingClientRect().top < 0) window.scrollTo({ top: window.scrollY + f.getBoundingClientRect().top - 70, behavior: 'smooth' }); return; }
     var lv = e.target.closest('.klv button'); if (lv) { setLv(+lv.dataset.lv); limit = PAGE; render(); return; }
     var b = e.target.closest('.kc'); if (b) openRecipe(b.dataset.r);
   });

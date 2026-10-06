@@ -15,7 +15,7 @@
     next.onclick = function () { rail.scrollBy({ left: step(), behavior: 'smooth' }); };
     function edges() {
       var max = rail.scrollWidth - rail.clientWidth - 2;
-      prev.hidden = rail.scrollLeft <= 2; next.hidden = rail.scrollLeft >= max;
+      prev.hidden = rail.scrollLeft <= 2; next.hidden = rail.scrollLeft >= max; rail.classList.toggle('atend', rail.scrollLeft >= max);
     }
     rail.addEventListener('scroll', edges, { passive: true }); window.addEventListener('resize', edges); edges();
     if (!fine) return;
