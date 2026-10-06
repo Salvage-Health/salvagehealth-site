@@ -667,7 +667,7 @@ window.SK = {
       ]
     },
     {
-      id: 'protein-overnight-oats', lvl: 1, veg: true, batch: true, name: 'Protein Overnight Oats', cat: 'Breakfast', tag: 'Make ahead', serves: 2, mins: 5,
+      id: 'protein-overnight-oats', lvl: 1, photos: ['/kitchen/img/protein-overnight-oats.jpg'], veg: true, batch: true, name: 'Protein Overnight Oats', cat: 'Breakfast', tag: 'Make ahead', serves: 2, mins: 5,
       blurb: 'Oats, Greek yogurt and a scoop of protein, mixed the night before. Grab-and-go breakfast with over 30 grams of protein.',
       items: [
         { need: 'oats', txt: '1 cup (80 g) rolled oats', food: 'oats', g: 80 },
