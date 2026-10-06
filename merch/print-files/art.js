@@ -155,6 +155,9 @@
     { id: 'womens-heart', name: 'Women\'s tank, front: heartbeat heart', place: 'Left chest, 3 in (7.5 cm) wide', inches: 3, bg: 'light',
       svg: svg('4 14 92 80', '<path d="M50 86 C27 71 12 56 15 39 C18 25 35 19 50 35 C65 19 82 25 85 39 C88 56 73 71 50 86 Z" fill="none" stroke="' + R + '" stroke-width="3.6" stroke-linejoin="round"/>' +
         '<path d="M8 53 H31 L38 41 L46 67 L53 46 L58 53 H92" fill="none" stroke="' + S + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>') },
+    { id: 'heart-dark', name: 'Heartbeat heart (for dark garments)', place: 'Left chest, 3 in (7.5 cm) wide', inches: 3, bg: 'dark',
+      svg: svg('4 14 92 80', '<path d="M50 86 C27 71 12 56 15 39 C18 25 35 19 50 35 C65 19 82 25 85 39 C88 56 73 71 50 86 Z" fill="none" stroke="' + R + '" stroke-width="3.6" stroke-linejoin="round"/>' +
+        '<path d="M8 53 H31 L38 41 L46 67 L53 46 L58 53 H92" fill="none" stroke="' + B + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>') },
     { id: 'bag-front', name: 'Drawstring bag: full front (black)', place: 'Full bag front, edge to edge (Sublicolor 604)', inches: 16, bg: 'dark',
       svg: svg('0 0 464 552', '<rect width="464" height="552" fill="' + S + '"/>' +
         '<g transform="translate(196.00 136.68) scale(.72)">' + SHIELD(R, B, 7) + '</g>' +
@@ -185,6 +188,10 @@
       svg: svg('0 0 60 400', '<g transform="translate(60 0) rotate(90)">' +
         '<path d="M0 30 L30 30 L34 25 L38 30 L44 30 L47 35 L53 4 L59 52 L63 30 L72 30 L78 23 L84 30 L120 30 L124 25 L128 30 L134 30 L137 35 L143 4 L149 52 L153 30 L162 30 L168 23 L174 30 L250 30" fill="none" stroke="' + R + '" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="6"/>' +
         '<text ' + O + ' font-size="24" fill="' + B + '" x="262" y="39" textLength="136" lengthAdjust="spacing">STILL BEATING.</text></g>') },
+    { id: 'sleeve-salvage', name: 'Sleeve: SALVAGE heartbeat (runs top to bottom)', place: 'Left sleeve, 2.3 in (6 cm) wide, starts near the shoulder', inches: 2.3, bg: 'dark',
+      svg: svg('0 -4 100 351', '<g transform="translate(100 0) rotate(90)">' +
+        '<path d="M0.0 76.0 L12.0 76.0 L18.0 69.0 L24.0 76.0 L32.0 76.0 L35.0 84.0 L40.0 4.0 L45.0 96.0 L49.0 76.0 L60.0 76.0 L68.0 65.0 L76.0 76.0 L90.0 76.0" fill="none" stroke="' + R + '" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="6"/>' +
+        '<path d="M90.0 76.0 L90.0 76.0 L114.0 76.0 L114.0 57.0 L108.0 51.0 L96.0 51.0 L90.0 45.0 L90.0 32.0 L96.0 26.0 L108.0 26.0 L114.0 32.0 L108.0 26.0 L96.0 26.0 L90.0 32.0 L90.0 45.0 L96.0 51.0 L108.0 51.0 L114.0 57.0 L114.0 76.0 L90.0 76.0 L114.0 76.0 L123.0 76.0 L123.0 76.0 L135.0 20.0 L142.7 56.0 L127.3 56.0 L142.7 56.0 L147.0 76.0 L156.0 76.0 L156.0 76.0 L156.0 26.0 L156.0 76.0 L174.0 76.0 L183.0 76.0 L183.0 76.0 L195.0 76.0 L183.0 26.0 L195.0 76.0 L207.0 26.0 L195.0 76.0 L207.0 76.0 L216.0 76.0 L216.0 76.0 L228.0 20.0 L235.7 56.0 L220.3 56.0 L235.7 56.0 L240.0 76.0 L249.0 76.0 L249.0 76.0 L249.0 32.0 L255.0 26.0 L267.0 26.0 L273.0 32.0 L273.0 36.0 L273.0 32.0 L267.0 26.0 L255.0 26.0 L249.0 32.0 L249.0 76.0 L273.0 76.0 L273.0 54.0 L261.0 54.0 L273.0 54.0 L273.0 76.0 L282.0 76.0 L282.0 76.0 L282.0 76.0 L282.0 32.0 L288.0 26.0 L303.0 26.0 L288.0 26.0 L282.0 32.0 L282.0 76.0 L282.0 51.0 L299.0 51.0 L282.0 51.0 L282.0 76.0 L303.0 76.0 L303.0 76.0 L315.0 76.0 L321.0 70.0 L327.0 76.0 L343.0 76.0" fill="none" stroke="' + B + '" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="6"/></g>') },
     { id: 'socks', name: 'Crew socks: full wrap, left and right', place: 'Full sock template (Tribe TC001), both socks', inches: 46.67, bg: 'dark',
       svg: (function () {
         var sock = function (ox, side, sideFill) {
