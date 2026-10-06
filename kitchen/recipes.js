@@ -837,7 +837,7 @@ window.SK = {
       ]
     },
     {
-      id: 'korean-beef-bowls', lvl: 2, batch: true, name: 'Korean-Style Beef Bowls', cat: 'Dinner', tag: '20 minutes', serves: 4, mins: 20,
+      id: 'korean-beef-bowls', lvl: 2, photos: ['/kitchen/img/korean-beef-bowls.jpg'], batch: true, name: 'Korean-Style Beef Bowls', cat: 'Dinner', tag: '20 minutes', serves: 4, mins: 20,
       blurb: 'Sweet and savory ground beef with garlic, ginger and soy over rice. Faster than takeout and a lot leaner.',
       items: [
         { need: 'ground-beef', or: ['ground-turkey'], txt: '1 1/2 lb (680 g) 93% lean ground beef', food: 'ground-beef', g: 680 },
