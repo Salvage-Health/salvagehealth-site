@@ -46,7 +46,21 @@ def topbar(active):
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{href}"{cur}{c}>{label}</a>'
     cta = "" if active in ("start",) else '<a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>'
-    bar = "" if active in ("thebook", "members") else '<a class="launch" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>\n'
+    links = [("/book", "The Book", "thebook"), ("/kitchen/", "Kitchen", "kitchen"), ("/articles/", "Articles", "articles"), ("/merch/", "Merch", "merch"), ("/about/", "About", "about")]
+    ql = "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links if k != "thebook")
+    ml = "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links) + '<a class="lmk" href="/start/">Free Starter Kit</a>'
+    burger = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+    bar = "" if active in ("thebook", "members") else (
+        '<div class="launch" id="lb"><a class="lp" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>'
+        f'<nav class="ln" aria-label="Quick links">{ql}<a class="lnc" href="/start/">Starter Kit</a></nav>'
+        f'<button class="lm" type="button" aria-label="Menu" aria-expanded="false" aria-controls="lmenu">{burger}</button>'
+        f'<div class="lmenu" id="lmenu" hidden>{ml}</div></div>\n'
+        "<script>(function(){var b=document.getElementById('lb');if(!b)return;var m=b.querySelector('.lm'),d=document.getElementById('lmenu');"
+        "function close(){d.hidden=true;m.setAttribute('aria-expanded','false');}"
+        "m.addEventListener('click',function(e){e.stopPropagation();var o=d.hidden;d.hidden=!o;m.setAttribute('aria-expanded',o);});"
+        "document.addEventListener('click',function(e){if(!b.contains(e.target))close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});"
+        "window.addEventListener('DOMContentLoaded',function(){var t=document.querySelector('header.top');if(!t||!('IntersectionObserver' in window))return;"
+        "new IntersectionObserver(function(es){var s=!es[0].isIntersecting;b.classList.toggle('sc',s);if(!s)close();},{rootMargin:'-60px 0px 0px 0px'}).observe(t);});})();</script>\n")
     return bar + f"""  <header class="top">
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
