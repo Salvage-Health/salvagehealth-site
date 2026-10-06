@@ -647,7 +647,7 @@ window.SK = {
       ]
     },
     {
-      id: 'chicken-meal-prep', lvl: 2, photos: ['/kitchen/img/chicken-meal-prep.jpg', '/kitchen/img/chicken-meal-prep-pan.jpg'], picRatio: '5/7', batch: true, cat: 'Lunch',
+      id: 'chicken-meal-prep', lvl: 2, photos: ['/kitchen/img/chicken-meal-prep.jpg', '/kitchen/img/chicken-meal-prep-pan.jpg'], batch: true, cat: 'Lunch',
       name: 'Chicken, Sweet Potato and Broccoli Meal Prep',
       tag: 'Meal prep',
       serves: 4, mins: 40,
