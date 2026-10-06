@@ -204,7 +204,7 @@ html,body{overflow-x:clip}
 .simg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transition:opacity .25s,transform .4s ease}
 @media (hover:hover){.scard:hover .simg img{transform:scale(1.03)}}
 .simg img.alt{opacity:0}
-@media (hover:hover){.simg:hover img.alt{opacity:1}}
+@media (hover:hover){.simg:hover img.alt{opacity:1}.simg:hover img:not(.alt){opacity:0}}
 .stag{position:absolute;top:10px;left:10px;z-index:1;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--rust);color:#FAF9F5;padding:4px 9px;border-radius:99px}
 .stx{flex:1;display:flex;flex-direction:column;gap:4px;padding:14px 16px 16px}
 .scat{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--rust-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
