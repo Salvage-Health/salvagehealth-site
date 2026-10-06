@@ -6,6 +6,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
 SPOTIFY = "https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw"
 KINDLE = "https://www.amazon.com/dp/B0HLTN491G"
+KINDLE_PRICE = "9.99"
+PAPERBACK = ""          # paste the Amazon paperback link here when it goes live
+PAPERBACK_PRICE = "19.99"
 IG = "https://www.instagram.com/el_dourado/"
 
 def strip(s): return re.sub(r"<[^>]+>", "", s)
@@ -43,11 +46,12 @@ def topbar(active):
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{href}"{cur}{c}>{label}</a>'
     cta = "" if active in ("start",) else '<a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>'
-    return f"""  <header class="top">
+    bar = "" if active in ("thebook", "members") else '<a class="launch" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> is out now. <u>Get the book</u></a>\n'
+    return bar + f"""  <header class="top">
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
+      {a('/book','The Book','thebook')}
       {a('/kitchen/','Kitchen','kitchen')}
-      {a('/book','Free plan','book')}
       {a('/articles/','Articles','articles')}
       {a('/merch/','Merch','merch')}
       {a('/about/','About','about')}
@@ -68,7 +72,8 @@ FOOT = f"""  <footer class="site">
         <a href="/kitchen/">Salvage Kitchen</a>
         <a href="/merch/">Merch</a>
         <a href="/faq/">FAQ</a>
-        <a href="/book">Free companion app</a>
+        <a href="/book">The book</a>
+        <a href="/companion/">Book companion app</a>
         <a href="{SPOTIFY}" target="_blank" rel="noopener">Audiobook</a>
         <a href="{KINDLE}" target="_blank" rel="noopener">Kindle</a>
         <a href="{IG}" target="_blank" rel="noopener">Instagram</a>
@@ -94,8 +99,8 @@ def card(a):
 
 CTA = f"""    <div class="cta">
       <img src="/book/paperback-cover.jpg" alt="" width="64">
-      <div><b>Build your own plan</b><span>Fitness Without the Fear is free on Spotify, and the free companion app turns it into your personal calorie and macro plan.</span></div>
-      <a class="btn solid" href="/book">Get your free plan</a>
+      <div><b>Fitness Without the Fear</b><span>The plain-English guide to nutrition, training and recovery. Kindle, audiobook on Spotify, and soon paperback.</span></div>
+      <a class="btn solid" href="/book">Get the book</a>
     </div>
 """
 
@@ -463,11 +468,12 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
 write("/kitchen/", kp)
 
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "home.py")).read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bookpage.py")).read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "coaching.py")).read())  # hidden page, not in sitemap
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "members.py")).read())  # gated by netlify/edge-functions/members
 
 # sitemap + robots
-urls = ["/", "/start/", "/kitchen/", "/about/", "/book", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
+urls = ["/", "/book", "/start/", "/kitchen/", "/about/", "/companion/", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
     f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
 open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)

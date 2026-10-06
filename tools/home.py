@@ -180,7 +180,7 @@ home = head("Salvage Health | It's never too late to take your life back",
       <h2 class="disp">Learn it. Plan it. <em>Cook it.</em></h2>
       <div class="steps3">
         <a class="st3" href="#book"><span class="n">1</span><h3>Learn how it works</h3><p>Calories, protein, training and sleep in plain English. The book is free to listen to on Spotify.</p><span class="go">Start the book &rarr;</span></a>
-        <a class="st3" href="/book"><span class="n">2</span><h3>Get your numbers</h3><p>The free app turns your height, weight and goal into your daily calorie and protein targets.</p><span class="go">Build your free plan &rarr;</span></a>
+        <a class="st3" href="/companion/"><span class="n">2</span><h3>Get your numbers</h3><p>The free app turns your height, weight and goal into your daily calorie and protein targets.</p><span class="go">Build your free plan &rarr;</span></a>
         <a class="st3" href="/kitchen/"><span class="n">3</span><h3>Cook food you like</h3><p>{NREC} high-protein recipes with real step-by-steps. Tell it what's in your fridge and it finds dinner.</p><span class="go">Open the kitchen &rarr;</span></a>
       </div>
     </section>
@@ -467,7 +467,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
         <div class="cq"><span class="cl">In the kitchen</span><div class="seg sk" id="c-skill"></div></div>
       </form>
       <div class="need" id="r-empty" aria-live="polite"><b id="need-h">Answer 6 quick questions</b><span id="need-l"></span></div>
-      <p class="pantry">Estimates only, not medical advice. Want goal dates? Use the <a href="/book">full companion app</a>.</p>
+      <p class="pantry">Estimates only, not medical advice. Want goal dates? Use the <a href="/companion/">full companion app</a>.</p>
     </section>
 
     <section id="plan" class="plan" hidden aria-live="polite">

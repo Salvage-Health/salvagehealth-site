@@ -1,27 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Fitness Without the Fear by Bryan Dourado | The No-BS Beginner&#x27;s Guide</title>
-<meta name="description" content="From 265 pounds and prediabetic to 178. The plain-English guide to nutrition, training and recovery I wish I had when I started. Kindle, audiobook on Spotify, and paperback.">
-<link rel="canonical" href="https://salvagehealth.com/book">
-<meta name="theme-color" content="#141413">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
-<meta property="og:type" content="book">
-<meta property="og:site_name" content="Salvage Health">
-<meta property="og:title" content="Fitness Without the Fear by Bryan Dourado | The No-BS Beginner&#x27;s Guide">
-<meta property="og:description" content="From 265 pounds and prediabetic to 178. The plain-English guide to nutrition, training and recovery I wish I had when I started. Kindle, audiobook on Spotify, and paperback.">
-<meta property="og:image" content="https://salvagehealth.com/brand/og.png">
-<meta property="og:url" content="https://salvagehealth.com/book">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=0626e3b8">
-<meta property="og:image:alt" content="Fitness Without the Fear by Bryan Dourado">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Fitness Without the Fear", "author": {"@type": "Person", "name": "Bryan Dourado", "url": "https://salvagehealth.com/about/"}, "description": "A no-BS beginner's guide to nutrition, training and recovery, explained in plain English.", "image": "https://salvagehealth.com/book/cover-600.jpg", "url": "https://salvagehealth.com/book", "workExample": [{"@type": "Book", "bookFormat": "https://schema.org/EBook", "potentialAction": {"@type": "ReadAction", "target": "https://www.amazon.com/dp/B0HLTN491G"}}, {"@type": "Book", "bookFormat": "https://schema.org/AudiobookFormat", "potentialAction": {"@type": "ListenAction", "target": "https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw"}}]}</script>
-<style>
+# Book sales page: /book (Instagram bio link). /the-book and /fitness-without-the-fear redirect here.
+# The reader companion page lives at /companion/ (/fitness-companion redirects there).
+# Executed from build.py, so head(), topbar(), FOOT, write(), html, json, SITE, KINDLE, SPOTIFY, PAPERBACK are in scope.
+
+REVIEW = "https://www.amazon.com/review/create-review?asin=B0HLTN491G"
+
+BCSS = """<style>
 .bp section{padding:72px 0 0}
 .bp-have{display:block;margin:16px 0 0;padding:11px 14px;border:1px solid var(--rule);border-radius:10px;background:var(--raised);color:var(--dim);font-size:14px;text-decoration:none}
 .bp-have b{color:var(--rust-text);font-weight:700}
@@ -79,7 +62,7 @@
 .bp-faq details{border-bottom:1px solid var(--rule);padding:14px 0}
 .bp-faq summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
 .bp-faq summary::after{content:"+";color:var(--rust-text);font-size:22px;line-height:1}
-.bp-faq details[open] summary::after{content:"\2212"}
+.bp-faq details[open] summary::after{content:"\\2212"}
 .bp-faq details p{color:var(--dim);margin:10px 0 0;font-size:15.5px}
 .bp-end{margin:72px 0 0;padding:40px 22px;border:1px solid var(--rule);border-radius:18px;text-align:center;background:linear-gradient(180deg,rgba(190,81,38,.12),transparent)}
 .bp-end .lead{margin:12px auto 0}
@@ -88,32 +71,56 @@
 .bp-sticky{display:none}
 @media(max-width:760px){.bp-sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,20,19,.96);border-top:1px solid var(--rule);backdrop-filter:blur(8px)}.bp-sticky .btn{flex:1;min-height:46px;font-size:14px}body{padding-bottom:76px}}
 </style>
-</head>
-<body>
-<div class="wrap">
-  <header class="top">
-    <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
-    <nav aria-label="Main">
-      <a href="/book" aria-current="page">The Book</a>
-      <a href="/kitchen/">Kitchen</a>
-      <a href="/articles/">Articles</a>
-      <a href="/merch/">Merch</a>
-      <a href="/about/">About</a>
-    </nav>
-    <a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>
-  </header>
-  <main class="bp">
+"""
+
+PB = PAPERBACK
+def buy_buttons(extra_cls=""):
+    pb = (f'<a class="btn line" href="{PB}" target="_blank" rel="noopener">Paperback<small>${PAPERBACK_PRICE}</small></a>' if PB else "")
+    return f"""<div class="bp-buy {extra_cls}">
+        <a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Get it on Kindle<small>${KINDLE_PRICE}</small></a>
+        <a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen free on Spotify</a>
+        {pb}
+      </div>"""
+
+PARTS = [
+    ("Part 1", "How your body actually works", ["Body basics without the biology class", "Calories and why they still matter", "Protein, carbs and fat, made simple", "Vitamins and minerals that move the needle", "TDEE: how many calories you really burn"]),
+    ("Part 2", "Train and eat with a target", ["Training with intention, not just sweating", "Deficits and surpluses, and how big to go", "Clean vs. dirty bulking", "Why weight loss is not the same as fat loss"]),
+    ("Part 3", "Myths that kept you stuck", ["Carbs are not the enemy", "The truth about sugar", "Fat will not make you fat", "Every major fad diet, broken down, including intermittent fasting"]),
+    ("Part 4", "Tracking without losing your mind", ["Should you even track? A quick decision guide", "Tracking without obsessing", "How to read a nutrition label in 10 seconds"]),
+    ("Part 5", "The stuff nobody talks about", ["Sleep", "Stress and recovery", "Alcohol", "Hydration (it is not 8 glasses)", "Peptides, explained honestly"]),
+    ("Part 6", "Put it all together", ["A simple 6-step framework for your own plan", "When a coach is worth it", "Your first week, day by day"]),
+]
+
+FAQ = [
+    ("I'm really out of shape. Is this book for me?", "Yes. It was written for exactly that person. I wrote it at the end of going from 265 pounds and prediabetic to 178. It starts at zero and assumes nothing."),
+    ("Is this a diet book?", "No. There is no diet to follow and nothing to buy. It teaches you how calories, protein, training and recovery actually work, so you can build a plan that fits your life and keep it."),
+    ("Do I need a gym?", "No. The training chapters work for a gym, home or a mix. The point is training with intention, not owning equipment."),
+    ("What's the difference between the formats?", "Same book. The Kindle eBook and paperback include the worksheet, sources and glossary. The audiobook is the full book narrated, and the worksheet, sources and glossary live on the free companion page instead."),
+    ("Is the audiobook really free?", "It streams on Spotify. Depending on your Spotify plan, it may be included or available to purchase."),
+    ("Are you a doctor?", "No, and the book says so up front. I'm someone who did the research, tested it on myself and documented what worked. Every factual claim has a source listed in the back, and the book tells you when to talk to your doctor."),
+]
+
+parts = "".join(f'<div><small>{p}</small><h3>{html.escape(t)}</h3><ul>{"".join(f"<li>{html.escape(x)}</li>" for x in xs)}</ul></div>' for p, t, xs in PARTS)
+faq = "".join(f'<details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>' for q, a in FAQ)
+pb_card = (f'<a href="{PB}" target="_blank" rel="noopener"><small>Hold it in your hands</small><h3>Paperback</h3><div class="price">${PAPERBACK_PRICE}</div><p>Full color print edition with every diagram, the worksheet and the glossary.</p><span class="go">Order on Amazon &rarr;</span></a>'
+           if PB else '<div class="soon"><small>Coming soon</small><h3>Paperback</h3><div class="price">Soon</div><p>Full color print edition with every diagram, the worksheet and the glossary. Get the free Starter Kit below and I will email you the day it drops.</p><span class="go">In final proofing</span></div>')
+
+ld = {"@context": "https://schema.org", "@type": "Book", "name": "Fitness Without the Fear", "author": {"@type": "Person", "name": "Bryan Dourado", "url": SITE + "/about/"},
+      "description": "A no-BS beginner's guide to nutrition, training and recovery, explained in plain English.", "image": SITE + "/book/cover-600.jpg", "url": SITE + "/book",
+      "workExample": [{"@type": "Book", "bookFormat": "https://schema.org/EBook", "potentialAction": {"@type": "ReadAction", "target": KINDLE}},
+                      {"@type": "Book", "bookFormat": "https://schema.org/AudiobookFormat", "potentialAction": {"@type": "ListenAction", "target": SPOTIFY}}]}
+og = '<meta property="og:image:alt" content="Fitness Without the Fear by Bryan Dourado">\n'
+
+bp = head("Fitness Without the Fear by Bryan Dourado | The No-BS Beginner's Guide",
+          "From 265 pounds and prediabetic to 178. The plain-English guide to nutrition, training and recovery I wish I had when I started. Kindle, audiobook on Spotify, and paperback.",
+          "/book", og + f'<script type="application/ld+json">{json.dumps(ld)}</script>\n' + BCSS, "book") + topbar("thebook") + f"""  <main class="bp">
     <a class="bp-have" href="/companion/">Already have the book? <b>Open the companion app, worksheet and sources &rarr;</b></a>
     <section class="bp-hero">
       <div>
         <p class="sub">A no-BS beginner's guide</p>
         <h1 class="disp">Fitness Without <em>the Fear</em></h1>
         <p class="dek">I went from 265 pounds and prediabetic to 178 by finally learning how this stuff actually works. This is that knowledge in plain English: nutrition, training and recovery, without the jargon, the guilt or the gurus.</p>
-        <div class="bp-buy ">
-        <a class="btn solid" href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener">Get it on Kindle<small>$9.99</small></a>
-        <a class="btn line" href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Listen free on Spotify</a>
-        
-      </div>
+        {buy_buttons()}
         <ul class="bp-facts"><li>23 chapters</li><li>11 diagrams</li><li>Worksheet and glossary</li><li>Free companion app</li></ul>
       </div>
       <div class="bp-cover"><img src="/book/cover-600.jpg" alt="Fitness Without the Fear by Bryan Dourado, cover" width="600" height="960"><span class="badge">Out now</span></div>
@@ -147,7 +154,7 @@
       <p class="eyebrow">What's inside</p>
       <h2 class="disp">Everything you need. <em>Nothing you don't.</em></h2>
       <p class="lead">23 chapters that build on each other, and every one also works on its own as a quick reference.</p>
-      <div class="bp-parts"><div><small>Part 1</small><h3>How your body actually works</h3><ul><li>Body basics without the biology class</li><li>Calories and why they still matter</li><li>Protein, carbs and fat, made simple</li><li>Vitamins and minerals that move the needle</li><li>TDEE: how many calories you really burn</li></ul></div><div><small>Part 2</small><h3>Train and eat with a target</h3><ul><li>Training with intention, not just sweating</li><li>Deficits and surpluses, and how big to go</li><li>Clean vs. dirty bulking</li><li>Why weight loss is not the same as fat loss</li></ul></div><div><small>Part 3</small><h3>Myths that kept you stuck</h3><ul><li>Carbs are not the enemy</li><li>The truth about sugar</li><li>Fat will not make you fat</li><li>Every major fad diet, broken down, including intermittent fasting</li></ul></div><div><small>Part 4</small><h3>Tracking without losing your mind</h3><ul><li>Should you even track? A quick decision guide</li><li>Tracking without obsessing</li><li>How to read a nutrition label in 10 seconds</li></ul></div><div><small>Part 5</small><h3>The stuff nobody talks about</h3><ul><li>Sleep</li><li>Stress and recovery</li><li>Alcohol</li><li>Hydration (it is not 8 glasses)</li><li>Peptides, explained honestly</li></ul></div><div><small>Part 6</small><h3>Put it all together</h3><ul><li>A simple 6-step framework for your own plan</li><li>When a coach is worth it</li><li>Your first week, day by day</li></ul></div></div>
+      <div class="bp-parts">{parts}</div>
     </section>
 
     <section>
@@ -165,9 +172,9 @@
       <p class="eyebrow">Pick your format</p>
       <h2 class="disp">Read it, hear it, <em>or hold it</em></h2>
       <div class="bp-fmt">
-        <a class="best" href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener"><small>Most popular</small><h3>Kindle eBook</h3><div class="price">$9.99</div><p>Read on any phone, tablet or Kindle. Includes the worksheet, sources and glossary.</p><span class="go">Get it on Amazon &rarr;</span></a>
-        <a href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener"><small>Listen anywhere</small><h3>Audiobook</h3><div class="price">Spotify</div><p>The full book, narrated. Perfect for the gym, the commute or a walk.</p><span class="go">Listen on Spotify &rarr;</span></a>
-        <div class="soon"><small>Coming soon</small><h3>Paperback</h3><div class="price">Soon</div><p>Full color print edition with every diagram, the worksheet and the glossary. Get the free Starter Kit below and I will email you the day it drops.</p><span class="go">In final proofing</span></div>
+        <a class="best" href="{KINDLE}" target="_blank" rel="noopener"><small>Most popular</small><h3>Kindle eBook</h3><div class="price">${KINDLE_PRICE}</div><p>Read on any phone, tablet or Kindle. Includes the worksheet, sources and glossary.</p><span class="go">Get it on Amazon &rarr;</span></a>
+        <a href="{SPOTIFY}" target="_blank" rel="noopener"><small>Listen anywhere</small><h3>Audiobook</h3><div class="price">Spotify</div><p>The full book, narrated. Perfect for the gym, the commute or a walk.</p><span class="go">Listen on Spotify &rarr;</span></a>
+        {pb_card}
       </div>
     </section>
 
@@ -184,44 +191,16 @@
     <section class="bp-faq">
       <p class="eyebrow">Questions</p>
       <h2 class="disp">Before you <em>buy</em></h2>
-      <details><summary>I&#x27;m really out of shape. Is this book for me?</summary><p>Yes. It was written for exactly that person. I wrote it at the end of going from 265 pounds and prediabetic to 178. It starts at zero and assumes nothing.</p></details><details><summary>Is this a diet book?</summary><p>No. There is no diet to follow and nothing to buy. It teaches you how calories, protein, training and recovery actually work, so you can build a plan that fits your life and keep it.</p></details><details><summary>Do I need a gym?</summary><p>No. The training chapters work for a gym, home or a mix. The point is training with intention, not owning equipment.</p></details><details><summary>What&#x27;s the difference between the formats?</summary><p>Same book. The Kindle eBook and paperback include the worksheet, sources and glossary. The audiobook is the full book narrated, and the worksheet, sources and glossary live on the free companion page instead.</p></details><details><summary>Is the audiobook really free?</summary><p>It streams on Spotify. Depending on your Spotify plan, it may be included or available to purchase.</p></details><details><summary>Are you a doctor?</summary><p>No, and the book says so up front. I&#x27;m someone who did the research, tested it on myself and documented what worked. Every factual claim has a source listed in the back, and the book tells you when to talk to your doctor.</p></details>
+      {faq}
     </section>
 
     <div class="bp-end">
       <h2 class="disp" style="font-size:clamp(28px,4.5vw,42px)">Start today. <em>Not Monday.</em></h2>
       <p class="lead">The first chapter takes about 10 minutes. By the end of the week you'll know more about how your body works than most people ever learn.</p>
-      <div class="bp-buy ">
-        <a class="btn solid" href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener">Get it on Kindle<small>$9.99</small></a>
-        <a class="btn line" href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Listen free on Spotify</a>
-        
-      </div>
+      {buy_buttons()}
     </div>
-    <p class="bp-rev">Already read it? <a href="https://www.amazon.com/review/create-review?asin=B0HLTN491G" target="_blank" rel="noopener">Leave a quick review on Amazon</a>. It is the single biggest thing that helps an independent book get found.</p>
+    <p class="bp-rev">Already read it? <a href="{REVIEW}" target="_blank" rel="noopener">Leave a quick review on Amazon</a>. It is the single biggest thing that helps an independent book get found.</p>
   </main>
-  <div class="bp-sticky"><a class="btn solid" href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener">Kindle $9.99</a><a class="btn line" href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Listen free</a></div>
-  <footer class="site">
-    <div class="foot">
-      <div>
-        <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="24" height="24"><span class="wm">Salvage <span>Health</span></span></a>
-        <span class="tg">Built from what's left.</span>
-      </div>
-      <nav aria-label="Footer">
-        <a href="/about/">About</a>
-        <a href="/articles/">Articles</a>
-        <a href="/kitchen/">Salvage Kitchen</a>
-        <a href="/merch/">Merch</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/book">The book</a>
-        <a href="/companion/">Book companion app</a>
-        <a href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Audiobook</a>
-        <a href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener">Kindle</a>
-        <a href="https://www.instagram.com/el_dourado/" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:hello@salvagehealth.com">hello@salvagehealth.com</a>
-      </nav>
-    </div>
-    <p class="fine">Salvage Health shares education, not medical advice. Talk to your doctor before you change how you eat, train or supplement, especially if you have a medical condition. &copy; 2026 Salvage Health.</p>
-  </footer>
-
-</div>
-</body>
-</html>
+  <div class="bp-sticky"><a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a><a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen free</a></div>
+""" + FOOT
+write("/book/", bp)

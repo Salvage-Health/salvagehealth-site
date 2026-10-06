@@ -1,1 +1,1205 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting…</title><link rel="canonical" href="https://salvagehealth.com/book"><meta http-equiv="refresh" content="0; url=/book"><meta name="robots" content="noindex"></head><body><a href="/book">Continue to salvagehealth.com/book</a></body></html>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Fitness Without the Fear Companion | Salvage Health</title>
+<meta name="description" content="Companion resources for Fitness Without the Fear by Bryan Dourado: your personal plan app, printable worksheet, sources, glossary and all editions.">
+<meta name="theme-color" content="#141413">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<meta property="og:title" content="Fitness Without the Fear: Companion and Personal Plan">
+<meta property="og:description" content="Free companion app for Fitness Without the Fear by Bryan Dourado: build your personal calorie and macro plan, plus the worksheet, sources and glossary.">
+<meta property="og:image" content="https://salvagehealth.com/brand/og.png">
+<meta property="og:url" content="https://salvagehealth.com/companion/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  /* Layout: single dark brand page (matches the book cover): hero, then three
+     stacked resource blocks (worksheet / sources / glossary), sources grouped
+     by chapter in <details>, glossary filterable by a search field. */
+  :root{
+    --bg:#141413;
+    --bg-raised:#1c1b19;
+    --fg:#FAF9F5;
+    --fg-dim:#C9C7C0;
+    --fg-faint:#9C9A93;
+    --accent:#D97757;
+    --accent-ink:#3A241A;
+    --rule:#3A3934;
+    color-scheme: dark;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:Inter, -apple-system, sans-serif;
+    padding-inline:20px;
+    padding-block:48px;
+    line-height:1.55;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:740px;margin:0 auto;}
+
+  .eyebrow{
+    font-weight:700;font-size:11px;letter-spacing:2px;color:var(--accent);
+    text-transform:uppercase;margin:0 0 14px;
+  }
+  h1{
+    font-family:Fraunces, Georgia, serif;font-weight:700;
+    font-size:clamp(32px,6vw,52px);line-height:1.05;letter-spacing:-0.5px;
+    margin:0 0 16px;text-wrap:balance;
+  }
+  .lede{
+    font-size:17px;color:var(--fg-dim);max-width:52ch;margin:0 0 6px;
+  }
+  .byline{font-size:13px;color:var(--fg-faint);margin:28px 0 0;}
+
+  header{margin-bottom:48px;padding-bottom:36px;border-bottom:1px solid var(--rule);}
+
+  section{margin-bottom:48px;}
+  section > h2{
+    font-family:Fraunces, Georgia, serif;font-weight:700;
+    font-size:22px;letter-spacing:-0.2px;margin:0 0 6px;
+  }
+  section > .section-note{font-size:14px;color:var(--fg-dim);margin:0 0 20px;max-width:56ch;}
+
+  /* Worksheet card (reused for resource/format/review link rows) */
+  .worksheet-card{
+    display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+    background:var(--bg-raised);border:1px solid var(--rule);border-radius:12px;
+    padding:22px 24px;
+  }
+  .worksheet-card + .worksheet-card{ margin-top:12px; }
+  @keyframes iconPop{
+    0%{ transform:scale(0.6); opacity:0; }
+    60%{ transform:scale(1.08); opacity:1; }
+    100%{ transform:scale(1); opacity:1; }
+  }
+  @keyframes iconGlow{
+    0%,100%{ box-shadow:0 4px 10px rgba(217,119,87,0.35); }
+    50%{ box-shadow:0 4px 18px rgba(217,119,87,0.65); }
+  }
+  .worksheet-card .icon{
+    width:44px;height:44px;border-radius:9px;
+    background:linear-gradient(145deg,#E08863,var(--accent));
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    animation:iconPop .5s cubic-bezier(.34,1.56,.64,1) both,
+              iconGlow 2.6s ease-in-out .5s infinite;
+    transition:transform .12s cubic-bezier(.34,1.56,.64,1), box-shadow .12s ease;
+  }
+  .worksheet-card .icon svg{width:22px;height:22px;}
+  .worksheet-card .icon-logo{
+    flex:0 0 44px;width:44px;height:44px;border-radius:9px;
+    background:#FFFFFF;display:flex;align-items:center;justify-content:center;
+    padding:11px;overflow:hidden;
+    animation:iconPop .5s cubic-bezier(.34,1.56,.64,1) both;
+    transition:transform .12s cubic-bezier(.34,1.56,.64,1), box-shadow .12s ease;
+  }
+  .worksheet-card .icon-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;}
+  .worksheet-card:hover .icon,
+  .worksheet-card:hover .icon-logo{
+    transform:scale(1.22) rotate(-6deg);
+    box-shadow:0 0 0 7px rgba(217,119,87,0.32), 0 0 34px 10px rgba(217,119,87,0.85);
+  }
+  .worksheet-card:nth-of-type(2) .icon,
+  .worksheet-card:nth-of-type(2) .icon-logo{ animation-delay:.08s; }
+  .worksheet-card:nth-of-type(3) .icon,
+  .worksheet-card:nth-of-type(3) .icon-logo{ animation-delay:.16s; }
+  .worksheet-card:nth-of-type(4) .icon,
+  .worksheet-card:nth-of-type(4) .icon-logo{ animation-delay:.24s; }
+  .worksheet-card:nth-of-type(5) .icon,
+  .worksheet-card:nth-of-type(5) .icon-logo{ animation-delay:.32s; }
+  .worksheet-card:nth-of-type(6) .icon,
+  .worksheet-card:nth-of-type(6) .icon-logo{ animation-delay:.4s; }
+
+  .stars{
+    display:flex;gap:2px;flex:0 0 auto;color:#F2B203;font-size:17px;
+    letter-spacing:1px;line-height:1;
+  }
+  .worksheet-meta{flex:1;min-width:180px;}
+  .worksheet-meta .name{font-weight:600;font-size:15px;color:var(--fg);}
+  .worksheet-meta .sub{font-size:13px;color:var(--fg-faint);margin-top:2px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:13px;
+    letter-spacing:0.3px;padding:11px 18px;border-radius:8px;text-decoration:none;
+    white-space:nowrap;
+  }
+  .btn:hover{filter:brightness(1.06);}
+  .btn[aria-disabled="true"]{
+    background:transparent;color:var(--fg-faint);border:1px solid var(--rule);
+    pointer-events:none;
+  }
+
+  /* Sources: chapter groups */
+  details{
+    border-bottom:1px solid var(--rule);
+  }
+  details:first-of-type{border-top:1px solid var(--rule);}
+  summary{
+    cursor:pointer;list-style:none;padding:14px 2px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    font-weight:600;font-size:14.5px;color:var(--fg);
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .chev{
+    flex-shrink:0;width:9px;height:9px;border-right:2px solid var(--fg-faint);
+    border-bottom:2px solid var(--fg-faint);transform:rotate(-45deg);
+    transition:transform .15s ease;
+  }
+  details[open] summary .chev{transform:rotate(45deg);}
+  .source-list{margin:0 0 18px;padding:0 2px 0 0;list-style:none;}
+  .source-list li{
+    font-size:13.5px;color:var(--fg-dim);padding:8px 0 8px 18px;
+    border-top:1px solid var(--rule);position:relative;
+  }
+  .source-list li:first-child{border-top:none;}
+  .source-list li::before{
+    content:"";position:absolute;left:0;top:14px;width:5px;height:5px;
+    border-radius:50%;background:var(--accent);
+  }
+
+  /* Glossary */
+  .search-hint{
+    font-weight:600;font-size:13px;color:var(--accent);margin:0 0 8px 0;
+    letter-spacing:0.2px;
+  }
+  .search{
+    width:100%;background:var(--bg-raised);border:1px solid var(--rule);
+    border-radius:10px;padding:16px 18px;color:var(--fg);font-size:17px;
+    font-family:inherit;margin-bottom:18px;
+  }
+  .search::placeholder{color:var(--fg-faint);}
+  .search:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  .gloss-list dt{
+    font-weight:600;font-size:14.5px;color:var(--fg);margin-top:16px;
+  }
+  .gloss-list dt .chref{
+    font-weight:500;font-size:11.5px;color:var(--accent);letter-spacing:0.3px;
+    margin-left:8px;
+  }
+  .gloss-list dd{
+    margin:4px 0 0;font-size:13.5px;color:var(--fg-dim);
+  }
+  .gloss-empty{display:none;font-size:13.5px;color:var(--fg-faint);padding:16px 0;}
+
+  /* Tools */
+  .tool-group h3{
+    font-size:13px;font-weight:700;letter-spacing:0.4px;color:var(--fg);
+    margin:22px 0 8px;
+  }
+  .tool-group ul{margin:0 0 4px;padding-left:18px;color:var(--fg-dim);font-size:13.5px;}
+  .tool-group li{margin-bottom:5px;}
+  .tool-group .also{font-size:13px;color:var(--fg-faint);margin-top:8px;}
+
+
+  /* Paperback teaser card */
+  .worksheet-card.tease{
+    position:relative;overflow:hidden;border:1.5px solid var(--accent);
+    background:radial-gradient(120% 160% at 0% 50%,rgba(217,119,87,.28) 0%,rgba(217,119,87,.07) 45%,var(--bg-raised) 75%);
+    box-shadow:0 0 0 4px rgba(217,119,87,.10),0 0 36px rgba(217,119,87,.30);
+  }
+  .tease .cover{
+    flex:0 0 44px;width:44px;height:68px;border-radius:3px 6px 6px 3px;overflow:hidden;
+    transform:rotate(-4deg);box-shadow:0 0 18px rgba(217,119,87,.55);
+  }
+  .tease .cover img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.55) blur(.6px) saturate(.7);}
+  .tease .worksheet-meta{padding-right:70px;}
+  .tease .ribbon{
+    position:absolute;top:26px;right:-54px;width:200px;text-align:center;transform:rotate(35deg);
+    background:var(--accent);color:var(--bg);font-weight:800;font-size:10.5px;letter-spacing:2px;
+    text-transform:uppercase;padding:6px 0;box-shadow:0 3px 10px rgba(0,0,0,.4);
+  }
+
+  /* Macro plan calculator */
+  .calc{background:var(--bg-raised);border:1px solid var(--rule);border-radius:12px;padding:22px 24px;display:grid;gap:18px;}
+  .calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 16px;}
+  .calc label{display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--fg-dim);letter-spacing:.2px;min-width:0;}
+  .calc input,.calc select{font:inherit;font-size:15px;font-weight:500;color:var(--fg);background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:10px 12px;width:100%;min-width:0;}
+  .calc input:focus,.calc select:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  .calc .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .calc .hint{font-size:11.5px;font-weight:400;color:var(--fg-faint);}
+  .seg{display:flex;flex-wrap:wrap;gap:8px;}
+  .seg button{font:inherit;font-size:13px;font-weight:600;padding:9px 14px;border-radius:99px;border:1px solid var(--rule);background:transparent;color:var(--fg-dim);cursor:pointer;}
+  .seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+  .calc-go{justify-self:start;border:0;cursor:pointer;font-family:inherit;font-size:14px;}
+  .calc-err{font-size:13px;color:var(--accent);}
+  .res{display:grid;gap:16px;border-top:1px solid var(--rule);padding-top:18px;}
+  .res h3{font-family:Fraunces,Georgia,serif;font-size:19px;margin:0;}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}
+  .tile{background:var(--bg);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;display:grid;gap:2px;min-width:0;}
+  .tile .k{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fg-faint);}
+  .tile .v{font-size:22px;font-weight:700;color:var(--fg);font-variant-numeric:tabular-nums;}
+  .tile .s{font-size:12px;color:var(--fg-faint);font-variant-numeric:tabular-nums;}
+  .tile.hl{border-color:var(--accent);}
+  .tile.hl .v{color:var(--accent);}
+  .res-note{font-size:13.5px;color:var(--fg-dim);margin:0;}
+  .res-warn{font-size:13.5px;color:var(--fg);background:rgba(217,119,87,.12);border-left:3px solid var(--accent);padding:10px 12px;border-radius:0 8px 8px 0;margin:0;}
+  .cp-wrap{overflow-x:auto;}
+  .cp{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;}
+  .cp .sub2{display:block;font-size:11.5px;font-weight:400;color:var(--fg-faint);}
+  .cp th{text-align:left;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--fg-faint);font-weight:700;padding:6px 8px;border-bottom:1px solid var(--rule);}
+  .cp td{padding:8px;border-bottom:1px solid var(--rule);color:var(--fg-dim);}
+  .cp td:first-child{color:var(--fg);font-weight:600;}
+  .fine{font-size:12px;color:var(--fg-faint);margin:0;}
+
+  /* Personal Plan app */
+  .app{display:grid;gap:14px;}
+  .app.calc{background:none;border:0;padding:0;border-radius:0;}
+  .app-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--rule);display:grid;gap:8px;}
+  .app-bar .nums{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;}
+  .app-bar .num{display:grid;gap:1px;min-width:0;}
+  .app-bar .num b{font-size:16px;font-variant-numeric:tabular-nums;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .app-bar .num span{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--fg-faint);font-weight:700;}
+  .app-bar .num.hl b{color:var(--accent);}
+  .prog{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--fg-faint);}
+  .prog .track{flex:1;height:5px;border-radius:99px;background:var(--rule);overflow:hidden;}
+  .prog .track i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s;}
+  .sec{background:var(--bg-raised);border:1px solid var(--rule);border-radius:12px;overflow:hidden;}
+  .sec > summary{padding:14px 18px;border:0;display:flex;align-items:center;gap:12px;}
+  .sec .sn{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--bg);border:1px solid var(--rule);color:var(--fg-dim);}
+  .sec.done .sn{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+  .sec .st{flex:1;min-width:0;display:grid;gap:1px;}
+  .sec .st b{font-size:15px;color:var(--fg);}
+  .sec .st small{font-size:11.5px;color:var(--fg-faint);font-weight:500;}
+  .sec-body{padding:4px 18px 18px;display:grid;gap:14px;}
+  .calc input,.calc select,.calc textarea{font:inherit;font-size:15px;font-weight:500;color:var(--fg);background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:10px 12px;width:100%;min-width:0;}
+  .calc textarea{min-height:64px;resize:vertical;line-height:1.45;}
+  .calc input:focus,.calc select:focus,.calc textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  .log-add{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .log-add .full{grid-column:1/-1;}
+  .log-list{display:grid;gap:8px;}
+  .log-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:10px 12px;font-size:13.5px;}
+  .log-row b{font-variant-numeric:tabular-nums;}
+  .log-row small{color:var(--fg-faint);display:block;}
+  .x{font:inherit;background:none;border:0;color:var(--fg-faint);cursor:pointer;font-size:18px;line-height:1;padding:2px 6px;}
+  .app-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+  .saved{font-size:12px;color:var(--fg-faint);}
+  .reset-link{font:inherit;font-size:12.5px;color:var(--fg-faint);background:none;border:0;text-decoration:underline;cursor:pointer;padding:0;}
+  .plan-view{background:var(--bg-raised);border:1px solid var(--accent);border-radius:12px;padding:16px 18px;display:grid;gap:10px;}
+  .pv-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+  .pv-top b{font-family:Fraunces,Georgia,serif;font-size:19px;}
+  .pv-btns{display:flex;gap:14px;align-items:center;}
+  #plan-body h4{margin:10px 0 2px;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);}
+  #plan-body p{margin:0;font-size:14px;color:var(--fg-dim);line-height:1.5;white-space:pre-wrap;}
+  .plan-view{scroll-margin-top:120px;}
+  #plan-body p.pv-title{display:none;}
+  @media (max-width:480px){ .app-bar .num b{font-size:14px;} .sec-body{padding:4px 14px 16px;} }
+
+  footer{
+    border-top:1px solid var(--rule);padding-top:24px;margin-top:8px;
+    font-size:12.5px;color:var(--fg-faint);
+  }
+
+  @media (max-width:480px){
+    .worksheet-card{padding:18px;}
+  }
+
+  /* Salvage Health brand bar + footer (site chrome; the book content keeps the cover palette) */
+  .brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-24px 0 40px;padding-bottom:18px;border-bottom:1px solid var(--rule);}
+  .brandbar a.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg);}
+  .brandbar a.brand img{width:26px;height:26px;}
+  .brandbar .wm{white-space:nowrap;font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;font-size:19px;letter-spacing:1px;text-transform:uppercase;line-height:1;}
+  .brandbar .wm span{color:#BE5126;}
+  .brandbar .home{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--fg-faint);text-decoration:none;}
+  .brandbar .home:hover,.brandbar a.brand:hover .wm{color:var(--fg);}
+  .brandbar a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+  .sh-foot{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:16px;}
+  .sh-foot img{width:18px;height:18px;opacity:.8;}
+  .sh-foot .wm{white-space:nowrap;font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--fg-dim);}
+  .sh-foot .wm span{color:#BE5126;}
+  .sh-foot .tg{white-space:nowrap;font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--fg-faint);}
+</style>
+
+<div class="wrap">
+
+  <nav class="brandbar" aria-label="Salvage Health">
+    <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="26" height="26"><span class="wm">Salvage <span>Health</span></span></a>
+    <a class="home" href="/">Home</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">Fitness Without the Fear</div>
+    <h1>Companion Resources</h1>
+    <p class="lede">The worksheet, full source list, and glossary that go with the book. Built for listeners of the audiobook edition, and just as useful alongside the print or ebook.</p>
+    <p class="byline">Bryan Dourado</p>
+  </header>
+
+  <section id="plan">
+    <h2>Your Personal Plan</h2>
+    <p class="section-note">The book's worksheet, as an app. Fill it in chapter by chapter as you read. Sections 1 to 3 do the math for you as you type, and everything saves on this device so you can come back anytime.</p>
+
+    <div class="app calc" id="app">
+      <div class="app-bar" aria-live="polite">
+        <div class="nums">
+          <div class="num hl"><b id="b-cal">--</b><span>Calories</span></div>
+          <div class="num"><b id="b-p">--</b><span>Protein</span></div>
+          <div class="num"><b id="b-f">--</b><span>Fat</span></div>
+          <div class="num"><b id="b-c">--</b><span>Carbs</span></div>
+          <div class="num"><b id="b-date">--</b><span>Goal date</span></div>
+        </div>
+        <div class="prog"><span id="prog-txt">0 of 10 sections</span><span class="track"><i id="prog-bar"></i></span><span class="saved" id="saved">Saved on this device</span></div>
+      </div>
+
+      <details class="sec" data-sec="1" open>
+        <summary><span class="sn">1</span><span class="st"><b>Your stats</b><small>Ch. 5</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <div class="calc-grid">
+            <label for="f-sex">Sex <span class="hint">used by the BMR formula</span>
+              <select id="f-sex" data-k="sex"><option value="">Choose</option><option value="m">Male</option><option value="f">Female</option></select></label>
+            <label for="f-age">Age<input id="f-age" data-k="age" type="number" inputmode="numeric" min="18" max="90" placeholder="38"></label>
+            <label>Height<span class="pair"><input id="f-ft" data-k="height_ft" type="number" inputmode="numeric" placeholder="ft" aria-label="Height feet"><input id="f-in" data-k="height_in" type="number" inputmode="numeric" placeholder="in" aria-label="Height inches"></span></label>
+            <label for="f-wt">Current weight <span class="hint">lbs</span><input id="f-wt" data-k="weight_lbs" type="number" inputmode="decimal" placeholder="220"></label>
+          </div>
+          <label for="f-act">Activity level <span class="hint">pick the closest; most people overestimate</span>
+            <select id="f-act" data-k="activity_level">
+              <option value="">Choose one</option>
+              <option value="1.2">Mostly sitting: desk job, little or no exercise (x 1.2)</option>
+              <option value="1.375">Lightly active: exercise 1 to 3 days a week (x 1.375)</option>
+              <option value="1.55">Moderately active: exercise 3 to 5 days a week (x 1.55)</option>
+              <option value="1.725">Very active: hard exercise 6 to 7 days a week (x 1.725)</option>
+              <option value="1.9">Extremely active: physical job plus daily training (x 1.9)</option>
+            </select></label>
+          <div class="res-note" id="o-stats"></div>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="2">
+        <summary><span class="sn">2</span><span class="st"><b>Energy and goal</b><small>Ch. 5 and 7</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <div class="tiles"><div class="tile"><span class="k">BMR</span><span class="v" id="o-bmr">--</span><span class="s">calories at rest</span></div><div class="tile"><span class="k">TDEE</span><span class="v" id="o-tdee">--</span><span class="s">maintenance calories</span></div></div>
+          <div style="display:grid;gap:8px"><span style="font-size:12px;font-weight:600;color:var(--fg-dim)">My goal is</span>
+            <div class="seg" id="f-goal" role="group" aria-label="Goal">
+              <button type="button" data-v="loss" aria-pressed="false">Fat loss</button><button type="button" data-v="gain" aria-pressed="false">Muscle gain</button><button type="button" data-v="recomp" aria-pressed="false">Recomp</button><button type="button" data-v="maint" aria-pressed="false">Maintenance</button>
+            </div></div>
+          <div class="calc-grid" id="goal-row">
+            <label for="f-gw">Goal weight <span class="hint">lbs</span><input id="f-gw" data-k="goal_weight" type="number" inputmode="decimal" placeholder="185"></label>
+            <label for="f-pace">Pace<select id="f-pace" data-k="pace_pct"></select></label>
+            <label for="f-date">Hit it by a date? <span class="hint">optional</span><input id="f-date" data-k="goal_date" type="date"></label>
+          </div>
+          <div id="o-goal"></div>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="3">
+        <summary><span class="sn">3</span><span class="st"><b>Macros</b><small>Ch. 3 and 21</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <label for="f-style">Macro style <span class="hint">protein stays the same; this shifts fat vs. carbs</span>
+            <select id="f-style" data-k="macro_style"><option value="0.25">Balanced: about 25% of calories from fat</option><option value="0.35">Lower carb: about 35% from fat</option><option value="0.20">Higher carb: about 20% from fat</option></select></label>
+          <div id="o-macros"></div>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="4">
+        <summary><span class="sn">4</span><span class="st"><b>Should I track?</b><small>Ch. 13 and 14</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <div style="display:grid;gap:8px"><span style="font-size:12px;font-weight:600;color:var(--fg-dim)">Is tracking the right tool for me right now?</span>
+            <div class="seg" data-radio="tracking_right"><button type="button" data-v="yes" aria-pressed="false">Yes</button><button type="button" data-v="no" aria-pressed="false">No</button><button type="button" data-v="unsure" aria-pressed="false">Not sure, ask a pro first</button></div></div>
+          <label for="f-ta">My tracking approach<textarea id="f-ta" data-k="tracking_approach" placeholder="e.g. Track everything for 3 weeks, then switch to hand portions"></textarea></label>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="5">
+        <summary><span class="sn">5</span><span class="st"><b>Direction and why</b><small>Ch. 1</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <label for="f-dw">What direction am I moving my body in, and why?<textarea id="f-dw" data-k="direction_why"></textarea></label>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="6">
+        <summary><span class="sn">6</span><span class="st"><b>Sleep and recovery</b><small>Ch. 16 and 17</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <div class="calc-grid">
+            <label for="f-sc">Current sleep <span class="hint">hrs a night</span><input id="f-sc" data-k="sleep_current" type="number" inputmode="decimal" step="0.5"></label>
+            <label for="f-stg">Target <span class="hint">hrs a night</span><input id="f-stg" data-k="sleep_target" type="number" inputmode="decimal" step="0.5" placeholder="7.5"></label>
+            <label for="f-dl">Deload every <span class="hint">weeks</span><input id="f-dl" data-k="deload_weeks" type="number" inputmode="numeric" placeholder="6"></label>
+          </div>
+          <div style="display:grid;gap:8px"><span style="font-size:12px;font-weight:600;color:var(--fg-dim)">Current stress level</span>
+            <div class="seg" data-radio="stress_level"><button type="button" data-v="low" aria-pressed="false">Low</button><button type="button" data-v="moderate" aria-pressed="false">Moderate</button><button type="button" data-v="high" aria-pressed="false">High</button></div></div>
+          <label for="f-sch">One change I'll make to hit my sleep target<textarea id="f-sch" data-k="sleep_change"></textarea></label>
+          <div class="res-note" id="o-sleep"></div>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="7">
+        <summary><span class="sn">7</span><span class="st"><b>Alcohol and hydration</b><small>Ch. 18 and 19</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <label for="f-ap">My honest current drinking pattern<textarea id="f-ap" data-k="alcohol_pattern"></textarea></label>
+          <label for="f-ac">Changes I want to make, given my goal<textarea id="f-ac" data-k="alcohol_change"></textarea></label>
+          <label for="f-hy">Hydration target <span class="hint">cups a day</span><input id="f-hy" data-k="hydration_target" type="number" inputmode="decimal" step="0.5"></label>
+          <div class="res-note" id="o-hyd"></div>
+          <div style="display:grid;gap:8px"><span style="font-size:12px;font-weight:600;color:var(--fg-dim)">Do I need an electrolyte plan for training?</span>
+            <div class="seg" data-radio="electrolytes"><button type="button" data-v="yes" aria-pressed="false">Yes</button><button type="button" data-v="no" aria-pressed="false">No</button></div></div>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="8">
+        <summary><span class="sn">8</span><span class="st"><b>Label check</b><small>Ch. 15</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <label for="f-ps">A protein source I eat that passes the "x10" test<input id="f-ps" data-k="protein_source" type="text" placeholder="e.g. Greek yogurt: 15 g protein, 140 calories"></label>
+          <div class="calc-grid">
+            <label for="f-lp">Try one: protein per serving <span class="hint">g</span><input id="f-lp" data-k="x10_protein" type="number" inputmode="decimal"></label>
+            <label for="f-lc">Calories per serving<input id="f-lc" data-k="x10_cal" type="number" inputmode="numeric"></label>
+          </div>
+          <div class="res-note" id="o-x10"></div>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="9">
+        <summary><span class="sn">9</span><span class="st"><b>Coaching and success</b><small>Ch. 22</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <div style="display:grid;gap:8px"><span style="font-size:12px;font-weight:600;color:var(--fg-dim)">I'm pursuing this</span>
+            <div class="seg" data-radio="coaching_path"><button type="button" data-v="alone" aria-pressed="false">Alone</button><button type="button" data-v="coach" aria-pressed="false">With a coach</button><button type="button" data-v="undecided" aria-pressed="false">Undecided</button></div></div>
+          <label for="f-sd">My personal definition of success, starting today<textarea id="f-sd" data-k="success_def"></textarea></label>
+        </div>
+      </details>
+
+      <details class="sec" data-sec="10">
+        <summary><span class="sn">10</span><span class="st"><b>Review log</b><small>Ch. 7 and 21 · every 2 to 3 weeks</small></span><span class="chev"></span></summary>
+        <div class="sec-body">
+          <div class="log-add">
+            <label for="l-date">Date<input id="l-date" type="date"></label>
+            <label for="l-wt">Weight <span class="hint">lbs</span><input id="l-wt" type="number" inputmode="decimal"></label>
+            <label class="full" for="l-note">Notes <span class="hint">optional</span><input id="l-note" type="text" placeholder="e.g. great week, hit protein 6 of 7 days"></label>
+            <button class="btn full" type="button" id="l-add" style="border:0;cursor:pointer;font-family:inherit;justify-self:start">Add check-in</button>
+          </div>
+          <div id="o-review"></div>
+          <div class="log-list" id="log-list"></div>
+        </div>
+      </details>
+
+      <div class="plan-view" id="plan-view" hidden>
+        <div class="pv-top"><b>Your plan</b><span class="pv-btns"><button class="btn" type="button" id="plan-copy" style="border:0;cursor:pointer;font-family:inherit">Copy my plan</button><button class="reset-link" type="button" id="plan-close">Close</button></span></div>
+        <p class="fine" style="margin:0">Paste it into Notes, or take a screenshot to keep it.</p>
+        <div id="plan-body"></div>
+      </div>
+      <div class="calc-err" id="app-msg" hidden></div>
+      <div class="app-actions">
+        <button class="btn" type="button" id="dl-plan" style="border:0;cursor:pointer;font-family:inherit">Save my plan</button>
+        <button class="reset-link" type="button" id="view-plan">View or copy</button>
+        <button class="reset-link" type="button" id="reset">Start over</button>
+      </div>
+      <p class="fine">The numbers this app calculates are general estimates for healthy adults, not personalized medical or nutritional advice. Real progress varies, which is why the book has you recheck every 2 to 3 weeks. If you're pregnant, under 18, or managing a medical condition, talk to your doctor before changing how you eat. Your answers stay on this device and are never sent anywhere.</p>
+    </div>
+  </section>
+
+  <section id="worksheet">
+    <h2>Printable Worksheet</h2>
+    <p class="section-note">Prefer pen and paper? The same plan as a one-page fillable PDF you can print.</p>
+    <div class="worksheet-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FAF9F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h6"/></svg>
+      </div>
+      <div class="worksheet-meta">
+        <div class="name">Personal Worksheet</div>
+        <div class="sub">PDF · 1 page · fillable</div>
+        <div class="sub" id="worksheet-msg" style="color:var(--accent);margin-top:4px" hidden></div>
+      </div>
+      <a class="btn" id="worksheet-link" href="/book/worksheet.pdf" download="fitness-without-the-fear-worksheet.pdf">Download worksheet ↓</a>
+    </div>
+  </section>
+
+  <section id="formats">
+    <h2>Also Available As</h2>
+    <p class="section-note">Whichever edition you're on, the book comes in a few other forms too, worth knowing about if you want to pass it along or switch between reading and listening.</p>
+
+    <div class="worksheet-card">
+      <div class="icon-logo"><img src="/book/spotify-logo.png" alt="Spotify"></div>
+      <div class="worksheet-meta">
+        <div class="name">The Audiobook</div>
+        <div class="sub">Full narration, free to stream on Spotify</div>
+      </div>
+      <a class="btn" href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Listen ↗</a>
+    </div>
+
+    <div class="worksheet-card tease">
+      <div class="cover"><img src="/book/paperback-cover.jpg" alt="Paperback cover, coming soon"></div>
+      <div class="worksheet-meta">
+        <div class="name">The Paperback</div>
+        <div class="sub">On Amazon</div>
+      </div>
+      <div class="ribbon" aria-hidden="true">Coming soon</div>
+    </div>
+
+    <div class="worksheet-card">
+      <div class="icon-logo"><img src="/book/kindle-logo.png" alt="Kindle"></div>
+      <div class="worksheet-meta">
+        <div class="name">The Kindle eBook</div>
+        <div class="sub">Good for passing along to a friend</div>
+      </div>
+      <a class="btn" href="https://www.amazon.com/dp/B0HLTN491G" target="_blank" rel="noopener">Get it ↗</a>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>Enjoyed It?</h2>
+    <p class="section-note">A review is the single biggest thing that helps an independent book get found. If the book or the audiobook helped, this is the best way to pay it forward, two minutes, tops.</p>
+
+    <div class="worksheet-card">
+      <div class="icon-logo"><img src="/book/amazon-logo.png" alt="Amazon"></div>
+      <div class="worksheet-meta">
+        <div class="name">Leave a review on Amazon</div>
+        <div class="sub">For the Kindle edition (paperback reviews open once it's live)</div>
+      </div>
+      <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <a class="btn" href="https://www.amazon.com/review/create-review?asin=B0HLTN491G" target="_blank" rel="noopener">Review ↗</a>
+    </div>
+
+    <div class="worksheet-card">
+      <div class="icon-logo"><img src="/book/spotify-logo.png" alt="Spotify"></div>
+      <div class="worksheet-meta">
+        <div class="name">Rate it on Spotify</div>
+        <div class="sub">If you listened to the audiobook</div>
+      </div>
+      <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <a class="btn" href="https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw" target="_blank" rel="noopener">Rate ↗</a>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources &amp; References</h2>
+    <p class="section-note">Every specific number, study finding, or factual claim in the book has a traceable source, organized here by chapter. Chapters that are experience- or logic-based rather than citation-based (the introduction, the coaching chapter's personal reflections, and Week One) aren't listed.</p>
+
+    <details>
+      <summary>Chapter 2: What's a Calorie, Really?<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Wishnofsky, M. (1958). "Caloric equivalents of gained or lost weight." <em>American Journal of Clinical Nutrition</em>. Origin of the 3,500-calorie-per-pound estimate.</li>
+        <li>Thomas, D.M. et al., critiqued in Hall, K.D. &amp; Chow, C.C. (2013). "Why is the 3500 kcal per pound weight loss rule wrong?" <em>International Journal of Obesity</em>. PMC3859816.</li>
+        <li>American Institute for Cancer Research, "The 3500-Calorie Weight Loss Myth." aicr.org</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 3: Macros Demystified<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>International Society of Sports Nutrition Position Stand on protein and exercise. <em>Journal of the International Society of Sports Nutrition</em>. PMC5477153.</li>
+        <li>Academy of Nutrition and Dietetics, Dietitians of Canada, and ACSM joint position statement on protein intake for physically active individuals (summarized via Healthline, MSU Extension, Mayo Clinic Health System).</li>
+        <li>Mayo Clinic Health System, "Are you getting too much protein."</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 4: Micronutrients in Plain English<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Harvard T.H. Chan School of Public Health, The Nutrition Source, "Vitamins and Minerals."</li>
+        <li>NASM Blog, "A Guide to Micronutrients: Recommendations &amp; Sources."</li>
+        <li>CDC, "Micronutrient Facts."</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 5: Total Daily Energy Expenditure<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Mifflin, M.D., St Jeor, S.T., et al. (1990). "A new predictive equation for resting energy expenditure in healthy individuals." <em>American Journal of Clinical Nutrition</em>, 51(2), 241-247. PMID 2305711. Original source of the Mifflin-St Jeor equation.</li>
+        <li>Frankenfield, D., Roth-Yousey, L., Compher, C. (2005). "Comparison of predictive equations for resting metabolic rate." <em>Journal of the American Dietetic Association</em>. Validation study comparing Mifflin-St Jeor to other formulas.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 7: Calorie Deficit vs. Surplus<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Helms, E.R. et al.: research on protein intake and deficit sizing during contest prep, summarized via Built With Science and TrainCalc calorie calculators.</li>
+        <li>Morton, R.W. et al.: research on protein dosing and muscle protein synthesis, referenced via FitCalcs protein chart.</li>
+        <li>Stronger by Science, "Building Muscle in a Calorie Deficit: Context is Key," analysis of surplus/deficit sizing research.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 8: Clean Eating vs. Dirty Bulking<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>NASM Blog, "How To Clean Bulk."</li>
+        <li>Vitamin Shoppe's "What's Good" blog, "Clean Bulking vs. Dirty Bulking: The Pros And Cons Of Each," citing sports dietitian commentary.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 9: "Carbs Are Bad"<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>RP Strength, "Carbs Aren't the Enemy: Debunking Popular Myths About Carbohydrates."</li>
+        <li>Legion Athletics, "How Insulin Really Works," summarizing insulin/fat-storage research.</li>
+        <li>Precision Nutrition, "Carbs, Insulin, and Weight Loss: What REALLY Matters."</li>
+        <li>Research on Kitavan and Okinawan traditional high-carb diets and low obesity rates, referenced via BodyScan UK.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 10: "Sugar Is Poison"<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Lustig, R.H.: original "sugar as toxin" arguments, discussed critically in <em>Psychology Today</em> ("Is Sugar Really 'Poison'?") and a peer-reviewed critical discourse analysis: "From science to sensational headline," Taylor &amp; Francis.</li>
+        <li>Rippe, J.M. &amp; Angelopoulos, T.J. (2016). "Relationship between Added Sugars Consumption and Chronic Disease Risk Factors." <em>Nutrients</em>. PMC5133084.</li>
+        <li>American Heart Association added-sugar intake guidelines (25g women / 36g men), referenced via NBC News and Harvard Health.</li>
+        <li>FDA, "Added Sugars on the Nutrition Facts Label."</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 11: Fat Doesn't Make You Fat<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Keys, A. et al., "Seven Countries Study," discussed with critical context via ResearchGate ("The origin of low-fat diet: The fallacy of the lipidic hypothesis") and Blue Zones ("Bad Science or Bad Journalism? Top Experts Address Nutrition Myths").</li>
+        <li>PREDIMED trial (Mediterranean diet and cardiovascular outcomes), <em>New England Journal of Medicine</em>, 2018, referenced via Scott Free Clinic summary.</li>
+        <li>Meta-analysis of randomized dietary fat trials finding no significant difference in all-cause/CHD mortality, referenced via Common Science Space.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 12: Fad Diet Breakdown<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Harvard Health, "What are the differences between popular low-carb diets?"</li>
+        <li>Fortune Well, "Keto vs. paleo diet: which one is better? Experts weigh in."</li>
+        <li>A systematic review comparing Atkins, Zone, and Weight Watchers outcomes over one year, referenced via Reuters Health/Fox News summary (Atallah, R., McGill University).</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 13: Should You Even Track?<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Hahn, S.L., Kaciroti, N., Eisenberg, D., Bauer, K.W., Sonneville, K.R. (2021). "Introducing Dietary Self-Monitoring to Undergraduate Women via a Calorie Counting App Has No Effect on Mental Health or Health Behaviors." <em>Journal of the Academy of Nutrition and Dietetics</em>. Reviewed in depth by Stronger by Science.</li>
+        <li>Levinson, C.A., Fewell, L., Brosof, L.C. (2017). Discussed in Duke Department of Psychiatry &amp; Behavioral Sciences, "The Trouble with Tracking."</li>
+        <li>Simpson, C.C. &amp; Mazzeo, S.E. (2017). "Calorie counting and fitness tracking technology: Associations with eating disorder symptomatology." PubMed 28214452.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 14: How to Track Without It Taking Over Your Life<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Precision Nutrition research on hand-portion estimation accuracy (~95% as accurate as weighing food), referenced via Kalo Health blog.</li>
+        <li>Precision Nutrition, "Macros vs. Calories vs. Intuitive Eating: What's Best?"</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 15: Reading a Nutrition Label Like a Human<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>FDA, "How to Understand and Use the Nutrition Facts Label," "Serving Size on the Nutrition Facts Label," "Added Sugars on the Nutrition Facts Label," "The Lows and Highs of Percent Daily Value."</li>
+        <li>Harvard T.H. Chan School of Public Health, "Understanding Food Labels."</li>
+        <li>Spartan.com, "These 50 High-Protein Foods Will Help You Hit Your Macros," source for the "rule of tens" protein-density heuristic underlying the multiply-by-10 trick.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 16: Sleep Is Not Optional<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Nedeltcheva, A.V. et al. (2010). "Insufficient sleep undermines dietary efforts to reduce adiposity." <em>Annals of Internal Medicine</em>. The sleep-restriction/muscle-vs-fat-loss study. Discussed in depth via BodySpec.</li>
+        <li>Lamon, S., Morabito, A., Arentson-Lantz, E. et al. (2021). "The effect of acute sleep deprivation on skeletal muscle protein synthesis and the hormonal environment." <em>Physiological Reports</em>, 9(1), e14660.</li>
+        <li>Spiegel, K., Leproult, R., Van Cauter, E. (1999/2004) sleep-restriction and glucose tolerance research, summarized via Medscape, "The Impact of Sleep Deprivation on Hormones and Metabolism."</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 17: Stress, Hormones, and Recovery<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Cadegiani, F.A. &amp; Kater, C.E. (2017). "Hypothalamic-Pituitary-Adrenal (HPA) Axis Functioning in Overtraining Syndrome." <em>Sports Medicine - Open</em>. PMC5722782.</li>
+        <li>Society for Endocrinology, "Overtraining and the Endocrine System. Can Hormones Indicate Overtraining?"</li>
+        <li>Epel, E. et al.: cortisol reactivity and central fat distribution research, referenced via Shred App's summary ("Weight Loss Plateau Stress: Why Cortisol Stalls Fat Loss").</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 18: Alcohol and Your Progress<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Leangains (Berkhan, M.), "The truth about alcohol, fat loss and muscle growth," summarizing acute alcohol/testosterone/MPS research.</li>
+        <li>StrengthLog, "Alcohol and Muscle Growth," summarizing dose-dependent MPS suppression research (Parr, E.B. et al.).</li>
+        <li>Parr, E.B. et al. (2014). "Alcohol Ingestion Impairs Maximal Post-Exercise Rates of Myofibrillar Protein Synthesis following a Single Bout of Concurrent Training." <em>PLOS ONE</em>. Source of the 24–37% MPS suppression figures.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 19: Hydration and the Boring Stuff That Actually Matters<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Mayo Clinic, "Water: How much should you drink every day?"</li>
+        <li>National Athletic Trainers' Association, "Hydration Guidelines" handout.</li>
+        <li>Sawka, M.N. et al. (2007). American College of Sports Medicine position stand: "Exercise and fluid replacement." <em>Medicine &amp; Science in Sports &amp; Exercise</em>.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 20: Peptides: What They Are and What's Still Unknown<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Wikipedia, "BPC-157" (regulatory status, chemical identifiers, general overview; cross-referenced against primary regulatory sources below).</li>
+        <li>Józwiak, M., Bauer, M., Kamysz, W., Kleczkowska, P. (2025). "Multifunctionality and Possible Medical Application of the BPC 157 Peptide: Literature and Patent Review." <em>Pharmaceuticals</em>. PMC11859134.</li>
+        <li>Peer-reviewed review: "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance." PubMed 41966639.</li>
+        <li>Operation Supplement Safety (Department of Defense program), "BPC-157: A Prohibited Peptide and an Unapproved Drug Found in Health and Wellness Products."</li>
+        <li>FDA regulatory status coverage current as of this writing via Forbes ("FDA's Review Of Peptides Signals A Growing Public Health Challenge," July 2026) and Pharmacy Times coverage of the February 2026 HHS reclassification announcement.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Chapter 22: The Power of Coaching<span class="chev"></span></summary>
+      <ul class="source-list">
+        <li>Losch, S., Traut-Mattausch, E., Mühlberger, M.D., Jonas, E. (2016). Comparative study of individual coaching, group coaching, and self-coaching for goal attainment, referenced via GoalsWon's research summary.</li>
+        <li>ACE (American Council on Exercise), "Coaching Behavior Change: Accountability for Change," ProSource, February 2016.</li>
+      </ul>
+    </details>
+  </section>
+
+  <section id="tools">
+    <h2>Recommended Apps &amp; Tools</h2>
+    <p class="section-note">Everything in the book can be done with a notebook, a calculator, and the formulas provided. These just remove friction. Look for the functionality below; specific apps come and go, the features don't.</p>
+
+    <div class="tool-group">
+      <h3>CALORIE &amp; MACRO TRACKING</h3>
+      <ul>
+        <li>Large searchable food database with barcode scanning</li>
+        <li>Save and reuse frequent meals</li>
+        <li>Built-in TDEE calculator using Mifflin-St Jeor (Ch. 5)</li>
+        <li>Macro breakdown by gram and percentage</li>
+        <li>Separate "Added Sugars" field, not just total sugar (Ch. 15)</li>
+        <li>Weekly average view, not just daily totals (Ch. 7, 21)</li>
+        <li>Restaurant and common-brand entries</li>
+      </ul>
+      <p class="also">Widely used: MyFitnessPal, Cronometer, Lose It!, MacroFactor.</p>
+    </div>
+
+    <div class="tool-group">
+      <h3>WORKOUT &amp; TRAINING LOG</h3>
+      <ul>
+        <li>Log sets, reps, and weight per exercise with scrollable history</li>
+        <li>Automatic PR and progression tracking</li>
+        <li>Built-in rest timer</li>
+        <li>Build and reuse a program/routine</li>
+        <li>Deload or program-phase notation (Ch. 17)</li>
+      </ul>
+      <p class="also">Widely used: Strong, Hevy, Boostcamp.</p>
+    </div>
+
+    <div class="tool-group">
+      <h3>TDEE &amp; CALORIE CALCULATORS</h3>
+      <ul>
+        <li>Uses Mifflin-St Jeor, or lets you select it (Ch. 5)</li>
+        <li>Unit toggle set to US Standard, not metric</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="glossary">
+    <h2>Glossary of Terms</h2>
+    <p class="section-note">Quick-reference definitions for terms used throughout the book, in case you want to look one up without flipping back to where it was first explained.</p>
+    <p class="search-hint">Find it faster, just type it in</p>
+    <input class="search" id="gloss-search" type="text" placeholder="Search terms…" autocomplete="off">
+    <dl class="gloss-list" id="gloss-list">
+      <dt>A1C <span class="chref">Introduction</span></dt>
+      <dd>A blood test measuring average blood sugar over the past 2–3 months, reported as a percentage. Under 5.7% is normal, 5.7–6.4% is prediabetes, 6.5%+ is diabetes.</dd>
+
+      <dt>Activity Multiplier <span class="chref">Ch. 5</span></dt>
+      <dd>A number (roughly 1.2–1.9) used to convert BMR into TDEE, based on how active you are day to day.</dd>
+
+      <dt>Added Sugars <span class="chref">Ch. 10, 14</span></dt>
+      <dd>Sugar introduced during food processing, as opposed to sugar naturally occurring in a food. Listed separately from Total Sugars on nutrition labels.</dd>
+
+      <dt>Amino Acid <span class="chref">Ch. 3, 19</span></dt>
+      <dd>A small molecule that acts as a building block for protein. Your body uses 20 different amino acids; chains of them form peptides and, when long enough, full proteins.</dd>
+
+      <dt>Atrophy <span class="chref">Training chapter</span></dt>
+      <dd>The shrinking or wasting of muscle tissue, the opposite of hypertrophy. Happens when a muscle isn't sufficiently used or challenged over time.</dd>
+
+      <dt>BMR (Basal Metabolic Rate) <span class="chref">Ch. 5</span></dt>
+      <dd>The number of calories your body burns at complete rest, just to keep your organs and basic functions running.</dd>
+
+      <dt>Bulking <span class="chref">Ch. 7, 11</span></dt>
+      <dd>Eating in a calorie surplus with the goal of building muscle (and typically gaining some fat along with it).</dd>
+
+      <dt>Calorie <span class="chref">Ch. 2</span></dt>
+      <dd>A unit of energy; the measurement used for the energy content of food.</dd>
+
+      <dt>Calorie Deficit <span class="chref">Ch. 7</span></dt>
+      <dd>Eating fewer calories than your body burns (your TDEE), which drives fat loss.</dd>
+
+      <dt>Calorie Surplus <span class="chref">Ch. 7</span></dt>
+      <dd>Eating more calories than your body burns, which drives weight gain, including muscle gain under the right conditions.</dd>
+
+      <dt>Cardio (Cardiovascular Training) <span class="chref">Training chapter</span></dt>
+      <dd>Sustained activity that elevates your heart rate: running, cycling, swimming, rowing. Primarily supports heart/lung health, endurance, and calorie expenditure.</dd>
+
+      <dt>Compound Movement <span class="chref">Training chapter</span></dt>
+      <dd>An exercise that works multiple muscle groups and joints at once (e.g., a squat or a bench press), as opposed to an isolation exercise that targets one muscle specifically.</dd>
+
+      <dt>Cortisol <span class="chref">Ch. 16</span></dt>
+      <dd>A hormone involved in your body's stress response, blood sugar regulation, and daily energy rhythm. Chronically elevated cortisol, often from poor sleep or overtraining, is the actual concern, not cortisol itself.</dd>
+
+      <dt>Cutting <span class="chref">Ch. 7, 11</span></dt>
+      <dd>Eating in a calorie deficit with the goal of losing fat while preserving muscle.</dd>
+
+      <dt>Deload <span class="chref">Ch. 17</span></dt>
+      <dd>A planned, temporary reduction in training volume and/or intensity to allow recovery, typically every 6–8 weeks.</dd>
+
+      <dt>Electrolytes <span class="chref">Ch. 19</span></dt>
+      <dd>Minerals (primarily sodium, potassium, magnesium, calcium) that regulate fluid balance, muscle contraction, and nerve signaling.</dd>
+
+      <dt>Essential Amino Acids <span class="chref">Ch. 20</span></dt>
+      <dd>The 9 amino acids your body cannot produce on its own and must get from food.</dd>
+
+      <dt>Flexibility <span class="chref">Training chapter</span></dt>
+      <dd>The length and pliability of your muscles and connective tissue, distinct from mobility (which is about joint range of motion with control).</dd>
+
+      <dt>Ghrelin <span class="chref">Ch. 16</span></dt>
+      <dd>A hormone that stimulates hunger; disrupted (raised) by poor sleep.</dd>
+
+      <dt>Glycogen <span class="chref">Ch. 3, 8</span></dt>
+      <dd>The stored form of carbohydrate in your muscles and liver, used as a reserve energy source.</dd>
+
+      <dt>HPA Axis (Hypothalamic-Pituitary-Adrenal Axis) <span class="chref">Ch. 17</span></dt>
+      <dd>The hormone system that governs your body's stress response, involving the hypothalamus, pituitary gland, and adrenal glands.</dd>
+
+      <dt>Hypertrophy <span class="chref">Training chapter</span></dt>
+      <dd>The growth or enlargement of muscle tissue, driven by resistance training and adequate protein/recovery. The actual physiological process behind "building muscle."</dd>
+
+      <dt>Hyponatremia <span class="chref">Ch. 19</span></dt>
+      <dd>A dangerous drop in blood sodium, usually from drinking excessive fluid without replacing electrolytes.</dd>
+
+      <dt>Insulin <span class="chref">Ch. 9</span></dt>
+      <dd>A hormone released in response to rising blood sugar, which helps cells absorb glucose and regulates energy storage.</dd>
+
+      <dt>Isolation Exercise <span class="chref">Training chapter</span></dt>
+      <dd>An exercise that targets a single muscle or muscle group (e.g., a bicep curl), as opposed to a compound movement that works several at once.</dd>
+
+      <dt>Ketosis <span class="chref">Ch. 12</span></dt>
+      <dd>A metabolic state in which the body, deprived of sufficient carbohydrate, breaks down fat into ketones for fuel. Central to the ketogenic diet.</dd>
+
+      <dt>Leptin <span class="chref">Ch. 16</span></dt>
+      <dd>A hormone that signals fullness; suppressed by poor sleep.</dd>
+
+      <dt>Macronutrients (Macros) <span class="chref">Ch. 3</span></dt>
+      <dd>The three nutrients that provide calories: protein, carbohydrates, and fat.</dd>
+
+      <dt>Maintenance Calories <span class="chref">Ch. 7</span></dt>
+      <dd>Eating at your TDEE, keeping weight roughly stable.</dd>
+
+      <dt>Micronutrients <span class="chref">Ch. 4</span></dt>
+      <dd>Vitamins and minerals; needed in smaller amounts than macros but essential for the body to function.</dd>
+
+      <dt>Mobility <span class="chref">Training chapter</span></dt>
+      <dd>Your ability to move a joint through its full range of motion with control, distinct from flexibility (the pliability of muscle/connective tissue itself).</dd>
+
+      <dt>Muscle Protein Synthesis (MPS) <span class="chref">Ch. 3, 15, 17</span></dt>
+      <dd>The process by which your body builds and repairs muscle tissue, primarily using dietary protein.</dd>
+
+      <dt>Overtraining Syndrome <span class="chref">Ch. 17</span></dt>
+      <dd>A state of hormonal and performance disruption caused by training load consistently outpacing recovery over an extended period.</dd>
+
+      <dt>Peptide <span class="chref">Ch. 20</span></dt>
+      <dd>A short chain of amino acids, smaller than a full protein, that acts as a signaling molecule in the body.</dd>
+
+      <dt>Progressive Overload <span class="chref">Training chapter</span></dt>
+      <dd>Gradually increasing the demand placed on your muscles over time (more weight, reps, sets, or better range of motion). The core mechanism that drives muscle growth and strength gains.</dd>
+
+      <dt>Protein Synthesis <span class="chref">Ch. 3, 15, 17</span></dt>
+      <dd>The general biological process of building proteins from amino acids. In a training/fitness context, this almost always refers specifically to Muscle Protein Synthesis (MPS).</dd>
+
+      <dt>Range of Motion (ROM) <span class="chref">Training chapter</span></dt>
+      <dd>How far a joint can move in a given direction. Relevant to both mobility work and exercise technique. A fuller range of motion generally produces a stronger training stimulus.</dd>
+
+      <dt>Recomposition (Recomp) <span class="chref">Ch. 7</span></dt>
+      <dd>Building muscle and losing fat at roughly the same time, typically while eating at or near maintenance calories.</dd>
+
+      <dt>Resistance Training <span class="chref">Training chapter</span></dt>
+      <dd>Any activity that makes your muscles work against an external force: weights, bands, or bodyweight. The primary driver of muscle building and preservation.</dd>
+
+      <dt>Sarcopenia <span class="chref">Training chapter</span></dt>
+      <dd>The gradual, age-related loss of muscle mass and strength, which begins as early as your 30s and accelerates without intervention. Resistance training is the most effective known way to slow it.</dd>
+
+      <dt>Split (Training Split) <span class="chref">Training chapter</span></dt>
+      <dd>How you divide your resistance training across the days you train each week (e.g., full-body, upper/lower, push/pull/legs, body-part).</dd>
+
+      <dt>TDEE (Total Daily Energy Expenditure) <span class="chref">Ch. 5</span></dt>
+      <dd>The total number of calories your body burns in a day, including BMR plus activity.</dd>
+
+      <dt>%DV (Percent Daily Value) <span class="chref">Ch. 15</span></dt>
+      <dd>The percentage of a nutrient's recommended daily target that one serving of a food provides, shown on nutrition labels. 5% or less is considered low; 20% or more is considered high.</dd>
+    </dl>
+    <p class="gloss-empty" id="gloss-empty">No terms match "<span id="gloss-empty-term"></span>".</p>
+  </section>
+
+  <footer>
+    Fitness Without the Fear: companion resources for the print, ebook, and audiobook editions.
+  
+    <a class="sh-foot" href="/" style="text-decoration:none"><img src="/brand/mark.svg" alt="" width="18" height="18"><span class="wm">Salvage <span>Health</span></span><span class="tg">Built from what's left.</span></a></footer>
+
+</div>
+
+<script>
+(function(){
+  try{
+    var input = document.getElementById('gloss-search');
+    var list = document.getElementById('gloss-list');
+    var empty = document.getElementById('gloss-empty');
+    var emptyTerm = document.getElementById('gloss-empty-term');
+    var pairs = [];
+    var dts = list.querySelectorAll('dt');
+    dts.forEach(function(dt){
+      var dd = dt.nextElementSibling;
+      pairs.push({dt:dt, dd:dd, text:(dt.textContent + ' ' + (dd ? dd.textContent : '')).toLowerCase()});
+    });
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      var anyVisible = false;
+      pairs.forEach(function(p){
+        var match = q === '' || p.text.indexOf(q) !== -1;
+        p.dt.hidden = !match;
+        if(p.dd) p.dd.hidden = !match;
+        if(match) anyVisible = true;
+      });
+      empty.hidden = anyVisible || q === '';
+      emptyTerm.textContent = input.value.trim();
+    });
+  }catch(e){}
+})();
+</script>
+
+
+
+<script>
+(function(){
+  var KEY='fwtf-plan-v1', S={log:[]};
+  try{ var raw=localStorage.getItem(KEY); if(raw){ S=JSON.parse(raw)||S; S.log=S.log||[]; } }catch(e){}
+  var $=function(id){return document.getElementById(id);};
+  var qa=function(sel,root){return Array.prototype.slice.call((root||document).querySelectorAll(sel));};
+  var n=function(v){return Math.round(v).toLocaleString('en-US');};
+  var kg=function(lb){return (lb*0.45359237).toFixed(1);};
+  var fmt=function(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});};
+  var fmtS=function(d){return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});};
+  var savedT;
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); $('saved').textContent='Saved on this device'; }catch(e){ $('saved').textContent='Not saved: this browser blocks storage'; } }
+  var PACES={loss:[['0.15','Steady: about 15% below maintenance'],['0.20','Standard: about 20% below maintenance'],['0.25','Faster: about 25% below maintenance']],gain:[['200','Lean: about 200 calories above maintenance'],['250','Standard: about 250 calories above maintenance'],['300','Faster: about 300 calories above maintenance']]};
+  function fillPace(){
+    var sel=$('f-pace'); var g=S.goal; sel.innerHTML='';
+    (PACES[g]||[]).forEach(function(p,i){ var o=document.createElement('option'); o.value=p[0]; o.textContent=p[1]; sel.appendChild(o); });
+    var vals=(PACES[g]||[]).map(function(p){return p[0];});
+    if(vals.length){ if(vals.indexOf(S.pace_pct)<0) S.pace_pct=vals[1]; sel.value=S.pace_pct; }
+    $('goal-row').hidden=!(g==='loss'||g==='gain');
+  }
+  // bind inputs
+  qa('[data-k]').forEach(function(el){
+    var k=el.getAttribute('data-k');
+    if(S[k]!=null) el.value=S[k];
+    el.addEventListener('input',function(){ S[k]=el.value; save(); compute(); });
+    el.addEventListener('change',function(){ S[k]=el.value; save(); compute(); });
+  });
+  // goal + radio segs
+  function bindSeg(box,key,after){
+    qa('button',box).forEach(function(b){
+      b.setAttribute('aria-pressed',S[key]===b.getAttribute('data-v')?'true':'false');
+      b.addEventListener('click',function(){
+        S[key]=(S[key]===b.getAttribute('data-v'))?'':b.getAttribute('data-v');
+        qa('button',box).forEach(function(x){x.setAttribute('aria-pressed',S[key]===x.getAttribute('data-v')?'true':'false');});
+        if(after) after(); save(); compute();
+      });
+    });
+  }
+  bindSeg($('f-goal'),'goal',fillPace);
+  qa('[data-radio]').forEach(function(box){ bindSeg(box,box.getAttribute('data-radio')); });
+  fillPace();
+
+  function bmr(sex,lb,cm,age){ return 10*lb*0.45359237+6.25*cm-5*age+(sex==='m'?5:-161); }
+  function macros(cal,ref,perLb){
+    var fp=+S.macro_style||0.25, p=Math.round(ref*perLb), f=Math.round(Math.max(cal*fp/9,ref*0.3)), c=Math.round((cal-p*4-f*9)/4), low=false;
+    if(c<50){c=50;low=true;} return {p:p,f:f,c:c,low:low};
+  }
+  function tiles(arr){ return '<div class="tiles">'+arr.map(function(t){return '<div class="tile'+(t.hl?' hl':'')+'"><span class="k">'+t.k+'</span><span class="v"'+(t.small?' style="font-size:18px"':'')+'>'+t.v+'</span><span class="s">'+t.s+'</span></div>';}).join('')+'</div>'; }
+
+  var PLAN=null;
+  function compute(){
+    var sex=S.sex, age=+S.age, ft=+S.height_ft, inch=+(S.height_in||0), wt=+S.weight_lbs, act=+S.activity_level;
+    var ok=sex&&age>=18&&age<=90&&ft>=4&&ft<=7&&inch>=0&&inch<12&&wt>=80&&wt<=700&&act;
+    PLAN=null;
+    var bar={cal:'--',p:'--',f:'--',c:'--',date:'--'};
+    if(!ok){
+      $('o-stats').textContent='Fill in all five to unlock sections 2 and 3.';
+      $('o-bmr').textContent='--'; $('o-tdee').textContent='--';
+      $('o-goal').innerHTML=''; $('o-macros').innerHTML='<p class="res-note">Finish section 1 first.</p>';
+    } else {
+      var cm=(ft*12+inch)*2.54, b0=bmr(sex,wt,cm,age), t0=b0*act, floor=sex==='m'?1500:1200;
+      $('o-stats').textContent='That\'s '+ft+' ft '+inch+' in ('+Math.round(cm)+' cm) and '+n(wt)+' lbs ('+kg(wt)+' kg).';
+      $('o-bmr').textContent=n(b0); $('o-tdee').textContent=n(t0);
+      var g=S.goal, html='', first, m;
+      if(!g){ $('o-goal').innerHTML='<p class="res-note">Pick a goal to get your calorie target.</p>'; $('o-macros').innerHTML='<p class="res-note">Pick a goal in section 2 first.</p>'; }
+      else if(g==='loss'||g==='gain'){
+        var gw=+S.goal_weight, today=new Date();
+        if(!gw||(g==='loss'&&gw>=wt)||(g==='gain'&&gw<=wt)){
+          $('o-goal').innerHTML='<p class="res-note">'+(g==='loss'?'Enter a goal weight below your current weight.':'Enter a goal weight above your current weight.')+'</p>';
+          $('o-macros').innerHTML='<p class="res-note">Finish section 2 first.</p>';
+        } else {
+          var pct=+S.pace_pct, warn='';
+          if(S.goal_date){
+            var d=new Date(S.goal_date+'T12:00:00'), wks=(d-today)/(7*864e5);
+            if(wks>=1){ var needDay=Math.abs(gw-wt)/wks*500;
+              if(g==='loss'){ var needF=needDay/t0;
+                if(needF>0.25){ warn='Getting to '+n(gw)+' lbs by '+fmt(d)+' would take eating more than 25% below maintenance, which usually costs muscle and doesn\'t stick (Ch. 7). This plan uses the fastest realistic pace instead.'; pct=0.25; }
+                else pct=Math.max(needF,0.10); }
+              else { if(needDay>300){ warn='Getting to '+n(gw)+' lbs by '+fmt(d)+' would take a surplus of more than 300 calories a day, which mostly adds fat, not muscle (Ch. 7). This plan uses the fastest realistic pace instead.'; pct=300; }
+                else pct=Math.max(needDay,150); }
+            }
+          }
+          var w=wt, week=0, cps=[], hitFloor=false, dir=g==='loss'?-1:1; first=null;
+          while(week<260&&(dir<0?w>gw:w<gw)){
+            var t=bmr(sex,w,cm,age)*act;
+            var cal=g==='loss'?t*(1-pct):t+pct; if(g==='loss'&&cal<floor){cal=floor;hitFloor=true;}
+            cal=Math.round(cal/10)*10; if(!first) first={cal:cal,rate:Math.abs(cal-t)*7/3500};
+            var ch=(cal-t)*7/3500; if(Math.abs(ch)<0.05) break;
+            cps.push({week:week,w:w,cal:cal}); w+=ch; week++; if(dir<0&&w<gw)w=gw; if(dir>0&&w>gw)w=gw;
+          }
+          var end=new Date(today.getTime()+week*7*864e5), step=week>40?8:4;
+          cps=cps.filter(function(c){return c.week%step===0;}); cps.push({week:week,w:w,cal:null});
+          m=macros(first.cal,g==='loss'?gw:wt,g==='loss'?0.9:0.8);
+          PLAN={cal:first.cal,rate:first.rate,dir:dir,end:end,weeks:week,m:m,gw:gw,tdee:t0,bmr:b0,cps:cps};
+          html+=tiles([{k:'Calorie target',v:n(first.cal),s:'calories a day to start',hl:1},{k:'Expected pace',v:first.rate.toFixed(1)+' lbs',s:kg(first.rate)+' kg a week to start'},{k:'Goal date',v:fmt(end),s:'about '+week+' weeks',hl:1,small:1}]);
+          if(warn) html+='<p class="res-warn">'+warn+'</p>';
+          if(hitFloor) html+='<p class="res-warn">Your target bottoms out at '+n(floor)+' calories a day, the lowest this plan will suggest. That stretches the timeline a bit, which is the safer trade.</p>';
+          html+='<details><summary>See checkpoints along the way<span class="chev"></span></summary><div class="cp-wrap"><table class="cp"><thead><tr><th>When</th><th>Projected weight</th><th>Calories</th></tr></thead><tbody>';
+          cps.forEach(function(c,i){ var dt=new Date(today.getTime()+c.week*7*864e5); html+='<tr><td>'+(i===0?'Start':(c.cal===null?'Goal':'Week '+c.week))+'<span class="sub2">'+fmt(dt)+'</span></td><td>'+n(c.w)+' lbs<span class="sub2">'+kg(c.w)+' kg</span></td><td>'+(c.cal===null?'Maintenance':n(c.cal))+'</td></tr>'; });
+          html+='</tbody></table></div><p class="fine">Calories step '+(dir<0?'down':'up')+' as your weight changes. Log your real weight in section 10 to keep this honest.</p></details>';
+          $('o-goal').innerHTML=html;
+          bar.date=fmtS(end); 
+        }
+      } else {
+        var cal2=Math.round(t0/10)*10; m=macros(cal2,wt,g==='recomp'?1.0:0.8);
+        PLAN={cal:cal2,rate:0,dir:0,end:null,m:m,tdee:t0,bmr:b0};
+        $('o-goal').innerHTML=tiles([{k:'Calorie target',v:n(cal2),s:'at maintenance',hl:1}])+'<p class="res-note">'+(g==='recomp'?'A recomp has no scale target. The scale may barely move while your body composition improves, so track measurements, photos and strength, and recheck every 4 weeks (Ch. 7).':'If your weight trend drifts more than a couple of pounds over 2 to 3 weeks, adjust by 100 to 150 calories (Ch. 7).')+'</p>';
+        bar.date=g==='recomp'?'Recomp':'Maintain';
+      }
+      if(PLAN){
+        var M=PLAN.m, C=PLAN.cal;
+        $('o-macros').innerHTML=tiles([{k:'Protein',v:n(M.p)+' g',s:Math.round(M.p*4/C*100)+'% of calories'},{k:'Fat',v:n(M.f)+' g',s:Math.round(M.f*9/C*100)+'% of calories'},{k:'Carbs',v:n(M.c)+' g',s:Math.round(M.c*4/C*100)+'% of calories'}])+(M.low?'<p class="res-warn">Carbs are held at a 50 g minimum, so these add up to a little more than your calorie target. Consider a slower pace.</p>':'')+'<p class="res-note">Protein is set from body weight, not a percentage (Ch. 3). Carbs fill whatever calories are left.</p>';
+        bar.cal=n(C); bar.p=M.p+'g'; bar.f=M.f+'g'; bar.c=M.c+'g';
+      }
+    }
+    $('b-cal').textContent=bar.cal; $('b-p').textContent=bar.p; $('b-f').textContent=bar.f; $('b-c').textContent=bar.c; $('b-date').textContent=bar.date;
+    // sleep
+    var sc=+S.sleep_current, stg=+S.sleep_target;
+    $('o-sleep').textContent=(sc&&stg)?(stg>sc?'That\'s '+(stg-sc).toFixed(1)+' more hours a night. Moving bedtime earlier by 15 minutes a week gets there without a shock.':'You\'re already at or above your target. Protect it.'):'';
+    // hydration
+    $('o-hyd').textContent=S.sex?'Ch. 19 starting point: about '+(S.sex==='m'?'15.5 cups (3.7 L)':'11.5 cups (2.7 L)')+' a day from all drinks and food, more on training days.':'Ch. 19 starting point: about 15.5 cups (3.7 L) a day for men and 11.5 cups (2.7 L) for women, from all drinks and food.';
+    // x10
+    var xp=+S.x10_protein, xc=+S.x10_cal;
+    $('o-x10').innerHTML=(xp&&xc)?(xp*10>=xc*0.9?'<b style="color:var(--accent)">Passes.</b> '+xp+' g x 10 = '+n(xp*10)+', '+(xp*10>=xc?'at or above':'close to')+' the '+n(xc)+' calories. That\'s a solid protein source.':'<b>Doesn\'t pass.</b> '+xp+' g x 10 = '+n(xp*10)+', well below the '+n(xc)+' calories. Most of the calories come from carbs or fat.'):'';
+    review(); progress();
+  }
+  // review log
+  function review(){
+    var L=S.log.slice().sort(function(a,b){return a.d<b.d?-1:1;}), out='';
+    var box=$('log-list'); box.innerHTML='';
+    L.slice().reverse().forEach(function(e){
+      var row=document.createElement('div'); row.className='log-row';
+      var dt=new Date(e.d+'T12:00:00');
+      row.innerHTML='<div><b>'+n(e.w)+' lbs</b><small>'+kg(e.w)+' kg</small></div><div>'+fmt(dt)+(e.note?'<small></small>':'')+'</div>';
+      if(e.note) row.querySelector('small:last-child').textContent=e.note;
+      var x=document.createElement('button'); x.className='x'; x.type='button'; x.setAttribute('aria-label','Delete check-in'); x.textContent='×';
+      x.addEventListener('click',function(){ S.log=S.log.filter(function(z){return z!==e;}); save(); compute(); });
+      row.appendChild(x); box.appendChild(row);
+    });
+    if(L.length>=2){
+      var a=L[0], b=L[L.length-1], wks=(new Date(b.d)-new Date(a.d))/(7*864e5);
+      if(wks>=1.5){
+        var per=(b.w-a.w)/wks;
+        out+='<p class="res-note">Your trend: <b>'+(per<0?'down ':'up ')+Math.abs(per).toFixed(1)+' lbs a week</b> ('+kg(Math.abs(per))+' kg) over '+Math.round(wks)+' weeks.';
+        if(PLAN&&PLAN.dir!==0){
+          var target=PLAN.rate*PLAN.dir, adv;
+          if(PLAN.dir<0){ if(per>-0.5*PLAN.rate) adv='Slower than planned. Recheck your tracking first, then drop about 100 to 150 calories a day.'; else if(per<-1.5*PLAN.rate) adv='Faster than planned. Add about 100 to 150 calories a day to protect muscle.'; else adv='Right on pace. Keep going.'; }
+          else { if(per<0.5*PLAN.rate) adv='Slower than planned. Add about 100 calories a day.'; else if(per>1.5*PLAN.rate) adv='Faster than planned, likely extra fat. Drop about 100 calories a day.'; else adv='Right on pace. Keep going.'; }
+          out+=' Planned: about '+Math.abs(target).toFixed(1)+' lbs a week. <b>'+adv+'</b>';
+        }
+        out+='</p>';
+      } else out='<p class="res-note">Log again in 2 to 3 weeks to see your trend.</p>';
+    } else out='<p class="res-note">Add your first check-in today, then come back every 2 to 3 weeks.</p>';
+    $('o-review').innerHTML=out;
+  }
+  $('l-date').value=new Date().toISOString().slice(0,10);
+  $('l-add').addEventListener('click',function(){
+    var d=$('l-date').value, w=+$('l-wt').value, msg=$('app-msg');
+    if(!d||!w||w<80||w>700){ msg.textContent='Enter a date and a weight in pounds to add a check-in.'; msg.hidden=false; return; }
+    msg.hidden=true; S.log.push({d:d,w:w,note:$('l-note').value.trim()}); $('l-wt').value=''; $('l-note').value=''; save(); compute();
+  });
+  // progress
+  function progress(){
+    var done={
+      1:!!(S.sex&&S.age&&S.height_ft&&S.weight_lbs&&S.activity_level),
+      2:!!(S.goal&&PLAN), 3:!!PLAN, 4:!!(S.tracking_right||S.tracking_approach), 5:!!S.direction_why,
+      6:!!(S.sleep_current||S.sleep_target||S.stress_level), 7:!!(S.alcohol_pattern||S.hydration_target), 8:!!S.protein_source,
+      9:!!(S.coaching_path||S.success_def), 10:S.log.length>0
+    };
+    var c=0; qa('.sec').forEach(function(sec){ var k=sec.getAttribute('data-sec'); sec.classList.toggle('done',done[k]); if(done[k]) c++; });
+    $('prog-txt').textContent=c+' of 10 sections'; $('prog-bar').style.width=(c*10)+'%';
+  }
+  // reset (two taps)
+  $('reset').addEventListener('click',function(){
+    var b=$('reset');
+    if(b.dataset.armed){ S={log:[]}; save(); location.reload(); }
+    else { b.dataset.armed='1'; b.textContent='Tap again to erase everything'; setTimeout(function(){ delete b.dataset.armed; b.textContent='Start over'; },3000); }
+  });
+  function showPlan(rows){
+    var box=$('plan-view'), body=$('plan-body'); body.innerHTML='';
+    rows.forEach(function(r){ var el=document.createElement(r.t==='h'?'h4':'p'); el.textContent=r.x; if(r.big) el.className='pv-title'; body.appendChild(el); });
+    box.hidden=false; box.scrollIntoView({behavior:'smooth',block:'start'});
+    $('plan-copy').onclick=function(){
+      var txt=rows.map(function(r){return r.t==='h'?'\n'+r.x:r.x;}).join('\n').trim();
+      var done=function(){ $('plan-copy').textContent='Copied'; setTimeout(function(){ $('plan-copy').textContent='Copy my plan'; },1600); };
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,function(){ selectBody(); }); } else selectBody();
+    };
+    function selectBody(){ var r=document.createRange(); r.selectNodeContents(body); var s=getSelection(); s.removeAllRanges(); s.addRange(r); $('app-msg').textContent='Plan selected. Use your phone\'s Copy option.'; $('app-msg').hidden=false; }
+    $('plan-close').onclick=function(){ box.hidden=true; };
+  }
+  // PDF
+  var dl=null, VIEWONLY=false;
+  $('dl-plan').addEventListener('click',function(){
+    var msg=$('app-msg');
+    function MiniPDF(){
+      var pages=[], cur=null;
+      function rgb(h){ h=h.replace('#',''); return [0,2,4].map(function(i){return (parseInt(h.substr(i,2),16)/255).toFixed(3);}).join(' '); }
+      function esc(t){ return String(t).replace(/[\u2018\u2019]/g,"'").replace(/[\u201C\u201D]/g,'"').replace(/[\u2013\u2014]/g,'-').replace(/\u00D7/g,'x').replace(/[^\x20-\xFF]/g,'').replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)'); }
+      this.addPage=function(){ cur=[]; pages.push(cur); };
+      this.text=function(x,y,t,size,bold,col){ cur.push('BT /'+(bold?'F2':'F1')+' '+size+' Tf '+rgb(col||'#222222')+' rg '+x+' '+(792-y)+' Td ('+esc(t)+') Tj ET'); };
+      this.rect=function(x,y,w,h,col){ cur.push(rgb(col)+' rg '+x+' '+(792-y-h)+' '+w+' '+h+' re f'); };
+      this.width=function(t,size,bold){ return esc(t).length*size*(bold?0.56:0.52); };
+      this.blob=function(){
+        var objs=[], n=4+pages.length*2, kids=[];
+        objs[1]='<< /Type /Catalog /Pages 2 0 R >>';
+        objs[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';
+        objs[4]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';
+        pages.forEach(function(p,i){ var po=5+i*2, co=6+i*2, body=p.join('\n'); kids.push(po+' 0 R');
+          objs[po]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents '+co+' 0 R >>';
+          objs[co]='<< /Length '+body.length+' >>\nstream\n'+body+'\nendstream'; });
+        objs[2]='<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+pages.length+' >>';
+        var out='%PDF-1.4\n', offs=[];
+        for(var i=1;i<objs.length;i++){ offs[i]=out.length; out+=i+' 0 obj\n'+objs[i]+'\nendobj\n'; }
+        var x=out.length; out+='xref\n0 '+objs.length+'\n0000000000 65535 f \n';
+        for(i=1;i<objs.length;i++) out+=('0000000000'+offs[i]).slice(-10)+' 00000 n \n';
+        out+='trailer\n<< /Size '+objs.length+' /Root 1 0 R >>\nstartxref\n'+x+'\n%%EOF';
+        var bytes=new Uint8Array(out.length); for(i=0;i<out.length;i++) bytes[i]=out.charCodeAt(i)&255;
+        return new Blob([bytes],{type:'application/pdf'});
+      };
+    }
+    var doc=new MiniPDF(); doc.addPage(); var y=60, X=48, W=516, ROWS=[];
+    function line(t,o){ o=o||{}; ROWS.push({t:'l',x:String(t),b:o.b,big:o.s>12}); var size=o.s||10.5, words=String(t).split(' '), ln='';
+      function flush(){ if(y>748){doc.addPage();y=60;} doc.text(X,y,ln,size,o.b,o.c||'#222222'); y+=size*1.45; ln=''; }
+      words.forEach(function(w){ var tryL=ln?ln+' '+w:w; if(doc.width(tryL,size,o.b)>W&&ln){ flush(); ln=w; } else ln=tryL; }); flush(); }
+    function head(t){ ROWS.push({t:'h',x:t}); y+=8; if(y>720){doc.addPage();y=60;} doc.rect(X,y-13,W,19,'#1F4E79'); doc.text(X+7,y,t,10.5,true,'#FFFFFF'); y+=21; }
+    var lab={fatloss:'',loss:'Fat loss',gain:'Muscle gain',recomp:'Recomp',maint:'Maintenance'};
+    var v=function(k){return S[k]?S[k]:'-';};
+    line('YOUR PERSONAL PLAN',{b:1,s:18,c:'#1F4E79'}); line('Fitness Without the Fear  ·  saved '+fmt(new Date()),{c:'#666666'});
+    head('1 · YOUR STATS (Ch. 5)');
+    var actTxt=$('f-act').selectedIndex>0?$('f-act').options[$('f-act').selectedIndex].text:'-';
+    line('Age: '+v('age')+'    Sex: '+(S.sex==='m'?'Male':S.sex==='f'?'Female':'-')+'    Height: '+v('height_ft')+' ft '+(S.height_in||0)+' in    Weight: '+v('weight_lbs')+' lbs'); line('Activity: '+actTxt);
+    head('2 · ENERGY AND GOAL (Ch. 5 and 7)');
+    if(PLAN){ line('BMR: '+n(PLAN.bmr)+' cal/day    TDEE: '+n(PLAN.tdee)+' cal/day'); line('Goal: '+(lab[S.goal]||'-')+(PLAN.gw?' to '+n(PLAN.gw)+' lbs':'')); line('Calorie target: '+n(PLAN.cal)+' cal/day'+(PLAN.rate?'    Pace: '+PLAN.rate.toFixed(1)+' lbs/week':'')+(PLAN.end?'    Goal date: '+fmt(PLAN.end):'')); } else line('Not complete yet.');
+    head('3 · MACROS (Ch. 3 and 21)');
+    if(PLAN) line('Protein: '+PLAN.m.p+' g    Fat: '+PLAN.m.f+' g    Carbs: '+PLAN.m.c+' g'); else line('Not complete yet.');
+    head('4 · SHOULD I TRACK? (Ch. 13 and 14)'); line('Right tool for me now: '+({yes:'Yes',no:'No',unsure:'Not sure, ask a pro first'}[S.tracking_right]||'-')); line('Approach: '+v('tracking_approach'));
+    head('5 · DIRECTION AND WHY (Ch. 1)'); line(v('direction_why'));
+    head('6 · SLEEP AND RECOVERY (Ch. 16 and 17)'); line('Current sleep: '+v('sleep_current')+' hrs    Target: '+v('sleep_target')+' hrs    Deload every: '+v('deload_weeks')+' weeks    Stress: '+(S.stress_level||'-')); line('One change: '+v('sleep_change'));
+    head('7 · ALCOHOL AND HYDRATION (Ch. 18 and 19)'); line('Current pattern: '+v('alcohol_pattern')); line('Changes: '+v('alcohol_change')); line('Hydration target: '+v('hydration_target')+' cups/day    Electrolyte plan: '+(S.electrolytes||'-'));
+    head('8 · LABEL CHECK (Ch. 15)'); line('Protein source that passes the x10 test: '+v('protein_source'));
+    head('9 · COACHING AND SUCCESS (Ch. 22)'); line('Pursuing this: '+({alone:'Alone',coach:'With a coach',undecided:'Undecided'}[S.coaching_path]||'-')); line('Success means: '+v('success_def'));
+    head('10 · REVIEW LOG (Ch. 7 and 21)');
+    var L=S.log.slice().sort(function(a,b){return a.d<b.d?-1:1;}); if(!L.length) line('No check-ins yet.');
+    L.forEach(function(e){ line(fmt(new Date(e.d+'T12:00:00'))+':  '+n(e.w)+' lbs ('+kg(e.w)+' kg)'+(e.note?'  ·  '+e.note:'')); });
+    y+=10; line('These numbers are general estimates, not personalized medical or nutritional advice. Talk to your doctor before changing how you eat, especially if you have a medical condition.',{c:'#888888',s:9}); line('salvagehealth.com/book',{c:'#888888',s:9});
+    if(VIEWONLY){ showPlan(ROWS); return; }
+    var blob=doc.blob();
+    if(dl){ dl.save({filename:'my-personal-plan.pdf',data:blob}).then(function(){ msg.textContent='Saved. Find it in your downloads.'; msg.hidden=false; }).catch(function(e){ msg.textContent=e&&e.code==='declined'?'Download cancelled.':'Couldn\'t save right now. Try again in a moment.'; msg.hidden=false; }); }
+    else { try{ var u=URL.createObjectURL(blob), a=document.createElement('a'); a.href=u; a.download='my-personal-plan.pdf'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){URL.revokeObjectURL(u);},4000); msg.textContent='Saved. Find it in your downloads.'; msg.hidden=false; }catch(e){ showPlan(ROWS); } }
+  });
+  $('view-plan').addEventListener('click',function(){ VIEWONLY=true; $('dl-plan').click(); VIEWONLY=false; });
+  compute();
+})();
+</script>
+</body></html>

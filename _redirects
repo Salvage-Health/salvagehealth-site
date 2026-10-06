@@ -1,2 +1,4 @@
-/companion  /book  301
-/fitness-companion  /book  301
+/fitness-companion  /companion/  301
+/the-book  /book  301
+/fitness-without-the-fear  /book  301
+/fitness-without-the-fear/*  /book  301
