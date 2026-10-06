@@ -152,6 +152,9 @@
         '<text ' + O + ' font-size="67.9" fill="' + S + '" x="2" y="185.9" textLength="296" lengthAdjust="spacing">YOU\'LL DO.</text>' +
         '<text ' + O + ' font-size="80.3" fill="' + R + '" x="2" y="264.8" textLength="296" lengthAdjust="spacing">DO WHAT</text>' +
         '<text ' + O + ' font-size="82.7" fill="' + R + '" x="2" y="345.7" textLength="296" lengthAdjust="spacing">YOU SAY.</text>') },
+    { id: 'womens-heart', name: 'Women\'s tank, front: heartbeat heart', place: 'Left chest, 3 in (7.5 cm) wide', inches: 3, bg: 'light',
+      svg: svg('4 14 92 80', '<path d="M50 86 C27 71 12 56 15 39 C18 25 35 19 50 35 C65 19 82 25 85 39 C88 56 73 71 50 86 Z" fill="none" stroke="' + R + '" stroke-width="3.6" stroke-linejoin="round"/>' +
+        '<path d="M8 53 H31 L38 41 L46 67 L53 46 L58 53 H92" fill="none" stroke="' + S + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>') },
     { id: 'socks', name: 'Crew socks: full wrap, left and right', place: 'Full sock template (Tribe TC001), both socks', inches: 46.67, bg: 'dark',
       svg: (function () {
         var sock = function (ox, side, sideFill) {
