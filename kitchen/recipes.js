@@ -626,7 +626,7 @@ window.SK = {
       ]
     },
     {
-      id: 'steak-eggs', lvl: 3, cat: 'Breakfast',
+      id: 'steak-eggs', lvl: 3, photos: ['/kitchen/img/steak-and-eggs.jpg'], cat: 'Breakfast',
       name: 'Steak and Eggs Breakfast Plate',
       tag: 'Breakfast',
       serves: 2, mins: 25,
