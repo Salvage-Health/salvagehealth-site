@@ -936,7 +936,7 @@ window.SK = {
       ]
     },
     {
-      id: 'beef-broccoli', lvl: 3, name: 'Beef and Broccoli', cat: 'Dinner', tag: 'Takeout swap', serves: 4, mins: 25,
+      id: 'beef-broccoli', lvl: 3, photos: ['/kitchen/img/beef-and-broccoli.jpg'], name: 'Beef and Broccoli', cat: 'Dinner', tag: 'Takeout swap', serves: 4, mins: 25,
       blurb: 'Thin-sliced steak and crisp broccoli in a glossy garlic-soy sauce over rice. The takeout classic, lighter.',
       items: [
         { need: 'steak', txt: '1 1/2 lb (680 g) flank or sirloin steak, thinly sliced', food: 'sirloin', g: 680 },
