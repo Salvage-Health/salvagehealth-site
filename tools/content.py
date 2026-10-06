@@ -315,6 +315,7 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "tumbler": ("$42", SHOP + "/products/salvage-tumbler", ("tumbler-black", "tumbler-etch-close")),
         "towel": ("$26", SHOP + "/products/say-what-youll-do-gym-towel", ("towel-front", "towel-detail")),
         "tank": ("$36", SHOP + "/products/say-what-youll-do-tank", ("tank-model-back", "tank-model-front")),
+        "heart-tank": ("$32", SHOP + "/products/heartbeat-tank", ("heart-tank-model-front", "heart-tank-model-back")),
         "log": ("$22", SHOP + "/products/salvage-health-training-log", ("log-front", "log-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
@@ -336,6 +337,8 @@ MERCH2 = [
  "Small wordmark on the left chest, \"Say what you'll do.\" down the sleeve, and the big shield with \"Second chances exist.\" across the back.", "hoodie-back"),
 ("tank", "Say What You'll Do Tank", "Garment-dyed cotton tank",
  "The whole promise stacked across the upper back in cream and rust, with the shield on the chest. Garment-dyed for a soft, broken-in feel. XS to 3XL.", "tee-never-front"),
+("heart-tank", "Heartbeat Tank", "Women's flowy muscle tank",
+ "A small heartbeat on the chest, a reminder that you're still in this. Soft, drapey fit with low-cut armholes. White, S to 2XL.", "tee-never-front"),
 ("beanie", "Shield Beanie", "Organic cotton beanie",
  "Ribbed organic cotton knit with the Salvage Health shield embroidered on the cuff. Black or Navy, one size.", "beanie-rust"),
 ("stickers", "Sticker Pack", "Kiss-cut vinyl sheet",
