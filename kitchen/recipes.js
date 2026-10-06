@@ -722,7 +722,7 @@ window.SK = {
       ]
     },
     {
-      id: 'greek-chicken-bowls', lvl: 3, batch: true, name: 'Greek Chicken Bowls', cat: 'Lunch', tag: 'Meal prep', serves: 4, mins: 35,
+      id: 'greek-chicken-bowls', lvl: 3, photos: ['/kitchen/img/greek-chicken-bowls.jpg'], batch: true, name: 'Greek Chicken Bowls', cat: 'Lunch', tag: 'Meal prep', serves: 4, mins: 35,
       blurb: 'Lemon-oregano chicken over rice with cucumber, tomato, red onion, feta and a Greek yogurt tzatziki.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '2 lb (907 g) chicken breast', food: 'chicken-breast', g: 907 },
