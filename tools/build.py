@@ -1,6 +1,6 @@
 import os, json, html, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE, FEATURE, SB_URL, SB_KEY
+from content import ARTICLES, FAQ, DATE_ISO, DATE_TXT, ABOUT_SHORT, ABOUT_BODY, MERCH2, SHOP, LIVE, FEATURE, SB_URL, SB_KEY, SHOP_GROUPS, SHOP_ORDER
 FAQ = [(g, [(q, a.replace('PLACEHOLDER_SHORT', html.escape(ABOUT_SHORT))) for q, a in qs]) for g, qs in FAQ]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://salvagehealth.com"
@@ -200,57 +200,61 @@ ab = head("About Bryan Dourado | Salvage Health", "Bryan Dourado, founder of Sal
 write("/about/", ab)
 
 # merch
-SHSYM = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sh" viewBox="0 0 100 100"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="#BE5126" stroke-width="6" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="#FAF9F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>'
+FILTERS = [("all", "All"), ("new", "New"), ("men", "Men"), ("women", "Women"), ("accessories", "Accessories")]
+items = sorted([m for m in MERCH2 if m[0] in LIVE], key=lambda m: SHOP_ORDER.index(m[0]) if m[0] in SHOP_ORDER else 99)
+counts = {k: 0 for k, _ in FILTERS}
 cards = ""
-MD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "merch")
-for slug, name, cat, d, art in MERCH2:
-    svg = open(os.path.join(MD, art + ".svg")).read().replace("<svg ", f'<svg role="img" aria-label="{html.escape(name)} concept" ', 1)
-    if slug in LIVE:
-        price, url, ph = LIVE[slug]
-        pic = f'<img src="/merch/img/{ph[0]}.jpg" alt="{html.escape(name)}" loading="lazy"><img class="alt" src="/merch/img/{ph[1]}.jpg" alt="" loading="lazy">' if ph else svg
-        cards += f"""      <div class="mcard live" id="{slug}">
-        <a class="mimg{' photo' if ph else ''}" href="{url}" target="_blank" rel="noopener" aria-label="Buy the {html.escape(name)}">{pic}<span class="mtag">Available now</span></a>
-        <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p><div class="mbuy"><b>{price}</b><a class="btn solid" href="{url}" target="_blank" rel="noopener">Buy now</a></div></div>
-      </div>
+for slug, name, cat, d, art in items:
+    price, url, ph = LIVE[slug]
+    groups, is_new = SHOP_GROUPS.get(slug, ("accessories", False))
+    tags = groups + (" new" if is_new else "")
+    counts["all"] += 1
+    for t in tags.split(): counts[t] = counts.get(t, 0) + 1
+    n = html.escape(name)
+    badge = '<span class="stag">New</span>' if is_new else ""
+    alt = f'<img class="alt" src="/merch/img/{ph[1]}.jpg" alt="" loading="lazy" width="900" height="900">' if len(ph) > 1 else ""
+    cards += f"""      <article class="scard" data-tags="{tags}">
+        <a class="simg" href="{url}" target="_blank" rel="noopener" aria-label="{n}, {price}, on the Salvage Health store"><img src="/merch/img/{ph[0]}.jpg" alt="{n}" loading="lazy" width="900" height="900">{alt}{badge}</a>
+        <div class="stx">
+          <span class="scat">{html.escape(cat)}</span>
+          <h2><a href="{url}" target="_blank" rel="noopener">{n}</a></h2>
+          <p class="sdesc">{html.escape(d)}</p>
+          <div class="sbuy"><b>{price}</b><a class="sbtn" href="{url}" target="_blank" rel="noopener">Buy now</a></div>
+        </div>
+      </article>
 """
-    else:
-        cards += f"""      <div class="mcard" id="{slug}">
-        <div class="mimg">{svg}<span class="mtag soon">Coming soon</span></div>
-        <div class="mtx"><span class="cat">{cat}</span><h2>{html.escape(name)}</h2><p>{html.escape(d)}</p></div>
-      </div>
-"""
-fslug, fphotos = FEATURE
-fname, fcat, fdesc = next((n, c, d) for sl, n, c, d, _ in MERCH2 if sl == fslug)
-fprice, furl, _ = LIVE[fslug]
-thumbs = "".join(f'<button type="button" class="fth{" on" if i == 0 else ""}" data-src="/merch/img/{ph}.jpg" data-alt="{html.escape(alt)}" aria-label="Show photo {i+1}: {html.escape(alt)}"><img src="/merch/img/{ph}.jpg" alt="" loading="lazy"></button>' for i, (ph, alt) in enumerate(fphotos))
-feature = f"""    <section class="feat" aria-label="Featured: {html.escape(fname)}">
-      <div class="fgal">
-        <div class="fmain"><img id="fimg" src="/merch/img/{fphotos[0][0]}.jpg" alt="{html.escape(fphotos[0][1])}"></div>
-        <div class="fthumbs">{thumbs}</div>
-      </div>
-      <div class="ftx">
-        <p class="eyebrow">Available now</p>
-        <h2 class="disp">Built From <em>What's Left.</em></h2>
-        <p>The flagship tee. A small shield on the chest and the whole mission across the back in a worn-in print.</p>
-        <p>For anyone who has started over, more than once if that's what it took. You don't need a perfect starting point. You build with what you've got.</p>
-        <ul class="fspec"><li>Unisex fit, soft organic cotton, ribbed neck</li><li>Black, sizes S to 5XL</li><li>Printed to order, ships in 5 to 11 days</li></ul>
-        <div class="fbuy"><b>{fprice}</b><a class="btn solid" href="{furl}" target="_blank" rel="noopener">Buy now</a></div>
-      </div>
-    </section>
-    <script>document.querySelectorAll('.fth').forEach(function(b){{b.addEventListener('click',function(){{var i=document.getElementById('fimg');i.src=b.dataset.src;i.alt=b.dataset.alt;document.querySelectorAll('.fth').forEach(function(x){{x.classList.remove('on')}});b.classList.add('on');}});}});</script>
-    <h2 class="disp mhead">The <em>lineup</em></h2>
-"""
-mp = head("Merch | Salvage Health", "Salvage Health gear: shield tees, hoodies, beanies, stickers and lifting gear. Built from what's left. First tee available now.", "/merch/") + topbar("merch") + f"""  <main>
-    <div class="phead">
+chips = "".join(f'<button type="button" class="schip" data-f="{k}" aria-pressed="{"true" if k == "all" else "false"}">{lbl}<span>{counts.get(k, 0)}</span></button>' for k, lbl in FILTERS)
+mp = head("Merch | Salvage Health", "Salvage Health gear for men and women: tees, tanks, hoodies, hats, bags and gym accessories. Built from what's left.", "/merch/") + topbar("merch") + f"""  <main class="shop">
+    <div class="shead">
       <p class="eyebrow">Merch</p>
       <h1 class="disp">Wear the <em>reminder.</em></h1>
-      <p>Gear for people building from what's left. Every piece is a daily reminder that you said you'd show up. The first tee is live now, with more dropping soon.</p>
-      <p style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn solid" href="{SHOP}" target="_blank" rel="noopener">Shop the store</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow for new drops</a></p>
+      <p>Gear for people building from what's left. Printed to order and shipped in 5 to 11 days.</p>
     </div>
-{feature}    <div class="mgrid">
+    <div class="sbar" role="toolbar" aria-label="Filter products">{chips}</div>
+    <p class="scount" aria-live="polite"><span id="sn">{counts["all"]}</span> products</p>
+    <div class="sgrid" id="sgrid">
 {cards}    </div>
-    <p class="fine" style="margin-top:22px">Items marked Coming soon are previews. Final products, colors and details may change. Orders are printed to order and handled by our store partner, Fourthwall.</p>
+    <div class="snote">
+      <p>Every piece is printed to order and shipped by our store partner, Fourthwall. Questions about an order? Email <a href="mailto:hello@salvagehealth.com">hello@salvagehealth.com</a>.</p>
+      <p><a href="{SHOP}" target="_blank" rel="noopener">Browse the full store</a> · <a href="{IG}" target="_blank" rel="noopener">Follow for new drops</a></p>
+    </div>
   </main>
+  <script>
+  (function(){{
+    var chips=[].slice.call(document.querySelectorAll('.schip')),cards=[].slice.call(document.querySelectorAll('.scard')),n=document.getElementById('sn');
+    var ok=['all','new','men','women','accessories'];
+    function apply(f,push){{
+      if(ok.indexOf(f)<0)f='all';
+      var c=0;cards.forEach(function(el){{var show=f==='all'||(' '+el.dataset.tags+' ').indexOf(' '+f+' ')>-1;el.hidden=!show;if(show)c++;}});
+      chips.forEach(function(b){{var on=b.dataset.f===f;b.setAttribute('aria-pressed',on);if(on&&b.scrollIntoView&&push)b.scrollIntoView({{block:'nearest',inline:'center'}});}});
+      n.textContent=c;
+      if(push)history.replaceState(null,'',f==='all'?location.pathname:'#'+f);
+    }}
+    chips.forEach(function(b){{b.addEventListener('click',function(){{apply(b.dataset.f,true);var g=document.querySelector('.sbar');if(g.getBoundingClientRect().top<0)window.scrollTo({{top:g.offsetTop-4}});}});}});
+    apply(location.hash.slice(1),false);
+    window.addEventListener('hashchange',function(){{apply(location.hash.slice(1),false);}});
+  }})();
+  </script>
 """ + FOOT
 write("/merch/", mp)
 
