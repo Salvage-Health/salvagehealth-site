@@ -1068,7 +1068,7 @@ window.SK = {
       ]
     },
     {
-      id: 'protein-pancakes', lvl: 3, veg: true, name: 'Banana Protein Pancakes', cat: 'Breakfast', tag: 'Weekend', serves: 2, mins: 15,
+      id: 'protein-pancakes', lvl: 3, photos: ['/kitchen/img/banana-protein-pancakes.jpg'], veg: true, name: 'Banana Protein Pancakes', cat: 'Breakfast', tag: 'Weekend', serves: 2, mins: 15,
       blurb: 'Blender pancakes made from oats, banana, eggs and protein powder. No flour, no mix, still fluffy.',
       items: [
         { need: 'oats', txt: '1 cup (80 g) rolled oats', food: 'oats', g: 80 },
