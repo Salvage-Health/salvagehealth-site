@@ -973,7 +973,7 @@ window.SK = {
       ]
     },
     {
-      id: 'turkey-meatballs-pasta', lvl: 4, batch: true, name: 'Turkey Meatballs and Marinara Pasta', cat: 'Dinner', tag: 'Family', serves: 4, mins: 35,
+      id: 'turkey-meatballs-pasta', lvl: 4, photos: ['/kitchen/img/turkey-meatballs-pasta.jpg'], batch: true, name: 'Turkey Meatballs and Marinara Pasta', cat: 'Dinner', tag: 'Family', serves: 4, mins: 35,
       blurb: 'Tender parmesan turkey meatballs baked, then simmered in marinara and served over pasta. Sunday dinner that fits the plan.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '1 1/2 lb (680 g) lean ground turkey', food: 'ground-turkey', g: 680 },
