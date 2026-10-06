@@ -318,6 +318,7 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "heart-tank": ("$32", SHOP + "/products/heartbeat-tank", ("heart-tank-model-front", "heart-tank-model-back")),
         "bag": ("$28", SHOP + "/products/salvage-pulse-drawstring-bag", ("bag-front", "bag-detail")),
         "hat": ("$32", SHOP + "/products/salvage-pulse-trucker-hat", ("hat-angle", "hat-front")),
+        "crop-hoodie": ("$58", SHOP + "/products/salvage-pulse-crop-hoodie", ("crop-hoodie-front", "crop-hoodie-side")),
         "log": ("$22", SHOP + "/products/salvage-health-training-log", ("log-front", "log-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
@@ -343,6 +344,8 @@ MERCH2 = [
  "A small heartbeat on the chest, a reminder that you're still in this. Soft, drapey fit with low-cut armholes. White, S to 2XL.", "tee-never-front"),
 ("hat", "Salvage Pulse Trucker Hat", "Embroidered camo trucker",
  "A heartbeat that writes SALVAGE, stitched in white on the side front. Woodland camo with a black mesh back and adjustable snap. One size.", "beanie-rust"),
+("crop-hoodie", "Salvage Pulse Crop Hoodie", "Women's fleece crop hoodie",
+ "A heartbeat heart on the chest and SALVAGE running down the left sleeve. Super-soft midweight fleece, regular fit, S to 2XL.", "hoodie-front"),
 ("beanie", "Shield Beanie", "Organic cotton beanie",
  "Ribbed organic cotton knit with the Salvage Health shield embroidered on the cuff. Black or Navy, one size.", "beanie-rust"),
 ("stickers", "Sticker Pack", "Kiss-cut vinyl sheet",
