@@ -179,7 +179,7 @@ home = head("Salvage Health | It's never too late to take your life back",
       <p class="eyebrow">How it works</p>
       <h2 class="disp">Learn it. Plan it. <em>Cook it.</em></h2>
       <div class="steps3">
-        <a class="st3" href="#book"><span class="n">1</span><h3>Learn how it works</h3><p>Calories, protein, training and sleep in plain English. The book is free to listen to on Spotify.</p><span class="go">Start the book &rarr;</span></a>
+        <a class="st3" href="#book"><span class="n">1</span><h3>Learn how it works</h3><p>Calories, protein, training and sleep in plain English. The audiobook is included with Spotify Premium.</p><span class="go">Start the book &rarr;</span></a>
         <a class="st3" href="/companion/"><span class="n">2</span><h3>Get your numbers</h3><p>The free app turns your height, weight and goal into your daily calorie and protein targets.</p><span class="go">Build your free plan &rarr;</span></a>
         <a class="st3" href="/kitchen/"><span class="n">3</span><h3>Cook food you like</h3><p>{NREC} high-protein recipes with real step-by-steps. Tell it what's in your fridge and it finds dinner.</p><span class="go">Open the kitchen &rarr;</span></a>
       </div>
@@ -225,10 +225,10 @@ home = head("Salvage Health | It's never too late to take your life back",
         <div>
           <p class="eyebrow">The book</p>
           <h2 class="disp">Fitness Without the Fear</h2>
-          <p class="lead">The plain-English guide I couldn't find when I started. Listen free, or read it on Kindle.</p>
+          <p class="lead">The plain-English guide I couldn't find when I started. Read it on Kindle, or listen on Spotify (included with Premium).</p>
           <div class="btns">
-            <a class="btn solid" href="{SPOTIFY}" target="_blank" rel="noopener">Listen free on Spotify</a>
-            <a class="btn line" href="{KINDLE}" target="_blank" rel="noopener">Kindle edition</a>
+            <a class="btn solid" href="/book">Get the book</a>
+            <a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen on Spotify</a>
           </div>
         </div>
       </div>
@@ -529,8 +529,8 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
     </section>
 
     <section style="padding-top:44px">
-      <div class="kit"><div><p class="eyebrow">Keep going</p><h2 class="disp">Want the <em>why</em> behind it?</h2><p class="lead">The book explains everything in this kit in plain English. Listen free on Spotify.</p></div>
-        <div style="display:grid;gap:10px"><a class="btn solid" href="{SPOTIFY}" target="_blank" rel="noopener">Listen free on Spotify</a><a class="btn line" href="/kitchen/">Browse all {NREC} recipes</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow on Instagram</a></div></div>
+      <div class="kit"><div><p class="eyebrow">Keep going</p><h2 class="disp">Want the <em>why</em> behind it?</h2><p class="lead">The book explains everything in this kit in plain English. Kindle, or the audiobook on Spotify (included with Premium).</p></div>
+        <div style="display:grid;gap:10px"><a class="btn solid" href="/book">Get the book</a><a class="btn line" href="/kitchen/">Browse all {NREC} recipes</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow on Instagram</a></div></div>
     </section>
   </main>
   <script>window.SH_ARTICLES = """ + _json.dumps({a['slug']: a['title'] for a in ARTICLES}) + """;</script>

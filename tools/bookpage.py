@@ -78,7 +78,7 @@ def buy_buttons(extra_cls=""):
     pb = (f'<a class="btn line" href="{PB}" target="_blank" rel="noopener">Paperback<small>${PAPERBACK_PRICE}</small></a>' if PB else "")
     return f"""<div class="bp-buy {extra_cls}">
         <a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Get it on Kindle<small>${KINDLE_PRICE}</small></a>
-        <a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen free on Spotify</a>
+        <a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen on Spotify</a>
         {pb}
       </div>"""
 
@@ -96,7 +96,7 @@ FAQ = [
     ("Is this a diet book?", "No. There is no diet to follow and nothing to buy. It teaches you how calories, protein, training and recovery actually work, so you can build a plan that fits your life and keep it."),
     ("Do I need a gym?", "No. The training chapters work for a gym, home or a mix. The point is training with intention, not owning equipment."),
     ("What's the difference between the formats?", "Same book. The Kindle eBook and paperback include the worksheet, sources and glossary. The audiobook is the full book narrated, and the worksheet, sources and glossary live on the free companion page instead."),
-    ("Is the audiobook really free?", "It streams on Spotify. Depending on your Spotify plan, it may be included or available to purchase."),
+    ("Is the audiobook free?", "If you have Spotify Premium, it's included in your plan at no extra cost. Without Premium, you can buy it on Spotify, and the price is set by Spotify and can vary by account and country."),
     ("Are you a doctor?", "No, and the book says so up front. I'm someone who did the research, tested it on myself and documented what worked. Every factual claim has a source listed in the back, and the book tells you when to talk to your doctor."),
 ]
 
@@ -173,7 +173,7 @@ bp = head("Fitness Without the Fear by Bryan Dourado | The No-BS Beginner's Guid
       <h2 class="disp">Read it, hear it, <em>or hold it</em></h2>
       <div class="bp-fmt">
         <a class="best" href="{KINDLE}" target="_blank" rel="noopener"><small>Most popular</small><h3>Kindle eBook</h3><div class="price">${KINDLE_PRICE}</div><p>Read on any phone, tablet or Kindle. Includes the worksheet, sources and glossary.</p><span class="go">Get it on Amazon &rarr;</span></a>
-        <a href="{SPOTIFY}" target="_blank" rel="noopener"><small>Listen anywhere</small><h3>Audiobook</h3><div class="price">Spotify</div><p>The full book, narrated. Perfect for the gym, the commute or a walk.</p><span class="go">Listen on Spotify &rarr;</span></a>
+        <a href="{SPOTIFY}" target="_blank" rel="noopener"><small>Listen anywhere</small><h3>Audiobook</h3><div class="price">Spotify</div><p>The full book, narrated. Included with Spotify Premium, or buy it on Spotify. Perfect for the gym, the commute or a walk.</p><span class="go">Listen on Spotify &rarr;</span></a>
         {pb_card}
       </div>
     </section>
@@ -201,6 +201,6 @@ bp = head("Fitness Without the Fear by Bryan Dourado | The No-BS Beginner's Guid
     </div>
     <p class="bp-rev">Already read it? <a href="{REVIEW}" target="_blank" rel="noopener">Leave a quick review on Amazon</a>. It is the single biggest thing that helps an independent book get found.</p>
   </main>
-  <div class="bp-sticky"><a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a><a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen free</a></div>
+  <div class="bp-sticky"><a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a><a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Spotify</a></div>
 """ + FOOT
 write("/book/", bp)

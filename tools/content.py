@@ -256,7 +256,7 @@ FAQ = [
  ("Is this for me if I'm older, heavier, or dealing with health problems?", "<p>Yes. You're never too old, too sick, too heavy or too thin to do something. Start where you are, and if you have a medical condition, bring your doctor into the loop before you change how you eat or train.</p>"),
 ]),
 ("The book and the app", [
- ("Where can I get Fitness Without the Fear?", "<p>The audiobook is <a href=\"https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw\" target=\"_blank\" rel=\"noopener\">free on Spotify</a>. The ebook is on <a href=\"https://www.amazon.com/dp/B0HLTN491G\" target=\"_blank\" rel=\"noopener\">Kindle</a>. The paperback is coming soon to Amazon.</p>"),
+ ("Where can I get Fitness Without the Fear?", "<p>The audiobook is <a href=\"https://open.spotify.com/show/1cWhytGxaBKPY5N36sD5aw\" target=\"_blank\" rel=\"noopener\">on Spotify</a> (included with Spotify Premium). The ebook is on <a href=\"https://www.amazon.com/dp/B0HLTN491G\" target=\"_blank\" rel=\"noopener\">Kindle</a>. The paperback is coming soon to Amazon.</p>"),
  ("What is the companion app?", "<p>A free tool at <a href=\"/companion/\">salvagehealth.com/companion</a> that turns the book into your personal plan. Enter your stats and goal, and it calculates your calories, protein, fat and carbs and a realistic goal date. You can save your plan as a PDF or print the worksheet instead.</p>"),
  ("Does the app store my information?", "<p>No. Everything you enter stays on your own device. Nothing is sent to us or anyone else.</p>"),
  ("Do I need the book to use the app?", "<p>No, but they work best together. Each chapter explains the reasoning behind one section of your plan.</p>"),
