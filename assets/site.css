@@ -171,9 +171,17 @@ html,body{overflow-x:clip}
 .lmenu a{padding:13px 2px;border-bottom:1px solid var(--rule);color:var(--fg);text-decoration:none;font-weight:600;font-size:16px}
 .lmenu a[aria-current]{color:var(--rust-text)}
 .lmenu .lmk{margin-top:14px;border:0;border-radius:10px;background:var(--rust);color:#FAF9F5;text-align:center;padding:13px}
+.lpb{gap:14px}
+.lpb b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;letter-spacing:.8px;font-size:16px}
+.lbuy,.lbuy2{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:99px;font-weight:700;font-size:13.5px;text-decoration:none;color:#FAF9F5}
+.lbuy{background:#141413}.lbuy:hover{background:#000}
+.lbuy2{border:1.5px solid rgba(250,249,245,.7)}.lbuy2:hover{border-color:#FAF9F5;background:rgba(0,0,0,.12)}
+.launch.lghost{position:fixed;left:0;right:0;margin:0;padding:0 max(20px,calc(50% - 500px));transform:translateY(-110%);transition:transform .25s ease;visibility:hidden}
+.launch.lghost.sc{transform:none;visibility:visible}
+@media (max-width:760px){.lpb .lbuy,.lpb .lbuy2{display:none}}
 @media (min-width:901px){.launch.sc .ln{display:flex}}
 @media (max-width:900px){.launch.sc .lm{display:inline-flex}.launch.sc{gap:8px}.launch.sc .lp{overflow:hidden}}
-@media (max-width:420px){.launch.sc .lp b{display:none}}
+@media (max-width:420px){.launch.sc .lp:not(.lpb) b{display:none}}
 
 /* merch shop (filters + compact grid) */
 .shop .shead{padding:30px 0 14px;max-width:760px}

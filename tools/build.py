@@ -46,13 +46,23 @@ def topbar(active):
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{href}"{cur}{c}>{label}</a>'
     cta = "" if active in ("start",) else '<a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>'
+    # Pinned bar. Left: the book promo (or, on the book page, buy buttons). Right, after scrolling: quick links
+    # to the other main pages (never the page you're on) plus the Starter Kit button (not on the Starter Kit pages).
     links = [("/book", "The Book", "thebook"), ("/kitchen/", "Kitchen", "kitchen"), ("/articles/", "Articles", "articles"), ("/merch/", "Merch", "merch"), ("/about/", "About", "about")]
-    ql = "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links if k != "thebook")
-    ml = "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links) + '<a class="lmk" href="/start/">Free Starter Kit</a>'
+    kit = active != "start"
+    ql = "".join(f'<a href="{h}">{l}</a>' for h, l, k in links if k not in (active, "thebook")) + ('<a class="lnc" href="/start/">Starter Kit</a>' if kit else "")
+    ml = "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links) + ('<a class="lmk" href="/start/">Free Starter Kit</a>' if kit else "")
     burger = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
-    bar = "" if active in ("thebook", "members") else (
-        '<div class="launch" id="lb"><a class="lp" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>'
-        f'<nav class="ln" aria-label="Quick links">{ql}<a class="lnc" href="/start/">Starter Kit</a></nav>'
+    if active == "thebook":
+        promo = (f'<span class="lp lpb"><b>Fitness Without the Fear</b><a class="lbuy" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a>'
+                 f'<a class="lbuy2" href="{SPOTIFY}" target="_blank" rel="noopener">Listen on Spotify</a></span>')
+        cls = "launch lghost"
+    else:
+        promo = '<a class="lp" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>'
+        cls = "launch"
+    bar = "" if active == "members" else (
+        f'<div class="{cls}" id="lb">{promo}'
+        f'<nav class="ln" aria-label="Quick links">{ql}</nav>'
         f'<button class="lm" type="button" aria-label="Menu" aria-expanded="false" aria-controls="lmenu">{burger}</button>'
         f'<div class="lmenu" id="lmenu" hidden>{ml}</div></div>\n'
         "<script>(function(){var b=document.getElementById('lb');if(!b)return;var m=b.querySelector('.lm'),d=document.getElementById('lmenu');"
@@ -282,7 +292,7 @@ KCSS = """<style>
 .ktab{min-height:44px;white-space:nowrap;padding:0 8px;border:0;border-radius:9px;background:transparent;color:var(--dim);font:700 14.5px Inter,sans-serif;cursor:pointer}
 .ktab.on{background:var(--fg);color:#141413}
 .ktab span:not(:empty){display:inline-block;min-width:20px;margin-left:6px;padding:1px 6px;border-radius:99px;background:var(--rust);color:#FAF9F5;font-size:12px}
-.kbar{position:sticky;top:0;z-index:5;background:var(--bg);margin:14px -20px 0;padding:12px 20px 10px;border-bottom:1px solid var(--rule)}
+.kbar{position:sticky;top:var(--lb);z-index:5;background:var(--bg);margin:14px -20px 0;padding:12px 20px 10px;border-bottom:1px solid var(--rule)}
 .kin{width:100%;min-height:46px;padding:10px 14px 10px 40px;border-radius:10px;border:1px solid var(--rule);background:var(--raised) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%239C9A93' stroke-width='2'%3E%3Ccircle cx='8' cy='8' r='6'/%3E%3Cpath d='M12.5 12.5L17 17'/%3E%3C/svg%3E") no-repeat 13px center;color:var(--fg);font:inherit;font-size:16px}
 .kin:focus{outline:2px solid var(--rust-text);outline-offset:1px}
 .kfil{display:flex;gap:8px;overflow-x:auto;margin:10px -20px 0;padding:0 20px 2px;scroll-padding-inline:20px;scrollbar-width:none}
