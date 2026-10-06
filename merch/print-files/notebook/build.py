@@ -23,7 +23,7 @@ body{{font-family:Inter,Arial,sans-serif;color:{S};background:#fff;-webkit-font-
 .eyebrow{{font:700 9px Inter;letter-spacing:2.6px;text-transform:uppercase;color:{R}}}
 h1{{font-family:Oswald;font-weight:700;text-transform:uppercase;font-size:34px;line-height:1;margin:6px 0 4px;letter-spacing:.4px}}
 .sub{{font-size:11px;color:#55534d;line-height:1.45}}
-.foot{{position:absolute;bottom:18px;left:0;right:0;text-align:center;font:600 7.5px Inter;letter-spacing:2px;color:{M};text-transform:uppercase}}
+.foot{{position:absolute;bottom:30px;left:0;right:0;text-align:center;font:600 7.5px Inter;letter-spacing:2px;color:{M};text-transform:uppercase}}
 .field{{display:flex;align-items:flex-end;gap:8px;margin-top:15px;font-size:11.5px;font-weight:600}}
 .field span.l{{white-space:nowrap}}
 .field span.line{{flex:1;border-bottom:1.3px solid {L};height:16px}}
