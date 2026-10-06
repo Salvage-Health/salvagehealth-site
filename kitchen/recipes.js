@@ -1126,7 +1126,7 @@ window.SK = {
       ]
     },
     {
-      id: 'cheeseburger-bowls', lvl: 3, name: 'Cheeseburger Bowls', cat: 'Dinner', tag: 'Meal prep', serves: 4, mins: 35,
+      id: 'cheeseburger-bowls', lvl: 3, photos: ['/kitchen/img/cheeseburger-bowls.jpg'], name: 'Cheeseburger Bowls', cat: 'Dinner', tag: 'Meal prep', serves: 4, mins: 35,
       blurb: 'Everything you love about a burger with fries: lean beef, crispy potatoes, lettuce, tomato, cheese and burger sauce.',
       items: [
         { need: 'ground-beef', or: ['ground-turkey'], txt: '1 1/2 lb (680 g) 93% lean ground beef', food: 'ground-beef', g: 680 },
