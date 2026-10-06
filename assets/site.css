@@ -147,8 +147,11 @@ a.mimg{text-decoration:none}
 .railbtn[hidden]{display:none!important}
 @media (pointer:fine){.railbtn{display:grid;place-items:center}.rail.drag,.krail.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}.rail,.krail{cursor:grab}}
 
-.launch{display:block;margin:0 -20px;padding:9px 20px;background:var(--rust);box-shadow:0 0 0 100vmax var(--rust);clip-path:inset(0 -100vmax);color:#FAF9F5;text-align:center;font-size:13.5px;text-decoration:none;line-height:1.4}
-.launch .nw{display:inline-block;background:#141413;color:#FAF9F5;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:99px;margin-right:4px;vertical-align:1px}
+.launch{position:sticky;top:0;z-index:60;display:block;height:var(--lb);box-sizing:border-box;margin:0 -20px;padding:0 20px;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;background:var(--rust);box-shadow:0 0 0 100vmax var(--rust);clip-path:inset(0 -100vmax);color:#FAF9F5;text-align:center;font-size:15.5px;text-decoration:none;line-height:1.2}
+:root{--lb:52px}
+@media (max-width:600px){:root{--lb:46px}.launch{font-size:14px}.launch .lo{display:none}}
+@media (max-width:360px){.launch .nw{display:none}}
+.launch .nw{display:inline-block;background:#141413;color:#FAF9F5;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-right:4px}
 .launch u{text-underline-offset:3px;font-weight:700}
 .launch:hover{background:#A9461F;box-shadow:0 0 0 100vmax #A9461F}
 
@@ -156,7 +159,7 @@ a.mimg{text-decoration:none}
 .shop .shead{padding:30px 0 14px;max-width:760px}
 .shop .shead h1{font-size:clamp(30px,4.4vw,46px)}
 .shop .shead p:not(.eyebrow){color:var(--dim);margin:12px 0 0;font-size:clamp(16px,1.8vw,18px)}
-.sbar{position:sticky;top:0;z-index:20;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:12px 20px;background:var(--bg);border-bottom:1px solid var(--rule)}
+.sbar{position:sticky;top:var(--sbtop,0);z-index:20;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:12px 20px;background:var(--bg);border-bottom:1px solid var(--rule)}
 .sbar::-webkit-scrollbar{display:none}
 .sbar::after{content:'';flex:0 0 8px}
 .schip{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:8px 16px;border-radius:99px;border:1px solid var(--rule);background:transparent;color:var(--dim);font:600 14px Inter,sans-serif;cursor:pointer;white-space:nowrap;transition:border-color .15s,background .15s,color .15s}

@@ -46,7 +46,7 @@ def topbar(active):
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{href}"{cur}{c}>{label}</a>'
     cta = "" if active in ("start",) else '<a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>'
-    bar = "" if active in ("thebook", "members") else '<a class="launch" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> is out now. <u>Get the book</u></a>\n'
+    bar = "" if active in ("thebook", "members") else '<a class="launch" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>\n'
     return bar + f"""  <header class="top">
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
@@ -224,7 +224,7 @@ for slug, name, cat, d, art in items:
       </article>
 """
 chips = "".join(f'<button type="button" class="schip" data-f="{k}" aria-pressed="{"true" if k == "all" else "false"}">{lbl}<span>{counts.get(k, 0)}</span></button>' for k, lbl in FILTERS)
-mp = head("Merch | Salvage Health", "Salvage Health gear for men and women: tees, tanks, hoodies, hats, bags and gym accessories. Built from what's left.", "/merch/") + topbar("merch") + f"""  <main class="shop">
+mp = head("Merch | Salvage Health", "Salvage Health gear for men and women: tees, tanks, hoodies, hats, bags and gym accessories. Built from what's left.", "/merch/") + topbar("merch") + f"""  <main class="shop" style="--sbtop:var(--lb)">
     <div class="shead">
       <p class="eyebrow">Merch</p>
       <h1 class="disp">Wear the <em>reminder.</em></h1>
