@@ -954,7 +954,7 @@ window.SK = {
       ]
     },
     {
-      id: 'honey-garlic-salmon', lvl: 2, name: 'Honey Garlic Salmon and Asparagus', cat: 'Dinner', tag: 'Sheet pan', serves: 4, mins: 25,
+      id: 'honey-garlic-salmon', lvl: 2, photos: ['/kitchen/img/honey-garlic-salmon.jpg'], name: 'Honey Garlic Salmon and Asparagus', cat: 'Dinner', tag: 'Sheet pan', serves: 4, mins: 25,
       blurb: 'Sticky honey-garlic glazed salmon roasted on one pan with asparagus. Restaurant flavor in 25 minutes.',
       items: [
         { need: 'salmon', or: ['white-fish'], txt: '1 1/2 lb (680 g) salmon fillets', food: 'salmon', g: 680 },
