@@ -559,7 +559,7 @@ window.SK = {
       ]
     },
     {
-      id: 'street-tacos', lvl: 3, cat: 'Dinner',
+      id: 'street-tacos', lvl: 3, photos: ['/kitchen/img/chicken-street-tacos.jpg'], cat: 'Dinner',
       name: 'Chicken Street Tacos',
       tag: 'Quick',
       serves: 4, mins: 25,
