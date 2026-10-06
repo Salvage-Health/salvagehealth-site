@@ -876,7 +876,7 @@ window.SK = {
       ]
     },
     {
-      id: 'sheet-pan-fajitas', lvl: 2, batch: true, name: 'Sheet Pan Chicken Fajitas', cat: 'Dinner', tag: 'Sheet pan', serves: 4, mins: 30,
+      id: 'sheet-pan-fajitas', lvl: 2, photos: ['/kitchen/img/sheet-pan-fajitas.jpg'], batch: true, name: 'Sheet Pan Chicken Fajitas', cat: 'Dinner', tag: 'Sheet pan', serves: 4, mins: 30,
       blurb: 'Chicken, peppers and onions roasted on one pan with fajita spices. Wrap them up or eat them over rice.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs', 'shrimp'], txt: '1 1/2 lb (680 g) chicken breast, sliced into strips', food: 'chicken-breast', g: 680 },
