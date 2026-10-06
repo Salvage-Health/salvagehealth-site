@@ -316,6 +316,7 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "towel": ("$26", SHOP + "/products/say-what-youll-do-gym-towel", ("towel-front", "towel-detail")),
         "tank": ("$36", SHOP + "/products/say-what-youll-do-tank", ("tank-model-back", "tank-model-front")),
         "heart-tank": ("$32", SHOP + "/products/heartbeat-tank", ("heart-tank-model-front", "heart-tank-model-back")),
+        "bag": ("$28", SHOP + "/products/salvage-pulse-drawstring-bag", ("bag-front", "bag-detail")),
         "log": ("$22", SHOP + "/products/salvage-health-training-log", ("log-front", "log-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
@@ -345,6 +346,8 @@ MERCH2 = [
  "Five waterproof stickers on one 5.5 in sheet: the shield, the wordmark, Never Too Late, Say What You'll Do and the badge. For your bottle, laptop, locker or lifting belt.", "stickers"),
 ("towel", "Say What You'll Do Gym Towel", "Sweat towel",
  "Clip-on gym towel with a grommet and hook. \"Say what you'll do. Do what you say.\" printed edge to edge.", "straps"),
+("bag", "Salvage Pulse Drawstring Bag", "Drawstring gym bag",
+ "A heart monitor line that beats once, writes SALVAGE and keeps going. Black, printed edge to edge, 15 x 17 in (38 x 43 cm). Holds your shoes, shaker and towel.", "straps"),
 ("log", "Salvage Health Training Log", "Softcover journal, 100 pages",
  "Write the promise down in the morning, check it off at night. Your numbers, how to log a day, 12 weeks of check-ins, a 30-day habit tracker and a protein cheat sheet. 5.75 x 8 in (14.6 x 20.3 cm).", "belt"),
 ("tumbler", "Salvage Tumbler", "40 oz insulated tumbler",
