@@ -140,6 +140,12 @@
         '<text ' + O + ' font-size="67.9" fill="' + B + '" x="2" y="185.9" textLength="296" lengthAdjust="spacing">YOU\'LL DO.</text>' +
         '<text ' + O + ' font-size="80.3" fill="' + R + '" x="2" y="264.8" textLength="296" lengthAdjust="spacing">DO WHAT</text>' +
         '<text ' + O + ' font-size="82.7" fill="' + R + '" x="2" y="345.7" textLength="296" lengthAdjust="spacing">YOU SAY.</text>') },
+    { id: 'tank-back-text', name: 'Tank, back: Say What You\'ll Do (text only, no shield)', place: 'Upper back, 10 in (25 cm) wide, 3 in (8 cm) below collar', inches: 10, bg: 'dark',
+      svg: svg('0 51 300 301',
+        '<text ' + O + ' font-size="73.6" fill="' + B + '" x="2" y="117.3" textLength="296" lengthAdjust="spacing">SAY WHAT</text>' +
+        '<text ' + O + ' font-size="67.9" fill="' + B + '" x="2" y="185.9" textLength="296" lengthAdjust="spacing">YOU\'LL DO.</text>' +
+        '<text ' + O + ' font-size="80.3" fill="' + R + '" x="2" y="264.8" textLength="296" lengthAdjust="spacing">DO WHAT</text>' +
+        '<text ' + O + ' font-size="82.7" fill="' + R + '" x="2" y="345.7" textLength="296" lengthAdjust="spacing">YOU SAY.</text>') },
     { id: 'socks', name: 'Crew socks: full wrap, left and right', place: 'Full sock template (Tribe TC001), both socks', inches: 46.67, bg: 'dark',
       svg: (function () {
         var sock = function (ox, side, sideFill) {
