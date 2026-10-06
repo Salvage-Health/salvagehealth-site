@@ -418,7 +418,10 @@ dialog#dlg::backdrop{background:rgba(0,0,0,.7)}
 .dgal{position:relative;margin:0 0 4px}
 .dpics{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .dpics::-webkit-scrollbar{display:none}
-.dpics img{flex:0 0 100%;width:100%;aspect-ratio:4/3;object-fit:cover;display:block;scroll-snap-align:start}
+.dpic{position:relative;flex:0 0 100%;height:min(64vh,620px);overflow:hidden;scroll-snap-align:start;background:#1A1917}
+.dpic::before{content:'';position:absolute;inset:-30px;background:var(--bg) center/cover;filter:blur(28px) brightness(.55)}
+.dpic img{position:relative;width:100%;height:100%;object-fit:contain;display:block}
+@media (max-width:760px){.dpic{height:auto;aspect-ratio:1/1}}
 .dnav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:0;background:rgba(20,20,19,.7);color:#FAF9F5;font-size:26px;line-height:1;cursor:pointer}
 .dnav.prev{left:10px}.dnav.next{right:10px}
 .dcount{position:absolute;bottom:10px;right:10px;background:rgba(20,20,19,.75);color:#FAF9F5;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px}

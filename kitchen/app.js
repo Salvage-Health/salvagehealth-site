@@ -203,7 +203,7 @@
       return '<li class="' + cls + '">' + (lab ? '<span class="lab">' + lab + '</span>' : '<span class="lab"></span>') + '<span>' + esc(it.txt) + alt + '</span></li>';
     }).join('');
     var n = r.photos ? r.photos.length : 0;
-    var gal = n ? '<div class="dgal"><div class="dpics" id="dpics">' + r.photos.map(function (u, i) { return '<img src="' + u + '" alt="' + esc(r.name) + ', photo ' + (i + 1) + ' of ' + n + '">'; }).join('') + '</div>' +
+    var gal = n ? '<div class="dgal"><div class="dpics" id="dpics">' + r.photos.map(function (u, i) { return '<span class="dpic" style="--bg:url(\'' + u + '\')"><img src="' + u + '" alt="' + esc(r.name) + ', photo ' + (i + 1) + ' of ' + n + '"></span>'; }).join('') + '</div>' +
       (n > 1 ? '<button type="button" class="dnav prev" data-d="-1" aria-label="Previous photo">&#8249;</button><button type="button" class="dnav next" data-d="1" aria-label="Next photo">&#8250;</button><span class="dcount" id="dcount">1 / ' + n + '</span>' : '') + '</div>' : '';
     var det = (window.SK_STEPS || {})[r.id];
     var steps = det ? '<p class="fine2">Tap a step to check it off as you cook.</p><ol class="stepsl det">' + det.steps.map(function (s) { return '<li tabindex="0" role="checkbox" aria-checked="false"><b>' + esc(s.t) + '</b><span>' + esc(s.d) + '</span></li>'; }).join('') + '</ol>' +
