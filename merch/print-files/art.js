@@ -155,7 +155,7 @@
     { id: 'womens-heart', name: 'Women\'s tank, front: heartbeat heart', place: 'Left chest, 3 in (7.5 cm) wide', inches: 3, bg: 'light',
       svg: svg('4 14 92 80', '<path d="M50 86 C27 71 12 56 15 39 C18 25 35 19 50 35 C65 19 82 25 85 39 C88 56 73 71 50 86 Z" fill="none" stroke="' + R + '" stroke-width="3.6" stroke-linejoin="round"/>' +
         '<path d="M8 53 H31 L38 41 L46 67 L53 46 L58 53 H92" fill="none" stroke="' + S + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>') },
-    { id: 'heart-dark', name: 'Heartbeat heart (for dark garments)', place: 'Left chest, 3 in (7.5 cm) wide', inches: 3, bg: 'dark',
+    { id: 'heart-dark', name: 'Heartbeat heart (for dark garments)', place: 'Left chest, 3 in (7.5 cm) wide', inches: 7, bg: 'dark',
       svg: svg('4 14 92 80', '<path d="M50 86 C27 71 12 56 15 39 C18 25 35 19 50 35 C65 19 82 25 85 39 C88 56 73 71 50 86 Z" fill="none" stroke="' + R + '" stroke-width="3.6" stroke-linejoin="round"/>' +
         '<path d="M8 53 H31 L38 41 L46 67 L53 46 L58 53 H92" fill="none" stroke="' + B + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>') },
     { id: 'bag-front', name: 'Drawstring bag: full front (black)', place: 'Full bag front, edge to edge (Sublicolor 604)', inches: 16, bg: 'dark',
