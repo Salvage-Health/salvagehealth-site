@@ -141,24 +141,24 @@ _tee = "/merch/img/tee-built-model-side.jpg"
 _art = ARTICLES[0]
 
 home = head("Salvage Health | It's never too late to take your life back",
-            "Think you're too far gone to start? Bryan Dourado went from 265 lbs and prediabetic to 178 lbs. Get the free Day One Starter Kit, 65 free high-protein recipes and the plain-English guide to building your own plan.",
+            "Think you're too far gone to start? Bryan Dourado lost over 80 pounds and reversed his prediabetes. Get the free Day One Starter Kit, 65 free high-protein recipes and the plain-English guide to building your own plan.",
             "/", HOMECSS) + topbar("home") + f"""  <main class="hm">
     <div class="hero2">
       <div>
         <p class="eyebrow">For anyone who thinks they're too far gone</p>
         <h1 class="disp">It's never too late to <em>take your life back.</em></h1>
-        <p class="lead">I was 265 pounds, prediabetic and out of chances. Fourteen months later I was 178. Not because I found a magic plan, but because I finally understood how this works. I'll show you how to start from exactly where you are.</p>
+        <p class="lead">I was prediabetic, way overweight and out of chances. Fourteen months later I was over 80 pounds lighter. Not because I found a magic plan, but because I finally understood how this works. I'll show you how to start from exactly where you are.</p>
         {optin("home-hero", "Get the free Starter Kit")}
         <a class="alt" href="/kitchen/">Or browse {NREC} free recipes &rarr;</a>
       </div>
       <figure class="ba">
-        <img src="/brand/before-after.jpg" alt="Bryan before at 265 pounds and after at 178 pounds, fourteen months apart" width="900" height="1095" fetchpriority="high">
-        <figcaption><span>265 lbs<small>April 2025</small></span><span>178 lbs<small>14 months later</small></span></figcaption>
+        <img src="/brand/before-after.jpg" alt="Bryan before and after losing over 80 pounds, fourteen months apart" width="900" height="1095" fetchpriority="high">
+        <figcaption><span>Before<small>April 2025</small></span><span>80+ lbs lighter<small>14 months later</small></span></figcaption>
       </figure>
     </div>
 
     <div class="proof" aria-label="Bryan's results">
-      <div><b>87 lbs <i>down</i></b><small>265 to 178 lbs (120 to 81 kg)</small></div>
+      <div><b>80+ lbs <i>down</i></b><small>In 14 months (36+ kg)</small></div>
       <div><b>A1C 5.9 <i>&rarr;</i> 4.6</b><small>Prediabetic to normal</small></div>
       <div><b>Sleep apnea <i>gone</i></b><small>Blood pressure normal</small></div>
     </div>
@@ -268,12 +268,12 @@ start = head("Free Day One Starter Kit | Salvage Health",
       <div>
         <p class="eyebrow">Free Day One Starter Kit</p>
         <h1 class="disp">Think you're too far gone? <em>Start here.</em></h1>
-        <p class="lead">I went from 265 pounds and prediabetic to 178. This is the exact first week I'd give anyone starting from where I was. Enter your email and it opens right away.</p>
+        <p class="lead">I lost over 80 pounds and reversed my prediabetes. This is the exact first week I'd give anyone starting from where I was. Enter your email and it opens right away.</p>
         {optin("start", "Send me the kit")}
       </div>
       <figure class="ba">
-        <img src="/brand/before-after.jpg" alt="Bryan before at 265 pounds and after at 178 pounds" width="900" height="1095">
-        <figcaption><span>265 lbs<small>April 2025</small></span><span>178 lbs<small>14 months later</small></span></figcaption>
+        <img src="/brand/before-after.jpg" alt="Bryan before and after losing over 80 pounds" width="900" height="1095">
+        <figcaption><span>Before<small>April 2025</small></span><span>80+ lbs lighter<small>14 months later</small></span></figcaption>
       </figure>
     </div>
     <section style="padding-top:44px">

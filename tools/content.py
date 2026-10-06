@@ -273,7 +273,7 @@ ABOUT_SHORT = ("Bryan Dourado is the founder of Salvage Health and the author of
 "His road here ran through poverty, adoption and living on his own at a young age, then years as a working musician, "
 "a career in sales and marketing, and running restaurant kitchens as a chef. It also ran through addiction, alcoholism and failed relationships, "
 "until he got fed up enough to pick up the pieces and figure out how to do life. He studied what creates success in other people, in health, diet, income, "
-"support, friendship and relationships, and rebuilt from there, starting with his own health: 265 pounds down to 178 in 14 months. "
+"support, friendship and relationships, and rebuilt from there, starting with his own health: over 80 pounds lost in 14 months. "
 "Today he shares the stories, the wins and the failures with anyone willing to listen, because second chances exist. In his case, so did the twentieth.")
 
 ABOUT_BODY = """
@@ -284,12 +284,12 @@ ABOUT_BODY = """
 <p>That path took a lot of turns. I spent years as a working musician. I built a career in sales and marketing. I ran restaurants and worked as a chef. Every one of those taught me something about people, pressure and showing up when it counts.</p>
 
 <h2>Hitting the wall</h2>
-<p>It wasn't all a highlight reel. Along the way I dealt with drug addiction, alcoholism and failed relationships. My health went with it. I hit 265 pounds, prediabetic, with high blood pressure and sleep apnea, and I wasn't even 40.</p>
+<p>It wasn't all a highlight reel. Along the way I dealt with drug addiction, alcoholism and failed relationships. My health went with it. I hit my heaviest, prediabetic, with high blood pressure and sleep apnea, and I wasn't even 40.</p>
 <p>Eventually I got fed up. Fed up with starting over, with feeling stuck, with the version of me I was living as. So I decided to pick up all the pieces and figure out how to actually do life.</p>
 
 <h2>Picking up the pieces</h2>
 <p>I started studying what creates success in other people. Not just in health and diet, but in income, support, friendship and relationships. What do people who have it figured out actually do differently? Then I started applying it, one piece at a time.</p>
-<p>Health was where it showed first. Once I understood how nutrition and training really work, I went from 265 to 178 pounds (120 to 81 kg) in 14 months, brought my A1C from 5.9 down to 4.6, and got rid of my sleep apnea. That process became my book.</p>
+<p>Health was where it showed first. Once I understood how nutrition and training really work, I lost over 80 pounds (36 kg) in 14 months, brought my A1C from 5.9 down to 4.6, and got rid of my sleep apnea. That process became my book.</p>
 <blockquote>Second chances exist. Hell, in my case, twentieth chances exist.</blockquote>
 
 <h2>Why Salvage Health</h2>

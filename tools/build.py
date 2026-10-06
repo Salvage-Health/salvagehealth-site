@@ -184,7 +184,7 @@ write("/faq/", faq)
 # about
 ld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Bryan Dourado","description":ABOUT_SHORT,
       "jobTitle":"Founder, Salvage Health","sameAs":[IG],"url":SITE+"/about/"}}
-ab = head("About Bryan Dourado | Salvage Health", "Bryan Dourado, founder of Salvage Health and author of Fitness Without the Fear: from poverty, addiction and 265 pounds to rebuilding his life. Second chances exist.", "/about/", f'<script type="application/ld+json">{json.dumps(ld)}</script>\n') + topbar("about") + f"""  <main>
+ab = head("About Bryan Dourado | Salvage Health", "Bryan Dourado, founder of Salvage Health and author of Fitness Without the Fear: from poverty, addiction and over 80 pounds lost to rebuilding his life. Second chances exist.", "/about/", f'<script type="application/ld+json">{json.dumps(ld)}</script>\n') + topbar("about") + f"""  <main>
   <article>
     <header>
       <p class="eyebrow">About Bryan</p>

@@ -92,7 +92,7 @@ PARTS = [
 ]
 
 FAQ = [
-    ("I'm really out of shape. Is this book for me?", "Yes. It was written for exactly that person. I wrote it at the end of going from 265 pounds and prediabetic to 178. It starts at zero and assumes nothing."),
+    ("I'm really out of shape. Is this book for me?", "Yes. It was written for exactly that person. I wrote it after losing over 80 pounds and reversing my prediabetes. It starts at zero and assumes nothing."),
     ("Is this a diet book?", "No. There is no diet to follow and nothing to buy. It teaches you how calories, protein, training and recovery actually work, so you can build a plan that fits your life and keep it."),
     ("Do I need a gym?", "No. The training chapters work for a gym, home or a mix. The point is training with intention, not owning equipment."),
     ("What's the difference between the formats?", "Same book. The Kindle eBook and paperback include the worksheet, sources and glossary. The audiobook is the full book narrated, and the worksheet, sources and glossary live on the free companion page instead."),
@@ -112,14 +112,14 @@ ld = {"@context": "https://schema.org", "@type": "Book", "name": "Fitness Withou
 og = '<meta property="og:image:alt" content="Fitness Without the Fear by Bryan Dourado">\n'
 
 bp = head("Fitness Without the Fear by Bryan Dourado | The No-BS Beginner's Guide",
-          "From 265 pounds and prediabetic to 178. The plain-English guide to nutrition, training and recovery I wish I had when I started. Kindle, audiobook on Spotify, and paperback.",
+          "I lost over 80 pounds and reversed my prediabetes. The plain-English guide to nutrition, training and recovery I wish I had when I started. Kindle, audiobook on Spotify, and paperback.",
           "/book", og + f'<script type="application/ld+json">{json.dumps(ld)}</script>\n' + BCSS, "book") + topbar("thebook") + f"""  <main class="bp">
     <a class="bp-have" href="/companion/">Already have the book? <b>Open the companion app, worksheet and sources &rarr;</b></a>
     <section class="bp-hero">
       <div>
         <p class="sub">A no-BS beginner's guide</p>
         <h1 class="disp">Fitness Without <em>the Fear</em></h1>
-        <p class="dek">I went from 265 pounds and prediabetic to 178 by finally learning how this stuff actually works. This is that knowledge in plain English: nutrition, training and recovery, without the jargon, the guilt or the gurus.</p>
+        <p class="dek">I lost over 80 pounds and reversed my prediabetes by finally learning how this stuff actually works. This is that knowledge in plain English: nutrition, training and recovery, without the jargon, the guilt or the gurus.</p>
         {buy_buttons()}
         <ul class="bp-facts"><li>23 chapters</li><li>11 diagrams</li><li>Worksheet and glossary</li><li>Free companion app</li></ul>
       </div>
@@ -139,10 +139,10 @@ bp = head("Fitness Without the Fear by Bryan Dourado | The No-BS Beginner's Guid
 
     <section>
       <div class="bp-story">
-        <img src="/brand/before-after.jpg" alt="Bryan Dourado before and after: 265 pounds to 178 pounds in 14 months" width="900" height="1095" loading="lazy">
+        <img src="/brand/before-after.jpg" alt="Bryan Dourado before and after losing over 80 pounds in 14 months" width="900" height="1095" loading="lazy">
         <div>
           <p class="eyebrow">Why I wrote it</p>
-          <h2 class="disp">265 to 178. <em>14 months.</em></h2>
+          <h2 class="disp">Over 80 pounds. <em>14 months.</em></h2>
           <p class="lead">I'm not a doctor or a fitness influencer. I'm a former chef and musician who spent years losing the same fight. What finally worked wasn't a magic diet. It was understanding calories, protein, training and sleep well enough to build a plan I could actually keep.</p>
           <p class="lead" style="margin-top:14px">I wrote down everything I learned, checked it against real research, and cut out everything that didn't matter. This is the book I wish someone had handed me on day one.</p>
           <blockquote>"It's never too late to take your life back. You just need to know how it works."</blockquote>
