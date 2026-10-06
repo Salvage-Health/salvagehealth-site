@@ -347,9 +347,11 @@ KCSS = """<style>
 .kimg{position:relative;display:block;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--raised);border:1px solid var(--rule)}
 .kimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
 .kc:hover .kimg img{transform:scale(1.04)}
-.kph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#4A4842;background:radial-gradient(circle at 50% 40%,#24231F,#1A1917 70%)}
-.kph svg{width:34%;max-width:60px}
-.kph i{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6B6960}
+.kph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:10px 12px 12px;text-align:center;background:radial-gradient(ellipse at 50% 38%,#2A2622,#1B1A17 72%)}
+.kph .kpl{width:56%;max-width:190px;height:auto;margin:4px 0 6px}
+.kph b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.6px;font-size:clamp(12px,1.35vw,15px);line-height:1.15;color:#D9D6CC}
+.kph i{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#BE5126}
+@media (max-width:480px){.kph{padding-top:30px}.kph .kpl{width:40%;margin:0 0 4px}.kph b{font-size:12px}.kph i{font-size:8.5px;letter-spacing:1.5px}}
 .kb{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:99px;background:rgba(20,20,19,.82);color:#FAF9F5;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
 .kb.by{background:var(--rust)}
 .kt{font-weight:700;font-size:15px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px}

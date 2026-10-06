@@ -34,6 +34,23 @@
 
   var SHIELD = '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+  // Placeholder for recipes without a photo yet: an empty plate, and a line that changes per recipe.
+  var QUIPS = ['Ate it before the photo.', 'Our photographer got hungry.', 'Camera shy. Tastes great.', 'Plating in progress.',
+    'Too good to wait for the camera.', 'Somebody ate the model.', 'Photo pending. Fork ready.', 'Seconds happened. Photo didn\'t.'];
+  var PLATE = '<svg class="kpl" viewBox="26 10 148 100" aria-hidden="true">' +
+    '<ellipse cx="100" cy="66" rx="50" ry="44" fill="#000" opacity=".28"/>' +
+    '<circle cx="100" cy="60" r="46" fill="#2C2A26" stroke="#3B3934" stroke-width="2"/><circle cx="100" cy="60" r="33" fill="#24221F" stroke="#34322D" stroke-width="1.5"/>' +
+    '<path d="M70 40 a40 40 0 0 1 44 -20" stroke="#4A4741" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>' +
+    '<g fill="#5A5750"><rect x="34" y="40" width="3" height="20" rx="1.5"/><rect x="39.5" y="40" width="3" height="20" rx="1.5"/><rect x="45" y="40" width="3" height="20" rx="1.5"/>' +
+    '<path d="M33 58 h16 v4 q0 6 -5 7 v32 q0 3 -3 3 q-3 0 -3 -3 v-32 q-5 -1 -5 -7 z"/>' +
+    '<path d="M162 40 q10 8 9 34 h-5 v29 q0 3 -3 3 q-3 0 -3 -3 v-60 q0 -3 2 -3 z"/></g>' +
+    '<circle cx="128" cy="38" r="3.2" fill="#BE5126"/></svg>';
+  var QI = {}, qn = 0;
+  SK.RECIPES.forEach(function (r) { if (!r.photos) QI[r.id] = qn++; });
+  function plate(r) {
+    if (!(r.id in QI)) QI[r.id] = qn++;
+    return '<span class="kph">' + PLATE + '<b>' + QUIPS[QI[r.id] % QUIPS.length] + '</b><i>Photo coming soon</i></span>';
+  }
   function badge(r) {
     if (r.by) return '<span class="kb by">Bryan\'s</span>';
     if (r.keto) return '<span class="kb">Keto</span>';
@@ -43,7 +60,7 @@
   }
   function card(s, status) {
     var r = s.r || s, m = r.m;
-    var pic = r.photos ? '<img src="' + r.photos[0] + '" alt="" loading="lazy">' : '<span class="kph">' + SHIELD + '<i>' + esc(r.cat) + '</i></span>';
+    var pic = r.photos ? '<img src="' + r.photos[0] + '" alt="" loading="lazy">' : plate(r);
     var st = '';
     if (status === 'ready') st = '<span class="kst ok">You have everything</span>';
     else if (status === 'close') st = '<span class="kst">Need ' + s.miss.map(function (it) { return esc(byId[it.need].name.toLowerCase()); }).join(', ') + '</span>';
