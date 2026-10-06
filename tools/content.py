@@ -312,7 +312,8 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "hoodie": ("$78.99", SHOP + "/products/second-chances-hoodie", ("hoodie-model-front", "hoodie-model-back")),
         "beanie": ("$32", SHOP + "/products/shield-beanie", ("beanie-model-1", "beanie-flat")),
         "stickers": ("$12", SHOP + "/products/sticker-pack", ("stickers-sheet", "stickers-sheet-tilt")),
-        "tumbler": ("$42", SHOP + "/products/salvage-tumbler", ("tumbler-black", "tumbler-etch-close"))}
+        "tumbler": ("$42", SHOP + "/products/salvage-tumbler", ("tumbler-black", "tumbler-etch-close")),
+        "towel": ("$26", SHOP + "/products/say-what-youll-do-gym-towel", ("towel-front", "towel-detail"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
     ("tee-built-model-side", "Front of the Built From What's Left Tee, worn, side angle"),
@@ -335,8 +336,8 @@ MERCH2 = [
  "Ribbed organic cotton knit with the Salvage Health shield embroidered on the cuff. Black or Navy, one size.", "beanie-rust"),
 ("stickers", "Sticker Pack", "Kiss-cut vinyl sheet",
  "Five waterproof stickers on one 5.5 in sheet: the shield, the wordmark, Never Too Late, Say What You'll Do and the badge. For your bottle, laptop, locker or lifting belt.", "stickers"),
-("straps", "Lifting Straps", "Lifting gear",
- "Padded straps. One says \"Say what you'll do.\" The other says \"Do what you say.\"", "straps"),
+("towel", "Say What You'll Do Gym Towel", "Sweat towel",
+ "Clip-on gym towel with a grommet and hook. \"Say what you'll do. Do what you say.\" printed edge to edge.", "straps"),
 ("belt", "Lever Belt", "Lifting gear",
  "Black leather, 4 in (10 cm) wide, rust stitching, shield and wordmark debossed.", "belt"),
 ("tumbler", "Salvage Tumbler", "40 oz insulated tumbler",
