@@ -314,6 +314,7 @@ LIVE = {"tee-built": ("$34", SHOP + "/products/built-from-whats-left-tee", ("tee
         "stickers": ("$12", SHOP + "/products/sticker-pack", ("stickers-sheet", "stickers-sheet-tilt")),
         "tumbler": ("$42", SHOP + "/products/salvage-tumbler", ("tumbler-black", "tumbler-etch-close")),
         "towel": ("$26", SHOP + "/products/say-what-youll-do-gym-towel", ("towel-front", "towel-detail")),
+        "tank": ("$36", SHOP + "/products/say-what-youll-do-tank", ("tank-model-back", "tank-model-front")),
         "log": ("$22", SHOP + "/products/salvage-health-training-log", ("log-front", "log-back"))}
 # Featured product at the top of /merch/: (slug, [(photo, alt), ...])
 FEATURE = ("tee-built", [
@@ -333,6 +334,8 @@ MERCH2 = [
  "Old-school athletic department look: arched wordmark over the shield, cracked vintage print. \"Never Too Late\" across the back. Black, French Navy, Anthracite, India Ink Grey or Dark Heather Grey. S to 5XL.", "tee-athletic-front"),
 ("hoodie", "Second Chances Hoodie", "Organic cotton hoodie",
  "Small wordmark on the left chest, \"Say what you'll do.\" down the sleeve, and the big shield with \"Second chances exist.\" across the back.", "hoodie-back"),
+("tank", "Say What You'll Do Tank", "Garment-dyed cotton tank",
+ "The whole promise stacked across the upper back in cream and rust, with the shield on the chest. Garment-dyed for a soft, broken-in feel. XS to 3XL.", "tee-never-front"),
 ("beanie", "Shield Beanie", "Organic cotton beanie",
  "Ribbed organic cotton knit with the Salvage Health shield embroidered on the cuff. Black or Navy, one size.", "beanie-rust"),
 ("stickers", "Sticker Pack", "Kiss-cut vinyl sheet",
