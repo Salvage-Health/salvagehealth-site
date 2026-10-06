@@ -159,6 +159,14 @@
       svg: svg('0 0 464 552', '<rect width="464" height="552" fill="' + S + '"/>' +
         '<g transform="translate(196.00 136.68) scale(.72)">' + SHIELD(R, B, 7) + '</g>' +
         '<g transform="translate(102 181.80) scale(0.8667)">' + '<text ' + O + ' font-size="73.6" fill="' + B + '" x="2" y="117.3" textLength="296" lengthAdjust="spacing">SAY WHAT</text>' + '<text ' + O + ' font-size="67.9" fill="' + B + '" x="2" y="185.9" textLength="296" lengthAdjust="spacing">YOU\'LL DO.</text>' + '<text ' + O + ' font-size="80.3" fill="' + R + '" x="2" y="264.8" textLength="296" lengthAdjust="spacing">DO WHAT</text>' + '<text ' + O + ' font-size="82.7" fill="' + R + '" x="2" y="345.7" textLength="296" lengthAdjust="spacing">YOU SAY.</text>' + '</g>') },
+    { id: 'bag-baggage', name: 'Drawstring bag: Emotional Baggage (black)', place: 'Full bag front, edge to edge (Sublicolor 604)', inches: 16, bg: 'dark',
+      svg: svg('0 0 464 552', '<rect width="464" height="552" fill="' + S + '"/>' +
+        '<path d="M232 196 V150 M218 164 L232 150 L246 164" fill="none" stroke="' + R + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<text ' + O + ' font-size="60.7" fill="' + B + '" x="92" y="265.6" textLength="280" lengthAdjust="spacing">EMOTIONAL</text>' +
+        '<text ' + O + ' font-size="68.3" fill="' + B + '" x="92" y="334.5" textLength="280" lengthAdjust="spacing">BAGGAGE.</text>' +
+        '<text font-family="Oswald" font-weight="500" font-size="22" fill="' + R + '" x="92" y="374.8" textLength="280" lengthAdjust="spacing">NOW WITH DRAWSTRINGS.</text>' +
+        '<g transform="translate(218.5 452) scale(.36)">' + SHIELD(R, B, 8) + '</g>' +
+        '<text font-family="Oswald" font-weight="500" font-size="11" fill="' + M + '" x="167" y="508" textLength="130" lengthAdjust="spacing">SALVAGE HEALTH</text>') },
     { id: 'socks', name: 'Crew socks: full wrap, left and right', place: 'Full sock template (Tribe TC001), both socks', inches: 46.67, bg: 'dark',
       svg: (function () {
         var sock = function (ox, side, sideFill) {
