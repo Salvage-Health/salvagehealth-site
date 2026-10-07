@@ -273,3 +273,5 @@ html,body{overflow-x:clip}
 .drops p{color:var(--dim);margin:0}
 .drops .optin{margin:0;max-width:none}
 @media (max-width:760px){.drops{grid-template-columns:1fr;gap:14px;padding:22px 18px}}
+
+.optin-go{margin-top:.75rem}

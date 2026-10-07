@@ -15,6 +15,16 @@
   }
   function wire(f) {
     if (f.dataset.wired) return; f.dataset.wired = '1';
+    // Already a member: don't ask for the email again, just open the kit.
+    if (SH_MEMBER.is() && !f.hasAttribute('data-stay')) {
+      var a = document.createElement('a');
+      a.className = 'btn solid optin-go'; a.href = f.getAttribute('data-next') || '/start/kit/';
+      a.textContent = 'Open your Starter Kit →';
+      var note = f.nextElementSibling;
+      if (note && note.classList.contains('optnote')) note.hidden = true;
+      f.replaceWith(a);
+      return;
+    }
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var em = ((f.querySelector('input[type=email]') || {}).value || '').trim();
