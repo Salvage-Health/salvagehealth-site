@@ -122,11 +122,12 @@ def card(a):
       </a>
 """
 
-CTA = f"""    <div class="cta">
-      <img src="/book/paperback-cover.jpg" alt="" width="64">
-      <div><b>Fitness Without the Fear</b><span>The plain-English guide to nutrition, training and recovery. Kindle, audiobook on Spotify, and soon paperback.</span></div>
-      <a class="btn solid" href="/book">Get the book</a>
+CTA = f"""    <div class="cta cta-kit">
+      <div><b>Start here: your first week, done for you</b><span>The free Day One Starter Kit: your calorie and protein numbers, a 7-day plan, a cook-twice meal plan and the grocery list. Plus every recipe in the Kitchen.</span>
+      <form class="optin" name="starter-kit" method="POST" action="/start/kit/"><input type="hidden" name="form-name" value="starter-kit"><input type="hidden" name="source" value="article"><p class="hp" hidden><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p><label class="sr" for="em-article">Email address</label><input id="em-article" type="email" name="email" required placeholder="Your email address" autocomplete="email"><button class="btn solid" type="submit">Send me the kit</button></form>
+      <p class="optnote">Free. Instant access. No spam, unsubscribe anytime.</p></div>
     </div>
+    <script src="/assets/optin.js"></script>
 """
 
 import hashlib as _hl
@@ -259,6 +260,12 @@ mp = head("Merch | Salvage Health", "Salvage Health gear for men and women: tees
     <p class="scount" aria-live="polite"><span id="sn">{counts["all"]}</span> products</p>
     <div class="sgrid" id="sgrid">
 {cards}    </div>
+    <div class="drops">
+      <div><p class="eyebrow">First dibs</p><h2 class="disp">New drops go to <em>the list first.</em></h2><p>Join free and you'll hear about new gear before anyone else. You also get the Day One Starter Kit and every recipe in the Kitchen.</p></div>
+      <div><form class="optin" name="starter-kit" method="POST" action="/start/kit/" data-stay><input type="hidden" name="form-name" value="starter-kit"><input type="hidden" name="source" value="merch-drops"><p class="hp" hidden><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p><label class="sr" for="em-drops">Email address</label><input id="em-drops" type="email" name="email" required placeholder="Your email address" autocomplete="email"><button class="btn solid" type="submit">Join the list</button></form><p class="optnote" id="drops-note">Free. No spam, unsubscribe anytime.</p></div>
+    </div>
+    <script src="/assets/optin.js"></script>
+    <script>(function(){{function done(){{var d=document.querySelector('.drops');if(d)d.innerHTML='<div><p class="eyebrow">You\\'re on the list</p><h2 class="disp">Thanks. <em>You\\'re in.</em></h2><p>Your free Starter Kit is ready whenever you are.</p></div><div><a class="btn solid" href="/start/kit/">Open my Starter Kit</a></div>';}}document.addEventListener('sh:joined',done);if(window.SH_MEMBER&&SH_MEMBER.is())done();}})();</script>
     <div class="snote">
       <p>Every piece is printed to order and shipped by our store partner, Fourthwall. Questions about an order? Email <a href="mailto:hello@salvagehealth.com">hello@salvagehealth.com</a>.</p>
       <p><a href="{SHOP}" target="_blank" rel="noopener">Browse the full store</a> · <a href="{IG}" target="_blank" rel="noopener">Follow for new drops</a></p>

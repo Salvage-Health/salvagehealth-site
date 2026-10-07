@@ -149,7 +149,7 @@ home = head("Salvage Health | It's never too late to take your life back",
         <h1 class="disp">It's never too late to <em>take your life back.</em></h1>
         <p class="lead">I was prediabetic, way overweight and out of chances. Fourteen months later I was over 80 pounds lighter. Not because I found a magic plan, but because I finally understood how this works. I'll show you how to start from exactly where you are.</p>
         {optin("home-hero", "Get the free Starter Kit")}
-        <a class="alt" href="/kitchen/">Or browse {NREC} free recipes &rarr;</a>
+        <a class="alt" href="/kitchen/">Or try 10 free recipes first &rarr;</a>
       </div>
       <figure class="ba">
         <img src="/brand/before-after.jpg" alt="Bryan before and after losing over 80 pounds, fourteen months apart" width="900" height="1095" fetchpriority="high">
