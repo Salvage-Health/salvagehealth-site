@@ -45,13 +45,16 @@ def topbar(active):
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{href}"{cur}{c}>{label}</a>'
-    cta = "" if active in ("start",) else '<a class="navcta" href="/start/"><span>Free&nbsp;<span class="l">Starter&nbsp;</span>Kit</span></a>'
+    cta = '<a class="navcta" href="/start/"' + (' aria-current="page"' if active == "start" else "") + '><span>Start&nbsp;here</span></a>'
     # Pinned bar. Left: the book promo (or, on the book page, buy buttons). Right, after scrolling: quick links
     # to the other main pages (never the page you're on) plus the Starter Kit button (not on the Starter Kit pages).
-    links = [("/book", "The Book", "thebook"), ("/kitchen/", "Kitchen", "kitchen"), ("/articles/", "Articles", "articles"), ("/merch/", "Merch", "merch"), ("/about/", "About", "about")]
+    # Main menu is deliberately short: Start Here (pill), Kitchen, Book, Merch. Articles, About, FAQ live in the footer.
+    links = [("/kitchen/", "Kitchen", "kitchen"), ("/book", "The Book", "thebook"), ("/merch/", "Merch", "merch")]
     kit = active != "start"
-    ql = "".join(f'<a href="{h}">{l}</a>' for h, l, k in links if k not in (active, "thebook")) + ('<a class="lnc" href="/start/">Starter Kit</a>' if kit else "")
-    ml = "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links) + ('<a class="lmk" href="/start/">Free Starter Kit</a>' if kit else "")
+    ql = "".join(f'<a href="{h}">{l}</a>' for h, l, k in links if k not in (active, "thebook")) + ('<a class="lnc" href="/start/">Start here</a>' if kit else "")
+    ml = (('<a class="lmk" href="/start/">Start here: free Starter Kit</a>' if kit else "")
+          + "".join(f'<a href="{h}"' + (' aria-current="page"' if k == active else "") + f'>{l}</a>' for h, l, k in links)
+          + '<div class="lmsub"><a href="/about/">About</a><a href="/articles/">Articles</a><a href="/faq/">FAQ</a></div>')
     burger = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
     if active == "thebook":
         promo = (f'<span class="lp lpb"><b>Fitness Without the Fear</b><a class="lbuy" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a>'
@@ -74,11 +77,9 @@ def topbar(active):
     return bar + f"""  <header class="top">
     <a class="brand" href="/"><img src="/brand/mark.svg" alt="" width="30" height="30"><span class="wm">Salvage <span>Health</span></span></a>
     <nav aria-label="Main">
-      {a('/book','The Book','thebook')}
       {a('/kitchen/','Kitchen','kitchen')}
-      {a('/articles/','Articles','articles')}
+      {a('/book','The Book','thebook')}
       {a('/merch/','Merch','merch')}
-      {a('/about/','About','about')}
     </nav>
     {cta}
   </header>
@@ -369,6 +370,16 @@ KCSS = """<style>
 @media (max-width:480px){.kph{padding-top:30px}.kph .kpl{width:40%;margin:0 0 4px}.kph b{font-size:12px}.kph i{font-size:8.5px;letter-spacing:1.5px}}
 .kb{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:99px;background:rgba(20,20,19,.82);color:#FAF9F5;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
 .kb.by{background:var(--rust)}
+.klk,.kfree{position:absolute;top:8px;right:8px;display:inline-flex;align-items:center;justify-content:center;border-radius:99px;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.klk{width:26px;height:26px;background:rgba(20,20,19,.82);color:#FAF9F5}
+.kfree{padding:3px 8px;background:#FAF9F5;color:#141413}
+.klock{position:relative;margin-top:20px}
+.kl-prev{filter:blur(4px);opacity:.55;pointer-events:none;user-select:none;margin:0}
+.kl-box{position:relative;margin-top:-90px;background:linear-gradient(180deg,rgba(29,28,26,.6),#1d1c1a 70px);border:1px solid var(--rust);border-radius:16px;padding:22px 20px 20px}
+.kl-ico{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:99px;background:var(--rust);color:#FAF9F5;margin-bottom:10px}
+.kl-box b{display:block;font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;font-size:22px;letter-spacing:.3px;line-height:1.15}
+.kl-box p{color:var(--dim);font-size:15px;margin:8px 0 0}
+.kl-box .optin{max-width:none}
 .kt{font-weight:700;font-size:15px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px}
 .km{font-size:12.5px;color:var(--faint);display:flex;flex-wrap:wrap;gap:0 8px}
 .km > span{white-space:nowrap}
@@ -510,6 +521,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
   <script src="/kitchen/recipes.js"></script>
   <script src="/kitchen/steps.js"></script>
   <script src="/assets/goals.js"></script>
+  <script src="/assets/optin.js"></script>
   <script src="/kitchen/app.js"></script>
   <script src="/assets/rail.js"></script>
 """ + FOOT

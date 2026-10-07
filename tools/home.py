@@ -445,10 +445,25 @@ KITCSS = HOMECSS.replace("</style>", """
 
 kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Starter Kit from Salvage Health.", "/start/kit/",
            '<meta name="robots" content="noindex">\n' + KITCSS) + topbar("start") + f"""  <main class="hm kp">
+    <div class="gate" data-gate data-source="kit-direct" data-button="Open my Starter Kit" hidden>
+      <p class="eyebrow">Free Day One Starter Kit</p>
+      <h2 class="disp">Your first week, <em>done for you.</em></h2>
+      <p class="lead">Enter your email and your kit opens right here.</p>
+      <ul><li>Your calorie and protein numbers in 30 seconds</li><li>A 7-day plan, one small step a day</li><li>A cook-twice meal plan and grocery list</li><li>All {NREC} recipes in the Kitchen, unlocked</li></ul>
+      <div class="gate-form"></div>
+    </div>
+    <div data-gated>
     <div style="padding-top:36px">
       <p class="eyebrow">You're in. Welcome.</p>
       <h1 class="disp">Your Day One <em>Starter Kit</em></h1>
-      <p class="lead">Bookmark this page. It's yours to keep. Work through it in order and don't try to be perfect. Week one is about starting, not nailing it.</p>
+      <p class="lead">Bookmark this page. It's yours to keep. Here's your path for week one. Don't try to be perfect: week one is about starting, not nailing it.</p>
+      <ol class="path">
+        <li><a href="#numbers"><b>Get your numbers</b><span>30 seconds</span></a></li>
+        <li><a href="#week"><b>Plan your week</b><span>One step a day</span></a></li>
+        <li><a href="#meals"><b>Cook twice</b><span>Meals and groceries</span></a></li>
+        <li><a href="#learn"><b>Learn the why</b><span>The book</span></a></li>
+      </ol>
+      <p class="pantry" style="margin-top:12px">Your free membership also unlocked all {NREC} recipes in the <a href="/kitchen/">Kitchen</a>.</p>
     </div>
 
     <section style="padding-top:36px" id="numbers">
@@ -528,11 +543,14 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
       <p class="pantry">Pantry basics assumed: avocado oil or avocado oil spray, salt and pepper, garlic, and basic spices (chili powder, cumin, paprika, oregano, sage, fennel seed, garlic powder).</p>
     </section>
 
-    <section style="padding-top:44px">
+    <section style="padding-top:44px" id="learn">
       <div class="kit"><div><p class="eyebrow">Keep going</p><h2 class="disp">Want the <em>why</em> behind it?</h2><p class="lead">The book explains everything in this kit in plain English. Kindle, or the audiobook on Spotify (included with Premium).</p></div>
         <div style="display:grid;gap:10px"><a class="btn solid" href="/book">Get the book</a><a class="btn line" href="/kitchen/">Browse all {NREC} recipes</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow on Instagram</a></div></div>
     </section>
+    </div>
   </main>
+  <script src="/assets/optin.js"></script>
+  <script src="/assets/gate.js"></script>
   <script>window.SH_ARTICLES = """ + _json.dumps({a['slug']: a['title'] for a in ARTICLES}) + """;</script>
   <script src="/kitchen/recipes.js"></script>
   <script src="/assets/goals.js"></script>

@@ -34,6 +34,13 @@
 
   var SHIELD = '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L84 18 V48 C84 72 68 88 50 96 C32 88 16 72 16 48 V18 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M24 54 H37 L44 40 L52 66 L59 46 L65 54 H78" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+  // Free membership: these recipes are open to everyone; the rest unlock with one email (shared with the Starter Kit).
+  var FREE = ['power-protein-bowl', 'carne-asada-tacos', 'teriyaki-chicken-bowl', 'protein-blueberry-pancakes', 'shredded-salsa-chicken',
+    'protein-overnight-oats', 'egg-roll-in-a-bowl', 'sheet-pan-fajitas', 'greek-chicken-bowls', 'turkey-sausage-mcmuffins'];
+  function member() { return window.SH_MEMBER ? SH_MEMBER.is() : true; }
+  function locked(r) { return !member() && FREE.indexOf(r.id) < 0; }
+  var LOCK = '<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><rect x="4" y="9" width="12" height="9" rx="2" fill="currentColor"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+
   // Placeholder for recipes without a photo yet: an empty plate, and a line that changes per recipe.
   var QUIPS = ['Ate it before the photo.', 'Our photographer got hungry.', 'Camera shy. Tastes great.', 'Plating in progress.',
     'Too good to wait for the camera.', 'Somebody ate the model.', 'Photo pending. Fork ready.', 'Seconds happened. Photo didn\'t.'];
@@ -64,7 +71,7 @@
     var st = '';
     if (status === 'ready') st = '<span class="kst ok">You have everything</span>';
     else if (status === 'close') st = '<span class="kst">Need ' + s.miss.map(function (it) { return esc(byId[it.need].name.toLowerCase()); }).join(', ') + '</span>';
-    return '<button type="button" class="kc" data-r="' + r.id + '"><span class="kimg">' + pic + badge(r) + '</span>' +
+    return '<button type="button" class="kc" data-r="' + r.id + '"><span class="kimg">' + pic + badge(r) + (locked(r) ? '<span class="klk" title="Free with email">' + LOCK + '</span>' : (!member() ? '<span class="kfree">Free</span>' : '')) + '</span>' +
       '<span class="kt">' + esc(r.name) + '</span>' +
       '<span class="km"><span><b>' + m.kcal + '</b> cal · <b>' + m.p + 'g</b> protein</span><span>' + r.mins + ' min' + dots(r.lvl) + '</span></span>' + st + '</button>';
   }
@@ -194,6 +201,18 @@
   q.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var b = sug.querySelector('button'); if (b) { e.preventDefault(); b.click(); } } });
 
   // recipe sheet
+  var OPEN = null;
+  function lockPanel(r) {
+    var nLocked = SK.RECIPES.filter(function (x) { return FREE.indexOf(x.id) < 0; }).length;
+    var det = (window.SK_STEPS || {})[r.id], ns = det ? det.steps.length : r.steps.length;
+    var prev = r.items.slice(0, 5).map(function (it) { return '<li><span class="lab"></span><span>' + esc(it.txt) + '</span></li>'; }).join('');
+    return '<div class="klock"><ul class="ing kl-prev" aria-hidden="true">' + prev + '</ul>' +
+      '<div class="kl-box"><span class="kl-ico">' + LOCK + '</span><b>Unlock this recipe and ' + (nLocked - 1) + ' more, free</b>' +
+      '<p>' + r.items.length + ' ingredients and ' + ns + ' step-by-step instructions. One email unlocks every recipe in the Kitchen, plus your free Day One Starter Kit.</p>' +
+      SH_OPTIN.html('kitchen-unlock', 'Unlock all recipes', { stay: true }) +
+      '<p class="optnote">Free. No spam, unsubscribe anytime. Already signed up? Use the same email.</p></div></div>';
+  }
+  document.addEventListener('sh:joined', function () { render(); if (OPEN) openRecipe(OPEN); });
   function openRecipe(id) {
     var r = SK.RECIPES.filter(function (x) { return x.id === id; })[0], m = r.m;
     var li = r.items.map(function (it) {
@@ -218,9 +237,12 @@
       (PLAN && PLAN.cal ? '<div class="dday"><b>Of your day</b>' + [['Calories', m.kcal, PLAN.cal], ['Protein', m.p, PLAN.p], ['Carbs', m.c, PLAN.c], ['Fat', m.f, PLAN.f]].map(function (x) { var pc = x[2] ? Math.round(x[1] / x[2] * 100) : 0; return '<span><i>' + x[0] + '</i><s><u style="width:' + Math.min(pc, 100) + '%"></u></s><em>' + pc + '%</em></span>'; }).join('') + '</div>' : '') +
       (r.lvl ? '<div class="dlv"><span>Level ' + r.lvl + ' of 5 ' + dots(r.lvl) + '</span><b>' + (HG ? HG.LV[r.lvl][0] : '') + '</b><p>' + (HG ? HG.LV[r.lvl][1] : '') + '</p></div>' : '') +
       '<p class="fine2">Per serving, including optional items. Estimates from USDA and package label data.</p>' +
+      (locked(r) ? lockPanel(r) :
       '<div class="dtabs" role="tablist"><button type="button" class="dtab on" data-p="ing" role="tab" aria-selected="true">Ingredients <span>' + r.items.length + '</span></button><button type="button" class="dtab" data-p="steps" role="tab" aria-selected="false">Steps <span>' + (det ? det.steps.length : r.steps.length) + '</span></button></div>' +
       '<div class="dpane" data-p="ing"><ul class="ing">' + li + '</ul><button type="button" class="dgo" data-p="steps">Start cooking</button></div>' +
-      '<div class="dpane" data-p="steps" hidden>' + steps + '</div>';
+      '<div class="dpane" data-p="steps" hidden>' + steps + '</div>');
+    if (locked(r) && window.SH_OPTIN) SH_OPTIN.wire($('dlg-body'));
+    OPEN = r.id;
     var d = $('dlg'); if (d.showModal) d.showModal(); else d.setAttribute('open', '');
     document.documentElement.classList.add('noscroll');
     var dp = $('dpics');
