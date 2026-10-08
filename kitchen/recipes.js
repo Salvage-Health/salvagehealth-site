@@ -705,7 +705,7 @@ window.SK = {
       ]
     },
     {
-      id: 'yogurt-bowl', lvl: 1, veg: true, name: 'Greek Yogurt Power Bowl', cat: 'Breakfast', tag: '5 minutes', serves: 1, mins: 5,
+      id: 'yogurt-bowl', lvl: 1, photos: ['/kitchen/img/yogurt-bowl.jpg'], veg: true, name: 'Greek Yogurt Power Bowl', cat: 'Breakfast', tag: '5 minutes', serves: 1, mins: 5,
       blurb: 'Thick Greek yogurt, berries, banana and a spoon of peanut butter. Tastes like dessert, eats like a protein shake.',
       items: [
         { need: 'greek-yogurt', txt: '1 cup (227 g) nonfat Greek yogurt', food: 'greek-yogurt', g: 227 },
