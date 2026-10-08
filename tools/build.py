@@ -413,6 +413,9 @@ KCSS = """<style>
 .lvd{display:inline-flex;gap:2px;vertical-align:middle;margin-left:6px}
 .lvd i{width:6px;height:6px;border-radius:99px;background:rgba(250,249,245,.18)}
 .lvd i.on{background:var(--rust-text)}
+.lvd i.on:nth-child(-n+2){background:#E8B33C}
+.lvd i.on:nth-child(n+3){background:#E5762C}
+.lvd i.on:nth-child(5){background:#D7262B;box-shadow:0 0 6px rgba(215,38,43,.55)}
 .kplan{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px;padding:12px 14px;border-radius:12px;border:1px solid var(--rust);background:rgba(190,81,38,.1);text-decoration:none;color:var(--fg)}
 .kplan small{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust-text)}
 .kplan b{font-size:16px}

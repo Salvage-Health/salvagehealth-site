@@ -442,6 +442,9 @@ KITCSS = HOMECSS.replace("</style>", """
 .lvd{display:inline-flex;gap:2px;vertical-align:middle;margin-left:4px}
 .lvd i{width:6px;height:6px;border-radius:99px;background:rgba(250,249,245,.18)}
 .lvd i.on{background:var(--rust-text)}
+.lvd i.on:nth-child(-n+2){background:#E8B33C}
+.lvd i.on:nth-child(n+3){background:#E5762C}
+.lvd i.on:nth-child(5){background:#D7262B;box-shadow:0 0 6px rgba(215,38,43,.55)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,250%);z-index:30;padding:10px 16px;border-radius:99px;background:var(--fg);color:#141413;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .25s;white-space:nowrap}
 .toast.on{transform:translate(-50%,0)}
 .toast button{margin-left:10px;border:0;background:none;color:var(--rust);font:inherit;cursor:pointer;text-decoration:underline}
