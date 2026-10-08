@@ -686,7 +686,7 @@ window.SK = {
       ]
     },
     {
-      id: 'egg-bites', lvl: 2, keto: true, veg: true, batch: true, name: 'Veggie Egg Bites', cat: 'Breakfast', tag: 'Meal prep', serves: 4, mins: 30,
+      id: 'egg-bites', lvl: 2, photos: ['/kitchen/img/egg-bites.jpg'], keto: true, veg: true, batch: true, name: 'Veggie Egg Bites', cat: 'Breakfast', tag: 'Meal prep', serves: 4, mins: 30,
       blurb: 'Fluffy muffin-tin egg bites with spinach and peppers. Cottage cheese makes them creamy and adds protein.',
       items: [
         { need: 'eggs', txt: '6 large eggs', food: 'egg', g: 300 },
