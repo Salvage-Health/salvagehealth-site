@@ -782,7 +782,7 @@ window.SK = {
       ]
     },
     {
-      id: 'greek-yogurt-chicken-salad', lvl: 1, keto: true, batch: true, name: 'Greek Yogurt Chicken Salad', cat: 'Lunch', tag: 'No cook option', serves: 4, mins: 15,
+      id: 'greek-yogurt-chicken-salad', lvl: 1, photos: ['/kitchen/img/greek-yogurt-chicken-salad.jpg'], keto: true, batch: true, name: 'Greek Yogurt Chicken Salad', cat: 'Lunch', tag: 'No cook option', serves: 4, mins: 15,
       blurb: 'Classic chicken salad made with Greek yogurt instead of mayo. Crunchy celery, red onion and lemon. Great in a wrap or lettuce.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '1 1/2 lb (680 g) cooked chicken breast or rotisserie chicken, chopped', food: 'chicken-breast', g: 680 },
