@@ -818,7 +818,7 @@ window.SK = {
       ]
     },
     {
-      id: 'chicken-caesar-wraps', lvl: 3, name: 'Chicken Caesar Wraps', cat: 'Lunch', tag: 'Wraps', serves: 4, mins: 25,
+      id: 'chicken-caesar-wraps', lvl: 3, photos: ['/kitchen/img/chicken-caesar-wraps.jpg'], name: 'Chicken Caesar Wraps', cat: 'Lunch', tag: 'Wraps', serves: 4, mins: 25,
       blurb: 'Grilled chicken, crisp romaine and parmesan with a creamy Greek yogurt Caesar dressing, rolled into a wrap.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '1 1/2 lb (680 g) chicken breast', food: 'chicken-breast', g: 680 },
