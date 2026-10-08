@@ -856,7 +856,7 @@ window.SK = {
       ]
     },
     {
-      id: 'buffalo-chicken-wraps', lvl: 3, name: 'Buffalo Chicken Wraps', cat: 'Lunch', tag: 'Wraps', serves: 4, mins: 25,
+      id: 'buffalo-chicken-wraps', lvl: 3, photos: ['/kitchen/img/buffalo-chicken-wraps.jpg'], name: 'Buffalo Chicken Wraps', cat: 'Lunch', tag: 'Wraps', serves: 4, mins: 25,
       blurb: 'Spicy buffalo chicken, crunchy lettuce and a cool Greek yogurt ranch, all in a wrap.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '1 1/2 lb (680 g) chicken breast', food: 'chicken-breast', g: 680 },
