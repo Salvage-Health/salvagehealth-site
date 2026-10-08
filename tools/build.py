@@ -13,7 +13,7 @@ IG = "https://www.instagram.com/el_dourado/"
 
 def strip(s): return re.sub(r"<[^>]+>", "", s)
 
-def head(title, desc, path, extra="", ogtype="website"):
+def head(title, desc, path, extra="", ogtype="website", ogimage=None):
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@ def head(title, desc, path, extra="", ogtype="website"):
 <meta property="og:site_name" content="Salvage Health">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="{SITE}/brand/og.png">
+<meta property="og:image" content="{SITE}{ogimage or '/brand/og.png'}">
 <meta property="og:url" content="{SITE}{path}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -526,6 +526,7 @@ dialog#dlg::backdrop{background:rgba(0,0,0,.7)}
 @media (prefers-reduced-motion:reduce){.kimg img{transition:none}}
 </style>
 """
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "recipepages.py")).read())  # /kitchen/<id>/ pages + KINDEX
 kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein recipes. Browse by goal, or tell it what's in your fridge and get recipes you can cook tonight.", "/kitchen/", KCSS) + topbar("kitchen") + """  <main class="kwrap">
     <div class="khead">
       <p class="eyebrow">Salvage Kitchen</p>
@@ -555,6 +556,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
     <div id="results" aria-live="polite"></div>
     """ + waitlist("kitchen") + """
     <p class="fine">Macros are estimates per serving based on USDA and package label data and include optional ingredients. Cook chicken and ground poultry to 165°F (74°C). We cook with avocado oil; swap in any oil if you have an allergy.</p>
+    """ + KINDEX + """
   </main>
   <dialog id="dlg" aria-label="Recipe"><button id="dlg-close" type="button" aria-label="Close">&times;</button><div id="dlg-body"></div></dialog>
   <script src="/kitchen/recipes.js"></script>
@@ -574,7 +576,7 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "coaching.py"
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "members.py")).read())  # gated by netlify/edge-functions/members
 
 # sitemap + robots
-urls = ["/", "/book", "/start/", "/kitchen/", "/about/", "/companion/", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES]
+urls = ["/", "/book", "/start/", "/kitchen/", "/about/", "/companion/", "/articles/", "/merch/", "/faq/"] + [f"/articles/{a['slug']}/" for a in ARTICLES] + RECIPE_URLS
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
     f"  <url><loc>{SITE}{u}</loc><lastmod>{DATE_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
 open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)
