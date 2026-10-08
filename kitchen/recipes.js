@@ -762,7 +762,7 @@ window.SK = {
       ]
     },
     {
-      id: 'turkey-taco-lettuce-wraps', lvl: 2, keto: true, name: 'Turkey Taco Lettuce Wraps', cat: 'Lunch', tag: 'Low carb', serves: 4, mins: 20,
+      id: 'turkey-taco-lettuce-wraps', lvl: 2, photos: ['/kitchen/img/turkey-taco-lettuce-wraps.jpg'], keto: true, name: 'Turkey Taco Lettuce Wraps', cat: 'Lunch', tag: 'Low carb', serves: 4, mins: 20,
       blurb: 'Seasoned taco turkey in crunchy romaine cups with tomato, cheese and a Greek yogurt crema.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '1 1/2 lb (680 g) lean ground turkey', food: 'ground-turkey', g: 680 },
