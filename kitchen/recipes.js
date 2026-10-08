@@ -993,7 +993,7 @@ window.SK = {
       ]
     },
     {
-      id: 'stuffed-peppers', lvl: 3, batch: true, name: 'Turkey Stuffed Peppers', cat: 'Dinner', tag: 'Oven', serves: 4, mins: 50,
+      id: 'stuffed-peppers', lvl: 3, photos: ['/kitchen/img/stuffed-peppers.jpg'], batch: true, name: 'Turkey Stuffed Peppers', cat: 'Dinner', tag: 'Oven', serves: 4, mins: 50,
       blurb: 'Bell peppers packed with seasoned turkey, rice and tomatoes, baked under melted cheese.',
       items: [
         { need: 'bell-pepper', txt: '4 large bell peppers, tops cut off and seeded', food: 'bell-pepper', g: 800 },
@@ -1012,7 +1012,7 @@ window.SK = {
       ]
     },
     {
-      id: 'spaghetti-squash-marinara', lvl: 3, batch: true, name: 'Spaghetti Squash with Turkey Marinara', cat: 'Dinner', tag: 'Low carb', serves: 4, mins: 55,
+      id: 'spaghetti-squash-marinara', lvl: 3, photos: ['/kitchen/img/spaghetti-squash-marinara.jpg'], batch: true, name: 'Spaghetti Squash with Turkey Marinara', cat: 'Dinner', tag: 'Low carb', serves: 4, mins: 55,
       blurb: 'Roasted spaghetti squash strands under a hearty turkey meat sauce and parmesan. Big bowl, light on calories.',
       items: [
         { need: 'spaghetti-squash', or: ['pasta'], txt: '1 large spaghetti squash (about 3 lb / 1.4 kg)', food: 'spaghetti-squash', g: 1000 },
