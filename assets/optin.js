@@ -20,6 +20,15 @@
     d.append('fields[source]', (f.querySelector('[name=source]') || {}).value || 'site');
     return fetch('https://app.kit.com/forms/' + KIT_FORM + '/subscriptions', { method: 'POST', mode: 'no-cors', body: d }).catch(function () {});
   }
+  // Links in our emails carry ?m=<subscriber email>, so opening the kit from an email on a new phone or
+  // browser doesn't ask for the email again. Strip it from the address bar right away.
+  try {
+    var q = new URLSearchParams(location.search), m = (q.get('m') || '').trim().replace(/ /g, '+');
+    if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)) {
+      SH_MEMBER.remember(m.toLowerCase());
+      q.delete('m'); history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash);
+    }
+  } catch (e) {}
   function send(f) {
     var body = new URLSearchParams(new FormData(f)).toString();
     var netlify = fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body }).catch(function () {});
