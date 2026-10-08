@@ -582,7 +582,7 @@ window.SK = {
       ]
     },
     {
-      id: 'steak-potatoes', lvl: 3, cat: 'Dinner',
+      id: 'steak-potatoes', lvl: 3, photos: ['/kitchen/img/steak-potatoes.jpg'], cat: 'Dinner',
       name: 'Garlic Butter Steak, Potatoes and Green Beans',
       tag: 'Dinner',
       serves: 4, mins: 40,
