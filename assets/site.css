@@ -285,3 +285,18 @@ html,body{overflow-x:clip}
 .fyr .kph{padding:8px 10px}
 .fyr .kph .kpl{width:38%;margin:0 0 4px}
 @media (max-width:480px){.fyr .kph{padding:6px 8px;gap:2px}.fyr .kph .kpl{width:30%;margin:0 0 2px}.fyr .kph b{font-size:11px}.fyr .kph i{font-size:7.5px;letter-spacing:1.2px}}
+/* Book plug: cover + store buttons (tools/build.py bookplug/stores) */
+.bplug{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center;padding:26px;border-radius:18px;border:1px solid rgba(190,81,38,.55);background:linear-gradient(120deg,rgba(190,81,38,.16),rgba(28,27,25,.6) 55%)}
+.bplug .bpc img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 14px 34px rgba(0,0,0,.5);transform:rotate(-2deg);transition:transform .2s}
+.bplug .bpc:hover img{transform:rotate(0) scale(1.02)}
+.bplug .eyebrow{margin:0 0 6px}.bplug h2{margin:0 0 8px}.bplug .lead{margin:0 0 16px}
+.stores{display:flex;flex-wrap:wrap;gap:10px}
+.store{display:flex;align-items:center;gap:12px;min-height:58px;padding:9px 16px;border-radius:12px;text-decoration:none;line-height:1.2;transition:transform .15s,box-shadow .15s}
+.store:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.store .st{display:flex;flex-direction:column}.store b{font-size:15px}.store small{font-size:12px;opacity:.8}
+.store.az{background:#fff;color:#111}.store.az img{height:22px;width:auto}
+.store.sp{background:#121212;color:#fff;border:1px solid #2a2a2a}.store.sp img{width:30px;height:30px}
+.store.pb{background:transparent;color:inherit;border:1px solid rgba(242,239,230,.35)}.store.pb .si{display:none}
+.bpm{display:inline-block;margin-top:14px;font-weight:700;font-size:14px;color:var(--rust-text,#E07A4F);text-decoration:none}
+.bpx{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0 0;font-size:14px}.bpx a{color:var(--dim,#B9B5AA)}
+@media (max-width:640px){.bplug{grid-template-columns:1fr;gap:18px;padding:20px}.bplug .bpc{width:120px}.store{flex:1 1 100%}}

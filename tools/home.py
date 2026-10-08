@@ -220,18 +220,7 @@ home = head("Salvage Health | It's never too late to take your life back",
     </section>
 
     <section id="book">
-      <div class="bk">
-        <img src="/book/paperback-cover.jpg" alt="Fitness Without the Fear by Bryan Dourado" width="150" loading="lazy">
-        <div>
-          <p class="eyebrow">The book</p>
-          <h2 class="disp">Fitness Without the Fear</h2>
-          <p class="lead">The plain-English guide I couldn't find when I started. Read it on Kindle, or listen on Spotify (included with Premium).</p>
-          <div class="btns">
-            <a class="btn solid" href="/book">Get the book</a>
-            <a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen on Spotify</a>
-          </div>
-        </div>
-      </div>
+      {bookplug("The book", "Fitness Without the <em>Fear</em>", "The plain-English guide I couldn't find when I started. 23 chapters, 11 diagrams and a free companion app that does the math for you.")}
     </section>
 
     <section id="more">
@@ -569,8 +558,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
     </section>
 
     <section style="padding-top:44px" id="learn">
-      <div class="kit"><div><p class="eyebrow">Keep going</p><h2 class="disp">Want the <em>why</em> behind it?</h2><p class="lead">The book explains everything in this kit in plain English. Kindle, or the audiobook on Spotify (included with Premium).</p></div>
-        <div style="display:grid;gap:10px"><a class="btn solid" href="/book">Get the book</a><a class="btn line" href="/kitchen/">Browse all {NREC} recipes</a><a class="btn line" href="{IG}" target="_blank" rel="noopener">Follow on Instagram</a></div></div>
+      {bookplug("Keep going", "Want the <em>why</em> behind it?", "This kit is Chapter 23. The other 22 chapters explain why it works, in plain English, so you can build your own plan from here.", '<p class="bpx"><a href="/kitchen/">Browse all ' + str(NREC) + ' recipes</a><a href="' + IG + '" target="_blank" rel="noopener">Follow on Instagram</a></p>')}
     </section>
     </div>
   </main>

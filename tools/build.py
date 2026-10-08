@@ -113,6 +113,28 @@ FOOT = f"""  <footer class="site">
 </html>
 """
 
+def stores(cls=""):
+    """Store buttons with the Amazon and Spotify marks. Used everywhere the book is plugged."""
+    pb = (f'<a class="store pb" href="{PAPERBACK}" target="_blank" rel="noopener"><span class="si">Paperback</span><span class="st"><b>Paperback</b><small>${PAPERBACK_PRICE} on Amazon</small></span></a>' if PAPERBACK else "")
+    return f'''<div class="stores {cls}">
+          <a class="store az" href="{KINDLE}" target="_blank" rel="noopener"><img src="/book/amazon-sm.png" alt="Amazon" width="107" height="22"><span class="st"><b>Kindle eBook</b><small>${KINDLE_PRICE} on Amazon</small></span></a>
+          <a class="store sp" href="{SPOTIFY}" target="_blank" rel="noopener"><img src="/book/spotify-sm.png" alt="Spotify" width="30" height="30"><span class="st"><b>Audiobook</b><small>On Spotify, included with Premium</small></span></a>
+          {pb}
+        </div>'''
+
+def bookplug(eyebrow, title, lead, extra=""):
+    """The book box: cover, pitch, store buttons."""
+    return f'''<div class="bplug">
+        <a class="bpc" href="/book" aria-label="About the book"><img src="/book/cover-240.jpg" alt="Fitness Without the Fear by Bryan Dourado" width="240" height="384" loading="lazy"></a>
+        <div class="bpt">
+          <p class="eyebrow">{eyebrow}</p>
+          <h2 class="disp">{title}</h2>
+          <p class="lead">{lead}</p>
+          {stores()}
+          <a class="bpm" href="/book">What's inside the book &rarr;</a>{extra}
+        </div>
+      </div>'''
+
 def card(a):
     return f"""      <a class="acard" href="/articles/{a['slug']}/">
         <span class="cat">{a['cat']}</span>

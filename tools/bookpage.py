@@ -75,12 +75,7 @@ BCSS = """<style>
 
 PB = PAPERBACK
 def buy_buttons(extra_cls=""):
-    pb = (f'<a class="btn line" href="{PB}" target="_blank" rel="noopener">Paperback<small>${PAPERBACK_PRICE}</small></a>' if PB else "")
-    return f"""<div class="bp-buy {extra_cls}">
-        <a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Get it on Kindle<small>${KINDLE_PRICE}</small></a>
-        <a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Listen on Spotify</a>
-        {pb}
-      </div>"""
+    return stores("bp-buy " + extra_cls)
 
 PARTS = [
     ("Part 1", "How your body actually works", ["Body basics without the biology class", "Calories and why they still matter", "Protein, carbs and fat, made simple", "Vitamins and minerals that move the needle", "TDEE: how many calories you really burn"]),
@@ -201,6 +196,6 @@ bp = head("Fitness Without the Fear by Bryan Dourado | The No-BS Beginner's Guid
     </div>
     <p class="bp-rev">Already read it? <a href="{REVIEW}" target="_blank" rel="noopener">Leave a quick review on Amazon</a>. It is the single biggest thing that helps an independent book get found.</p>
   </main>
-  <div class="bp-sticky"><a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a><a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener">Spotify</a></div>
+  <div class="bp-sticky"><a class="btn solid" href="{KINDLE}" target="_blank" rel="noopener">Kindle ${KINDLE_PRICE}</a><a class="btn line" href="{SPOTIFY}" target="_blank" rel="noopener"><img src="/book/spotify-sm.png" alt="" width="18" height="18" style="margin-right:6px;vertical-align:-3px">Spotify</a></div>
 """ + FOOT
 write("/book/", bp)
