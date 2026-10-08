@@ -801,7 +801,7 @@ window.SK = {
       ]
     },
     {
-      id: 'tuna-cucumber', lvl: 1, keto: true, name: 'Tuna Salad Cucumber Boats', cat: 'Lunch', tag: '10 minutes', serves: 2, mins: 10,
+      id: 'tuna-cucumber', lvl: 1, photos: ['/kitchen/img/tuna-cucumber.jpg'], keto: true, name: 'Tuna Salad Cucumber Boats', cat: 'Lunch', tag: '10 minutes', serves: 2, mins: 10,
       blurb: 'Lemony Greek yogurt tuna salad piled into cucumber halves. Over 30 grams of protein, almost no cooking.',
       items: [
         { need: 'tuna', txt: '2 cans (5 oz / 142 g each) tuna in water, drained', food: 'tuna', g: 226 },
