@@ -915,7 +915,7 @@ window.SK = {
       ]
     },
     {
-      id: 'turkey-chili', lvl: 2, batch: true, name: 'Big Batch Turkey Chili', cat: 'Dinner', tag: 'Meal prep', serves: 6, mins: 45,
+      id: 'turkey-chili', lvl: 2, photos: ['/kitchen/img/turkey-chili.jpg'], batch: true, name: 'Big Batch Turkey Chili', cat: 'Dinner', tag: 'Meal prep', serves: 6, mins: 45,
       blurb: 'Lean turkey, two kinds of beans and tomatoes simmered with real spice. Freezes perfectly.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '2 lb (907 g) lean ground turkey', food: 'ground-turkey', g: 907 },
