@@ -9,9 +9,21 @@
     is: function () { return !!this.email(); },
     remember: function (em) { try { sessionStorage.setItem('sh-email', em); localStorage.setItem('sh-email', em); } catch (x) {} }
   };
+  // Kit (kit.com) form "Starter Kit". Every signup goes to Kit (which sends the welcome series)
+  // and to Netlify Forms (a backup copy). "source" lands in the Kit custom field "source".
+  var KIT_FORM = '10017103';
+  function toKit(f) {
+    var em = ((f.querySelector('input[type=email]') || {}).value || '').trim();
+    if (!em || (f.querySelector('[name=company]') || {}).value) return Promise.resolve();
+    var d = new FormData();
+    d.append('email_address', em);
+    d.append('fields[source]', (f.querySelector('[name=source]') || {}).value || 'site');
+    return fetch('https://app.kit.com/forms/' + KIT_FORM + '/subscriptions', { method: 'POST', mode: 'no-cors', body: d }).catch(function () {});
+  }
   function send(f) {
     var body = new URLSearchParams(new FormData(f)).toString();
-    return fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body }).catch(function () {});
+    var netlify = fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body }).catch(function () {});
+    return Promise.all([netlify, toKit(f)]);
   }
   function wire(f) {
     if (f.dataset.wired) return; f.dataset.wired = '1';
