@@ -896,7 +896,7 @@ window.SK = {
       ]
     },
     {
-      id: 'shrimp-fried-rice', lvl: 3, name: 'Shrimp Fried Rice', cat: 'Dinner', tag: '20 minutes', serves: 4, mins: 20,
+      id: 'shrimp-fried-rice', lvl: 3, photos: ['/kitchen/img/shrimp-fried-rice.jpg'], name: 'Shrimp Fried Rice', cat: 'Dinner', tag: '20 minutes', serves: 4, mins: 20,
       blurb: 'Better than takeout: shrimp, egg, peas and carrots tossed with day-old rice and soy sauce in a hot pan.',
       items: [
         { need: 'shrimp', or: ['chicken-breast'], txt: '1 lb (454 g) raw shrimp, peeled', food: 'shrimp', g: 454 },
