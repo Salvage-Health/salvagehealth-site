@@ -17,7 +17,16 @@
       input.value = em; input.hidden = true; // stays type=email so optin.js still reads it
       form.querySelector('label.sr').hidden = true;
       form.querySelector('button').textContent = 'Add me to the waitlist';
-      var note = box.querySelector('.optnote'); if (note) note.textContent = 'One tap. We\'ll use ' + em + '.';
+      var note = box.querySelector('.optnote');
+      if (note) {
+        note.textContent = 'One tap. We\'ll use ' + em + '. ';
+        var other = document.createElement('a'); other.href = '#'; other.textContent = 'Use a different email';
+        other.addEventListener('click', function (e) {
+          e.preventDefault(); input.value = ''; input.hidden = false; form.querySelector('label.sr').hidden = false;
+          form.querySelector('button').textContent = 'Join the waitlist'; note.textContent = ''; input.focus();
+        });
+        note.appendChild(other);
+      }
     }
     form.addEventListener('submit', function () {
       try { localStorage.setItem(KEY, '1'); } catch (e) {}
