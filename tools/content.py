@@ -4,6 +4,52 @@ DATE_TXT = "October 4, 2026"
 
 ARTICLES = [
 {
+'slug': 'believe-it-first',
+'cat': 'Mindset',
+'title': "Believe It Before It Exists",
+'h1': "Believe it <em>before it exists.</em>",
+'desc': "Why progress starts in your head before it shows up in the mirror, and how reframing the way you talk about your goals can make the hard parts easier.",
+'dek': "The result is the last thing to show up. Belief has to come first, and time just has to catch up.",
+'read': 5,
+'body': """<p>Every result I've ever gotten existed in my head long before it existed anywhere else. Not as a wish. As a decision. The weight came off over fourteen months, but the version of me who lost it had to show up on day one, back when the scale and the mirror still said otherwise.</p>
+<p>That's the part nobody tells you. You don't get to see it first and then believe it. You have to believe it first, and then go do the things that make it real. The result just needs time to catch up.</p>
+
+<h2>Your brain is already running the show</h2>
+<p>This isn't just a motivational poster. How you think about what you're doing changes how it affects you. In one well-known study, researchers told a group of hotel housekeepers that their daily work already counted as real exercise. A second group wasn't told anything. Neither group changed what they actually did. Four weeks later, the group that saw their work as exercise had lower weight, blood pressure and body fat than the group that didn't.</p>
+<p>Same work. Different belief. Different result. One study doesn't prove everything, but it lines up with what I've lived: what you believe about your effort shapes what you get out of it.</p>
+<blockquote>You don't have to see it to believe it. You have to believe it to see it.</blockquote>
+
+<h2>Belief is the first rep</h2>
+<p>I spent years as a working musician. Every song I ever played on stage started as something I could hear in my head long before my hands could play it. The practice was just my hands catching up to what I already knew was possible.</p>
+<p>Your body works the same way. Psychologists call it self-efficacy: your belief that you're capable of doing a specific thing. People with higher self-efficacy start sooner, try harder and stick around longer when it gets tough. Not because they're more talented. Because they've already decided the outcome is possible, so every setback reads as a detour, not a dead end.</p>
+<p>Belief doesn't replace the work. It's what gets you to start the work, and it's what keeps you there on the days nothing seems to be moving.</p>
+
+<h2>Reframe it until it fits your goal</h2>
+<p>The fastest way to change how something feels is to change what you call it. The situation stays the same. The story you tell yourself about it is the part you control. A few reframes that changed everything for me:</p>
+<ul>
+<li><strong>"I have to work out" becomes "I get to train."</strong> Plenty of people would give anything to be able to move their body. It's a privilege, not a punishment.</li>
+<li><strong>"I can't eat that" becomes "I don't eat that."</strong> "Can't" sounds like a rule someone forced on you. "Don't" is a choice you made, and choices are a lot easier to keep.</li>
+<li><strong>"I'm on a diet" becomes "I'm building something."</strong> Diets end. You're not on a diet. You're becoming someone who eats like this.</li>
+<li><strong>"The scale didn't move" becomes "I got data."</strong> A flat week isn't failure. It's information. Look at your sleep, your salt, your stress, and adjust.</li>
+<li><strong>"I blew it" becomes "next meal."</strong> One bad meal is one bad meal. The only way it turns into a bad week is if you decide it does.</li>
+<li><strong>"I'm starting over" becomes "I'm starting from experience."</strong> You're not back at zero. You know more now than you did the first time.</li>
+</ul>
+<p>None of these are tricks. They're just more accurate than the stories most of us were telling ourselves.</p>
+
+<h2>Act like it's already true</h2>
+<p>Here's where belief turns into results. Ask yourself one question: what would the person who already reached this goal do today? Not someday. Today.</p>
+<p>That person drinks the water. Goes to bed on time. Gets the protein in. Takes the walk. None of it is dramatic. But every time you make the choice they would make, you're casting a vote for who you're becoming. Enough votes, and the mirror has no choice but to agree.</p>
+
+<h2>Time just has to catch up</h2>
+<p>The hardest stretch is the gap between deciding and seeing. You're doing everything right and the outside hasn't caught up yet. That's normal. That's the part that weeds people out.</p>
+<p>Don't let the lag fool you into thinking it isn't working. The change starts on the inside first. Keep believing it, keep acting like it, and give time the chance to catch up.</p>
+<p>It's never too late to decide who you're going to be.</p>""",
+'sources': [
+    ('Crum and Langer, "Mind-Set Matters: Exercise and the Placebo Effect," Psychological Science (2007)', 'https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2007.01867.x/'),
+    ('Bandura, "Self-efficacy: Toward a unifying theory of behavioral change," Psychological Review (1977)', 'https://doi.org/10.1037/0033-295X.84.2.191'),
+],
+},
+{
 'slug': 'power-of-a-coach',
 'cat': 'Coaching',
 'title': "The Power of a Coach",
