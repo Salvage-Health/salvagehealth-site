@@ -603,7 +603,7 @@ window.SK = {
       ]
     },
     {
-      id: 'shrimp-skewers', lvl: 3, cat: 'Dinner',
+      id: 'shrimp-skewers', lvl: 3, photos: ['/kitchen/img/shrimp-skewers.jpg'], cat: 'Dinner',
       name: 'Garlic Shrimp and Veggie Skewers',
       tag: 'Grill',
       serves: 4, mins: 30,
