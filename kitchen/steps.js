@@ -743,7 +743,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Brown the turkey",
-    "d": "Put the 1 1/2 lb (680 g) ground turkey and the onion in a large 12-inch (30 cm) nonstick skillet over medium-high heat. Cook 7 to 8 minutes, breaking the meat into small crumbles with a wooden spoon, until no pink is left and the onion is soft. The turkey should reach 160°F (71°C)."
+    "d": "Put the 1 1/2 lb (680 g) ground turkey and the onion in a large 12-inch (30 cm) nonstick skillet over medium-high heat. Cook 7 to 8 minutes, breaking the meat into small crumbles with a wooden spoon, until no pink is left and the onion is soft. The turkey should reach 165°F (74°C)."
    },
    {
     "t": "Season the meat",
@@ -975,7 +975,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Brown the turkey",
-    "d": "Turn the heat to medium-high and add the 2 lb (907 g) ground turkey. Cook 7 to 8 minutes, breaking it into small crumbles, until no pink is left and it reaches 160°F (71°C)."
+    "d": "Turn the heat to medium-high and add the 2 lb (907 g) ground turkey. Cook 7 to 8 minutes, breaking it into small crumbles, until no pink is left and it reaches 165°F (74°C)."
    },
    {
     "t": "Toast the spices",
@@ -1016,7 +1016,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Thicken the sauce",
-    "d": "Return all the steak to the pan, then add the broccoli. Stir the sauce again (the cornstarch settles) and pour it in. Toss over high heat about 1 minute, until the sauce bubbles, thickens and turns glossy."
+    "d": "Return all the steak to the pan, then add the broccoli. Stir the sauce again (the cornstarch settles) and pour it in. Toss over high heat about 1 minute, until the sauce bubbles, thickens and turns glossy and the steak is cooked through, at least 145°F (63°C)."
    },
    {
     "t": "Serve and store",
@@ -1095,7 +1095,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Brown the turkey",
-    "d": "Put the 1 lb (454 g) of turkey and the onion in a large 12-inch (30 cm) skillet over medium-high heat. Break the meat into small crumbles with a wooden spoon and cook 7 to 9 minutes, until no pink remains, the onion is soft, and the meat reaches 160°F (71°C). Stir in the garlic, about 1 tsp of Italian seasoning or cumin, 1/2 tsp of salt and some pepper, and cook 1 more minute until fragrant."
+    "d": "Put the 1 lb (454 g) of turkey and the onion in a large 12-inch (30 cm) skillet over medium-high heat. Break the meat into small crumbles with a wooden spoon and cook 7 to 9 minutes, until no pink remains, the onion is soft, and the meat reaches 165°F (74°C). Stir in the garlic, about 1 tsp of Italian seasoning or cumin, 1/2 tsp of salt and some pepper, and cook 1 more minute until fragrant."
    },
    {
     "t": "Make the filling",
@@ -1132,7 +1132,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Brown the turkey",
-    "d": "About 20 minutes before the squash is done, put the 1 lb (454 g) of turkey in a large 12-inch (30 cm) skillet over medium-high heat. Break it into small crumbles and cook 7 to 9 minutes, until no pink remains and it reaches 160°F (71°C). Stir in the garlic, about 1 tsp of Italian seasoning, 1/2 tsp of salt and some pepper, and cook 1 minute until fragrant."
+    "d": "About 20 minutes before the squash is done, put the 1 lb (454 g) of turkey in a large 12-inch (30 cm) skillet over medium-high heat. Break it into small crumbles and cook 7 to 9 minutes, until no pink remains and it reaches 165°F (74°C). Stir in the garlic, about 1 tsp of Italian seasoning, 1/2 tsp of salt and some pepper, and cook 1 minute until fragrant."
    },
    {
     "t": "Simmer the sauce",
@@ -1256,7 +1256,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Brown the turkey",
-    "d": "In the same pan over medium-high heat, add the 1 lb (454 g) of turkey with about 1 tsp each of chili powder and cumin, plus salt and pepper. Break it into small crumbles and cook 7 to 9 minutes, until no pink remains and it reaches 160°F (71°C). Move it to another plate."
+    "d": "In the same pan over medium-high heat, add the 1 lb (454 g) of turkey with about 1 tsp each of chili powder and cumin, plus salt and pepper. Break it into small crumbles and cook 7 to 9 minutes, until no pink remains and it reaches 165°F (74°C). Move it to another plate."
    },
    {
     "t": "Scramble the eggs",
@@ -1442,7 +1442,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Roast it all",
-    "d": "Pull the pan out, add the sausage and vegetables, and spread everything into a single layer. Crowded pans steam instead of roast, so use a second pan if needed. Roast 15 to 20 minutes more, until the potatoes are golden and tender when poked with a fork, the peppers have browned edges, and the sausage is sizzling and browned."
+    "d": "Pull the pan out, add the sausage and vegetables, and spread everything into a single layer. Crowded pans steam instead of roast, so use a second pan if needed. Roast 15 to 20 minutes more, until the potatoes are golden and tender when poked with a fork, the peppers have browned edges, and the sausage is sizzling, browned and hot all the way through, 165°F (74°C)."
    },
    {
     "t": "Serve or store",
@@ -1533,7 +1533,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Serve and store",
-    "d": "Ladle into 6 bowls, about 1 1/2 cups each, and top each with 1/4 cup (60 g) Greek yogurt, 1/2 oz (14 g) cheddar and cilantro. Keep the chili in sealed containers for up to 5 days in the fridge, or freeze in portions for up to 3 months. Thaw overnight in the fridge and reheat in a pot over medium heat or 2 to 3 minutes in the microwave, stirring halfway; add the toppings after reheating."
+    "d": "Ladle into 6 bowls, about 1 1/2 cups each, and top each with 1/4 cup (60 g) Greek yogurt, 1/2 oz (14 g) cheddar and cilantro. Keep the chili in sealed containers for up to 4 days in the fridge, or freeze in portions for up to 3 months. Thaw overnight in the fridge and reheat in a pot over medium heat or 2 to 3 minutes in the microwave, stirring halfway; add the toppings after reheating."
    }
   ],
   "tip": "Stir the pot every few minutes once the lentils go in. Red lentils thicken fast and love to stick to the bottom, and one scorched patch can make the whole batch taste burnt."
@@ -1649,7 +1649,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Serve and store",
-    "d": "Toss the pasta with the sauce, loosening with pasta water as needed, or spoon the sauce over each portion. Divide into 6 bowls and top each with 1/4 oz (7 g) parmesan and basil. The sauce keeps 5 days in the fridge or 3 months in the freezer; store pasta and sauce separately if you can, and reheat in a pot over medium heat or 2 to 3 minutes in the microwave with a splash of water."
+    "d": "Toss the pasta with the sauce, loosening with pasta water as needed, or spoon the sauce over each portion. Divide into 6 bowls and top each with 1/4 oz (7 g) parmesan and basil. The sauce keeps 4 days in the fridge or 3 months in the freezer; store pasta and sauce separately if you can, and reheat in a pot over medium heat or 2 to 3 minutes in the microwave with a splash of water."
    }
   ],
   "tip": "Stop simmering when the lentils are just tender. Overcooked lentils turn to mush and the sauce goes from hearty bolognese to baby food, so start tasting at the 20 minute mark."
@@ -1828,7 +1828,7 @@ window.SK_STEPS = {
    },
    {
     "t": "Sear the steak",
-    "d": "Turn the heat to high, add the remaining oil and the steak in a single layer, and season with the salt, pepper and garlic powder. Cook 2 to 3 minutes, stirring once, until browned with no pink, then stir in the garlic, soy sauce and onion mixture for 30 seconds."
+    "d": "Turn the heat to high, add the remaining oil and the steak in a single layer, and season with the salt, pepper and garlic powder. Cook 2 to 3 minutes, stirring once, until browned with no pink, at least 145°F (63°C), then stir in the garlic, soy sauce and onion mixture for 30 seconds."
    },
    {
     "t": "Stuff and bake",
