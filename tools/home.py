@@ -378,7 +378,7 @@ KITCSS = HOMECSS.replace("</style>", """
 .fyh{font-family:Oswald,'Arial Narrow',Impact,sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:20px;margin:30px 0 12px}
 .fyr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .fyr a{text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:3px;min-width:0}
-.fyr .im{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--raised);border:1px solid var(--rule);display:grid;place-items:center}
+.fyr .im{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--raised);border:1px solid var(--rule);display:grid;place-items:center}
 .fyr .im img{width:100%;height:100%;object-fit:cover}
 .fyr .im svg{width:30%;color:#4A4842}
 .fyr b{font-size:14.5px;line-height:1.3;margin-top:3px}
@@ -554,6 +554,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
   <script>window.SH_ARTICLES = """ + _json.dumps({a['slug']: a['title'] for a in ARTICLES}) + """;</script>
   <script src="/kitchen/recipes.js"></script>
   <script src="/assets/goals.js"></script>
+  <script src="/assets/plate.js"></script>
   <script src="/assets/kit.js"></script>
 """ + FOOT
 write("/start/kit/", kit)

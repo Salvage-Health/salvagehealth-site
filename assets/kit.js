@@ -104,11 +104,12 @@
     // meals
     var max = H.maxLv(P.skill);
     $('p-skilltag').innerHTML = 'Kitchen level 1 to ' + max + ' ' + H.dots(max);
-    $('p-why').textContent = 'Picked for ' + g.short.toLowerCase() + ' and ' + sk[1].toLowerCase() + '. Each one shows why it fits.';
+    var COOK = { 'new': 'easy enough for a brand-new cook', ok: 'right for someone who can follow a recipe', pro: 'with the full range for a confident cook' };
+    $('p-why').textContent = 'Picked for ' + g.short.toLowerCase() + ', ' + (COOK[P.skill] || 'at your kitchen level') + '. Each one shows why it fits.';
     var rec = H.rank(SK.RECIPES, P.goal, P.skill).slice(0, 6);
     $('fy-rec').innerHTML = rec.map(function (r) {
       var pct = Math.round(r.m.kcal / t.cal * 100);
-      return '<a href="/kitchen/#' + r.id + '"><span class="im">' + (r.photos ? '<img src="' + r.photos[0] + '" alt="" loading="lazy">' : SHIELD) + '</span><b>' + esc(r.name) + '</b>' +
+      return '<a href="/kitchen/#' + r.id + '"><span class="im">' + (r.photos ? '<img src="' + r.photos[0] + '" alt="" loading="lazy">' : (window.SH_PLATE ? SH_PLATE(r) : SHIELD)) + '</span><b>' + esc(r.name) + '</b>' +
         '<small>' + r.m.kcal + ' cal · ' + r.m.p + 'g protein · ' + pct + '% of your day</small>' +
         '<small>Level ' + r.lvl + H.dots(r.lvl) + '</small><span class="why">' + esc(g.why(r)) + '</span></a>';
     }).join('');
