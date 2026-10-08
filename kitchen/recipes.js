@@ -1107,7 +1107,7 @@ window.SK = {
       ]
     },
     {
-      id: 'lighter-chicken-alfredo', lvl: 3, name: 'Lighter Chicken Alfredo', cat: 'Dinner', tag: 'Comfort food', serves: 4, mins: 30,
+      id: 'lighter-chicken-alfredo', lvl: 3, photos: ['/kitchen/img/lighter-chicken-alfredo.jpg'], name: 'Lighter Chicken Alfredo', cat: 'Dinner', tag: 'Comfort food', serves: 4, mins: 30,
       blurb: 'Creamy alfredo without the heavy cream. Blended cottage cheese, milk and parmesan make a silky high-protein sauce.',
       items: [
         { need: 'pasta', txt: '8 oz (227 g) dry fettuccine or penne', food: 'pasta', g: 227 },
