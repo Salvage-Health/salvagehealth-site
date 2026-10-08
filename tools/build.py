@@ -135,6 +135,21 @@ def bookplug(eyebrow, title, lead, extra=""):
         </div>
       </div>'''
 
+def waitlist(where):
+    """Waitlist block for the meal prep book. Members get a one-tap join (assets/waitlist.js)."""
+    src = "meal-prep-waitlist-" + where
+    return f'''<section class="wlist" data-wlist>
+      <img src="/book/cook-twice-cover.jpg" alt="Cook Twice, Eat All Week by Bryan Dourado, cover" width="480" height="720" loading="lazy">
+      <div class="wl-body">
+        <p class="eyebrow">Coming soon \u00b7 The meal prep book</p>
+        <h2 class="disp">Cook twice. <em>Eat all week.</em></h2>
+        <p>100 high-protein meal prep recipes, 6 done-for-you weeks with grocery lists, Bryan's Pantry seasonings and sauces, and the chef system that turns 2 hours on Sunday into 5 days of meals.</p>
+        <p class="wl-perk">Waitlist gets the early-bird price on launch day.</p>
+        <form class="optin" name="starter-kit" method="POST" action="/start/kit/" data-stay data-wl><input type="hidden" name="form-name" value="starter-kit"><input type="hidden" name="source" value="{src}"><p class="hp" hidden><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p><label class="sr" for="em-{src}">Email address</label><input id="em-{src}" type="email" name="email" required placeholder="Your email address" autocomplete="email"><button class="btn solid" type="submit">Join the waitlist</button></form>
+        <p class="optnote">Free. No spam, unsubscribe anytime.</p>
+      </div>
+    </section>'''
+
 def card(a):
     return f"""      <a class="acard" href="/articles/{a['slug']}/">
         <span class="cat">{a['cat']}</span>
@@ -538,10 +553,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
         </details>
     </div>
     <div id="results" aria-live="polite"></div>
-    <section class="skmail" aria-label="Get recipes by email">
-      <div><h2 class="disp">New recipes <em>weekly</em></h2><p>One fridge-friendly, high-protein recipe in your inbox every week.</p></div>
-      <form onsubmit="event.preventDefault();"><input type="email" placeholder="Your email" aria-label="Email" disabled><button class="btn solid" type="submit" disabled>Coming soon</button></form>
-    </section>
+    """ + waitlist("kitchen") + """
     <p class="fine">Macros are estimates per serving based on USDA and package label data and include optional ingredients. Cook chicken and ground poultry to 165°F (74°C). We cook with avocado oil; swap in any oil if you have an allergy.</p>
   </main>
   <dialog id="dlg" aria-label="Recipe"><button id="dlg-close" type="button" aria-label="Close">&times;</button><div id="dlg-body"></div></dialog>
@@ -551,6 +563,7 @@ kp = head("Salvage Kitchen | Salvage Health", "Macro-friendly, high-protein reci
   <script src="/assets/optin.js"></script>
   <script src="/assets/plate.js"></script>
   <script src="/kitchen/app.js"></script>
+  <script src="/assets/waitlist.js"></script>
   <script src="/assets/rail.js"></script>
 """ + FOOT
 write("/kitchen/", kp)

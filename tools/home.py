@@ -560,6 +560,8 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
         <a class="btn solid" href="#week">Back to the 7-day plan &rarr;</a></div>
     </section>
 
+    {waitlist("kit")}
+
     <section style="padding-top:44px" id="learn">
       {bookplug("Keep going", "Want the <em>why</em> behind it?", "This kit is Chapter 23. The other 22 chapters explain why it works, in plain English, so you can build your own plan from here.", '<p class="bpx"><a href="/kitchen/">Browse all ' + str(NREC) + ' recipes</a><a href="' + IG + '" target="_blank" rel="noopener">Follow on Instagram</a></p>')}
     </section>
@@ -573,6 +575,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
   <script src="/assets/plate.js"></script>
   <script src="/assets/kit.js"></script>
   <script src="/assets/groceries.js"></script>
+  <script src="/assets/waitlist.js"></script>
 """ + FOOT
 write("/start/kit/", kit)
 
