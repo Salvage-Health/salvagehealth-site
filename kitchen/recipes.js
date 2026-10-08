@@ -1030,7 +1030,7 @@ window.SK = {
       ]
     },
     {
-      id: 'lemon-butter-cod', lvl: 2, name: 'Lemon Butter Cod with Potatoes and Green Beans', cat: 'Dinner', tag: 'Lean', serves: 4, mins: 35,
+      id: 'lemon-butter-cod', lvl: 2, photos: ['/kitchen/img/lemon-butter-cod.jpg'], name: 'Lemon Butter Cod with Potatoes and Green Beans', cat: 'Dinner', tag: 'Lean', serves: 4, mins: 35,
       blurb: 'Flaky white fish baked with lemon, garlic and a little butter, next to roasted potatoes and green beans.',
       items: [
         { need: 'white-fish', or: ['salmon'], txt: '1 1/2 lb (680 g) cod or other white fish', food: 'white-fish', g: 680 },
@@ -1048,7 +1048,7 @@ window.SK = {
       ]
     },
     {
-      id: 'pork-carnitas-tacos', lvl: 3, name: 'Quick Pork Tenderloin Carnitas Tacos', cat: 'Dinner', tag: 'Taco night', serves: 4, mins: 40,
+      id: 'pork-carnitas-tacos', lvl: 3, photos: ['/kitchen/img/pork-carnitas-tacos.jpg'], name: 'Quick Pork Tenderloin Carnitas Tacos', cat: 'Dinner', tag: 'Taco night', serves: 4, mins: 40,
       blurb: 'Lean pork tenderloin seared, shredded and crisped with lime and spices. All the carnitas flavor, a fraction of the fat.',
       items: [
         { need: 'pork-tenderloin', txt: '1 1/2 lb (680 g) pork tenderloin', food: 'pork-tenderloin', g: 680 },
