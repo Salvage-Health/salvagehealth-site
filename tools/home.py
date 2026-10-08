@@ -338,6 +338,23 @@ KITCSS = HOMECSS.replace("</style>", """
 .gl input{margin-top:3px;accent-color:#BE5126;width:17px;height:17px;flex:0 0 auto}
 .gl input:checked + *{text-decoration:line-through}
 .gl em{color:var(--faint)}
+.build{display:block;width:100%;margin-top:12px;font-size:16px;padding:15px}
+.build.wait{opacity:.55}
+.build.built{background:transparent;color:var(--rust-text);border:1px solid var(--rust)}
+.nxt{margin-top:22px;padding:18px;border-radius:14px;border:1px solid var(--rule);background:var(--raised);display:grid;gap:10px;justify-items:start}
+.nxt .ok{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+.nxt .ok::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#BE5126;margin-right:8px;vertical-align:1px}
+.nxt p{margin:0;color:var(--dim);font-size:15px;line-height:1.5}
+.nxt .btn{width:auto}
+.nxt.all{border-color:var(--rust);background:rgba(190,81,38,.08)}
+.wk{margin:0;padding:0 0 0 18px;display:grid;gap:6px;color:var(--dim);font-size:14.5px}
+.wk b{color:var(--ink,#F2EFE6);margin-right:6px}
+.gtools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:16px}
+.gtools b{font-size:15px}
+.gtools span{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gtools .btn{width:auto;padding:9px 14px;font-size:13.5px;background:transparent;color:inherit;border:1px solid rgba(242,239,230,.35);cursor:pointer;font-family:inherit;font-weight:700}
+.kp section,#plan,#r-empty,#g-done{scroll-margin-top:96px}
+.gclear{background:none;border:0;color:var(--faint);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
 .pantry{font-size:13.5px;color:var(--faint);margin-top:10px}
 .calc{display:grid;gap:18px;margin-top:22px;padding:20px;background:var(--raised);border:1px solid var(--rule);border-radius:16px}
 .cl{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
@@ -482,6 +499,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
         <div class="cq"><span class="cl">In the kitchen</span><div class="seg sk" id="c-skill"></div></div>
       </form>
       <div class="need" id="r-empty" aria-live="polite"><b id="need-h">Answer 6 quick questions</b><span id="need-l"></span></div>
+      <button class="btn solid build" id="c-build" type="button">Build my plan</button>
       <p class="pantry">Estimates only, not medical advice. Want goal dates? Use the <a href="/companion/">full companion app</a>.</p>
     </section>
 
@@ -516,6 +534,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
       <ol class="tips" id="fy-tips"></ol>
       <h3 class="fyh">Read next</h3>
       <div class="fya" id="fy-art"></div>
+      <div class="nxt"><span class="ok">Step 1 done</span><p>Your numbers are saved on this device. Change any answer above and everything updates. Next, see what to do each day this week.</p><a class="btn solid" href="#week">Next: your 7-day plan &rarr;</a></div>
     </section>
     <form name="starter-kit-profile" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="starter-kit-profile"><input name="company"><input name="email"><input name="goal"><input name="calories"><input name="protein"><input name="activity"><input name="skill"></form>
 
@@ -524,6 +543,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
       <h2 class="disp">Your 7-day plan</h2>
       <p class="lead">One small step a day. From Chapter 23 of <i>Fitness Without the Fear</i>.</p>
       <ol class="days">{_dl}</ol>
+      <div class="nxt"><span class="ok">Step 2</span><p>That is the whole week: one small step a day. Day 1 is tomorrow, or today if you are ready. Next, the meals that make it easy.</p><a class="btn solid" href="#meals">Next: cook twice, eat all week &rarr;</a></div>
     </section>
 
     <section style="padding-top:44px" id="meals">
@@ -533,14 +553,19 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
       <p class="fit" id="mp-fit">Adjust portions up or down to match your numbers from Step 1.</p>
       <div class="mps">{_mp}</div>
       <p class="pantry">Day 5 is your real-world meal: eat out or eat with friends that night.</p>
+      <div class="nxt"><span class="ok">Step 3</span><p>Four recipes, two cook days. Next, the grocery list for all of it.</p><a class="btn solid" href="#groceries">Next: the grocery list &rarr;</a></div>
     </section>
 
     <section style="padding-top:44px" id="groceries">
       <p class="eyebrow">Step 4</p>
       <h2 class="disp">The grocery list</h2>
-      <p class="lead">Check items off as you shop. Amounts are for the full recipe.</p>
+      <p class="lead">Tap items as they go in your cart. Your checks save on this device, so you can close this page and pick up where you left off at the store. Amounts are for the full recipe.</p>
+      <div class="gtools"><b id="g-count">0 of 0 in the cart</b><span><a class="btn line" id="g-sms" href="#">Text it to me</a><a class="btn line" id="g-mail" href="#">Email it to me</a><button class="btn line" id="g-copy" type="button">Copy</button><button class="gclear" id="g-clear" type="button">Start over</button></span></div>
       <div class="gls">{_gl}</div>
       <p class="pantry">Pantry basics assumed: avocado oil or avocado oil spray, salt and pepper, garlic, and basic spices (chili powder, cumin, paprika, oregano, sage, fennel seed, garlic powder).</p>
+      <div class="nxt done" id="g-done"><span class="ok" id="g-done-h">Step 4</span><p id="g-done-p">When your cart is full, you are set for week one. Here is how the week goes:</p>
+        <ol class="wk"><li><b>Cook day (Sunday)</b>Cook the three Sunday recipes, about 2 hours. Tap any meal above for the steps.</li><li><b>Day 1</b>Weigh in, get your numbers, pick a bedtime. I will email you the details.</li><li><b>Thursday</b>Cook the Egg Roll in a Bowl, 20 minutes.</li><li><b>Day 7</b>Weigh in again and change nothing yet. One week is a data point.</li></ol>
+        <a class="btn solid" href="#week">Back to the 7-day plan &rarr;</a></div>
     </section>
 
     <section style="padding-top:44px" id="learn">
@@ -556,6 +581,7 @@ kit = head("Your Day One Starter Kit | Salvage Health", "Your free Day One Start
   <script src="/assets/goals.js"></script>
   <script src="/assets/plate.js"></script>
   <script src="/assets/kit.js"></script>
+  <script src="/assets/groceries.js"></script>
 """ + FOOT
 write("/start/kit/", kit)
 

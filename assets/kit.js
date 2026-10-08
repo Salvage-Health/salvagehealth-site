@@ -45,8 +45,7 @@
     else if (b.closest('#c-act')) P.act = +b.dataset.v;
     else if (b.closest('#c-skill')) { if (P.skill !== b.dataset.v) changed = 'Meals updated for your kitchen level'; P.skill = b.dataset.v; }
     mark(); var ready = update();
-    if (ready && !wasReady) { wasReady = true; setTimeout(function () { $('plan').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 150); }
-    else if (ready && changed) { flash(); if (!inView($('plan'))) say(changed, true); else say(changed); }
+    if (ready && changed && P.built) { flash(); if (!inView($('plan'))) say(changed, true); else say(changed); }
   });
   function inView(el) { var r = el.getBoundingClientRect(); return r.top < innerHeight * 0.8 && r.bottom > 80; }
   function flash() { var pl = $('plan'); pl.classList.remove('flash'); void pl.offsetWidth; pl.classList.add('flash'); }
@@ -66,8 +65,9 @@
     var t = ok ? H.targets({ sex: P.sex, age: +P.age, ft: +P.ft, inch: +(P.inch || 0), lb: +P.lb, act: +P.act, goal: P.goal }) : null;
     if (t) { P.cal = t.cal; P.p = t.p; P.c = t.c; P.f = t.f; P.tdee = t.tdee; } else { delete P.cal; }
     H.save(P);
-    $('plan').hidden = !ok; $('r-empty').hidden = !!ok; $('foryou').hidden = !ok;
-    needs(ok);
+    var show = ok && P.built;
+    $('plan').hidden = !show; $('foryou').hidden = !show; $('r-empty').hidden = !!show;
+    needs(ok); button(ok);
     if (!ok) return false;
     var g = H.G[P.goal], sk = H.SKILL.filter(function (s) { return s[0] === P.skill; })[0];
 
@@ -144,9 +144,22 @@
       tgt.classList.toggle('miss', touched && !ok && !c[1]);
       if (!c[1]) miss.push(c[0]);
     });
-    if (ok) return;
+    if (ok) { $('need-h').textContent = 'All set.'; $('need-l').textContent = 'Tap Build my plan to see your numbers and first meals.'; return; }
     $('need-h').textContent = miss.length >= 6 ? 'Answer 6 quick questions to see your plan' : 'Almost there. Your plan appears when you add:';
     $('need-l').innerHTML = miss.length >= 6 ? 'Your calories, protein, carbs and fat show up right here.' : miss.map(function (m) { return '<em>' + m + '</em>'; }).join(', ');
   }
-  mark(); wasReady = update();
+  // "Build my plan": the first reveal is a clear tap, not a surprise scroll. After that, edits update live.
+  function button(ok) {
+    var b = $('c-build');
+    b.classList.toggle('wait', !ok); b.classList.toggle('built', !!(ok && P.built));
+    b.textContent = !ok ? 'Build my plan' : P.built ? 'Plan saved. Change any answer and it updates.' : 'Build my plan \u2192';
+  }
+  $('c-build').addEventListener('click', function () {
+    var ok = update();
+    if (!ok) { touched = true; needs(false); $('r-empty').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    if (!P.built) { P.built = true; H.save(P); update(); }
+    $('plan').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  if (P.cal && P.built == null) P.built = true; // people who finished the calculator before the button existed
+  mark(); update();
 })();

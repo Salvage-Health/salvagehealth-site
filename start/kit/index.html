@@ -160,6 +160,23 @@
 .gl input{margin-top:3px;accent-color:#BE5126;width:17px;height:17px;flex:0 0 auto}
 .gl input:checked + *{text-decoration:line-through}
 .gl em{color:var(--faint)}
+.build{display:block;width:100%;margin-top:12px;font-size:16px;padding:15px}
+.build.wait{opacity:.55}
+.build.built{background:transparent;color:var(--rust-text);border:1px solid var(--rust)}
+.nxt{margin-top:22px;padding:18px;border-radius:14px;border:1px solid var(--rule);background:var(--raised);display:grid;gap:10px;justify-items:start}
+.nxt .ok{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--rust-text)}
+.nxt .ok::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#BE5126;margin-right:8px;vertical-align:1px}
+.nxt p{margin:0;color:var(--dim);font-size:15px;line-height:1.5}
+.nxt .btn{width:auto}
+.nxt.all{border-color:var(--rust);background:rgba(190,81,38,.08)}
+.wk{margin:0;padding:0 0 0 18px;display:grid;gap:6px;color:var(--dim);font-size:14.5px}
+.wk b{color:var(--ink,#F2EFE6);margin-right:6px}
+.gtools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:16px}
+.gtools b{font-size:15px}
+.gtools span{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gtools .btn{width:auto;padding:9px 14px;font-size:13.5px;background:transparent;color:inherit;border:1px solid rgba(242,239,230,.35);cursor:pointer;font-family:inherit;font-weight:700}
+.kp section,#plan,#r-empty,#g-done{scroll-margin-top:96px}
+.gclear{background:none;border:0;color:var(--faint);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
 .pantry{font-size:13.5px;color:var(--faint);margin-top:10px}
 .calc{display:grid;gap:18px;margin-top:22px;padding:20px;background:var(--raised);border:1px solid var(--rule);border-radius:16px}
 .cl{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
@@ -316,6 +333,7 @@
         <div class="cq"><span class="cl">In the kitchen</span><div class="seg sk" id="c-skill"></div></div>
       </form>
       <div class="need" id="r-empty" aria-live="polite"><b id="need-h">Answer 6 quick questions</b><span id="need-l"></span></div>
+      <button class="btn solid build" id="c-build" type="button">Build my plan</button>
       <p class="pantry">Estimates only, not medical advice. Want goal dates? Use the <a href="/companion/">full companion app</a>.</p>
     </section>
 
@@ -350,6 +368,7 @@
       <ol class="tips" id="fy-tips"></ol>
       <h3 class="fyh">Read next</h3>
       <div class="fya" id="fy-art"></div>
+      <div class="nxt"><span class="ok">Step 1 done</span><p>Your numbers are saved on this device. Change any answer above and everything updates. Next, see what to do each day this week.</p><a class="btn solid" href="#week">Next: your 7-day plan &rarr;</a></div>
     </section>
     <form name="starter-kit-profile" data-netlify="true" netlify-honeypot="company" hidden><input type="hidden" name="form-name" value="starter-kit-profile"><input name="company"><input name="email"><input name="goal"><input name="calories"><input name="protein"><input name="activity"><input name="skill"></form>
 
@@ -358,6 +377,7 @@
       <h2 class="disp">Your 7-day plan</h2>
       <p class="lead">One small step a day. From Chapter 23 of <i>Fitness Without the Fear</i>.</p>
       <ol class="days"><li><b>Day 1</b><span><strong>Get your baseline</strong>Weigh yourself first thing in the morning and write it down. Eat normally today. Get your calorie and protein numbers from the free app, and go to bed at a set time tonight.</span></li><li><b>Day 2</b><span><strong>Hit two numbers</strong>Start eating toward your calorie and protein targets. Those two numbers matter most. Don&#x27;t stress about the rest yet.</span></li><li><b>Day 3</b><span><strong>Add structure</strong>Pick how you&#x27;ll track (an app, a notebook, or just your meal plan) and commit to it for two weeks. Drink water and check that you&#x27;re well hydrated.</span></li><li><b>Day 4</b><span><strong>Check in with yourself</strong>Skip the scale today. Notice your energy, hunger, sleep and mood instead. Those are real signs of progress too.</span></li><li><b>Day 5</b><span><strong>Handle a real-world meal</strong>Eat one meal you don&#x27;t control: a restaurant, a work lunch, a friend&#x27;s cooking. Estimate it, enjoy it, move on. This is where plans usually break, so practice it.</span></li><li><b>Day 6</b><span><strong>Review the week</strong>Look back without judging. Are you landing near your calorie and protein targets? Where did sleep slip, and why?</span></li><li><b>Day 7</b><span><strong>Weigh in and reflect</strong>Weigh in the same way as Day 1 and write it down. Don&#x27;t change anything yet. One week is a data point, not a trend. You just finished week one.</span></li></ol>
+      <div class="nxt"><span class="ok">Step 2</span><p>That is the whole week: one small step a day. Day 1 is tomorrow, or today if you are ready. Next, the meals that make it easy.</p><a class="btn solid" href="#meals">Next: cook twice, eat all week &rarr;</a></div>
     </section>
 
     <section style="padding-top:44px" id="meals">
@@ -367,14 +387,19 @@
       <p class="fit" id="mp-fit">Adjust portions up or down to match your numbers from Step 1.</p>
       <div class="mps"><a class="mp" href="/kitchen/#turkey-sausage-mcmuffins"><img src="/kitchen/img/turkey-sausage-mcmuffins.jpg" alt="" loading="lazy"><span><small>Breakfast, all 7 days · Cook Sunday</small><b>High-Protein Turkey Sausage Egg McMuffins</b><em>320 cal · 34g protein per serving</em></span></a><a class="mp" href="/kitchen/#chicken-meal-prep"><img src="/kitchen/img/chicken-meal-prep.jpg" alt="" loading="lazy"><span><small>Lunch, Monday to Thursday · Cook Sunday</small><b>Chicken, Sweet Potato and Broccoli Meal Prep</b><em>585 cal · 59g protein per serving</em></span></a><a class="mp" href="/kitchen/#cabbage-enchiladas"><img src="/kitchen/img/cabbage-enchiladas-steps.jpg" alt="" loading="lazy"><span><small>Dinner, Sunday to Wednesday, plus lunch Friday to Sunday · Cook Sunday</small><b>Cabbage-Wrapped Shredded Chicken Enchiladas</b><em>470 cal · 62g protein per serving</em></span></a><a class="mp" href="/kitchen/#egg-roll-in-a-bowl"><img src="/kitchen/img/egg-roll-in-a-bowl.jpg" alt="" loading="lazy"><span><small>Dinner, Thursday, Saturday and Sunday · Cook Thursday, 20 minutes</small><b>Egg Roll in a Bowl</b><em>305 cal · 34g protein per serving</em></span></a></div>
       <p class="pantry">Day 5 is your real-world meal: eat out or eat with friends that night.</p>
+      <div class="nxt"><span class="ok">Step 3</span><p>Four recipes, two cook days. Next, the grocery list for all of it.</p><a class="btn solid" href="#groceries">Next: the grocery list &rarr;</a></div>
     </section>
 
     <section style="padding-top:44px" id="groceries">
       <p class="eyebrow">Step 4</p>
       <h2 class="disp">The grocery list</h2>
-      <p class="lead">Check items off as you shop. Amounts are for the full recipe.</p>
+      <p class="lead">Tap items as they go in your cart. Your checks save on this device, so you can close this page and pick up where you left off at the store. Amounts are for the full recipe.</p>
+      <div class="gtools"><b id="g-count">0 of 0 in the cart</b><span><a class="btn line" id="g-sms" href="#">Text it to me</a><a class="btn line" id="g-mail" href="#">Email it to me</a><button class="btn line" id="g-copy" type="button">Copy</button><button class="gclear" id="g-clear" type="button">Start over</button></span></div>
       <div class="gls"><div class="gl"><h3>High-Protein Turkey Sausage Egg McMuffins</h3><ul><li><label><input type="checkbox"> 1 1/2 lb (680 g) 93% lean ground turkey</label></li><li><label><input type="checkbox"> 3 cups (720 ml) Egg Beaters 100% Egg Whites (about 6 tbsp per sandwich)</label></li><li><label><input type="checkbox"> 8 light multigrain English muffins (about 100 calories each)</label></li><li><label><input type="checkbox"> 8 slices Kraft Singles 2% Milk American cheese</label></li></ul></div><div class="gl"><h3>Chicken, Sweet Potato and Broccoli Meal Prep</h3><ul><li><label><input type="checkbox"> 2 lb (907 g) chicken breast</label></li><li><label><input type="checkbox"> 2 lb (907 g) sweet potatoes, cubed</label></li><li><label><input type="checkbox"> 1 1/2 lb (680 g) broccoli florets</label></li></ul></div><div class="gl"><h3>Cabbage-Wrapped Shredded Chicken Enchiladas</h3><ul><li><label><input type="checkbox"> 2 3/4 lb (1.25 kg) cooked, shredded chicken breast, from about 3 1/2 lb (1.6 kg) raw</label></li><li><label><input type="checkbox"> 1 large head green cabbage, for 16 large leaves</label></li><li><label><input type="checkbox"> 2 cans (10 oz / 283 g each) Old El Paso Original Enchilada Sauce</label></li><li><label><input type="checkbox"> 12 oz (340 g) Monterey Jack, shredded, about 3 cups</label></li></ul></div><div class="gl"><h3>Egg Roll in a Bowl</h3><ul><li><label><input type="checkbox"> 1 1/2 lb (680 g) 93% lean ground turkey</label></li><li><label><input type="checkbox"> 1 bag (14 oz / 400 g) coleslaw mix</label></li><li><label><input type="checkbox"> 3 tbsp (45 ml) low-sodium soy sauce</label></li><li><label><input type="checkbox"> 4 green onions, sliced, whites and greens kept separate <em>(optional)</em></label></li><li><label><input type="checkbox"> 1 tbsp fresh ginger, grated (or 1/2 tsp ground) <em>(optional)</em></label></li><li><label><input type="checkbox"> 1 tsp toasted sesame oil <em>(optional)</em></label></li><li><label><input type="checkbox"> Sriracha to finish <em>(optional)</em></label></li></ul></div></div>
       <p class="pantry">Pantry basics assumed: avocado oil or avocado oil spray, salt and pepper, garlic, and basic spices (chili powder, cumin, paprika, oregano, sage, fennel seed, garlic powder).</p>
+      <div class="nxt done" id="g-done"><span class="ok" id="g-done-h">Step 4</span><p id="g-done-p">When your cart is full, you are set for week one. Here is how the week goes:</p>
+        <ol class="wk"><li><b>Cook day (Sunday)</b>Cook the three Sunday recipes, about 2 hours. Tap any meal above for the steps.</li><li><b>Day 1</b>Weigh in, get your numbers, pick a bedtime. I will email you the details.</li><li><b>Thursday</b>Cook the Egg Roll in a Bowl, 20 minutes.</li><li><b>Day 7</b>Weigh in again and change nothing yet. One week is a data point.</li></ol>
+        <a class="btn solid" href="#week">Back to the 7-day plan &rarr;</a></div>
     </section>
 
     <section style="padding-top:44px" id="learn">
@@ -389,7 +414,8 @@
   <script src="/kitchen/recipes.js?v=bf6323f2"></script>
   <script src="/assets/goals.js?v=9861d9d3"></script>
   <script src="/assets/plate.js?v=d5b8011a"></script>
-  <script src="/assets/kit.js?v=fa744efa"></script>
+  <script src="/assets/kit.js?v=b1812618"></script>
+  <script src="/assets/groceries.js?v=b645b33c"></script>
   <footer class="site">
     <div class="foot">
       <div>
