@@ -1087,7 +1087,7 @@ window.SK = {
       ]
     },
     {
-      id: 'breakfast-burritos', lvl: 3, batch: true, name: 'Meal Prep Breakfast Burritos', cat: 'Breakfast', tag: 'Freezer friendly', serves: 6, mins: 40,
+      id: 'breakfast-burritos', lvl: 3, photos: ['/kitchen/img/breakfast-burritos.jpg'], batch: true, name: 'Meal Prep Breakfast Burritos', cat: 'Breakfast', tag: 'Freezer friendly', serves: 6, mins: 40,
       blurb: 'Seasoned turkey, eggs, crispy potatoes and cheese, rolled and frozen. Microwave one and you are out the door.',
       items: [
         { need: 'ground-turkey', or: ['ground-beef'], txt: '1 lb (454 g) lean ground turkey', food: 'ground-turkey', g: 454 },
