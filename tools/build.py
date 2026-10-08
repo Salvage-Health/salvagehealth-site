@@ -61,7 +61,7 @@ def topbar(active):
                  f'<a class="lbuy2" href="{SPOTIFY}" target="_blank" rel="noopener">Listen on Spotify</a></span>')
         cls = "launch lghost"
     else:
-        promo = '<a class="lp" href="/book"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>'
+        promo = '<a class="lp" href="/book"><img class="lcov" src="/book/cover-thumb.jpg" alt="" width="25" height="40"><span class="nw">New</span> <b>Fitness Without the Fear</b> <span class="lo">is out now.</span> <u>Get the book</u></a>'
         cls = "launch"
     bar = "" if active == "members" else (
         f'<div class="{cls}" id="lb">{promo}'
