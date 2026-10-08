@@ -743,7 +743,7 @@ window.SK = {
       ]
     },
     {
-      id: 'burrito-skillet', lvl: 2, batch: true, name: 'One-Pan Chicken Burrito Skillet', cat: 'Dinner', tag: 'One pan', serves: 4, mins: 30,
+      id: 'burrito-skillet', lvl: 2, photos: ['/kitchen/img/burrito-skillet.jpg'], batch: true, name: 'One-Pan Chicken Burrito Skillet', cat: 'Dinner', tag: 'One pan', serves: 4, mins: 30,
       blurb: 'Chicken, rice, beans, corn and salsa all cooked in one skillet, finished with melted cheese. Burrito bowl, fewer dishes.',
       items: [
         { need: 'chicken-breast', or: ['chicken-thighs'], txt: '1 1/2 lb (680 g) chicken breast, cubed', food: 'chicken-breast', g: 680 },
