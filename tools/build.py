@@ -254,7 +254,7 @@ ab = head("About Bryan Dourado | Salvage Health", "Bryan Dourado, founder of Sal
       <h1 class="disp">Second chances exist. <em>Twentieth chances, too.</em></h1>
       <p class="dek">Musician. Chef. Salesman. Founder of Salvage Health. Still figuring it out, and sharing all of it.</p>
     </header>
-    <figure class="about-pic"><img src="/brand/bryan-polo.jpg" alt="Bryan Dourado, founder of Salvage Health" width="709" height="1046" fetchpriority="high"><figcaption>Bryan Dourado, Nashville</figcaption></figure>
+    <figure class="about-pic"><img src="/brand/bryan-polo.jpg" alt="Bryan Dourado, founder of Salvage Health" width="1024" height="1535" fetchpriority="high"><figcaption>Bryan Dourado, Nashville</figcaption></figure>
     <div class="prose" style="padding-top:28px">
 {ABOUT_BODY}
     </div>
