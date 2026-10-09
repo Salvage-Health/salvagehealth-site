@@ -357,3 +357,7 @@ html,body{overflow-x:clip}
 .rp .lvd i.on:nth-child(-n+2){background:#E8B33C}
 .rp .lvd i.on:nth-child(n+3){background:#E5762C}
 .rp .lvd i.on:nth-child(5){background:#D7262B;box-shadow:0 0 6px rgba(215,38,43,.55)}
+
+.about-pic{margin:28px 0 0;max-width:420px}
+.about-pic img{display:block;width:100%;height:auto;aspect-ratio:900/1100;object-fit:cover;object-position:50% 12%;border-radius:14px}
+.about-pic figcaption{margin-top:10px;font-size:14px;color:var(--faint);letter-spacing:.02em}
