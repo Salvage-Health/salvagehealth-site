@@ -140,10 +140,16 @@ def waitlist(where):
     src = "meal-prep-waitlist-" + where
     return f'''<section class="wlist" data-wlist>
       <img src="/book/cook-twice-cover.jpg" alt="Cook Twice, Eat All Week by Bryan Dourado, cover" width="480" height="720" loading="lazy">
+      <ul class="wl-stats" aria-label="What's in the book">
+        <li><b>100</b><span>high-protein recipes</span></li>
+        <li><b>6</b><span>done-for-you weeks</span></li>
+        <li><b>2</b><span>cook days. Sunday + Wednesday</span></li>
+      </ul>
       <div class="wl-body">
         <p class="eyebrow">Coming soon \u00b7 The meal prep book</p>
         <h2 class="disp">Cook twice. <em>Eat all week.</em></h2>
-        <p>100 high-protein meal prep recipes, 6 done-for-you weeks with grocery lists, Bryan's Pantry seasonings and sauces, and the restaurant system behind it: cook Sunday and Wednesday, eat well all week.</p>
+        <p class="wl-long">100 high-protein meal prep recipes, 6 done-for-you weeks with grocery lists, Bryan's Pantry seasonings and sauces, and the restaurant system behind it: cook Sunday and Wednesday, eat well all week.</p>
+        <p class="wl-short">Grocery lists for every week, Bryan's Pantry seasonings and sauces, and the restaurant system that makes it work.</p>
         <p class="wl-perk">Waitlist gets the early-bird price on launch day.</p>
         <form class="optin" name="starter-kit" method="POST" action="/start/kit/" data-stay data-wl><input type="hidden" name="form-name" value="starter-kit"><input type="hidden" name="source" value="{src}"><p class="hp" hidden><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p><label class="sr" for="em-{src}">Email address</label><input id="em-{src}" type="email" name="email" required placeholder="Your email address" autocomplete="email"><button class="btn solid" type="submit">Join the waitlist</button></form>
         <p class="optnote">Free. No spam, unsubscribe anytime.</p>
