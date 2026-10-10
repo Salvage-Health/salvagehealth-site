@@ -314,7 +314,8 @@ html,body{overflow-x:clip}
 .wlist .wl-perk a{color:inherit}
 .wlist .optin{margin:6px 0 0;max-width:none}
 .wlist .optin input[hidden]{display:none}
-@media (max-width:700px){.wlist{grid-template-columns:1fr;gap:18px;padding:20px}.wlist img{width:130px}}
+.wlist{grid-template-areas:'cover body'}.wlist>img{grid-area:cover}.wlist .wl-body{grid-area:body}.wl-stats{display:none}.wlist .wl-short{display:none}
+@media (max-width:700px){.wlist{grid-template-columns:132px 1fr;grid-template-areas:'cover stats' 'body body';gap:20px 18px;padding:20px}.wlist>img{width:132px}.wl-stats{grid-area:stats;display:flex;flex-direction:column;justify-content:center;gap:14px;list-style:none;margin:0;padding:0 0 0 16px;border-left:2px solid rgba(190,81,38,.55)}.wl-stats li{display:flex;flex-direction:column;line-height:1.1}.wl-stats b{font-family:Oswald,'Arial Narrow',Impact,sans-serif;font-weight:700;font-size:34px;color:var(--fg,#F2EDE4);letter-spacing:.5px}.wl-stats li:nth-child(2) b{color:var(--rust,#BE5126)}.wl-stats span{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim,#B9B5AA);margin-top:3px}.wlist .wl-long{display:none}.wlist .wl-short{display:block}}
 /* Recipe pages (tools/recipepages.py) */
 .rp{padding-top:22px}
 .rp-crumb{font-size:13px;color:var(--faint,#8C887E);margin:0 0 16px}.rp-crumb a{color:var(--dim,#B9B5AA)}.rp-crumb span{margin:0 6px}
